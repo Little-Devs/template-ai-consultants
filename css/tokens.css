@@ -1,0 +1,333 @@
+/* =============================================================================
+   Template tokens — change :root to rebrand.
+   Pair with js/brand.js for name, email, and the generated mark.
+   ============================================================================= */
+
+@font-face {
+  font-family: Inter;
+  src: url("/assets/fonts/Inter-Variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-paper: #FDFCF8;
+  --color-ink: #1C1917;
+  --color-muted: #525252;
+
+  --color-primary: #3D2265;
+  --color-primary-rgb: 61 34 101;
+
+  --color-accent: #9855FF;
+  --color-accent-rgb: 152 85 255;
+
+  --color-accent-2: #E63CFE;
+  --color-accent-2-rgb: 230 60 254;
+
+  --color-accent-ink: #5B2FA8;
+  --color-accent-ink-rgb: 91 47 168;
+
+  --font-display: Inter, system-ui, -apple-system, sans-serif;
+  --font-body: Inter, system-ui, -apple-system, sans-serif;
+  --font-label: Inter, system-ui, -apple-system, sans-serif;
+  --font-credit: "Black Echo", sans-serif;
+
+  --font-display-weight: 800;
+  --font-heading-weight: 700;
+  --letter-spacing-display: -0.02em;
+  --line-height-display: 1.1;
+  --line-height-body: 1.7;
+}
+
+html, body {
+  font-family: var(--font-body) !important;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  font-optical-sizing: auto;
+}
+
+.font-sans,
+.font-serif,
+.font-mono,
+.font-open-sans,
+.font-orange-avenue,
+.font-orange-avenue *,
+[class*="font-serif"],
+[class*="font-mono"],
+[class*="font-open-sans"],
+[class*="font-orange"] {
+  font-family: var(--font-body) !important;
+}
+
+h1, h2, h3, h4,
+.hero-title,
+.hero-title span,
+.font-orange-avenue,
+.tech-header-text,
+.svc-hero__headline,
+.svc-hero__headline .svc-w,
+.zi-h1-grad,
+.about-title-gradient,
+#about-studio-title,
+#inquiry-headline {
+  font-family: var(--font-display) !important;
+  font-style: normal !important;
+  font-weight: var(--font-heading-weight) !important;
+  letter-spacing: var(--letter-spacing-display) !important;
+  line-height: 1.2 !important;
+}
+
+.hero-title,
+#home-page .hero-title,
+#home-page .hero-title span {
+  font-weight: var(--font-display-weight) !important;
+  font-style: normal !important;
+  letter-spacing: var(--letter-spacing-display) !important;
+  line-height: var(--line-height-display) !important;
+}
+
+p, .font-open-sans, .home-hero-subtext, .svc-hero__distinction {
+  font-family: var(--font-body) !important;
+  line-height: var(--line-height-body);
+}
+
+#home-page .home-hero-subtext {
+  font-family: var(--font-body) !important;
+  font-weight: 400 !important;
+  font-size: clamp(1rem, 2vw, 1.25rem) !important;
+  letter-spacing: 0 !important;
+  line-height: var(--line-height-body) !important;
+}
+
+#home-page .home-hero-distinction {
+  font-family: var(--font-body) !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: inherit !important;
+  color: var(--color-accent-ink) !important;
+}
+
+#home-page #home-services-mobile .home-service-name {
+  font-family: var(--font-display) !important;
+  font-weight: var(--font-heading-weight) !important;
+  letter-spacing: var(--letter-spacing-display) !important;
+}
+
+#home-page #home-services-mobile .home-service-name small,
+.font-mono,
+.hero-kicker,
+#home-services-desktop,
+.section-label,
+.tab-num,
+.hww-phase__k {
+  font-family: var(--font-label) !important;
+  font-weight: 700 !important;
+}
+
+#logo-home span,
+#logo-home [data-brand] {
+  font-family: var(--font-display) !important;
+  font-weight: 700 !important;
+  letter-spacing: var(--letter-spacing-display) !important;
+}
+
+.brand-mark,
+[data-brand-mark] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.brand-mark svg,
+[data-brand-mark] svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.svc-hero__mark[data-brand-mark] {
+  height: auto;
+  aspect-ratio: 1;
+  max-width: min(100%, clamp(9rem, 18vw, 22rem));
+}
+.svc-hero__mark[data-brand-mark] svg {
+  height: auto;
+}
+
+nav a.font-mono,
+#mobile-menu a.font-mono {
+  font-family: var(--font-label) !important;
+  font-weight: 500 !important;
+}
+
+#nav-inquire,
+#mobile-inquire,
+.zi-cta,
+a.heartbeat-cta,
+.start-btn-hero,
+.start-btn-hero-label {
+  font-family: var(--font-label) !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+#nav-inquire,
+#mobile-inquire,
+.zi-cta,
+a.heartbeat-cta {
+  font-size: 0.9rem !important;
+}
+
+.little-company-word,
+.brand-little {
+  font-family: var(--font-credit) !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+}
+
+#mobile-menu a.font-serif {
+  font-family: var(--font-display) !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+}
+
+.hww-phase__t,
+.hww-phase__d,
+.tab-label,
+.service-tab-heading,
+.service-buyer-question,
+.service-buyer-explanation,
+.svc-hero__k,
+.svc-hero__row dt,
+.svc-hero__row dd,
+.tech-header,
+.tech-header-text,
+.header-prefix,
+.loader-text {
+  font-family: var(--font-body) !important;
+}
+
+.hww-phase__t,
+.tab-label {
+  font-weight: var(--font-heading-weight) !important;
+  font-style: normal !important;
+  letter-spacing: var(--letter-spacing-display) !important;
+}
+
+.hww-phase__d,
+.service-buyer-explanation,
+.svc-hero__row dd {
+  font-weight: 400 !important;
+  line-height: var(--line-height-body) !important;
+}
+
+.section-label,
+.svc-hero__k,
+.service-num,
+.tab-num {
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+}
+
+.bg-sepia { background-color: rgb(var(--color-primary-rgb) / var(--tw-bg-opacity, 1)) !important; }
+.hover\:bg-sepia:hover { background-color: rgb(var(--color-primary-rgb) / var(--tw-bg-opacity, 1)) !important; }
+.text-sepia { color: rgb(var(--color-primary-rgb) / var(--tw-text-opacity, 1)) !important; }
+.hover\:text-sepia:hover { color: rgb(var(--color-accent-ink-rgb) / var(--tw-text-opacity, 1)) !important; }
+.border-sepia { border-color: rgb(var(--color-primary-rgb) / var(--tw-border-opacity, 1)) !important; }
+.shadow-sepia { --tw-shadow-color: rgb(var(--color-primary-rgb)) !important; }
+
+.bg-rust { background-color: rgb(var(--color-accent-rgb) / var(--tw-bg-opacity, 1)) !important; }
+.hover\:bg-rust:hover { background-color: rgb(var(--color-accent-ink-rgb) / var(--tw-bg-opacity, 1)) !important; }
+.text-rust { color: rgb(var(--color-accent-ink-rgb) / var(--tw-text-opacity, 1)) !important; }
+.hover\:text-rust:hover { color: rgb(var(--color-primary-rgb) / var(--tw-text-opacity, 1)) !important; }
+.border-rust { border-color: rgb(var(--color-accent-rgb) / var(--tw-border-opacity, 1)) !important; }
+.border-rust\/10 { border-color: rgb(var(--color-accent-rgb) / 0.1) !important; }
+.border-rust\/20 { border-color: rgb(var(--color-accent-rgb) / 0.2) !important; }
+.border-rust\/30 { border-color: rgb(var(--color-accent-rgb) / 0.3) !important; }
+.border-rust\/40 { border-color: rgb(var(--color-accent-rgb) / 0.4) !important; }
+.border-rust\/70 { border-color: rgb(var(--color-accent-rgb) / 0.7) !important; }
+.from-rust { --tw-gradient-from: var(--color-accent) var(--tw-gradient-from-position) !important; --tw-gradient-to: rgb(var(--color-accent-rgb) / 0) var(--tw-gradient-to-position) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important; }
+.from-rust\/80 { --tw-gradient-from: rgb(var(--color-accent-rgb) / 0.8) var(--tw-gradient-from-position) !important; }
+.via-rust { --tw-gradient-to: rgb(var(--color-accent-rgb) / 0) var(--tw-gradient-to-position) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--color-accent) var(--tw-gradient-via-position), var(--tw-gradient-to) !important; }
+.via-rust\/40 { --tw-gradient-stops: var(--tw-gradient-from), rgb(var(--color-accent-rgb) / 0.4) var(--tw-gradient-via-position), var(--tw-gradient-to) !important; }
+.to-rust { --tw-gradient-to: var(--color-accent) var(--tw-gradient-to-position) !important; }
+.shadow-rust\/20 { --tw-shadow-color: rgb(var(--color-accent-rgb) / 0.2) !important; }
+.ring-rust { --tw-ring-color: rgb(var(--color-accent-rgb) / var(--tw-ring-opacity, 1)) !important; }
+.ring-rust\/20 { --tw-ring-color: rgb(var(--color-accent-rgb) / 0.2) !important; }
+.ring-rust\/30 { --tw-ring-color: rgb(var(--color-accent-rgb) / 0.3) !important; }
+.focus\:border-rust:focus { border-color: var(--color-accent) !important; }
+.focus\:ring-rust:focus { --tw-ring-color: var(--color-accent) !important; }
+.focus\:ring-rust\/20:focus { --tw-ring-color: rgb(var(--color-accent-rgb) / 0.2) !important; }
+.focus\:ring-rust\/30:focus { --tw-ring-color: rgb(var(--color-accent-rgb) / 0.3) !important; }
+.hover\:border-rust:hover { border-color: var(--color-accent) !important; }
+.hover\:border-rust\/30:hover { border-color: rgb(var(--color-accent-rgb) / 0.3) !important; }
+.hover\:border-rust\/70:hover { border-color: rgb(var(--color-accent-rgb) / 0.7) !important; }
+.decoration-rust\/40 { text-decoration-color: rgb(var(--color-accent-rgb) / 0.4) !important; }
+.via-gold\/50 { --tw-gradient-stops: var(--tw-gradient-from), rgb(var(--color-accent-2-rgb) / 0.5) var(--tw-gradient-via-position), var(--tw-gradient-to) !important; }
+.bg-gold { background-color: var(--color-accent-2) !important; }
+.text-gold { color: var(--color-accent-2) !important; }
+
+.zi-h1-grad,
+.svc-grad-text,
+.about-title-gradient,
+.tech-header-text.zi-h1-grad {
+  background-image: linear-gradient(105deg, var(--color-ink) 0%, var(--color-primary) 42%, var(--color-accent) 78%, var(--color-accent-2) 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+
+.sketch-line { stroke: var(--color-primary) !important; }
+.tree-folder-icon { color: var(--color-primary) !important; }
+.service-tab-item.active .tab-num { color: var(--color-accent-ink) !important; }
+.service-tab-item-dot {
+  background: var(--color-accent) !important;
+  box-shadow: 0 0 8px var(--color-accent) !important;
+}
+header.header-dark #logo-home .w-10.h-10,
+header.header-dark #logo-home .w-8.h-8 { border-color: var(--color-accent) !important; }
+header.header-dark nav a:hover { color: var(--color-accent) !important; }
+header.header-dark.about-active #mobile-menu #mobile-inquire,
+header.header-dark.about-active #nav-inquire {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent)) !important;
+}
+.inquiry-service-card.selected {
+  background-color: rgb(var(--color-accent-rgb) / 0.08) !important;
+  border-color: var(--color-accent) !important;
+  box-shadow: 0 10px 30px rgb(var(--color-accent-rgb) / 0.14) !important;
+}
+.inquiry-goal-pill.active {
+  background-color: var(--color-primary) !important;
+  box-shadow: 0 12px 30px rgb(var(--color-primary-rgb) / 0.25) !important;
+}
+
+#home-page .home-hero-distinction { color: var(--color-accent-ink) !important; }
+#home-page #home-services-mobile { border-top-color: rgb(var(--color-accent-rgb) / 0.28) !important; }
+#home-page #home-services-mobile .home-service-name { border-bottom-color: rgb(var(--color-accent-rgb) / 0.14) !important; }
+#home-page #home-services-mobile .home-service-name small { color: var(--color-accent-ink) !important; }
+#home-page .start-btn-hero {
+  box-shadow: 0 6px 20px -8px rgba(0,0,0,0.4), 0 0 22px -10px rgb(var(--color-accent-rgb) / 0.45) !important;
+}
+#home-page .start-btn-hero:hover {
+  box-shadow: 0 8px 26px -8px rgba(0,0,0,0.45), 0 0 32px -6px rgb(var(--color-accent-rgb) / 0.6) !important;
+}
+#home-page .sb-ring {
+  background: radial-gradient(circle at center,
+    rgb(var(--color-accent-rgb) / 0.70) 0%,
+    rgb(var(--color-accent-2-rgb) / 0.34) 46%,
+    rgb(var(--color-accent-rgb) / 0.00) 78%) !important;
+}
+
+.hww-phase__k { color: var(--color-accent-ink) !important; }
+.hww-phase__link:hover .hww-phase__t { color: var(--color-primary) !important; }
+.sp-start__title em,
+.sp-start__steps a,
+.sp-result__label,
+.sp-result__what a,
+.sp-trust p a,
+.sp-trust__title em { color: var(--color-accent-ink) !important; }
+.sp-trust { border-top-color: var(--color-accent-ink) !important; }

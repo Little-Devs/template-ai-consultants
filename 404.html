@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="robots" content="Lorem ipsum dolor sit amet consectetur adipiscing elit."/>
+
+<!-- Primary Meta Tags -->
+<title>Lorem Ipsum Dolor Sit Amet</title>
+<meta name="title" content="Lorem ipsum dolor sit amet consectetur adipiscing elit."/>
+<meta name="description" content="Lorem ipsum dolor sit amet consectetur adipiscing elit sed do."/>
+<meta name="author" content="Studio"/>
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/assets/icons/brand-mark.svg"/>
+<link rel="apple-touch-icon" href="/assets/icons/brand-mark.svg"/>
+
+<!-- DNS Prefetch for External Resources -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+<link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
+<link rel="dns-prefetch" href="https://unpkg.com"/>
+
+<!-- Preload Critical Resources -->
+<link rel="preload" href="/css/output.css" as="style"/>
+<link rel="preload" href="/css/site.css" as="style"/>
+<link rel="preload" href="/js/site.min.js" as="script"/>
+<link rel="preload" href="/assets/icons/brand-mark.svg" as="image" type="image/png"/>
+
+<!-- Fonts with Optimized Loading -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&amp;family=Inter:wght@200;300;400;500;600;700&amp;family=JetBrains+Mono:wght@200;300;400;500;600;700&amp;family=Open+Sans:wght@300;400;500;600;700&amp;display=swap"/>
+
+
+<!-- Tailwind CSS (Production Build) -->
+<link rel="stylesheet" href="/css/output.css"/>
+<link rel="stylesheet" href="/css/site.css"/>
+<link rel="stylesheet" href="css/tokens.css"/>
+
+<!-- External Libraries -->
+<script src="https://unpkg.com/lucide@0.577.0" defer onerror="console.warn(&#x27;Lucide failed to load&#x27;)"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer onerror="console.warn(&#x27;Lottie failed to load&#x27;)"></script>
+<script src="js/brand.js"></script>
+<script src="/js/site.min.js" defer></script>
+</head>
+<body class="antialiased font-sans bg-paper min-h-screen">
+
+    <!-- Header - Fixed across pages -->
+    <header class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-3 py-2 md:px-12 md:py-6 transition-all duration-300">
+        <!-- Background Gradient & Blur with Soft Masked Edge -->
+        <div class="absolute inset-x-0 top-0 h-32 md:h-48 bg-gradient-to-b from-paper via-paper/90 to-transparent backdrop-blur-md -z-10 pointer-events-none [mask-image:linear-gradient(to_bottom,black_20%,transparent_90%)]"></div>
+
+        <a href="/" class="flex items-center gap-2 md:gap-4 cursor-pointer" id="logo-home" aria-label="Studio">
+            <div class="w-8 h-8 md:w-10 md:h-10 border border-neutral-800 flex items-center justify-center rounded-sm bg-paper relative overflow-hidden">
+                <span class="brand-mark" data-brand-mark></span>
+            </div>
+            <span class="font-serif text-2xl md:text-4xl tracking-tight text-ink font-medium" data-brand>Studio</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-10 relative">
+            <div class="relative group">
+                <a href="/services.html" id="nav-services" class="flex items-center gap-1 font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase py-2">
+                    Services
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-neutral-400 group-hover:text-ink transition-colors"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <!-- Dropdown -->
+                <div class="absolute top-full left-0 mt-2 w-56 bg-paper border border-neutral-200 shadow-xl rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <div class="flex flex-col py-2">
+                        <a href="ai-opportunity-map.html" id="nav-start-here" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest border-b border-neutral-200 mb-1"><span class="block" style="color:#5B2FA8;font-size:9px;letter-spacing:0.2em;margin-bottom:2px;">Start here</span>AI Opportunity Map</a>
+                        <a href="/products#maria" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">AI Assistants</a>
+                        <a href="/ai-training.html" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Build</a>
+                        <a href="/ai-development.html" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Design</a>
+                        <a href="/ai-consulting.html" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Strategy</a>
+                        <a href="/ai-governance.html" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Care</a>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group">
+                <a href="how-we-work.html" id="nav-how-we-work" class="flex items-center gap-1 font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase py-2">
+                    How We Work
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-neutral-400 group-hover:text-ink transition-colors"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <!-- Dropdown -->
+                <div id="nav-how-we-work-dropdown" class="absolute top-full left-0 mt-2 w-56 bg-paper border border-neutral-200 shadow-xl rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <div class="flex flex-col py-2">
+                        <a href="how-we-work.html#method" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">The four phases</a>
+                        <a href="data-security.html" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Data &amp; Security</a>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group">
+                <a href="/products.html" id="nav-products" class="flex items-center gap-1 font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase py-2">
+                    Our Work
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-neutral-400 group-hover:text-ink transition-colors"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <div class="absolute top-full left-0 mt-2 w-56 bg-paper border border-neutral-200 shadow-xl rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <div class="flex flex-col py-2">
+                        <a href="/products#case-studies" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Client Results</a>
+                        <a href="/products#maria" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">AI Assistants</a>
+                        <a href="/products#what-we-build" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Lorem Ipsum</a>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group" style="display:none">
+                <a id="nav-industries" class="flex items-center gap-1 font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase py-2 cursor-default">
+                    Industries
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-neutral-400 group-hover:text-ink transition-colors"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <!-- Dropdown -->
+                <div class="absolute top-full left-0 mt-2 w-56 bg-paper border border-neutral-200 shadow-xl rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <div class="flex flex-col py-2">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Law</a>
+                    </div>
+                </div>
+            </div>
+            <a href="/about-us.html" id="nav-about" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase">About Us</a>
+            <a href="/blog.html" id="nav-blog" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase">Blog</a>
+            <a id="nav-inquire" href="/inquire.html#inquiry-form" class="font-serif italic text-lg px-8 py-2 border border-transparent bg-sepia hover:bg-ink transition-colors text-paper rounded-full shadow-sm">Book a Call</a>
+        </nav>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="md:hidden w-8 h-8 flex items-center justify-center" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu"></button>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="absolute top-14 right-3 md:top-24 md:right-6 md:hidden pointer-events-auto transition-all duration-300 opacity-0 translate-y-[-10px] invisible z-[60]">
+            <div class="flex flex-col items-end gap-3 md:gap-4 bg-paper/95 backdrop-blur-md border border-neutral-200 shadow-xl p-6 rounded-md min-w-[160px] transition-[min-width] duration-300">
+                <div class="flex flex-col items-end w-full">
+                    <div class="flex items-center justify-end gap-2 w-full">
+                        <a href="/services.html" id="mobile-services" class="font-serif text-xl text-ink hover:text-sepia transition-colors" style="min-width: 6.25rem; text-align: right;">Services</a>
+                        <button id="mobile-services-toggle" class="p-1 focus:outline-none" aria-label="Toggle Services Menu">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-collapsed w-5 h-5 text-neutral-400"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-expanded w-5 h-5 text-neutral-400 hidden"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                    </div>
+                    <!-- Mobile Services Dropdown -->
+                    <div id="mobile-services-dropdown" class="flex flex-col items-end gap-2 overflow-hidden max-h-0 opacity-0 transition-all duration-300 w-full">
+                        <a href="ai-opportunity-map.html" id="mobile-start-here" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1 mt-2"><span class="block text-right" style="color:#5B2FA8;font-size:9px;letter-spacing:0.2em;">Start here</span>AI Opportunity Map</a>
+                        <a href="/products#maria" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">AI Assistants</a>
+                        <a href="/ai-training.html" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Build</a>
+                        <a href="/ai-development.html" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Design</a>
+                        <a href="/ai-consulting.html" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Strategy</a>
+                        <a href="/ai-governance.html" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Care</a>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-end w-full">
+
+                    <div class="flex items-center justify-end gap-2 w-full">
+
+                        <a href="how-we-work.html" id="mobile-how-we-work" class="font-serif text-xl text-ink hover:text-sepia transition-colors" style="min-width: 6.25rem; text-align: right;">How We Work</a>
+
+                        <button id="mobile-how-we-work-toggle" class="p-1 focus:outline-none" aria-label="Toggle How We Work Menu">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-collapsed w-5 h-5 text-neutral-400"><polyline points="6 9 12 15 18 9"></polyline></svg>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-expanded w-5 h-5 text-neutral-400 hidden"><polyline points="6 9 12 15 18 9"></polyline></svg>
+
+                        </button>
+
+                    </div>
+
+                    <div id="mobile-how-we-work-dropdown" class="flex flex-col items-end gap-2 overflow-hidden max-h-0 opacity-0 transition-all duration-300 w-full">
+
+                        <a href="how-we-work.html#method" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1 mt-2">The four phases</a>
+
+                        <a href="data-security.html" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Data &amp; Security</a>
+
+                    </div>
+
+                </div>
+
+                <div class="flex flex-col items-end w-full">
+
+                    <div class="flex items-center justify-end gap-2 w-full">
+
+                        <a href="/products.html" id="mobile-products" class="font-serif text-xl text-ink hover:text-sepia transition-colors" style="min-width: 6.25rem; text-align: right;">Our Work</a>
+
+                        <button id="mobile-our-work-toggle" class="p-1 focus:outline-none" aria-label="Toggle Our Work Menu">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-collapsed w-5 h-5 text-neutral-400"><polyline points="6 9 12 15 18 9"></polyline></svg>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-expanded w-5 h-5 text-neutral-400 hidden"><polyline points="6 9 12 15 18 9"></polyline></svg>
+
+                        </button>
+
+                    </div>
+
+                    <!-- Mobile Our Work Dropdown -->
+
+                    <div id="mobile-our-work-dropdown" class="flex flex-col items-end gap-2 overflow-hidden max-h-0 opacity-0 transition-all duration-300 w-full">
+
+                        <a href="/products#case-studies" id="mobile-case-studies" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1 mt-2">Client Results</a>
+
+                        <a href="/products#maria" id="mobile-maria" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">AI Assistants</a>
+
+                        <a href="/products#what-we-build" id="mobile-what-we-build" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Lorem Ipsum</a>
+
+                    </div>
+
+                </div>
+                <div class="flex flex-col items-end w-full" style="display:none">
+                    <div class="flex items-center justify-end gap-2 w-full">
+                        <span id="mobile-industries" class="font-serif text-xl text-ink hover:text-sepia transition-colors" style="min-width: 6.25rem; text-align: right;">Industries</span>
+                        <button id="mobile-industries-toggle" class="p-1 focus:outline-none" aria-label="Toggle Industries Menu">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-collapsed w-5 h-5 text-neutral-400"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-expanded w-5 h-5 text-neutral-400 hidden"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                    </div>
+                    <div id="mobile-industries-dropdown" class="flex flex-col items-end gap-2 overflow-hidden max-h-0 opacity-0 transition-all duration-300 w-full">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1 mt-2">Law</a>
+                    </div>
+                </div>
+                <a href="/about-us.html" id="mobile-about" class="font-serif text-xl text-ink hover:text-sepia transition-colors">About Us</a>
+                <a href="/blog.html" id="mobile-blog" class="font-serif text-xl text-ink hover:text-sepia transition-colors">Blog</a>
+                <a id="mobile-inquire" href="/inquire.html#inquiry-form" class="font-serif italic text-lg px-6 py-1 border border-transparent bg-sepia text-paper rounded-full mt-2">Book a Call</a>
+            </div>
+        </div>
+    </header>
+
+
+<main class="relative overflow-visible z-10 px-6 md:px-12 pt-28 pb-20" style="max-width: 2200px; margin-left: auto; margin-right: auto;">
+  <div class="max-w-3xl mx-auto">
+    <div class="py-20 flex flex-col items-center text-center space-y-6">
+      <div class="flex items-center gap-3 mb-2">
+        <div class="h-px w-12 bg-rust/40"></div>
+        <span class="font-mono text-[10px] text-rust uppercase tracking-[0.2em] font-bold">lorem ipsum</span>
+        <div class="h-px w-12 bg-rust/40"></div>
+      </div>
+      <h1 class="text-5xl md:text-7xl font-serif text-ink leading-tight">Lorem Ipsum Dolor</h1>
+      <p class="text-lg text-neutral-600 font-open-sans max-w-md">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.</p>
+      <div class="flex flex-col sm:flex-row items-center gap-3 pt-6">
+        <a href="/" class="inline-flex items-center gap-2 rounded-full bg-sepia text-paper px-6 py-3 text-sm font-semibold tracking-[0.08em] shadow-lg hover:bg-ink transition-colors">lorem ipsum dolor <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        <a href="/services.html" class="inline-flex items-center gap-2 rounded-full border border-stone/50 bg-white/60 px-6 py-3 text-sm font-semibold tracking-[0.08em] text-ink hover:border-ink transition-colors">lorem ipsum</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script defer src="https://va.vercel-scripts.com/v1/speed-insights/script.js"></script>
+</body>
+</html>

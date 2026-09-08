@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="brandMarkGrad" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9855FF"/>
+      <stop offset="1" stop-color="#E63CFE"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="28" stroke="url(#brandMarkGrad)" stroke-width="1.15" opacity="0.35" stroke-dasharray="4 6"/>
+  <circle cx="32" cy="32" r="18" stroke="url(#brandMarkGrad)" stroke-width="2.75"/>
+  <circle cx="32" cy="32" r="5.5" fill="url(#brandMarkGrad)"/>
+</svg>

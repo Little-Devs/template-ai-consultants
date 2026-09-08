@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="Lorem ipsum dolor sit amet consectetur adipiscing elit."/>
+  <meta name="googlebot" content="Lorem ipsum dolor sit amet consectetur adipiscing elit."/>
+  <meta name="description" content="Lorem ipsum dolor sit amet consectetur adipiscing elit sed do."/>
+  <meta name="author" content="Studio"/>
+  <title>Lorem Ipsum Dolor Sit Amet Consectetur</title>
+  <link rel="icon" type="image/png" href="assets/icons/brand-favicon.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=DM+Sans:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@300;400;500&amp;display=swap"/>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5ede3;
+      --bg-soft: #fbf6f0;
+      --surface: #fffaf4;
+      --surface-strong: #efe2d4;
+      --ink: #1a1410;
+      --muted: #6f6259;
+      --faint: #9c8d82;
+      --line: #d4c4b8;
+      --line-strong: #bba99b;
+      --accent: #b84020;
+      --accent-strong: #8b2e0f;
+      --accent-soft: #e8c9b9;
+      --case-bg: #1c1f28;
+      --case-surface: #252a35;
+      --case-ink: #f5ede3;
+      --case-muted: #b9b0a7;
+      --header-bg: rgba(245, 237, 227, 0.86);
+      --shadow: 0 24px 80px rgba(52, 35, 22, 0.12);
+      --font-display: "Cormorant Garamond", Georgia, serif;
+      --font-body: "DM Sans", sans-serif;
+      --font-mono: "JetBrains Mono", monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      overflow-x: clip;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 260ms ease, color 260ms ease;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 1000;
+      top: 0.75rem;
+      left: 0.75rem;
+      padding: 0.75rem 1rem;
+      background: var(--ink);
+      color: var(--bg);
+      font: 500 0.75rem/1 var(--font-mono);
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      transform: translateY(-150%);
+      transition: transform 180ms ease;
+    }
+
+    .skip-link:focus { transform: translateY(0); }
+
+    .site-header {
+      position: sticky;
+      z-index: 100;
+      top: 0;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      min-height: 76px;
+      padding: 0 4vw;
+      border-bottom: 1px solid color-mix(in srgb, var(--line) 72%, transparent);
+      background: var(--header-bg);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      justify-self: start;
+      gap: 0.7rem;
+      min-height: 44px;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+      transition: filter 240ms ease;
+    }
+
+    .brand span {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+    }
+
+    .page-context {
+      display: flex;
+      align-items: center;
+      justify-self: center;
+      gap: 0.6rem;
+      margin: 0;
+      color: var(--muted);
+      font: 400 0.66rem/1 var(--font-mono);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 13%, transparent);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      justify-self: end;
+      gap: 0.85rem;
+    }
+
+    .header-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font: 400 0.68rem/1 var(--font-mono);
+      letter-spacing: 0.11em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 180ms ease, border-color 180ms ease, background-color 180ms ease;
+    }
+
+    .header-link:hover { color: var(--ink); }
+
+    .hero {
+      position: relative;
+      isolation: isolate;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+      gap: clamp(3rem, 7vw, 8rem);
+      align-items: center;
+      min-height: calc(100svh - 76px);
+      padding: clamp(5.5rem, 10vw, 9rem) max(4vw, calc((100vw - 1440px) / 2));
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      opacity: 0.75;
+      background:
+        radial-gradient(circle at 84% 28%, color-mix(in srgb, var(--accent) 12%, transparent) 0, transparent 28%),
+        linear-gradient(90deg, transparent 0 49.92%, color-mix(in srgb, var(--line) 48%, transparent) 50%, transparent 50.08%);
+    }
+
+    .hero-grid {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      opacity: 0.34;
+      background-image:
+        linear-gradient(color-mix(in srgb, var(--line) 45%, transparent) 1px, transparent 1px),
+        linear-gradient(90deg, color-mix(in srgb, var(--line) 45%, transparent) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: linear-gradient(to bottom, black, transparent 88%);
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      animation: rise-in 700ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+    }
+
+    .eyebrow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.65rem;
+      margin: 0 0 1.8rem;
+      color: var(--accent);
+      font: 500 0.68rem/1.4 var(--font-mono);
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow span { color: var(--muted); }
+
+    .hero-name {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+      font-weight: 500;
+      letter-spacing: -0.035em;
+      line-height: 1;
+    }
+
+    .hero-role {
+      margin: 0.65rem 0 2.5rem;
+      color: var(--muted);
+      font: 400 0.72rem/1.4 var(--font-mono);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 1000px;
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 7.2vw, 7.8rem);
+      font-weight: 500;
+      letter-spacing: -0.065em;
+      line-height: 0.83;
+      text-wrap: balance;
+    }
+
+    .hero h1 em {
+      color: var(--accent);
+      font-weight: 400;
+    }
+
+    .hero-summary {
+      max-width: 680px;
+      margin: 2.25rem 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.35vw, 1.2rem);
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    .hero-legal {
+      max-width: 680px;
+      margin: 1rem 0 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-weight: 400;
+      line-height: 1.65;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 2.5rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2.5rem;
+      min-height: 52px;
+      padding: 0.2rem 1.25rem;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      font: 500 0.72rem/1 var(--font-mono);
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: transform 180ms ease, color 180ms ease, background-color 180ms ease, border-color 180ms ease;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+    .button:active { transform: translateY(0) scale(0.98); }
+
+    .button-primary {
+      min-width: 260px;
+      background: var(--accent);
+      color: #fff9f3;
+    }
+
+    .button-primary:hover { background: var(--accent-strong); }
+
+    .button-secondary {
+      border-color: var(--line);
+      background: color-mix(in srgb, var(--surface) 74%, transparent);
+      color: var(--ink);
+    }
+
+    .button-secondary:hover { border-color: var(--accent); }
+
+    .hero-note {
+      margin: 2.5rem 0 0;
+      color: var(--faint);
+      font: 400 0.62rem/1.5 var(--font-mono);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .hero-note span { margin: 0 0.4rem; color: var(--accent); }
+
+    .portrait-frame {
+      position: relative;
+      width: min(100%, 480px);
+      margin: 0;
+      justify-self: end;
+      padding: 0.75rem;
+      border: 1px solid var(--line);
+      background: color-mix(in srgb, var(--surface) 85%, transparent);
+      box-shadow: var(--shadow);
+      animation: rise-in 800ms 120ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+    }
+
+    .portrait-frame::before,
+    .portrait-frame::after {
+      content: "+";
+      position: absolute;
+      z-index: 2;
+      color: var(--accent);
+      font: 400 0.8rem/1 var(--font-mono);
+    }
+
+    .portrait-frame::before { top: -6px; left: -5px; }
+    .portrait-frame::after { right: -5px; bottom: -6px; }
+
+    .portrait-meta {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.2rem 0.15rem 0.75rem;
+      color: var(--muted);
+      font: 400 0.58rem/1 var(--font-mono);
+      letter-spacing: 0.12em;
+    }
+
+    .portrait-crop {
+      position: relative;
+      aspect-ratio: 1 / 1.08;
+      overflow: hidden;
+      background: var(--surface-strong);
+    }
+
+    .portrait-crop::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ink) 10%, transparent);
+      pointer-events: none;
+    }
+
+    .portrait-crop img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 28%;
+      filter: saturate(0.72) contrast(1.03);
+      transition: filter 300ms ease, transform 500ms ease;
+    }
+
+    .portrait-frame:hover img {
+      filter: saturate(1) contrast(1.02);
+      transform: scale(1.015);
+    }
+
+    .portrait-frame figcaption {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      padding: 0.9rem 0.15rem 0.15rem;
+      color: var(--muted);
+      font: 400 0.64rem/1.2 var(--font-mono);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .portrait-frame figcaption strong {
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      text-transform: none;
+    }
+
+    .proof-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .proof-item {
+      min-width: 0;
+      padding: clamp(2rem, 4vw, 3.5rem) max(2rem, 4vw);
+      border-right: 1px solid var(--line);
+    }
+
+    .proof-item:last-child { border-right: 0; }
+
+    .proof-index,
+    .record-ref {
+      margin: 0 0 1.2rem;
+      color: var(--accent);
+      font: 500 0.62rem/1.4 var(--font-mono);
+      letter-spacing: 0.12em;
+    }
+
+    .proof-item h2 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .proof-logo-row {
+      display: flex;
+      align-items: center;
+      min-height: 58px;
+      margin-bottom: 1rem;
+    }
+
+    .proof-logo {
+      max-width: 190px;
+      height: 54px;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    .proof-logo-studio {
+      width: 54px;
+      padding: 0.35rem;
+      background: #fff;
+    }
+
+    .proof-logo-ey {
+      width: 78px;
+      background: #000;
+    }
+
+    .proof-logo-murdoch {
+      width: min(100%, 210px);
+      height: auto;
+    }
+
+    .proof-item > p:last-child {
+      max-width: 32rem;
+      margin: 1rem 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.65;
+    }
+
+    .section {
+      padding: clamp(6rem, 11vw, 11rem) max(4vw, calc((100vw - 1440px) / 2));
+    }
+
+    .section-teaching,
+    .section-fit {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.65fr) minmax(0, 1.35fr);
+      gap: clamp(3rem, 8vw, 9rem);
+      align-items: start;
+    }
+
+    .section-intro {
+      position: sticky;
+      top: 112px;
+    }
+
+    .section-intro h2,
+    .approach-heading h2,
+    .conversation h2 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(3.2rem, 5.3vw, 6rem);
+      font-weight: 500;
+      letter-spacing: -0.055em;
+      line-height: 0.92;
+    }
+
+    .section-intro h2 em {
+      color: var(--accent);
+      font-weight: 400;
+    }
+
+    .section-deck {
+      max-width: 26rem;
+      margin: 1.5rem 0 0;
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 2.7vw, 2.8rem);
+      font-weight: 500;
+      letter-spacing: -0.035em;
+      line-height: 1.04;
+    }
+
+    .section-intro > p:last-child {
+      max-width: 34rem;
+      margin: 1.8rem 0 0;
+      color: var(--muted);
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    .evidence-records { display: grid; gap: 1.25rem; }
+
+    .record-card {
+      position: relative;
+      padding: clamp(1.6rem, 3vw, 2.75rem);
+      border: 1px solid var(--line);
+      background: var(--surface);
+      box-shadow: 0 14px 48px color-mix(in srgb, var(--ink) 6%, transparent);
+    }
+
+    .record-card-featured { border-top: 3px solid var(--accent); }
+
+    .record-head {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-bottom: 1.8rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .record-head h3 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .record-identity {
+      min-width: 0;
+    }
+
+    .record-brandline {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      min-height: 42px;
+      margin-bottom: 1rem;
+    }
+
+    .record-brandline .record-ref { margin: 0; }
+
+    .record-logo {
+      flex: 0 0 auto;
+      height: 40px;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    .record-logo-ey {
+      width: 58px;
+      background: #000;
+    }
+
+    .record-logo-murdoch {
+      width: 154px;
+      height: auto;
+    }
+
+    .record-period {
+      flex: 0 0 auto;
+      margin: 0;
+      padding: 0.45rem 0.65rem;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font: 400 0.58rem/1 var(--font-mono);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .record-lead {
+      margin: 1.8rem 0;
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    .detail-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .detail-list li {
+      display: grid;
+      grid-template-columns: minmax(90px, 0.4fr) minmax(0, 1.6fr);
+      gap: 1rem;
+      padding: 0.9rem 0;
+      border-top: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+    }
+
+    .detail-list span {
+      color: var(--faint);
+      font: 400 0.6rem/1.5 var(--font-mono);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .detail-list strong {
+      font-size: 0.91rem;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .case-study {
+      padding-top: 0;
+      padding-bottom: 0;
+      background: var(--case-bg);
+      color: var(--case-ink);
+    }
+
+    .case-shell {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
+      gap: clamp(3rem, 8vw, 9rem);
+      padding: clamp(6rem, 11vw, 11rem) 0;
+    }
+
+    .case-heading .eyebrow span { color: var(--case-muted); }
+
+    .case-client {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-top: 3rem;
+    }
+
+    .case-client img {
+      width: 68px;
+      height: 68px;
+      padding: 0.65rem;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.94);
+      object-fit: contain;
+    }
+
+    .case-client p {
+      margin: 0 0 0.2rem;
+      color: var(--case-muted);
+      font: 400 0.58rem/1 var(--font-mono);
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .case-client h2 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 4.2vw, 4.5rem);
+      font-weight: 500;
+      letter-spacing: -0.05em;
+      line-height: 0.9;
+    }
+
+    .case-kicker {
+      margin: clamp(3.5rem, 8vw, 7rem) 0 0;
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 4.4vw, 4.8rem);
+      font-weight: 500;
+      letter-spacing: -0.05em;
+      line-height: 0.92;
+    }
+
+    .case-kicker em { color: #e8815e; font-weight: 400; }
+
+    .case-content {
+      padding: clamp(2rem, 4vw, 4rem);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background:
+        linear-gradient(rgba(255,255,255,0.024) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.024) 1px, transparent 1px),
+        var(--case-surface);
+      background-size: 52px 52px;
+    }
+
+    .case-story {
+      margin: 0 0 1.25rem;
+      color: var(--case-muted);
+      font-size: clamp(1rem, 1.4vw, 1.14rem);
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin: 3rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .metric {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: 1.7rem 1.2rem;
+      border-right: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .metric:first-child { padding-left: 0; }
+    .metric:last-child { border-right: 0; }
+
+    .metric strong {
+      color: #f2a084;
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      font-weight: 500;
+      letter-spacing: -0.045em;
+      line-height: 0.9;
+    }
+
+    .metric span {
+      margin-top: 1rem;
+      color: var(--case-ink);
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+
+    .metric small {
+      margin-top: 0.65rem;
+      color: var(--case-muted);
+      font: 400 0.55rem/1.4 var(--font-mono);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    blockquote {
+      margin: 3rem 0 2rem;
+      padding: 0 0 0 1.5rem;
+      border-left: 2px solid #e8815e;
+    }
+
+    blockquote p {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(1.55rem, 2.6vw, 2.6rem);
+      font-weight: 400;
+      letter-spacing: -0.025em;
+      line-height: 1.25;
+    }
+
+    blockquote footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 0.8rem;
+      margin-top: 1.4rem;
+      color: var(--case-muted);
+      font: 400 0.62rem/1.4 var(--font-mono);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    blockquote footer strong { color: var(--case-ink); font-weight: 500; }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      min-height: 44px;
+      color: #f2a084;
+      font: 500 0.66rem/1 var(--font-mono);
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .text-link:hover { color: #fff0e8; }
+
+    .section-fit { background: var(--bg-soft); }
+
+    .capability-list {
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid var(--line);
+      list-style: none;
+    }
+
+    .capability-list li {
+      display: grid;
+      grid-template-columns: 64px minmax(0, 1fr);
+      gap: 1.2rem;
+      padding: 1.7rem 0;
+      border-bottom: 1px solid var(--line);
+      transition: padding-left 180ms ease, color 180ms ease;
+    }
+
+    .capability-list li:hover { padding-left: 0.7rem; }
+
+    .capability-number {
+      color: var(--accent);
+      font: 500 0.64rem/1.6 var(--font-mono);
+      letter-spacing: 0.1em;
+    }
+
+    .capability-list h3 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 2.8vw, 2.7rem);
+      font-weight: 500;
+      letter-spacing: -0.035em;
+      line-height: 1;
+    }
+
+    .capability-list p {
+      max-width: 46rem;
+      margin: 0.7rem 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 300;
+      line-height: 1.65;
+    }
+
+    .section-approach {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.5fr) minmax(0, 1.5fr);
+      gap: clamp(3rem, 8vw, 9rem);
+    }
+
+    .principle-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .principle-grid article {
+      min-height: 270px;
+      padding: clamp(1.5rem, 3vw, 2.7rem);
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .principle-grid article > span {
+      color: var(--accent);
+      font: 500 0.62rem/1 var(--font-mono);
+      letter-spacing: 0.1em;
+    }
+
+    .principle-grid h3 {
+      margin: 4rem 0 0;
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 2.9vw, 2.8rem);
+      font-weight: 500;
+      letter-spacing: -0.035em;
+      line-height: 1;
+    }
+
+    .principle-grid p {
+      margin: 0.8rem 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 300;
+      line-height: 1.65;
+    }
+
+    .conversation {
+      position: relative;
+      padding: clamp(7rem, 14vw, 13rem) max(4vw, calc((100vw - 1440px) / 2));
+      overflow: hidden;
+      background: var(--accent);
+      color: #fff8f1;
+    }
+
+    .conversation::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.22;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(90deg, black, transparent 85%);
+    }
+
+    .conversation-inner { position: relative; max-width: 1020px; }
+    .conversation .eyebrow { color: #fff8f1; }
+    .conversation .eyebrow span { color: rgba(255, 248, 241, 0.72); }
+    .conversation h2 { font-size: clamp(4rem, 8vw, 8rem); }
+    .conversation h2 em { font-weight: 400; color: #2b1711; }
+
+    .conversation p:not(.eyebrow) {
+      max-width: 660px;
+      margin: 2rem 0 2.5rem;
+      color: rgba(255, 248, 241, 0.82);
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    .conversation .button-primary {
+      background: #fff8f1;
+      color: #391c13;
+    }
+
+    .conversation .button-primary:hover { background: #26150f; color: #fff8f1; }
+
+    .site-footer {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 4rem max(4vw, calc((100vw - 1440px) / 2));
+      border-top: 1px solid var(--line);
+      background: var(--bg);
+    }
+
+    .footer-brand {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+    }
+
+    .site-footer p {
+      margin: 0.6rem 0 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .footer-links { display: flex; flex-wrap: wrap; gap: 0.6rem 1.5rem; }
+
+    .footer-links a {
+      min-height: 44px;
+      color: var(--muted);
+      font: 400 0.62rem/44px var(--font-mono);
+      letter-spacing: 0.07em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .footer-links a:hover { color: var(--accent); }
+
+    @keyframes rise-in {
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 980px) {
+      .site-header { grid-template-columns: 1fr auto; }
+      .page-context { display: none; }
+
+      .hero {
+        grid-template-columns: minmax(0, 1fr) minmax(240px, 0.52fr);
+        gap: 2.5rem;
+        min-height: auto;
+        padding-top: 6.5rem;
+        padding-bottom: 6rem;
+      }
+
+      .hero h1 { font-size: clamp(3.6rem, 8vw, 6rem); }
+
+      .section-teaching,
+      .section-fit,
+      .section-approach,
+      .case-shell {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+
+      .section-intro { position: static; }
+      .case-kicker { margin-top: 3rem; }
+    }
+
+    @media (max-width: 720px) {
+      .site-header {
+        min-height: 64px;
+        padding: 0 1rem;
+      }
+
+      .brand span { font-size: 1.35rem; }
+      .brand img { width: 26px; height: 26px; }
+      .header-actions { gap: 0.45rem; }
+      .header-link { display: none; }
+
+      .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 3.5rem;
+        padding: 4.5rem 1.15rem 4rem;
+      }
+
+      .hero::before {
+        background: radial-gradient(circle at 85% 15%, color-mix(in srgb, var(--accent) 12%, transparent) 0, transparent 34%);
+      }
+
+      .hero-grid { background-size: 44px 44px; }
+      .eyebrow { margin-bottom: 1.4rem; }
+      .hero-name { font-size: 1.7rem; }
+      .hero-role { margin: 0.5rem 0 2rem; }
+      .hero h1 { font-size: clamp(2.55rem, 10.5vw, 3.75rem); line-height: 0.88; }
+      .hero-summary { margin-top: 1.75rem; font-size: 0.98rem; line-height: 1.65; }
+      .hero-actions { display: grid; }
+      .button { width: 100%; min-width: 0; }
+      .hero-note { display: none; }
+
+      .portrait-frame {
+        width: min(82vw, 390px);
+        justify-self: center;
+        align-self: center;
+        box-shadow: 0 18px 50px color-mix(in srgb, var(--ink) 10%, transparent);
+      }
+
+      .proof-strip { grid-template-columns: 1fr; }
+      .proof-item { padding: 2rem 1.15rem; border-right: 0; border-bottom: 1px solid var(--line); }
+      .proof-item:last-child { border-bottom: 0; }
+
+      .proof-logo-row { min-height: 48px; }
+      .proof-logo { height: 46px; }
+      .proof-logo-murdoch { width: 190px; height: auto; }
+
+      .section { padding: 6rem 1.15rem; }
+      .section-intro h2, .approach-heading h2 { font-size: clamp(2.4rem, 11vw, 3.75rem); }
+      .record-card { padding: 1.3rem; }
+      .record-head { align-items: flex-start; }
+      .record-head h3 { font-size: 2.15rem; }
+      .record-period { font-size: 0.52rem; }
+      .record-brandline { align-items: flex-start; flex-direction: column; gap: 0.65rem; }
+
+      .detail-list li {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+      }
+
+      .case-shell { padding: 6rem 0; }
+      .case-content { padding: 1.35rem; }
+      .case-kicker { font-size: clamp(2rem, 8.2vw, 2.75rem); }
+
+      .metric-grid { grid-template-columns: 1fr; }
+      .metric {
+        padding: 1.5rem 0;
+        border-right: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.14);
+      }
+      .metric:last-child { border-bottom: 0; }
+      blockquote { margin-top: 2.5rem; padding-left: 1rem; }
+
+      .capability-list li { grid-template-columns: 42px minmax(0, 1fr); }
+      .capability-list li:hover { padding-left: 0; }
+      .principle-grid { grid-template-columns: 1fr; }
+      .principle-grid article { min-height: 230px; }
+      .principle-grid h3 { margin-top: 3rem; }
+
+      .conversation { padding: 7rem 1.15rem; }
+      .conversation h2 { font-size: clamp(2.75rem, 13.8vw, 4.5rem); }
+
+      .site-footer {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 3.5rem 1.15rem;
+      }
+
+      .footer-links { flex-direction: column; gap: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">lorem ipsum dolor sit</a>
+
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Studio">
+      <img src="assets/icons/brand-mark.svg" alt="" width="36" height="36"/>
+      <span>Studio</span>
+    </a>
+    <p class="page-context"><span class="status-dot" aria-hidden="true"></span>Lorem ipsum dolor</p>
+    <div class="header-actions">
+      <a class="header-link" href="https://example.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">// Facilitator expression of interest <span>lorem</span></p>
+        <p class="hero-name">Alex Rivera</p>
+        <p class="hero-role">Lorem ipsum dolor sit</p>
+        <h1 id="hero-title">Lorem Ipsum Dolor Sit<br/><em>Lorem ipsum dolor sit amet consectetur.</em></h1>
+        <p class="hero-summary">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="mailto:hello@example.com">lorem ipsum dolor <span aria-hidden="true">&rarr;</span></a>
+          <a class="button button-secondary" href="#evidence">lorem ipsum dolor sit amet <span aria-hidden="true">&rarr;</span></a>
+        </div>
+        <p class="hero-legal">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut.</p>
+        <p class="hero-note">Lorem ipsum <span aria-hidden="true">//</span> Lorem ipsum <span aria-hidden="true">//</span> Lorem ipsum</p>
+      </div>
+
+      <figure class="portrait-frame">
+        <div class="portrait-meta portrait-meta-top"><span>lorem</span><span>lorem</span></div>
+        <div class="portrait-crop">
+          <img src="assets/images/abstract-portrait-with-geometric-glitch-layers-4k.webp" alt="Alex Rivera" width="500" height="500" fetchpriority="high"/>
+        </div>
+        <figcaption>
+          <strong>Alex Rivera</strong>
+          <span>lorem ipsum dolor sit</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="proof-strip" aria-label="Lorem Ipsum Dolor Sit">
+      <article class="proof-item">
+        <p class="proof-index">Lorem ipsum dolor sit</p>
+        <div class="proof-logo-row">
+          <img class="proof-logo proof-logo-studio" src="assets/icons/brand-mark.svg" alt="Lorem Ipsum" width="54" height="54" loading="lazy"/>
+        </div>
+        <h2>Studio</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      </article>
+      <article class="proof-item">
+        <p class="proof-index">Lorem ipsum dolor sit</p>
+        <div class="proof-logo-row">
+          <img class="proof-logo proof-logo-ey" src="assets/icons/brand-mark.svg" alt="Lorem Ipsum" width="78" height="54" loading="lazy"/>
+        </div>
+        <h2>Lorem</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      </article>
+      <article class="proof-item">
+        <p class="proof-index">Lorem ipsum dolor sit</p>
+        <div class="proof-logo-row">
+          <img class="proof-logo proof-logo-murdoch" src="assets/icons/brand-mark.svg" alt="Lorem Ipsum" width="210" height="45" loading="lazy"/>
+        </div>
+        <h2>Lorem Ipsum</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut.</p>
+      </article>
+    </section>
+
+    <section class="section section-teaching" id="evidence" aria-labelledby="teaching-title">
+      <div class="section-intro">
+        <p class="eyebrow">// 01 <span>lorem ipsum</span></p>
+        <h2 id="teaching-title">Lorem Ipsum Dolor Sit Amet<br/><em>lorem ipsum dolor</em></h2>
+        <p class="section-deck">Lorem ipsum dolor sit amet consectetur adipiscing.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure.</p>
+      </div>
+
+      <div class="evidence-records">
+        <article class="record-card record-card-featured">
+          <header class="record-head">
+            <div class="record-identity">
+              <div class="record-brandline">
+                <img class="record-logo record-logo-ey" src="assets/icons/brand-mark.svg" alt="Lorem Ipsum" width="58" height="40" loading="lazy"/>
+                <p class="record-ref">Lorem ipsum dolor</p>
+              </div>
+              <h3>Lorem Ipsum Dolor Sit Amet Consectetur</h3>
+            </div>
+            <p class="record-period">Lorem</p>
+          </header>
+          <p class="record-lead">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit.</p>
+          <ul class="detail-list">
+            <li><span>lorem</span><strong>Lorem ipsum dolor sit amet consectetur.</strong></li>
+            <li><span>lorem ipsum</span><strong>lorem ipsum dolor sit amet</strong></li>
+            <li><span>lorem</span><strong>Lorem ipsum dolor sit amet consectetur.</strong></li>
+            <li><span>lorem</span><strong>lorem ipsum dolor sit amet</strong></li>
+            <li><span>lorem</span><strong>lorem ipsum dolor sit amet</strong></li>
+            <li><span>lorem</span><strong>Lorem ipsum dolor sit amet consectetur.</strong></li>
+          </ul>
+        </article>
+
+        <article class="record-card">
+          <header class="record-head">
+            <div class="record-identity">
+              <div class="record-brandline">
+                <img class="record-logo record-logo-murdoch" src="assets/icons/brand-mark.svg" alt="Lorem Ipsum" width="154" height="33" loading="lazy"/>
+                <p class="record-ref">Lorem ipsum</p>
+              </div>
+              <h3>Lorem Ipsum Dolor</h3>
+            </div>
+            <p class="record-period">Lorem ipsum</p>
+          </header>
+          <p class="record-lead">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit.</p>
+          <ul class="detail-list">
+            <li><span>lorem</span><strong>lorem ipsum dolor</strong></li>
+            <li><span>lorem</span><strong>Lorem ipsum dolor sit amet consectetur.</strong></li>
+            <li><span>lorem ipsum</span><strong>lorem ipsum dolor</strong></li>
+            <li><span>lorem</span><strong>Lorem ipsum dolor sit amet consectetur.</strong></li>
+            <li><span>lorem</span><strong>lorem ipsum dolor sit amet</strong></li>
+            <li><span>lorem</span><strong>Lorem ipsum dolor sit amet consectetur adipiscing.</strong></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section case-study" id="where-u" aria-labelledby="where-u-title">
+      <div class="case-shell">
+        <div class="case-heading">
+          <p class="eyebrow">// 02 <span>lorem ipsum</span></p>
+          <div class="case-client">
+            <img src="assets/icons/brand-mark.svg" alt="Lorem Ipsum" width="72" height="72" loading="lazy"/>
+            <div>
+              <p>Lorem ipsum</p>
+              <h2 id="where-u-title">Northwind</h2>
+            </div>
+          </div>
+          <p class="case-kicker">Lorem ipsum dolor sit amet.<br/><em>Lorem ipsum dolor sit amet consectetur.</em></p>
+        </div>
+
+        <div class="case-content">
+          <p class="case-story">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate.</p>
+          <p class="case-story">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in.</p>
+
+          <div class="metric-grid" aria-label="Lorem Ipsum">
+            <div class="metric">
+              <strong>lorem</strong>
+              <span>lorem ipsum dolor sit amet</span>
+              <small>lorem ipsum dolor</small>
+            </div>
+            <div class="metric">
+              <strong>lorem ipsum</strong>
+              <span>lorem ipsum dolor sit</span>
+              <small>lorem ipsum</small>
+            </div>
+            <div class="metric">
+              <strong>24 / 7</strong>
+              <span>lorem ipsum dolor sit</span>
+              <small>lorem ipsum</small>
+            </div>
+          </div>
+
+          <blockquote>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure.</p>
+            <footer><strong>lorem ipsum</strong><span>lorem ipsum</span></footer>
+          </blockquote>
+
+          <a class="text-link" href="/products#case-studies">lorem ipsum dolor sit amet <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-fit" id="aim-fit" aria-labelledby="aim-fit-title">
+      <div class="section-intro">
+        <p class="eyebrow">// 03 <span>lorem ipsum dolor sit</span></p>
+        <h2 id="aim-fit-title">Lorem Ipsum Dolor Sit<br/><em>lorem ipsum</em></h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris.</p>
+      </div>
+
+      <ol class="capability-list">
+        <li>
+          <span class="capability-number">01</span>
+          <div><h3>Lorem Ipsum Dolor Sit Amet</h3><p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad.</p></div>
+</li>
+        <li>
+          <span class="capability-number">02</span>
+          <div><h3>Lorem Ipsum Dolor Sit Amet</h3><p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi.</p></div>
+</li>
+        <li>
+          <span class="capability-number">03</span>
+          <div><h3>Lorem Ipsum Dolor Sit Amet</h3><p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip.</p></div>
+</li>
+        <li>
+          <span class="capability-number">04</span>
+          <div><h3>Lorem Ipsum Dolor</h3><p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim.</p></div>
+</li>
+        <li>
+          <span class="capability-number">05</span>
+          <div><h3>Lorem Ipsum Dolor</h3><p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis.</p></div>
+</li>
+      </ol>
+    </section>
+
+    <section class="section section-approach" id="approach" aria-labelledby="approach-title">
+      <div class="approach-heading">
+        <p class="eyebrow">// 04 <span>lorem ipsum dolor</span></p>
+        <h2 id="approach-title">Lorem Ipsum Dolor Sit Amet</h2>
+      </div>
+      <div class="principle-grid">
+        <article><span>01</span><h3>Lorem Ipsum Dolor Sit</h3><p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod.</p></article>
+        <article><span>02</span><h3>Lorem Ipsum Dolor Sit Amet</h3><p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut.</p></article>
+        <article><span>03</span><h3>Lorem Ipsum Dolor</h3><p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed.</p></article>
+        <article><span>04</span><h3>Lorem Ipsum Dolor Sit</h3><p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore.</p></article>
+      </div>
+    </section>
+
+    <section class="conversation" id="conversation" aria-labelledby="conversation-title">
+      <div class="conversation-inner">
+        <p class="eyebrow">// Why Institute <span>lorem ipsum dolor</span></p>
+        <h2 id="conversation-title">Lorem Ipsum Dolor<br/><em>lorem ipsum dolor sit</em></h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est.</p>
+        <a class="button button-primary" href="mailto:hello@example.com">lorem ipsum dolor <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <span class="footer-brand">Studio</span>
+      <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed.</p>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:hello@example.com">lorem</a>
+      <a href="https://example.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </footer>
+</body>
+</html>

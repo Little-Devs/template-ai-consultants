@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500&amp;family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&amp;family=JetBrains+Mono:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --base:#0E1117; --surface:#21252F; --surface-2:#262B36; --ivory:#FDFAF7;
+  --muted:rgba(253,250,247,0.6); --faint:rgba(253,250,247,0.34);
+  --hair:rgba(253,250,247,0.10); --hair-strong:rgba(253,250,247,0.18);
+  --grid:rgba(253,250,247,0.04);
+  --terra:#CF5430; --terra-deep:#B84020; --terra-soft:#E07A50; --hot:#FF6A38;
+  --f-display:'Cormorant Garamond',Georgia,serif; --f-body:'DM Sans',system-ui,sans-serif; --f-mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{background:#000;height:100%;}
+body{overflow:hidden;color:var(--ivory);font-family:var(--f-body);}
+.frame{position:relative;width:100%;height:100vh;display:flex;align-items:center;justify-content:center;background:#000;overflow:hidden;}
+.stage{
+  position:relative;width:1080px;height:1350px;flex:0 0 auto;
+  transform:scale(var(--s,1));transform-origin:center center;overflow:hidden;
+  background:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px),
+    radial-gradient(72% 40% at 50% 20%,rgba(207,84,48,0.10),transparent 60%),
+    var(--base);
+  background-size:60px 60px,60px 60px,100% 100%,100% 100%;
+}
+
+/* chrome */
+.ch{position:absolute;font-family:var(--f-mono);font-size:21px;letter-spacing:.24em;text-transform:uppercase;z-index:7;}
+.ch.tl{top:60px;left:72px;color:var(--faint);}
+.ch.tl b{color:var(--terra);font-weight:500;}
+.ch.tr{top:60px;right:72px;color:var(--muted);}
+.ch.bc{bottom:60px;left:0;width:100%;text-align:center;color:var(--faint);font-size:18px;letter-spacing:.3em;}
+
+/* sweep line (loop bookend: down = reveal, up = clear) */
+.sweep{position:absolute;left:40px;width:1000px;height:3px;top:0;z-index:6;opacity:0;
+  background:linear-gradient(90deg,transparent,var(--hot),transparent);box-shadow:0 0 26px 2px rgba(255,106,56,0.55);}
+#content{position:absolute;inset:0;}
+
+/* Aria, the chief of staff (apex) */
+.mtile{position:absolute;left:350px;top:160px;width:380px;height:160px;border-radius:18px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;
+  background:linear-gradient(180deg,rgba(207,84,48,0.17),rgba(207,84,48,0.04));border:1.5px solid var(--terra);z-index:5;}
+.mtile .mn{font-family:var(--f-display);font-weight:500;font-size:52px;line-height:1;color:var(--terra-soft);}
+.mtile .mr{font-family:var(--f-mono);font-size:19px;letter-spacing:.24em;text-transform:uppercase;color:var(--terra);}
+.mtile .md{font-family:var(--f-mono);font-size:21px;letter-spacing:.02em;color:var(--ivory);}
+
+/* org-chart connectors */
+.org{position:absolute;inset:0;z-index:2;}
+
+/* the three heads */
+.head{position:absolute;top:440px;width:290px;height:272px;border-radius:16px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;
+  background:var(--surface);border:1px solid var(--hair-strong);z-index:5;opacity:0;}
+.head.h0{left:80px;} .head.h1{left:395px;} .head.h2{left:710px;}
+.head .hg{width:44px;height:44px;}
+.head .hg svg{width:44px;height:44px;display:block;}
+.head .hn{font-family:var(--f-display);font-weight:500;font-size:46px;line-height:1;color:var(--terra-soft);}
+.head .hr{font-family:var(--f-mono);font-size:17px;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);}
+.head .hd{font-family:var(--f-mono);font-size:21px;letter-spacing:.02em;color:var(--ivory);white-space:nowrap;}
+
+/* shared-memory foundation */
+.membar{position:absolute;left:140px;top:805px;width:800px;height:94px;border-radius:16px;
+  display:flex;align-items:center;justify-content:center;gap:18px;
+  background:linear-gradient(180deg,rgba(207,84,48,0.10),rgba(207,84,48,0.02));border:1px solid var(--hair-strong);z-index:5;opacity:0;}
+.membar .mg{width:30px;height:30px;}
+.membar .mg svg{width:30px;height:30px;display:block;}
+.membar .mt{font-family:var(--f-mono);font-size:22px;letter-spacing:.22em;text-transform:uppercase;color:var(--ivory);white-space:nowrap;}
+
+/* headline */
+.headline{position:absolute;bottom:114px;left:0;width:100%;text-align:center;z-index:6;opacity:0;}
+.headline .tag{font-family:var(--f-mono);font-size:18px;letter-spacing:.26em;text-transform:uppercase;color:var(--terra);margin-bottom:18px;}
+.headline .t{font-family:var(--f-mono);font-weight:500;font-size:46px;letter-spacing:.05em;text-transform:uppercase;color:var(--ivory);line-height:1.16;}
+</style>
+</head>
+<body>
+<div class="frame"><div class="stage" id="stage">
+
+  <div class="ch tl"><b>lorem</b> STUDIO</div>
+  <div class="ch tr">lorem ipsum dolor sit</div>
+  <div class="ch bc">lorem ipsum dolor sit amet</div>
+
+  <div class="sweep" id="sweep"></div>
+
+  <div id="content">
+
+    <!-- org-chart connectors -->
+    <svg class="org" id="orgsvg" viewbox="0 0 1080 1350" fill="none">
+      <path id="branch" d="M540 320 L540 400 M225 400 L855 400" stroke="#CF5430" stroke-width="2" opacity="0.55"/>
+      <path id="drop0" d="M225 400 L225 440" stroke="#CF5430" stroke-width="2" opacity="0.55"/>
+      <path id="drop1" d="M540 400 L540 440" stroke="#CF5430" stroke-width="2" opacity="0.55"/>
+      <path id="drop2" d="M855 400 L855 440" stroke="#CF5430" stroke-width="2" opacity="0.55"/>
+      <path id="mdrop0" d="M225 712 L225 805" stroke="#CF5430" stroke-width="2" opacity="0.4"/>
+      <path id="mdrop1" d="M540 712 L540 805" stroke="#CF5430" stroke-width="2" opacity="0.4"/>
+      <path id="mdrop2" d="M855 712 L855 805" stroke="#CF5430" stroke-width="2" opacity="0.4"/>
+    </svg>
+
+    <!-- Aria, chief of staff -->
+    <div class="mtile" id="mtile">
+      <span class="mn" id="mname">Aria</span>
+      <span class="mr" id="mrole">lorem ipsum dolor</span>
+      <span class="md" id="mdoes">lorem ipsum dolor</span>
+    </div>
+
+    <!-- the three heads -->
+    <div class="head h0" id="h0">
+      <span class="hg"><svg viewbox="0 0 24 24" fill="none" stroke="#E07A50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M16 8h5v5"/></svg></span>
+      <span class="hn" id="n0">Nova</span>
+      <span class="hr" id="r0">lorem ipsum dolor</span>
+      <span class="hd" id="d0">lorem ipsum</span>
+    </div>
+    <div class="head h1" id="h1">
+      <span class="hg"><svg viewbox="0 0 24 24" fill="none" stroke="#E07A50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.4"/><path d="M7 7.5a7 7 0 0 0 0 9"/><path d="M17 7.5a7 7 0 0 1 0 9"/><path d="M3.4 4a12 12 0 0 0 0 16"/><path d="M20.6 4a12 12 0 0 1 0 16"/></svg></span>
+      <span class="hn" id="n1">lorem</span>
+      <span class="hr" id="r1">lorem ipsum dolor</span>
+      <span class="hd" id="d1">lorem ipsum</span>
+    </div>
+    <div class="head h2" id="h2">
+      <span class="hg"><svg viewbox="0 0 24 24" fill="none" stroke="#E07A50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.6 8.4l-2.3 4.9-4.9 2.3 2.3-4.9z"/></svg></span>
+      <span class="hn" id="n2">lorem</span>
+      <span class="hr" id="r2">lorem ipsum</span>
+      <span class="hd" id="d2">lorem ipsum dolor</span>
+    </div>
+
+    <!-- shared-memory foundation -->
+    <div class="membar" id="membar">
+      <span class="mg"><svg viewbox="0 0 24 24" fill="none" stroke="#E07A50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg></span>
+      <span class="mt" id="memt">lorem ipsum dolor</span>
+    </div>
+
+    <div class="headline" id="hl">
+      <div class="tag" id="hltag">lorem ipsum dolor</div>
+      <div class="t" id="hl1">lorem ipsum</div>
+      <div class="t" id="hl2">lorem ipsum dolor</div>
+    </div>
+
+  </div><!-- /#content -->
+
+</div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrambleTextPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>
+<script>
+(function(){
+  'use strict';
+  var root=document.documentElement;
+  function scale(){ root.style.setProperty('--s', Math.min(innerWidth/1080, innerHeight/1350).toFixed(4)); }
+  scale(); addEventListener('resize',scale);
+  gsap.registerPlugin(DrawSVGPlugin, ScrambleTextPlugin, TextPlugin);
+
+  var HEADS=[{box:'#h0',drop:'#drop0',n:'#n0',r:'#r0',d:'#d0',name:'Nova'},
+             {box:'#h1',drop:'#drop1',n:'#n1',r:'#r1',d:'#d1',name:'Vera'},
+             {box:'#h2',drop:'#drop2',n:'#n2',r:'#r2',d:'#d2',name:'Esme'}];
+  // mono single-line runs that digitise away (constant width => no reflow).
+  // the Cormorant names (Aria, Nova, Vera, Esme) and glyphs just fade.
+  var AWAY=['#mrole','#mdoes','#r0','#d0','#r1','#d1','#r2','#d2','#memt','#hltag','#hl1','#hl2'];
+  var ORIG=AWAY.map(function(s){ var el=document.querySelector(s); return el?el.textContent:''; });
+  var NOISE=ORIG.map(function(t){ var C='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', o='';
+    for(var i=0;i<t.length;i++){ o+= /\s/.test(t[i]) ? ' ' : C[(Math.random()*C.length)|0]; } return o; });
+
+  /* ========================================================================
+     SHARED LOOP ENGINE  —  identical in every Aria slide.
+     ======================================================================== */
+  function revealIn(tl){
+    tl.to('#sweep',{opacity:1,duration:.3,ease:'power2.out'},0);
+    tl.to('#sweep',{top:1340,duration:1.7,ease:'power1.inOut'},0);
+    tl.to('#sweep',{opacity:0,duration:.45,ease:'power1.in'},1.35);
+    revealHero(tl);
+  }
+  function clearOut(tl){
+    tl.set('#sweep',{top:1320,opacity:0})
+      .to('#sweep',{opacity:1,duration:.3,ease:'power2.out'},'<')
+      .to('#sweep',{top:60,duration:1.3,ease:'power1.inOut'},'<')
+      .to('#content',{opacity:0,duration:.95,ease:'none'},'<+0.2');
+    AWAY.forEach(function(sel,i){
+      tl.to(sel,{scrambleText:{text:NOISE[i],chars:'upperCase',speed:2.4},duration:.95,ease:'none'},'<');
+    });
+    tl.to('#sweep',{opacity:0,duration:.3,ease:'power1.in'},'>-0.25');
+  }
+  var DECCH='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  function decodeAll(tl, sel, finalText, dur, pos){
+    var el=document.querySelector(sel), n=finalText.length, thr=[];
+    for(var i=0;i<n;i++){ thr.push(/\s/.test(finalText[i]) ? -1 : (0.55+Math.random()*0.4)); }
+    var st={p:0};
+    tl.to(st,{p:1,duration:dur,ease:'none',onUpdate:function(){
+      var p=st.p, out='';
+      for(var i=0;i<n;i++){ var c=finalText[i]; out += /\s/.test(c) ? ' ' : (p>=thr[i] ? c : DECCH[(Math.random()*DECCH.length)|0]); }
+      el.textContent=out;
+    }}, pos);
+  }
+
+  /* ========================================================================
+     SLIDE 03 · YOUR AI WORKFORCE  —  the org chart.
+     ======================================================================== */
+  // HERO: Aria reveals at the apex (the Chief of Staff)
+  function revealHero(tl){
+    tl.fromTo('#mtile',{opacity:0,scale:.9,y:-12},{opacity:1,scale:1,y:0,duration:.6,ease:'power3.out',immediateRender:false},0.66);
+    tl.to('#mname',{scrambleText:{text:'Aria',chars:'upperCase',speed:1},duration:.55,ease:'none'},0.72);
+    tl.to('#mname',{color:'#FDFAF7',duration:.6,ease:'power1.out'},0.9);
+    tl.to('#mrole',{scrambleText:{text:'{original}',chars:'upperCase',speed:1},duration:.5,ease:'none'},0.92);
+    tl.to('#mdoes',{scrambleText:{text:'{original}',chars:'upperCase',speed:1},duration:.5,ease:'none'},1.04);
+    tl.to({},{duration:0.5});
+  }
+
+  // BODY: the org chart assembles, three heads stack in, all on one memory
+  function body(tl){
+    // 1. trunk + beam draw down from Aria
+    tl.to('#branch',{drawSVG:'100%',duration:.7,ease:'power2.inOut'},'+=0.1');
+    // 2. the three heads stack in, left to right, each name decodes
+    HEADS.forEach(function(h,i){
+      var p = i===0 ? '-=0.25' : '-=0.34';
+      tl.to(h.drop,{drawSVG:'100%',duration:.3,ease:'power2.out'},p);
+      tl.fromTo(h.box,{opacity:0,scale:.85,y:12},{opacity:1,scale:1,y:0,duration:.5,ease:'power3.out',immediateRender:false},'<');
+      tl.to(h.n,{scrambleText:{text:h.name,chars:'upperCase',speed:1},duration:.5,ease:'none'},'<');
+      tl.to(h.n,{color:'#FDFAF7',duration:.5,ease:'power1.out'},'<+0.18');
+      tl.to(h.r,{scrambleText:{text:'{original}',chars:'upperCase',speed:.8},duration:.45,ease:'none'},'<+0.05');
+      tl.to(h.d,{scrambleText:{text:'{original}',chars:'upperCase',speed:.8},duration:.5,ease:'none'},'<+0.1');
+    });
+    // 3. they all wire down into one shared memory
+    tl.to(['#mdrop0','#mdrop1','#mdrop2'],{drawSVG:'100%',duration:.45,ease:'power2.out'},'+=0.05');
+    tl.fromTo('#membar',{opacity:0,y:14},{opacity:1,y:0,duration:.5,ease:'power3.out',immediateRender:false},'<+0.12');
+    tl.to('#memt',{scrambleText:{text:'{original}',chars:'upperCase',speed:.8},duration:.55,ease:'none'},'<');
+    // 4. headline decodes in, then hold
+    tl.to('#hl',{opacity:1,duration:.3},'+=0.15')
+      .fromTo('#hltag',{opacity:0,y:10},{opacity:1,y:0,duration:.45,ease:'power3.out',immediateRender:false},'<');
+    decodeAll(tl,'#hl1',ORIG[AWAY.indexOf('#hl1')],1.0,'<');
+    decodeAll(tl,'#hl2',ORIG[AWAY.indexOf('#hl2')],1.0,'<+0.18');
+    tl.to({},{duration:5.5});
+  }
+
+  /* ---- start state (position 0; re-established every repeat) ---- */
+  function setStart(tl){
+    tl.set('#content',{opacity:1},0);
+    tl.set('#sweep',{top:90,opacity:0},0);
+    tl.set('#mtile',{opacity:0,scale:.9,y:-12},0);
+    tl.set('#mname',{color:'#E07A50'},0);
+    tl.set('#branch',{drawSVG:'0%'},0);
+    HEADS.forEach(function(h){
+      tl.set(h.box,{opacity:0,scale:.85,y:12},0);
+      tl.set(h.drop,{drawSVG:'0%'},0);
+      tl.set(h.n,{color:'#E07A50'},0);
+    });
+    tl.set(['#mdrop0','#mdrop1','#mdrop2'],{drawSVG:'0%'},0);
+    tl.set('#membar',{opacity:0,y:14},0);
+    tl.set('#hl',{opacity:0},0);
+    tl.set('#hltag',{opacity:0,y:10},0);
+    tl.set(['#hl1','#hl2'],{opacity:1},0);
+    AWAY.forEach(function(s,i){ tl.set(s,{text:ORIG[i]},0); });
+  }
+
+  /* ---- build the single master loop + expose it for the renderer ---- */
+  function build(){
+    var tl=gsap.timeline();
+    setStart(tl);
+    revealIn(tl);
+    body(tl);
+    clearOut(tl);
+    return tl;
+  }
+  var master=build();
+  master.repeat(-1).repeatDelay(0.35);
+  window.__MARIA__={ tl:master, cycle:master.duration() };
+  master.play(0);
+})();
+</script>
+</body>
+</html>

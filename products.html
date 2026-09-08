@@ -1,0 +1,2792 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+<!-- Primary Meta Tags -->
+<title>Lorem Ipsum Dolor Sit Amet Consectetur &amp; Lorem Ipsum Dolor Sit</title>
+<meta name="title" content="Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod."/>
+<meta name="description" content="Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim."/>
+<meta name="keywords" content="studio, template, consultancy"/>
+<meta name="author" content="Studio"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://example.com/products"/>
+<meta property="og:title" content="Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod."/>
+<meta property="og:description" content="Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim."/>
+<meta property="og:image" content="https://example.com/assets/images/og-card.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:alt" content="Studio"/>
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image"/>
+<meta property="twitter:url" content="https://example.com/products"/>
+<meta property="twitter:title" content="Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod."/>
+<meta property="twitter:description" content="Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim."/>
+<meta property="twitter:image" content="https://example.com/assets/images/og-card.png"/>
+<meta property="twitter:image:alt" content="Studio"/>
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="assets/icons/brand-favicon.svg"/>
+<link rel="apple-touch-icon" href="assets/icons/brand-favicon.svg"/>
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://example.com/products"/>
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://example.com/#organization",
+  "name": "Studio",
+  "url": "https://example.com",
+  "logo": "https://example.com/assets/icons/brand-mark.svg",
+  "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Perth",
+    "addressRegion": "WA",
+    "addressCountry": "AU"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "hello@example.com",
+    "contactType": "sales"
+  },
+  "areaServed": "AU",
+  "sameAs": []
+}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://example.com/"},{"@type":"ListItem","position":2,"name":"Our Work","item":"https://example.com/products"}]}
+</script>
+
+<!-- DNS Prefetch for External Resources -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+<link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com"/>
+<link rel="dns-prefetch" href="https://unpkg.com"/>
+
+<!-- Preload Critical Resources -->
+<link rel="preload" href="css/output.css" as="style"/>
+<link rel="preload" href="css/site.css" as="style"/>
+<link rel="preload" href="css/products.css" as="style"/>
+<link rel="preload" href="js/site.min.js" as="script"/>
+<link rel="preload" href="js/gsap/gsap.min.js" as="script"/>
+<link rel="preload" href="assets/icons/brand-favicon.svg" as="image" type="image/png"/>
+
+<!-- Fonts with Optimized Loading -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/> 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&amp;family=Inter:wght@200;300;400;500;600;700&amp;family=JetBrains+Mono:wght@200;300;400;500;600;700&amp;family=Open+Sans:wght@300;400;500;600;700&amp;display=swap"/>
+
+
+<!-- Tailwind CSS (Production Build) -->
+<link rel="stylesheet" href="css/output.css"/>
+<link rel="stylesheet" href="css/site.css"/>
+<link rel="stylesheet" href="css/products.css"/>
+<link rel="stylesheet" href="css/tokens.css"/>
+<style>
+  #mobile-menu-btn path, #mobile-menu-btn rect { fill: #f5f0e8 !important; }
+</style>
+
+<!-- External Libraries -->
+<script src="js/gsap/gsap.min.js" defer></script>
+<script src="https://unpkg.com/lucide@0.577.0" defer onerror="console.warn(&#x27;Lucide failed to load&#x27;)"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer onerror="console.warn(&#x27;Lottie failed to load&#x27;)"></script>
+<script src="js/brand.js"></script>
+<script src="js/site.min.js" defer></script>
+<script src="js/maria-carousel.js" defer></script>
+
+	<script>
+	  // Animate-on-scroll helper
+	  (function () {
+	    document.documentElement.dataset.productsScramble = "pending";
+	    window.setTimeout(() => {
+	      if (document.documentElement.dataset.productsScramble === "pending") {
+	        delete document.documentElement.dataset.productsScramble;
+	      }
+	    }, 2500);
+	    const style = document.createElement("style");
+	    style.textContent = `
+	      .animate-on-scroll { animation-play-state: paused !important; }
+	      .animate-on-scroll.animate { animation-play-state: running !important; }
+	    `;
+    document.head.appendChild(style);
+
+    const once = true;
+    if (!window.__inViewIO) {
+      window.__inViewIO = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
+            if (once) window.__inViewIO.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
+    }
+
+    window.initInViewAnimations = function (selector = ".animate-on-scroll") {
+      document.querySelectorAll(selector).forEach((el) => {
+        window.__inViewIO.observe(el);
+      });
+    };
+
+    document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
+  })();
+</script>
+</head>
+<body class="antialiased font-sans bg-paper min-h-screen">
+
+    <!-- Header - Fixed across pages -->
+    <header class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-3 py-2 md:px-12 md:py-6 transition-all duration-300 header-dark">
+        <!-- Background Gradient & Blur with Soft Masked Edge -->
+        <div class="absolute inset-x-0 top-0 h-32 md:h-48 bg-gradient-to-b from-paper via-paper/90 to-transparent backdrop-blur-md -z-10 pointer-events-none [mask-image:linear-gradient(to_bottom,black_20%,transparent_90%)]"></div>
+
+        <a href="/" class="flex items-center gap-2 md:gap-4 cursor-pointer" id="logo-home" aria-label="Studio">
+            <div class="w-8 h-8 md:w-10 md:h-10 border border-neutral-800 flex items-center justify-center rounded-sm bg-paper relative overflow-hidden">
+                <span class="brand-mark" data-brand-mark></span>
+            </div>
+            <span class="font-serif text-2xl md:text-4xl tracking-tight text-ink font-medium" data-brand>Studio</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-10 relative">
+            <div class="relative group">
+                <a href="services.html" id="nav-services" class="flex items-center gap-1 font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase py-2">
+                    Services
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-neutral-400 group-hover:text-ink transition-colors"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <!-- Dropdown -->
+                <div class="absolute top-full left-0 mt-2 w-56 bg-paper border border-neutral-200 shadow-xl rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <div class="flex flex-col py-2">
+                        <a href="ai-opportunity-map.html" id="nav-start-here" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest border-b border-neutral-200 mb-1"><span class="block" style="color:#5B2FA8;font-size:9px;letter-spacing:0.2em;margin-bottom:2px;">Start here</span>AI Opportunity Map</a>
+                        <a href="/products#maria" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">AI Assistants</a>
+                        <a href="ai-training.html" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Build</a>
+                        <a href="ai-development.html" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Design</a>
+                        <a href="ai-consulting.html" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Strategy</a>
+                        <a href="ai-governance.html" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Care</a>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group">
+                <a href="how-we-work.html" id="nav-how-we-work" class="flex items-center gap-1 font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase py-2">
+                    How We Work
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-neutral-400 group-hover:text-ink transition-colors"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <!-- Dropdown -->
+                <div id="nav-how-we-work-dropdown" class="absolute top-full left-0 mt-2 w-56 bg-paper border border-neutral-200 shadow-xl rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <div class="flex flex-col py-2">
+                        <a href="how-we-work.html#method" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">The four phases</a>
+                        <a href="data-security.html" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Data &amp; Security</a>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group">
+                <a href="products.html" id="nav-products" class="flex items-center gap-1 font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase py-2">
+                    Our Work
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-neutral-400 group-hover:text-ink transition-colors"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <!-- Dropdown -->
+                <div class="absolute top-full left-0 mt-2 w-56 bg-paper border border-neutral-200 shadow-xl rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <div class="flex flex-col py-2">
+                        <a href="/products#case-studies" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Client Results</a>
+                        <a href="/products#maria" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">AI Assistants</a>
+                        <a href="/products#what-we-build" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Lorem Ipsum</a>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group" style="display:none">
+                <a id="nav-industries" class="flex items-center gap-1 font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase py-2 cursor-default">
+                    Industries
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-neutral-400 group-hover:text-ink transition-colors"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <!-- Dropdown -->
+                <div class="absolute top-full left-0 mt-2 w-56 bg-paper border border-neutral-200 shadow-xl rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <div class="flex flex-col py-2">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Law</a>
+                    </div>
+                </div>
+            </div>
+            <a href="about-us.html" id="nav-about" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase">About Us</a>
+            <a href="blog.html" id="nav-blog" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase">Blog</a>
+            <a id="nav-inquire" href="inquire.html#inquiry-form" class="font-serif italic text-lg px-8 py-2 border border-transparent bg-sepia hover:bg-ink transition-colors text-paper rounded-full shadow-sm">Book a Call</a>
+        </nav>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="md:hidden w-8 h-8 flex items-center justify-center" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu"></button>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="absolute top-14 right-3 md:top-24 md:right-6 md:hidden pointer-events-auto transition-all duration-300 opacity-0 translate-y-[-10px] invisible z-[60]">
+            <div class="flex flex-col items-end gap-3 md:gap-4 bg-paper/95 backdrop-blur-md border border-neutral-200 shadow-xl p-6 rounded-md min-w-[160px] transition-[min-width] duration-300">
+                <div class="flex flex-col items-end w-full">
+                    <div class="flex items-center justify-end gap-2 w-full">
+                        <a href="services.html" id="mobile-services" class="font-serif text-xl text-ink hover:text-sepia transition-colors" style="min-width: 6.25rem; text-align: right;">Services</a>
+                        <button id="mobile-services-toggle" class="p-1 focus:outline-none" aria-label="Toggle Services Menu">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-collapsed w-5 h-5 text-neutral-400"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-expanded w-5 h-5 text-neutral-400 hidden"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                    </div>
+                    <!-- Mobile Services Dropdown -->
+                    <div id="mobile-services-dropdown" class="flex flex-col items-end gap-2 overflow-hidden max-h-0 opacity-0 transition-all duration-300 w-full">
+                        <a href="ai-opportunity-map.html" id="mobile-start-here" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1 mt-2"><span class="block text-right" style="color:#5B2FA8;font-size:9px;letter-spacing:0.2em;">Start here</span>AI Opportunity Map</a>
+                        <a href="/products#maria" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">AI Assistants</a>
+                        <a href="ai-training.html" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Build</a>
+                        <a href="ai-development.html" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Design</a>
+                        <a href="ai-consulting.html" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Strategy</a>
+                        <a href="ai-governance.html" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Care</a>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-end w-full">
+
+                    <div class="flex items-center justify-end gap-2 w-full">
+
+                        <a href="how-we-work.html" id="mobile-how-we-work" class="font-serif text-xl text-ink hover:text-sepia transition-colors" style="min-width: 6.25rem; text-align: right;">How We Work</a>
+
+                        <button id="mobile-how-we-work-toggle" class="p-1 focus:outline-none" aria-label="Toggle How We Work Menu">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-collapsed w-5 h-5 text-neutral-400"><polyline points="6 9 12 15 18 9"></polyline></svg>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-expanded w-5 h-5 text-neutral-400 hidden"><polyline points="6 9 12 15 18 9"></polyline></svg>
+
+                        </button>
+
+                    </div>
+
+                    <div id="mobile-how-we-work-dropdown" class="flex flex-col items-end gap-2 overflow-hidden max-h-0 opacity-0 transition-all duration-300 w-full">
+
+                        <a href="how-we-work.html#method" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1 mt-2">The four phases</a>
+
+                        <a href="data-security.html" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Data &amp; Security</a>
+
+                    </div>
+
+                </div>
+
+                <div class="flex flex-col items-end w-full">
+
+                    <div class="flex items-center justify-end gap-2 w-full">
+
+                        <a href="products.html" id="mobile-products" class="font-serif text-xl text-ink hover:text-sepia transition-colors" style="min-width: 6.25rem; text-align: right;">Our Work</a>
+
+                        <button id="mobile-our-work-toggle" class="p-1 focus:outline-none" aria-label="Toggle Our Work Menu">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-collapsed w-5 h-5 text-neutral-400"><polyline points="6 9 12 15 18 9"></polyline></svg>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-expanded w-5 h-5 text-neutral-400 hidden"><polyline points="6 9 12 15 18 9"></polyline></svg>
+
+                        </button>
+
+                    </div>
+
+                    <!-- Mobile Our Work Dropdown -->
+
+                    <div id="mobile-our-work-dropdown" class="flex flex-col items-end gap-2 overflow-hidden max-h-0 opacity-0 transition-all duration-300 w-full">
+
+                        <a href="/products#case-studies" id="mobile-case-studies" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1 mt-2">Client Results</a>
+
+                        <a href="/products#maria" id="mobile-maria" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">AI Assistants</a>
+
+                        <a href="/products#what-we-build" id="mobile-what-we-build" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Lorem Ipsum</a>
+
+                    </div>
+
+                </div>
+                <div class="flex flex-col items-end w-full" style="display:none">
+                    <div class="flex items-center justify-end gap-2 w-full">
+                        <span id="mobile-industries" class="font-serif text-xl text-ink hover:text-sepia transition-colors" style="min-width: 6.25rem; text-align: right;">Industries</span>
+                        <button id="mobile-industries-toggle" class="p-1 focus:outline-none" aria-label="Toggle Industries Menu">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-collapsed w-5 h-5 text-neutral-400"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-expanded w-5 h-5 text-neutral-400 hidden"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                    </div>
+                    <div id="mobile-industries-dropdown" class="flex flex-col items-end gap-2 overflow-hidden max-h-0 opacity-0 transition-all duration-300 w-full">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1 mt-2">Law</a>
+                    </div>
+                </div>
+                <a href="about-us.html" id="mobile-about" class="font-serif text-xl text-ink hover:text-sepia transition-colors">About Us</a>
+                <a href="blog.html" id="mobile-blog" class="font-serif text-xl text-ink hover:text-sepia transition-colors">Blog</a>
+                <a id="mobile-inquire" href="inquire.html#inquiry-form" class="font-serif italic text-lg px-6 py-1 border border-transparent bg-sepia text-paper rounded-full mt-2">Book a Call</a>
+            </div>
+        </div>
+    </header>
+
+
+<!-- Products Page (initially hidden) -->
+    <section id="products-page" class="relative overflow-x-hidden bg-dark">
+        <!-- Grid Overlay with Gradient Mask (Dark Mode) -->
+        <div class="absolute inset-0 pointer-events-none z-0 grid-overlay-dark opacity-30"></div>
+        
+        <!-- Subtly Integrated Tech Sketch Photo - Restored Header Image -->
+        <!-- Wrapper clips the decorative image so it can't create extra scroll space (desktop issue) -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+            <picture>
+                <source srcset="assets/images/abstract-portrait-with-geometric-glitch-layers-4k.webp" type="image/webp"/>
+                <img src="assets/images/abstract-portrait-with-geometric-glitch-layers-4k_opt.jpg" alt="" class="absolute top-24 left-1/2 -translate-x-1/2 w-[90%] h-[120vh] object-cover opacity-20 mix-blend-lighten" style="object-position: center top;
+                            mask-image: radial-gradient(circle at 52% 20%, black 12%, transparent 35%), linear-gradient(to bottom, black 15%, transparent 55%), linear-gradient(to right, black 65%, transparent 90%); 
+                            -webkit-mask-image: radial-gradient(circle at 52% 20%, black 12%, transparent 35%), linear-gradient(to bottom, black 15%, transparent 55%), linear-gradient(to right, black 65%, transparent 90%);
+                            -webkit-mask-composite: source-in;
+                            mask-composite: intersect;"/>
+            </picture>
+        </div>
+        
+        <!-- Circular Drafting Element - Works (Positioned at section level) -->
+        <div class="absolute right-4 md:right-12 top-6 md:top-12 opacity-30 pointer-events-none z-[5]" style="width: clamp(16rem, 32vw, 40rem); height: clamp(16rem, 32vw, 40rem);">
+            <svg viewbox="0 0 100 100" class="w-full h-full text-violet-500 animate-spin-slow" style="animation-duration: 90s;">
+                <circle cx="50" cy="50" r="48" fill="none" stroke="currentColor" stroke-width="0.3" stroke-dasharray="2 4"></circle>
+                <circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" stroke-width="0.15"></circle>
+                <rect x="25" y="25" width="50" height="50" fill="none" stroke="currentColor" stroke-width="0.15" transform="rotate(45 50 50)"></rect>
+                <path d="M50 2 L50 98 M2 50 L98 50" stroke="currentColor" stroke-width="0.05" opacity="0.4"></path>
+            </svg>
+        </div>
+        
+        <div class="relative overflow-visible px-6 md:px-12 pt-16 md:pt-32 pb-6 z-10" style="max-width: 2200px; margin-left: auto; margin-right: auto;">
+            <!-- Integrated Products Header (Dark Mode) -->
+            <div class="relative mb-4 md:mb-12 group overflow-visible">
+                
+                <!-- Technical/Architectural Elements (Dark Mode) -->
+                <div class="absolute inset-0 pointer-events-none opacity-50">
+                    <!-- Blueprint Corner Markers -->
+                    <div class="absolute -top-4 -left-4 w-12 h-12 border-l-2 border-t-2" style="border-image: linear-gradient(to bottom right, #8b5cf6, #f97316) 1;"></div>
+                    <div class="absolute -top-4 -right-4 w-12 h-12 border-r-2 border-t-2" style="border-image: linear-gradient(to bottom left, #8b5cf6, #f97316) 1;"></div>
+
+                    <!-- Tech Lines -->
+                    <div class="absolute left-1/4 top-0 w-px h-48 bg-gradient-to-b from-violet-500/20 to-transparent"></div>
+                    <div class="absolute right-1/4 top-0 w-px h-48 bg-gradient-to-b from-violet-500/20 to-transparent"></div>
+                </div>
+
+                <div class="flex flex-col relative z-10">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-3 md:mb-6">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 bg-violet-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(139,92,246,0.3)]"></span>
+                                <span id="products-protocol-label" class="font-mono text-[10px] text-white font-bold uppercase tracking-[0.2em] px-3 py-1 border border-violet-500 bg-violet-600 shadow-md">Our Work</span>
+                            </div>
+
+                            <!-- Archival Marker (// 02) -->
+                            <div class="flex flex-col border-l border-violet-500/20 pl-4 ml-2 mt-1">
+                                <span id="products-archival-num" class="font-mono text-[10px] text-violet-400 font-bold tracking-[0.2em] leading-none">// 03</span>
+                                <span class="font-mono text-[7px] text-neutral-500 uppercase tracking-widest mt-1 hidden sm:block">Ref. Portfolio_SYS.v4</span>
+                            </div>
+
+                            <div class="h-px flex-1 bg-gradient-to-r from-violet-500/80 via-orange-400/80 to-transparent"></div>
+                            <span class="font-mono text-[8px] text-neutral-500 uppercase tracking-[0.2em] hidden md:block">lorem ipsum</span>
+                        </div>
+                        
+                        <div class="relative">
+                            <div aria-hidden="true" class="absolute -inset-x-6 -inset-y-4 bg-[radial-gradient(520px_circle_at_28%_40%,rgba(139,92,246,0.1)_0%,transparent_72%)] blur-2xl opacity-60"></div>
+                            <h1 id="products-main-headline" class="font-serif text-[clamp(2.2rem,9vw,3.6rem)] md:text-[clamp(2.6rem,6vw,4.35rem)] text-white leading-[1.02] md:leading-[1.08] tracking-tight max-w-4xl italic pr-4 flex flex-wrap items-baseline gap-x-4">
+                                <span id="products-title-digital">lorem</span>
+                                <span id="products-title-renaissance" class="italic font-light pr-2">lorem</span>
+</h1>
+                        </div>
+
+                        <div class="mt-7 max-w-3xl">
+                            <p class="font-serif text-xl md:text-2xl text-neutral-200 leading-relaxed">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut.</p>
+                        </div>
+
+	                        <div class="mt-8 flex items-center gap-4 opacity-90">
+	                            <div class="h-[1px] w-12 bg-violet-500/40"></div>
+	                            <span class="font-mono text-[8px] text-neutral-300 tracking-[0.3em] uppercase font-medium">lorem ipsum dolor sit amet</span>
+	                            <div class="h-[1px] flex-1 bg-gradient-to-r from-violet-500/30 via-orange-400/20 to-transparent"></div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+
+            <!-- Client Results (Dark Mode) -->
+            <style>
+                .work-cases {
+                    margin-top: 2.25rem;
+                    position: relative;
+                    z-index: 10;
+                }
+                .work-cases__header {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    margin-bottom: 1rem;
+                }
+                .work-cases__label {
+                    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+                    font-size: 10px;
+                    font-weight: 700;
+                    letter-spacing: 0.22em;
+                    text-transform: uppercase;
+                    color: #f97316;
+                    padding: 0.35rem 0.75rem;
+                    border: 1px solid rgba(249,115,22,0.45);
+                    background: rgba(249,115,22,0.06);
+                }
+                .work-cases__rule {
+                    flex: 1;
+                    height: 1px;
+                    background: linear-gradient(to right, rgba(249,115,22,0.5), rgba(139,92,246,0.35), transparent);
+                }
+                .work-cases__archival {
+                    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+                    font-size: 9px;
+                    letter-spacing: 0.2em;
+                    text-transform: uppercase;
+                    color: #737373;
+                }
+                .work-cases__title {
+                    font-family: 'Cormorant Garamond', Georgia, serif;
+                    font-size: clamp(1.9rem, 5vw, 3rem);
+                    line-height: 1.05;
+                    letter-spacing: -0.01em;
+                    color: #fff;
+                    margin: 0.25rem 0 0.75rem;
+                    font-style: normal;
+                    font-weight: 400;
+                }
+                .work-cases__intro {
+                    font-family: 'Cormorant Garamond', Georgia, serif;
+                    font-style: italic;
+                    font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+                    line-height: 1.5;
+                    color: #d4d4d4;
+                    max-width: 56rem;
+                    margin: 0 0 2.25rem;
+                }
+                .work-cases__grid {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: 1.5rem;
+                }
+                @media (min-width: 900px) {
+                    .work-cases__grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+                }
+                .work-case {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 2rem 1.75rem 2.25rem;
+                    background: rgba(15,15,18,0.7);
+                    border: 1px solid rgba(255,255,255,0.08);
+                    overflow: hidden;
+                    transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+                }
+                @media (min-width: 900px) {
+                    .work-case { padding: 2.5rem 2.5rem 2.75rem; }
+                }
+                .work-case:hover {
+                    border-color: rgba(255,255,255,0.18);
+                    transform: translateY(-3px);
+                    box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+                }
+                .work-case__glow {
+                    position: absolute;
+                    inset: 0;
+                    pointer-events: none;
+                    opacity: 0.7;
+                    z-index: 0;
+                }
+                .work-case__glow.rust {
+                    background: radial-gradient(700px circle at 0% 0%, rgba(249,115,22,0.16) 0%, transparent 62%);
+                }
+                .work-case__glow.purple {
+                    background: radial-gradient(700px circle at 100% 100%, rgba(139,92,246,0.20) 0%, transparent 62%);
+                }
+                .work-case__body { position: relative; z-index: 1; display: flex; flex-direction: column; flex: 1 1 auto; }
+                .work-case__head {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    gap: 1rem;
+                    margin-bottom: 1.25rem;
+                }
+                .work-case__engagement {
+                    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+                    font-size: 11px;
+                    font-weight: 600;
+                    letter-spacing: 0.16em;
+                    color: #f97316;
+                    margin: 0;
+                    padding-top: 0.5rem;
+                }
+                .work-case__logo {
+                    width: 56px;
+                    height: 56px;
+                    object-fit: contain;
+                    flex-shrink: 0;
+                    background: #fff;
+                    padding: 6px;
+                    border-radius: 4px;
+                    opacity: 0.95;
+                }
+                .work-case__name {
+                    font-family: 'Cormorant Garamond', Georgia, serif;
+                    font-size: clamp(1.85rem, 3vw, 2.5rem);
+                    font-weight: 500;
+                    color: #fff;
+                    margin: 0 0 0.25rem;
+                    letter-spacing: -0.02em;
+                    line-height: 1;
+                }
+                .work-case__subtitle {
+                    font-family: 'Cormorant Garamond', Georgia, serif;
+                    font-style: italic;
+                    font-size: 1.05rem;
+                    color: #a3a3a3;
+                    margin: 0 0 1.1rem;
+                }
+                .work-case__led-by {
+                    font-family: 'Open Sans', system-ui, sans-serif;
+                    font-size: 0.8125rem;
+                    color: #a3a3a3;
+                    margin: 0 0 1.1rem;
+                    line-height: 1.5;
+                }
+                .work-case__led-by strong { color: #fff; font-weight: 600; }
+                .work-case__services {
+                    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+                    font-size: 9.5px;
+                    letter-spacing: 0.12em;
+                    text-transform: uppercase;
+                    color: #f97316;
+                    margin: 0 0 1.4rem;
+                    padding: 0.65rem 0;
+                    border-top: 1px solid rgba(255,255,255,0.1);
+                    border-bottom: 1px solid rgba(255,255,255,0.1);
+                }
+                .work-case__services span { color: #f97316; opacity: 0.5; padding: 0 0.4em; }
+                .work-case__more { margin-top: 1rem; }
+                .work-case__more a { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: #f5d0a9; text-decoration: none; border-bottom: 1px solid rgba(249,115,22,0.45); padding-bottom: 0.2rem; transition: color 150ms ease-out, border-color 150ms ease-out; }
+                .work-case__more a:hover { color: #ffffff; border-color: #ffffff; }
+                .work-case__story {
+                    font-family: 'Open Sans', system-ui, sans-serif;
+                    font-size: 0.9375rem;
+                    line-height: 1.65;
+                    color: #c4c4c4;
+                    margin: 0 0 1.4rem;
+                }
+                .work-case__outcome {
+                    margin: 0 0 1.4rem;
+                    padding: 1.15rem 1.2rem 1.2rem;
+                    border: 1px solid rgba(249,115,22,0.24);
+                    background: linear-gradient(135deg, rgba(249,115,22,0.10), rgba(249,115,22,0.025));
+                }
+                .work-case__outcome-label {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.45rem;
+                    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+                    font-size: 11px;
+                    font-weight: 700;
+                    letter-spacing: 0.18em;
+                    text-transform: uppercase;
+                    color: #f97316;
+                    margin: 0 0 0.8rem;
+                }
+                .work-case__outcome-label svg { width: 15px; height: 15px; }
+                .work-case__outcome-metric {
+                    display: flex;
+                    align-items: baseline;
+                    gap: 0.75rem;
+                    margin: 0 0 0.65rem;
+                }
+                .work-case__outcome-value {
+                    flex: 0 0 auto;
+                    font-family: 'Cormorant Garamond', Georgia, serif;
+                    font-size: clamp(3rem, 5vw, 4.5rem);
+                    font-weight: 500;
+                    line-height: 0.82;
+                    letter-spacing: -0.04em;
+                    color: #fb923c;
+                    text-shadow: 0 0 24px rgba(249,115,22,0.18);
+                }
+                .work-case__outcome-suffix {
+                    display: inline-block;
+                    margin-left: 0.02em;
+                    font-size: 0.4em;
+                    letter-spacing: -0.02em;
+                    transform: translateY(-0.34em);
+                }
+                .work-case__outcome-detail {
+                    max-width: 13rem;
+                    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+                    font-size: 10px;
+                    line-height: 1.45;
+                    letter-spacing: 0.13em;
+                    text-transform: uppercase;
+                    color: rgba(255,255,255,0.78);
+                }
+                .work-case__outcome-text {
+                    font-family: 'Open Sans', system-ui, sans-serif;
+                    font-size: 0.875rem;
+                    font-weight: 500;
+                    line-height: 1.55;
+                    color: #d4d4d4;
+                    margin: 0;
+                }
+                @media (max-width: 520px) {
+                    .work-case__outcome-metric {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 0.35rem;
+                    }
+                    .work-case__outcome-detail { max-width: none; }
+                }
+                .work-case__quote {
+                    position: relative;
+                    border-top: 1px solid rgba(255,255,255,0.1);
+                    padding-top: 1.5rem;
+                }
+                .work-case__quote-mark {
+                    position: absolute;
+                    top: 1.3rem;
+                    left: -0.2rem;
+                    font-family: 'Cormorant Garamond', Georgia, serif;
+                    font-size: 3.5rem;
+                    line-height: 0.6;
+                    color: rgba(249,115,22,0.4);
+                    pointer-events: none;
+                }
+                .work-case--purple .work-case__quote-mark { color: rgba(139,92,246,0.5); }
+                .work-case--purple .work-case__engagement,
+                .work-case--purple .work-case__outcome-label,
+                .work-case--purple .work-case__services,
+                .work-case--purple .work-case__services span {
+                    color: #a78bfa;
+                }
+                .work-case--purple .work-case__outcome {
+                    border-color: rgba(139,92,246,0.28);
+                    background: linear-gradient(135deg, rgba(139,92,246,0.12), rgba(139,92,246,0.03));
+                }
+                .work-case--purple .work-case__outcome-value {
+                    color: #a78bfa;
+                    text-shadow: 0 0 24px rgba(139,92,246,0.22);
+                }
+                .work-case__quote-text {
+                    font-family: 'Cormorant Garamond', Georgia, serif;
+                    font-style: italic;
+                    font-size: 1.0625rem;
+                    line-height: 1.5;
+                    color: #d4d4d4;
+                    margin: 0 0 0.875rem;
+                    padding-left: 1.25rem;
+                }
+                .work-case__quote-attr {
+                    font-family: 'Open Sans', system-ui, sans-serif;
+                    font-size: 0.75rem;
+                    color: #a3a3a3;
+                    margin: 0;
+                    padding-left: 1.25rem;
+                    letter-spacing: 0.02em;
+                }
+                .work-case__quote-attr strong { color: #fff; font-weight: 600; }
+            </style>
+            <section id="case-studies" class="work-cases" style="scroll-margin-top:90px" aria-labelledby="work-cases-title">
+                <div class="work-cases__header">
+                    <span class="work-cases__label">// Engagements</span>
+                    <div class="work-cases__rule"></div>
+                    <span class="work-cases__archival">Ref. Engagements_LOG.v1</span>
+                </div>
+                <h3 id="work-cases-title" class="work-cases__title">Lorem Ipsum</h3>
+                <p class="work-cases__intro">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.</p>
+
+                <div class="work-cases__grid">
+
+                    <article class="work-case work-case--purple animate-on-scroll">
+                        <div class="work-case__glow purple" aria-hidden="true"></div>
+                        <div class="work-case__body">
+                            <header class="work-case__head">
+                                <p class="work-case__engagement">// ENGAGEMENT 01</p>
+                                <img src="assets/icons/brand-mark.svg" alt="Lorem Ipsum" class="work-case__logo" loading="lazy" width="56" height="56"/>
+                            </header>
+                            <h4 class="work-case__name">Lorem</h4>
+                            <p class="work-case__subtitle">Lorem ipsum dolor</p>
+                            <p class="work-case__led-by">Lorem ipsum <strong>lorem ipsum</strong>Lorem ipsum</p>
+                            <div class="work-case__outcome">
+                                <p class="work-case__outcome-label">
+                                    <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="9 12 12 15 16 10"></polyline></svg>Lorem ipsum</p>
+                                <p class="work-case__outcome-metric"><strong class="work-case__outcome-value">lorem<span class="work-case__outcome-suffix">lorem</span></strong><span class="work-case__outcome-detail">Lorem ipsum dolor sit amet consectetur.</span></p>
+                                <p class="work-case__outcome-text">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.</p>
+                            </div>
+                            <p class="work-case__services">Lorem ipsum dolor <span>lorem</span> Lorem <span>lorem</span> Lorem <span>lorem</span> Lorem</p>
+                            <p class="work-case__story">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse.<br/><br/>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris.</p>
+                            <div class="work-case__quote">
+                                <span class="work-case__quote-mark" aria-hidden="true">&ldquo;</span>
+                                <p class="work-case__quote-text">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure.</p>
+                                <p class="work-case__quote-attr"><strong>lorem ipsum</strong>Lorem ipsum dolor</p>
+                            </div>
+                            <p class="work-case__more"><a href="client-results/where-u.html">lorem ipsum dolor sit amet <span aria-hidden="true">&rarr;</span></a></p>
+                        </div>
+                    </article>
+
+                    <article class="work-case work-case--rust animate-on-scroll">
+                        <div class="work-case__glow rust" aria-hidden="true"></div>
+                        <div class="work-case__body">
+                            <header class="work-case__head">
+                                <p class="work-case__engagement">// ENGAGEMENT 02</p>
+                                <img src="assets/icons/brand-mark.svg" alt="Lorem Ipsum" class="work-case__logo" loading="lazy" width="56" height="56"/>
+                            </header>
+                            <h4 class="work-case__name">Contoso</h4>
+                            <p class="work-case__subtitle">Lorem ipsum</p>
+                            <p class="work-case__led-by">Lorem ipsum <strong>lorem ipsum</strong>Lorem ipsum dolor sit &amp; Lorem</p>
+                            <div class="work-case__outcome">
+                                <p class="work-case__outcome-label">
+                                    <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="9 12 12 15 16 10"></polyline></svg>Lorem ipsum</p>
+                                <p class="work-case__outcome-metric"><strong class="work-case__outcome-value">40<span class="work-case__outcome-suffix">lorem</span></strong><span class="work-case__outcome-detail">lorem ipsum dolor sit amet</span></p>
+                                <p class="work-case__outcome-text">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do.</p>
+                            </div>
+                            <p class="work-case__services">Lorem <span>lorem</span> Strategy <span>lorem</span> Lorem <span>lorem</span> Lorem</p>
+                            <p class="work-case__story">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor.</p>
+                            <div class="work-case__quote">
+                                <span class="work-case__quote-mark" aria-hidden="true">&ldquo;</span>
+                                <p class="work-case__quote-text">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis.</p>
+                                <p class="work-case__quote-attr"><strong>lorem ipsum</strong>Lorem ipsum dolor sit &amp; Lorem ipsum</p>
+                            </div>
+                            <p class="work-case__more"><a href="client-results/ims.html">lorem ipsum dolor sit amet <span aria-hidden="true">&rarr;</span></a></p>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+	            <!-- Shared business-area styles for the combined What We Build section -->
+	            <style>
+	                            .wp-process {
+	                                position: relative;
+	                                padding: clamp(0.5rem,1.5vh,1.25rem) 0 clamp(1rem,3vh,1.85rem);
+	                                overflow: visible;
+	                            }
+	                            .wp-orbit {
+	                                position: absolute;
+	                                pointer-events: none;
+	                                z-index: 0;
+	                                opacity: 0.55;
+	                            }
+	                            .wp-orbit__ring {
+	                                position: absolute;
+	                                inset: 0;
+	                                border-radius: 50%;
+	                                animation: spin-60s 60s linear infinite;
+	                            }
+	                            .wp-orbit__ring--inner {
+	                                inset: 22%;
+	                                animation: spin-40s-reverse 40s linear infinite;
+	                            }
+	                            .wp-orbit--left {
+	                                top: -6rem;
+	                                left: -320px;
+	                                width: 820px;
+	                                height: 820px;
+	                            }
+	                            .wp-orbit--right {
+	                                top: 6rem;
+	                                right: -200px;
+	                                width: 520px;
+	                                height: 520px;
+	                                opacity: 0.4;
+	                            }
+	                            .wp-orbit__ring--orange { border: 1.5px solid rgba(249,115,22,0.18); box-shadow: 0 0 24px rgba(249,115,22,0.04); }
+	                            .wp-orbit__ring--violet { border: 1px solid rgba(139,92,246,0.16); box-shadow: 0 0 18px rgba(139,92,246,0.04); }
+	                            .wp-orbit__node {
+	                                position: absolute;
+	                                width: 9px;
+	                                height: 9px;
+	                                border-radius: 50%;
+	                                left: 50%;
+	                                transform: translateX(-50%);
+	                            }
+	                            .wp-orbit__node--top    { top: -5px; }
+	                            .wp-orbit__node--bottom { bottom: -5px; }
+	                            .wp-orbit__node--left {
+	                                left: -4px;
+	                                top: 50%;
+	                                transform: translateY(-50%);
+	                                width: 7px;
+	                                height: 7px;
+	                            }
+	                            .wp-orbit__node--right {
+	                                left: auto;
+	                                right: -4px;
+	                                top: 50%;
+	                                transform: translateY(-50%);
+	                                width: 7px;
+	                                height: 7px;
+	                            }
+	                            .wp-orbit__node--orange { background: #f97316; box-shadow: 0 0 10px rgba(249,115,22,0.55); }
+	                            .wp-orbit__node--violet { background: #a78bfa; box-shadow: 0 0 10px rgba(167,139,250,0.5); }
+	                            @media (max-width: 1023px) {
+	                                .wp-orbit { display: none; }
+	                            }
+	                            @media (prefers-reduced-motion: reduce) {
+	                                .wp-orbit__ring { animation: none; }
+	                            }
+	                            .wp-steps-wrap {
+	                                position: relative;
+	                                z-index: 2;
+	                                max-width: 84rem;
+	                                margin: 0 auto;
+	                            }
+	                            .wp-line {
+	                                position: absolute;
+	                                top: 48px;
+	                                left: 12.5%;
+	                                right: 12.5%;
+	                                height: 1px;
+	                                z-index: 0;
+	                                background: linear-gradient(90deg,
+	                                    transparent,
+	                                    rgba(249,115,22,0.25) 6%,
+	                                    rgba(249,115,22,0.25) 30%,
+	                                    transparent 34%,
+	                                    transparent 38%,
+	                                    rgba(139,92,246,0.25) 42%,
+	                                    rgba(139,92,246,0.25) 58%,
+	                                    transparent 62%,
+	                                    transparent 66%,
+	                                    rgba(249,115,22,0.25) 70%,
+	                                    rgba(249,115,22,0.25) 94%,
+	                                    transparent
+	                                );
+	                            }
+	                            .wp-steps-grid {
+	                                display: grid;
+	                                grid-template-columns: repeat(4, minmax(0, 1fr));
+	                                gap: 0;
+	                            }
+	                            .wp-step {
+	                                position: relative;
+	                                display: flex;
+	                                flex-direction: column;
+	                                align-items: center;
+	                                gap: 1.15rem;
+	                                padding: 0 clamp(0.85rem, 1.6vw, 1.6rem);
+	                            }
+	                            .wp-num {
+	                                width: 96px;
+	                                height: 96px;
+	                                border-radius: 50%;
+	                                display: flex;
+	                                align-items: center;
+	                                justify-content: center;
+	                                background: #0d0d11;
+	                                position: relative;
+	                                z-index: 3;
+	                                box-shadow: 0 0 0 1px rgba(249,115,22,0.22), 0 0 24px rgba(249,115,22,0.05);
+	                                transition: background 0.5s cubic-bezier(0.16,1,0.3,1), box-shadow 0.5s cubic-bezier(0.16,1,0.3,1), transform 0.5s cubic-bezier(0.16,1,0.3,1);
+	                            }
+	                            .wp-num::before {
+	                                content: '';
+	                                position: absolute;
+	                                inset: -1px;
+	                                border-radius: 50%;
+	                                background: linear-gradient(135deg, rgba(249,115,22,0.55), rgba(139,92,246,0.45), transparent 65%);
+	                                -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	                                -webkit-mask-composite: xor;
+	                                mask-composite: exclude;
+	                                padding: 1px;
+	                                transition: opacity 0.5s ease;
+	                            }
+	                            .wp-num span {
+	                                font-family: 'Cormorant Garamond', Georgia, serif;
+	                                font-size: 1.85rem;
+	                                font-weight: 600;
+	                                background: linear-gradient(135deg, #f97316, #c084fc);
+	                                -webkit-background-clip: text;
+	                                -webkit-text-fill-color: transparent;
+	                                background-clip: text;
+	                                color: transparent;
+	                                transition: all 0.4s ease;
+	                            }
+	                            .wp-step__copy {
+	                                position: relative;
+	                                width: 100%;
+	                                max-width: 24rem;
+	                                flex: 1 1 auto;
+	                                min-height: 16.5rem;
+	                                display: flex;
+	                                flex-direction: column;
+	                                align-items: flex-start;
+	                                justify-content: flex-start;
+	                                gap: 0.75rem;
+	                                text-align: left;
+	                                padding: clamp(1.4rem,2vw,1.85rem) clamp(1.2rem,2vw,1.75rem) clamp(1.35rem,1.8vw,1.65rem);
+	                                background: rgba(255,255,255,0.025);
+	                                backdrop-filter: blur(8px);
+	                                -webkit-backdrop-filter: blur(8px);
+	                                border: 1px solid rgba(255,255,255,0.06);
+	                                clip-path: polygon(0 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%);
+	                                transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), background 0.4s ease, border-color 0.4s ease;
+	                            }
+	                            .wp-step__copy::before {
+	                                content: '';
+	                                position: absolute;
+	                                inset: 0;
+	                                pointer-events: none;
+	                                background:
+	                                    linear-gradient(90deg, rgba(249,115,22,0.55), rgba(249,115,22,0.55)) 10px 10px / 18px 1px no-repeat,
+	                                    linear-gradient(180deg, rgba(249,115,22,0.55), rgba(249,115,22,0.55)) 10px 10px / 1px 18px no-repeat,
+	                                    linear-gradient(90deg, rgba(249,115,22,0.55), rgba(249,115,22,0.55)) calc(100% - 28px) 10px / 18px 1px no-repeat,
+	                                    linear-gradient(180deg, rgba(249,115,22,0.55), rgba(249,115,22,0.55)) calc(100% - 10px) 10px / 1px 18px no-repeat,
+	                                    linear-gradient(90deg, rgba(139,92,246,0.55), rgba(139,92,246,0.55)) 10px calc(100% - 10px) / 18px 1px no-repeat,
+	                                    linear-gradient(180deg, rgba(139,92,246,0.55), rgba(139,92,246,0.55)) 10px calc(100% - 28px) / 1px 18px no-repeat,
+	                                    linear-gradient(-45deg, transparent calc(50% - 0.75px), rgba(192,132,252,0.55) calc(50% - 0.75px), rgba(192,132,252,0.55) calc(50% + 0.75px), transparent calc(50% + 0.75px)) calc(100% - 1px) calc(100% - 1px) / 22px 22px no-repeat;
+	                                transition: opacity 0.4s ease;
+	                            }
+	                            .wp-step__header-row {
+	                                display: flex;
+	                                align-items: center;
+	                                justify-content: space-between;
+	                                gap: 0.95rem;
+	                                width: 100%;
+	                                margin-bottom: 0.25rem;
+	                                position: relative;
+	                                z-index: 2;
+	                            }
+	                            .wp-step__status {
+	                                display: inline-flex;
+	                                align-items: center;
+	                                gap: 0.55rem;
+	                                font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	                                font-size: 0.78rem;
+	                                font-weight: 700;
+	                                letter-spacing: 0.2em;
+	                                text-transform: uppercase;
+	                                color: #f5f5f5;
+	                                font-variant-numeric: tabular-nums;
+	                            }
+	                            .wp-step__status::before {
+	                                content: '';
+	                                width: 2.2rem;
+	                                height: 1px;
+	                                background: linear-gradient(90deg, rgba(249,115,22,0.7), rgba(249,115,22,0.1));
+	                            }
+	                            .wp-step__icon {
+	                                display: inline-flex;
+	                                align-items: center;
+	                                justify-content: center;
+	                                flex: 0 0 auto;
+	                                width: 2.6rem;
+	                                height: 2.6rem;
+	                                color: #ffffff;
+	                                background: linear-gradient(135deg, rgba(194,65,12,0.85) 0%, rgba(88,28,135,0.85) 100%);
+	                                border: 1px solid rgba(249,115,22,0.25);
+	                                transition: filter 0.35s ease, transform 0.35s cubic-bezier(0.16,1,0.3,1), border-color 0.35s ease;
+	                            }
+	                            .wp-step__icon svg, .wp-step__icon i {
+	                                width: 1.15rem;
+	                                height: 1.15rem;
+	                                stroke-width: 2;
+	                                color: #fff;
+	                            }
+	                            .wp-step__body {
+	                                position: relative;
+	                                width: 100%;
+	                                flex: 1;
+	                                min-height: 0;
+	                                display: flex;
+	                                align-items: flex-start;
+	                                padding: 1rem 1rem 0.95rem;
+	                                border: 1px solid rgba(255,255,255,0.06);
+	                                background: rgba(255,255,255,0.015);
+	                            }
+	                            .wp-step__body p {
+	                                font-family: 'Open Sans', system-ui, sans-serif;
+	                                font-size: 1.025rem;
+	                                line-height: 1.7;
+	                                color: rgba(229,229,229,0.88);
+	                                margin: 0;
+	                                text-wrap: pretty;
+	                            }
+	                            .wp-step:hover .wp-step__copy {
+	                                transform: translateY(-4px);
+	                                background: rgba(255,255,255,0.045);
+	                                border-color: rgba(255,255,255,0.12);
+	                            }
+	                            .wp-step:hover .wp-step__icon {
+	                                filter: brightness(1.15);
+	                                transform: translateY(-1px);
+	                            }
+	                            .wp-step:hover .wp-num {
+	                                box-shadow: 0 0 0 1px rgba(249,115,22,0.5), 0 0 32px rgba(249,115,22,0.18);
+	                                transform: scale(1.05);
+	                            }
+	                            /* laptop (1392-1640): keep all four business areas in ONE row, but scale the whole row down proportionally.
+	                            	It renders at a wide logical width (1500px) where each copy wraps short, then zoom shrinks the row to fit,
+	                            	so the cards stop going tall/narrow as the columns squeeze. Mirrors the Aria block's zoom approach.
+	                            	site.css forces max-width:100% on every descendant, so the width override needs id + !important. */
+	                            @media (min-width: 1392px) and (max-width: 1640px) {
+	                            	#products-page .wp-steps-wrap { width: 1500px !important; max-width: none !important; margin-left: auto; margin-right: auto; zoom: 0.8; }
+	                            }
+	                            @media (max-width: 1391px) {
+	                                .wp-steps-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 0.5rem; }
+	                                .wp-line { display: none; }
+	                            }
+	                            .wp-step__status { white-space: nowrap; }
+	                            .mobile-rail-controls { display: none; }
+	                            @media (max-width: 639px) {
+	                                #products-page .wp-steps-wrap { max-width: none !important; width: 100% !important; }
+	                                .wp-steps-grid {
+	                                    display: flex;
+	                                    gap: 1rem;
+	                                    grid-template-columns: none;
+	                                    overflow-x: auto;
+	                                    padding: 0.5rem 1.15rem 1.25rem;
+	                                    scroll-padding-inline: 1.15rem;
+	                                    scroll-snap-type: x mandatory;
+	                                    scrollbar-width: none;
+	                                    -webkit-overflow-scrolling: touch;
+	                                }
+	                                .wp-steps-grid::-webkit-scrollbar { display: none; }
+	                                .wp-steps-grid:focus-visible { outline: 2px solid rgba(249,115,22,0.55); outline-offset: 4px; }
+	                                .wp-step {
+	                                    align-items: stretch;
+	                                    flex: 0 0 min(84vw, 20rem);
+	                                    padding: 0;
+	                                    scroll-snap-align: center;
+	                                }
+	                                .wp-num { display: none; }
+	                                .wp-step__copy { max-width: none; min-height: 21rem; padding: 1.35rem 1.2rem 1.25rem; }
+	                                .wp-step__body p { font-size: 1rem; line-height: 1.65; }
+	                                .wp-step__status {
+	                                    font-size: 0.72rem;
+	                                    letter-spacing: 0.14em;
+	                                    gap: 0.45rem;
+	                                }
+	                                .wp-step__status::before { width: 1.6rem; }
+	                                .wp-step__header-row { gap: 0.7rem; }
+	                                .mobile-rail-controls { display: flex; margin-top: 0.65rem; }
+	                            }
+	            </style>
+
+	            <!-- ============================================================
+                 Aria — interactive AI-workforce deck (viewer-controlled
+                 carousel). Self-contained: scoped inline styles below,
+                 player in js/maria-carousel.js, slides in /maria/slides/.
+                 ============================================================ -->
+            <style>
+            /* All custom props scoped to .maria so nothing leaks to the page. */
+            .maria{
+              --m-base:#0A0A0A;        /* section bg — matches the page's bg-dark (#0A0A0A) so it never reads as a tacked-on panel */
+              --m-card:#15171E;        /* capability cards — a subtle raised surface on the black field */
+              --m-surface:#1A1D25;     /* device / slide bg */
+              --m-surface-2:#21252F;
+              --m-ivory:#FDFAF7;
+              --m-muted:rgba(253,250,247,0.62);
+              --m-faint:rgba(253,250,247,0.34);
+              --m-hair:rgba(253,250,247,0.10);
+              --m-hair-strong:rgba(253,250,247,0.20);
+              --m-terra:#CF5430;       /* the product's own UI accent (matches the deck) */
+              --m-terra-soft:#E07A50;
+              --m-hot:#FF6A38;         /* brighter accent for headline / emphasis */
+              --m-orange:#F97316;      /* the Studio page chrome accent */
+              --m-violet:#8B5CF6;
+              --f-display:'Cormorant Garamond',Georgia,serif;
+              --f-body:'DM Sans',system-ui,sans-serif;
+              --f-mono:'JetBrains Mono',ui-monospace,monospace;
+            }
+            /* ======================  Aria SECTION  ====================== */
+            .maria{
+              position:relative;
+              /* section is transparent so the page's purple gradient continues across it; the decorative
+                 bg lives on ::before, masked to fade out at every edge so nothing reads as a block on top */
+              background:transparent;
+              padding:clamp(1.5rem,3vw,2.5rem) clamp(1.25rem,5vw,5rem) clamp(1rem,2vw,1.5rem);
+              /* visible so the background orbit can bleed off the right edge instead of being clipped */
+              overflow:visible;
+              box-sizing:border-box;
+            }
+            .maria::before{
+              content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
+              background:
+                radial-gradient(56% 42% at 50% 50%,rgba(224,96,48,0.15),transparent 72%),
+                radial-gradient(135% 96% at 50% 50%,rgba(207,84,48,0.06),transparent 78%),
+                linear-gradient(rgba(253,250,247,0.018) 1px,transparent 1px),
+                linear-gradient(90deg,rgba(253,250,247,0.018) 1px,transparent 1px),
+                var(--m-base);
+              background-size:100% 100%,100% 100%,64px 64px,64px 64px,100% 100%;
+              /* feather each side straight & gradual (H x V intersected) so no edge reads as a cutoff */
+              -webkit-mask-image:
+                linear-gradient(to right,transparent,#000 16%,#000 84%,transparent),
+                linear-gradient(to bottom,transparent,#000 13%,#000 87%,transparent);
+              -webkit-mask-composite:source-in;
+              mask-image:
+                linear-gradient(to right,transparent,#000 16%,#000 84%,transparent),
+                linear-gradient(to bottom,transparent,#000 13%,#000 87%,transparent);
+              mask-composite:intersect;
+            }
+            .maria__inner{position:relative;z-index:1;}
+            .maria *{box-sizing:border-box;}
+            /* large spinning orbital artifact, anchored off the bottom-right corner, behind the cards.
+               Reuses the business-area .wp-orbit mechanics (spin-60s / spin-40s-reverse from site.css). */
+            .wp-orbit--maria{
+              /* full circle stays within the section's vertical extent (bottom at the section edge, so it
+                 is NOT cut off) and bleeds off the RIGHT edge into the page background. */
+              top:auto; left:auto; bottom:0; right:-340px;
+              width:1100px; height:1100px;
+              /* same faintness as the business-area orbit it was copied from (rings use the default faint
+                 borders; no visibility boost) */
+              opacity:0.55; z-index:0;
+            }
+            @media (max-width:1380px){ .wp-orbit--maria{ width:780px; height:780px; bottom:0; right:-260px; } }
+            /* site.css forces "#products-page :not(.overflow-visible){max-width:100%!important}" on every
+               descendant, which lets this section over-spread on wide screens. Outrank it with a more
+               specific selector AND !important so the container actually caps and centres. */
+            #products-page .maria .maria__inner{max-width:1460px!important;margin:0 auto;}
+
+            /* --- HUD side rails (fill the margins) + corner frame (contain the section as one module) --- */
+            .maria__rail{position:absolute;top:clamp(2.5rem,10vh,7rem);bottom:clamp(2.5rem,10vh,7rem);width:1px;z-index:2;pointer-events:none;
+              background:linear-gradient(to bottom,transparent,var(--m-hair-strong) 12%,var(--m-hair-strong) 88%,transparent);}
+            .maria__rail span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);writing-mode:vertical-rl;
+              font-family:var(--f-mono);font-size:11px;font-weight:700;letter-spacing:.34em;text-transform:uppercase;white-space:nowrap;
+              background:var(--m-base);padding:1.3rem 0;}
+            .maria__rail--left{left:clamp(1.25rem,3.5vw,3.25rem);}
+            .maria__rail--left span{color:rgba(249,115,22,0.78);}
+            .maria__rail--right{right:clamp(1.25rem,3.5vw,3.25rem);}
+            .maria__rail--right span{color:rgba(155,123,240,0.85);transform:translate(-50%,-50%) rotate(180deg);}
+            .maria__frame{position:absolute;inset:clamp(1rem,2.5vw,2rem);z-index:1;pointer-events:none;}
+            .maria__frame::before,.maria__frame::after{content:'';position:absolute;width:20px;height:20px;}
+            .maria__frame::before{top:0;left:0;border-top:1px solid var(--m-hair-strong);border-left:1px solid var(--m-hair-strong);}
+            .maria__frame::after{bottom:0;right:0;border-bottom:1px solid var(--m-hair-strong);border-right:1px solid var(--m-hair-strong);}
+            /* rails/frame need side room; hide once the section stacks */
+            @media (max-width:1800px){.maria__rail{display:none;}}
+
+            /* --- section header (HUD chrome) --- */
+            .maria__head{max-width:860px;margin:0 auto clamp(2.5rem,5vw,4rem);text-align:center;}
+            .maria__eyebrow{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--f-mono);font-size:11px;font-weight:700;
+              letter-spacing:.24em;text-transform:uppercase;color:rgba(249,115,22,0.9);margin-bottom:1.4rem;}
+            .maria__eyebrow::before{content:'';width:32px;height:1px;
+              background:linear-gradient(to right,rgba(249,115,22,0.7),rgba(139,92,246,0.4));}
+            .maria__eyebrow::after{content:'';width:32px;height:1px;
+              background:linear-gradient(to left,rgba(249,115,22,0.7),rgba(139,92,246,0.4));}
+            .maria__ref{font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--m-faint);margin-bottom:1.1rem;}
+            /* matched to the What We Build display heading so the section headers read as a pair */
+            .maria__title{font-family:var(--f-display);font-weight:400;font-size:clamp(2rem,4.5vw,3.4rem);line-height:1.12;letter-spacing:-.01em;color:var(--m-ivory);}
+            /* reversed twin of the pillars' "four things" gradient (purple -> orange) */
+            .maria__title em{font-style:italic;white-space:nowrap;
+              background:linear-gradient(95deg,#c084fc 10%,#f97316 90%);-webkit-background-clip:text;background-clip:text;
+              -webkit-text-fill-color:transparent;color:transparent;}
+            @media (max-width:560px){.maria__title em{white-space:normal;}}
+            .maria__sub{font-family:var(--f-display);font-style:italic;font-weight:400;font-size:clamp(1.15rem,2vw,1.45rem);
+              line-height:1.5;color:var(--m-muted);margin-top:1rem;letter-spacing:0.01em;}
+
+            /* --- split layout --- */
+            .maria__split{display:grid;grid-template-columns:minmax(0,730px) minmax(0,1fr);gap:clamp(1.5rem,3vw,2.5rem);align-items:stretch;}
+            /* laptop (1381-1800): scale the WHOLE 2-col down proportionally. It renders at full logical width (1460px)
+               where the copy fits in 2 lines and the cards align to the device, then zoom shrinks the whole block to
+               fit, keeping every element in proportion (device + cards + text together). */
+            @media (max-width:1800px) and (min-width:1381px){
+              #products-page .maria .maria__split{width:1460px!important;max-width:none!important;margin:0 auto;zoom:0.78;}
+            }
+            @media (max-width:1380px){
+              /* below ~1380 even the 540 device leaves the aside too narrow, so stack into one centred column */
+              .maria__split{grid-template-columns:minmax(0,1fr);gap:2.5rem;align-items:stretch;}
+              #products-page .maria .maria__split{max-width:820px!important;margin:0 auto;}  /* outrank site.css max-width:100%!important */
+              .maria__split > .maria-player,.maria__split > .maria-aside{min-width:0;}
+            }
+
+            /* --- the carousel device --- */
+            .maria-player{position:relative;}
+            .maria-device{
+              position:relative;width:100%;max-width:730px;margin:0 auto;
+              /* own GPU layer so the bezel sheen's repaints stay contained and don't make the fixed nav flicker */
+              transform:translateZ(0);isolation:isolate;
+              border:1px solid rgba(253,250,247,0.12);border-radius:20px;
+              /* dark gradient bezel (purple top-left, orange bottom-right) so the inner screen pops */
+              background:
+                radial-gradient(70% 55% at 12% 0%,rgba(139,92,246,0.20),transparent 55%),
+                radial-gradient(75% 65% at 100% 100%,rgba(255,106,56,0.22),transparent 55%),
+                linear-gradient(160deg,#0A0C11 0%,#14101A 52%,#0A0C11 100%);
+              box-shadow:0 50px 140px -40px rgba(0,0,0,0.85),0 0 0 1px rgba(0,0,0,0.4),
+                0 0 60px -20px rgba(207,84,48,0.25),inset 0 1px 0 rgba(253,250,247,0.06);
+              padding:16px;
+            }
+            /* on the stacked (laptop/tablet) layout, shrink the device so it doesn't fill the whole viewport
+               (id + !important to outrank site.css's max-width:100%!important) */
+            @media (max-width:1380px){#products-page .maria .maria-device{max-width:540px!important;}}
+            /* faint animated sheen across the bezel to hint "this is alive / interactive" */
+            .maria-device::before{content:'';position:absolute;inset:0;border-radius:20px;pointer-events:none;z-index:0;
+              background:linear-gradient(115deg,transparent 30%,rgba(255,106,56,0.06) 48%,transparent 66%);
+              background-size:280% 280%;animation:maria-sheen 7s ease-in-out infinite;}
+            @keyframes maria-sheen{0%{background-position:120% 0;}100%{background-position:-120% 0;}}
+            .maria-device__bar,.maria-stage,.maria-device__controls{position:relative;z-index:1;}
+            @media (prefers-reduced-motion:reduce){.maria-device::before{animation:none;}}
+            /* device top chrome */
+            .maria-device__bar{display:flex;align-items:center;justify-content:space-between;padding:4px 6px 12px;}
+            .maria-device__dots{display:flex;gap:6px;}
+            .maria-device__dots i{width:8px;height:8px;border-radius:50%;background:var(--m-hair-strong);}
+            .maria-device__dots i:first-child{background:rgba(207,84,48,0.7);}
+            .maria-device__meta{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--m-faint);
+              display:flex;align-items:center;gap:.5rem;min-width:0;}
+            .maria-device__meta [data-maria-counter]{color:var(--m-hot);font-weight:700;white-space:nowrap;flex:0 0 auto;}
+            .maria-device__meta b{color:var(--m-ivory);font-weight:500;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+            .maria-device__meta b::before{content:'·';margin-right:.5rem;color:var(--m-faint);font-weight:400;}
+
+            /* the stage: 4:5 portrait */
+            .maria-stage{position:relative;width:100%;aspect-ratio:4/5;border-radius:9px;overflow:hidden;background:var(--m-surface);
+              border:1px solid var(--m-hair);}
+            .maria-stage__skeleton{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+              background:
+                radial-gradient(70% 50% at 50% 38%,rgba(207,84,48,0.10),transparent 60%),
+                var(--m-surface);
+              z-index:1;transition:opacity .6s ease;}
+            .maria-stage__skeleton span{font-family:var(--f-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--m-faint);
+              animation:mp-pulse 2.4s ease-in-out infinite;}
+            @keyframes mp-pulse{0%,100%{opacity:.35;}50%{opacity:.8;}}
+            .maria-player.is-booted .maria-stage__skeleton{opacity:0;pointer-events:none;}
+            /* Transition lives ONLY on .is-active, so the incoming slide fades in cleanly
+               while the outgoing one snaps away instantly (no content bleed = each slide
+               visibly starts from frame 0). */
+            .maria-frame{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:2;
+              opacity:0;pointer-events:none;}
+            .maria-frame.is-active{opacity:1;pointer-events:auto;z-index:3;transition:opacity .3s ease;}
+            @media (prefers-reduced-motion:reduce){.maria-frame.is-active{transition:none;}}
+
+            /* tap zones for prev/next (story-style) */
+            .maria-stage__zone{position:absolute;top:0;bottom:0;width:30%;z-index:4;cursor:pointer;border:0;background:transparent;
+              -webkit-tap-highlight-color:transparent;}
+            .maria-stage__zone--prev{left:0;}
+            .maria-stage__zone--next{right:0;}
+
+            /* device bottom controls */
+            .maria-device__controls{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:14px 6px 4px;}
+            .maria-navgroup{display:inline-flex;align-items:center;gap:.75rem;flex:0 0 auto;}
+            .maria-navlabel{font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;
+              color:var(--m-muted);cursor:pointer;transition:color .25s ease;user-select:none;}
+            .maria-navgroup:hover .maria-navlabel{color:var(--m-ivory);}
+            .maria-nav{position:relative;display:inline-flex;align-items:center;justify-content:center;width:50px;height:50px;border-radius:50%;
+              border:1px solid rgba(207,84,48,0.5);background:rgba(207,84,48,0.10);color:var(--m-ivory);cursor:pointer;flex:0 0 auto;
+              box-shadow:0 0 18px -4px rgba(207,84,48,0.35);
+              transition:border-color .25s ease,background .25s ease,transform .15s ease,box-shadow .25s ease;}
+            .maria-nav:hover{border-color:var(--m-hot);background:rgba(255,106,56,0.18);box-shadow:0 0 26px -2px rgba(255,106,56,0.55);transform:scale(1.06);}
+            .maria-nav:active{transform:scale(0.94);}
+            .maria-nav svg{width:20px;height:20px;stroke:currentColor;stroke-width:2;fill:none;position:relative;z-index:1;}
+            /* pulsing ring — draws the eye to the controls */
+            .maria-nav::after{content:'';position:absolute;inset:-1px;border-radius:50%;border:1.5px solid #9B7BF0;
+              opacity:0;pointer-events:none;animation:maria-ring 2.8s cubic-bezier(0.22,1,0.36,1) infinite;}
+            .maria-nav--next::after{animation-delay:1.4s;}
+            @keyframes maria-ring{0%{transform:scale(1);opacity:.6;}70%{opacity:0;}100%{transform:scale(1.65);opacity:0;}}
+            .maria-nav:hover::after{animation-play-state:paused;}
+            @media (prefers-reduced-motion:reduce){.maria-nav::after{animation:none;display:none;}}
+            /* phones: the Back/Next text + 10 dots + buttons won't fit a portrait device,
+               so drop the labels (arrows, tap-zones and swipe remain) and tighten the dots */
+            @media (max-width:560px){
+              .maria-navlabel{display:none;}
+              .maria-nav{width:44px;height:44px;}
+              .maria-progress{gap:6px;}
+              .maria-progress button{width:7px;height:7px;}
+              /* drop the slide label in the device bar so the counter never gets squished */
+              .maria-device__meta b{display:none;}
+              .maria-device__meta{font-size:11px;}
+            }
+            .maria-progress{display:flex;gap:7px;flex:1;justify-content:center;align-items:center;}
+            .maria-progress button{width:9px;height:9px;border-radius:50%;border:0;padding:0;cursor:pointer;
+              background:var(--m-hair-strong);transition:background .25s ease,transform .2s ease;}
+            .maria-progress button:hover{background:var(--m-muted);}
+            .maria-progress button.is-on{background:var(--m-terra);transform:scale(1.25);}
+
+            /* --- right column: copy + capabilities + CTA --- */
+            .maria-aside__lead{font-family:var(--f-display);font-weight:400;font-size:clamp(1.3rem,2.6vw,1.75rem);line-height:1.4;
+              color:var(--m-ivory);margin-bottom:.6rem;}
+            .maria-aside__lead b{color:var(--m-hot);font-weight:500;text-shadow:0 0 28px rgba(255,106,56,0.3);}
+            .maria-aside__body{font-size:clamp(.95rem,1.5vw,1.05rem);line-height:1.65;color:var(--m-muted);max-width:46ch;margin-bottom:1.5rem;}
+
+            /* aside is a flex column; the caps grid grows to fill the device's height so the
+               cards' bottom edge always lines up with the bottom of the Aria device. */
+            .maria-aside{display:flex;flex-direction:column;}
+            .maria-caps{display:grid;grid-template-columns:1fr;grid-auto-rows:1fr;gap:1px;background:var(--m-hair);
+              border:1px solid var(--m-hair);border-radius:4px;overflow:visible;flex:1;min-height:0;}
+            /* stacked (<=1300): 2x2 natural-height cards (placed after the base rule so it wins the cascade) */
+            @media (max-width:1380px){.maria-caps{grid-template-columns:1fr 1fr;grid-auto-rows:auto;flex:none;}}
+            .maria-cap,.maria-system-card{position:relative;background:rgba(10,10,10,0.85);padding:1.15rem 1.9rem 1.25rem;z-index:0;
+              display:grid;grid-template-columns:1fr;align-content:center;gap:.4rem;--c:var(--m-terra);
+              transition:box-shadow .4s cubic-bezier(.22,1,.36,1),transform .4s cubic-bezier(.22,1,.36,1),background .3s ease;}
+            .maria-cap:nth-child(1),.maria-system-card:nth-child(1){--c:#FF6A38;}   /* terra/orange */
+            .maria-cap:nth-child(2),.maria-system-card:nth-child(2){--c:#9B7BF0;}   /* violet */
+            .maria-cap:nth-child(3),.maria-system-card:nth-child(3){--c:#5FB8C4;}   /* cyan */
+            .maria-cap:nth-child(4),.maria-system-card:nth-child(4){--c:#6FBF8E;}   /* green */
+            /* premium hover: no grey wash. the cell IGNITES in its own accent —
+               1px inner edge + an inner bloom + a soft outer halo that pops it above its neighbours */
+            .maria-cap:hover,.maria-system-card:hover,
+            .maria-cap.is-rail-active,.maria-system-card.is-rail-active{
+              background:var(--m-base);z-index:1;transform:translateY(-5px);
+              box-shadow:
+                /* black floor: fills the strip the lift uncovers so it reads black, not the grid's grey seam */
+                0 7px 0 0 var(--m-base),
+                inset 0 0 0 1px color-mix(in srgb,var(--c) 28%,transparent),
+                inset 0 0 50px -18px color-mix(in srgb,var(--c) 26%,transparent),
+                inset 0 2px 0 -1px color-mix(in srgb,var(--c) 14%,transparent),
+                0 18px 34px -20px color-mix(in srgb,var(--c) 28%,transparent),
+                0 12px 26px -16px rgba(0,0,0,0.62);
+            }
+            /* corner brackets that light on hover (echoes the page's value-block chrome) */
+            .maria-cap::before,.maria-cap::after,.maria-system-card::before,.maria-system-card::after{content:'';position:absolute;width:11px;height:11px;pointer-events:none;
+              opacity:0;transition:opacity .3s ease,width .3s ease,height .3s ease;}
+            .maria-cap::before,.maria-system-card::before{top:9px;left:9px;border-top:1px solid var(--c);border-left:1px solid var(--c);}
+            .maria-cap::after,.maria-system-card::after{bottom:9px;right:9px;border-bottom:1px solid var(--c);border-right:1px solid var(--c);}
+            .maria-cap:hover::before,.maria-cap:hover::after,.maria-system-card:hover::before,.maria-system-card:hover::after,
+            .maria-cap.is-rail-active::before,.maria-cap.is-rail-active::after,.maria-system-card.is-rail-active::before,.maria-system-card.is-rail-active::after{opacity:.7;width:14px;height:14px;}
+            .maria-cap__k{position:relative;z-index:1;font-family:var(--f-mono);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+              color:var(--c);margin-bottom:.55rem;display:block;transition:text-shadow .3s ease;}
+            .maria-cap:hover .maria-cap__k,.maria-system-card:hover .maria-cap__k,
+            .maria-cap.is-rail-active .maria-cap__k,.maria-system-card.is-rail-active .maria-cap__k{text-shadow:0 0 12px color-mix(in srgb,var(--c) 26%,transparent);}
+            .maria-cap__t{position:relative;z-index:1;font-family:var(--f-display);font-size:2.1rem;font-weight:500;color:var(--m-ivory);margin-bottom:.22rem;}
+            .maria-cap:hover .maria-cap__t,.maria-system-card:hover .maria-cap__t,
+            .maria-cap.is-rail-arriving .maria-cap__t,.maria-system-card.is-rail-arriving .maria-cap__t{animation:maria-cap-glitch .42s steps(2,end) 1 both;}
+            .maria-cap__t::after{content:'';display:block;width:34px;height:1px;margin-top:.5rem;
+              background:linear-gradient(to right,var(--c),transparent);opacity:.85;transition:width .35s cubic-bezier(0.22,1,0.36,1);}
+            .maria-cap:hover .maria-cap__t::after,.maria-system-card:hover .maria-cap__t::after,
+            .maria-cap.is-rail-active .maria-cap__t::after,.maria-system-card.is-rail-active .maria-cap__t::after{width:72px;}
+            .maria-cap__d{position:relative;z-index:1;font-size:1.12rem;line-height:1.6;color:var(--m-muted);max-width:52ch;}
+            /* quick chromatic-aberration glitch burst on the agent name (runs once per hover) */
+            @keyframes maria-cap-glitch{
+              0%{transform:translate(0);text-shadow:none;clip-path:inset(0 0 0 0);}
+              18%{transform:translate(-1.5px,0);text-shadow:1.5px 0 var(--c),-1.5px 0 #5FB8C4;clip-path:inset(0 0 62% 0);}
+              36%{transform:translate(1.5px,0);text-shadow:-1.5px 0 var(--c),1.5px 0 #9B7BF0;clip-path:inset(40% 0 22% 0);}
+              54%{transform:translate(-1px,0);text-shadow:1px 0 var(--c);clip-path:inset(74% 0 0 0);}
+              72%{transform:translate(1px,0);text-shadow:none;clip-path:inset(0 0 0 0);}
+              100%{transform:translate(0);text-shadow:none;clip-path:inset(0 0 0 0);}
+            }
+            @media (prefers-reduced-motion:reduce){
+              .maria-cap:hover .maria-cap__t,.maria-system-card:hover .maria-cap__t,
+              .maria-cap.is-rail-arriving .maria-cap__t,.maria-system-card.is-rail-arriving .maria-cap__t{animation:none;}
+            }
+
+            .maria-rail-heading{display:none;}
+            .maria-system{margin-top:clamp(1.5rem,3vw,2.5rem);}
+            .maria-system-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--m-hair);
+              border:1px solid var(--m-hair);border-radius:4px;overflow:visible;}
+            .maria-system-card{padding:1.85rem 1.7rem 2rem;align-content:start;min-width:0;}
+            .maria-system-card .maria-cap__t{font-size:1.7rem;margin-bottom:.14rem;}
+            @media (max-width:1380px){.maria-system-grid{grid-template-columns:repeat(2,1fr);}}
+            @media (max-width:639px){
+              .maria-rail-heading{display:block;margin:1.8rem 0 .9rem;padding:0 .15rem;}
+              .maria-rail-heading h3{font-family:var(--f-display);font-size:clamp(1.75rem,8vw,2.25rem);font-weight:500;line-height:1.08;color:var(--m-ivory);margin:0 0 .45rem;}
+              .maria-rail-heading p{font-size:1rem;line-height:1.55;color:var(--m-muted);margin:0;max-width:34ch;}
+              .maria-caps,.maria-system-grid{
+                display:flex;gap:1rem;grid-template-columns:none;grid-auto-rows:auto;overflow-x:auto;overflow-y:hidden;
+                width:100%;padding:.65rem 1.15rem 1rem;scroll-padding-inline:1.15rem;scroll-snap-type:x mandatory;
+                scrollbar-width:none;-webkit-overflow-scrolling:touch;background:transparent;border:0;border-radius:0;flex:none;
+              }
+              .maria-caps::-webkit-scrollbar,.maria-system-grid::-webkit-scrollbar{display:none;}
+              .maria-caps:focus-visible,.maria-system-grid:focus-visible{outline:2px solid rgba(249,115,22,.55);outline-offset:4px;}
+              .maria-cap,.maria-system-card{flex:0 0 min(84vw,20rem);min-height:15.5rem;padding:1.45rem 1.35rem;scroll-snap-align:center;border:1px solid var(--m-hair-strong);}
+              .maria-cap__t,.maria-system-card .maria-cap__t{font-size:1.85rem;}
+              .maria-cap__d{font-size:1rem;line-height:1.6;}
+              .maria-system{margin-top:2.1rem;}
+            }
+
+            /* CTA, centred just below the team band (tagline removed, so it sits up close to the cards) */
+            .maria-cta{display:flex;align-items:center;justify-content:center;gap:1.3rem;flex-wrap:wrap;
+              margin-top:clamp(1.25rem,2.4vw,1.75rem);}
+            .maria-cta__btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--f-display);font-style:italic;font-size:1.15rem;
+              padding:.7rem 2rem;border-radius:999px;background:var(--m-terra);color:var(--m-ivory);text-decoration:none;
+              box-shadow:0 10px 30px -8px rgba(207,84,48,0.6);transition:background .25s ease,transform .15s ease,box-shadow .25s ease;}
+            .maria-cta__btn:hover{background:var(--m-terra-soft);transform:translateY(-1px);box-shadow:0 14px 38px -8px rgba(207,84,48,0.7);}
+            .maria-cta__btn svg{width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none;}
+            .maria-cta__detail{font-family:var(--f-mono);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+              color:var(--m-muted);text-decoration:none;border-bottom:1px solid var(--m-hair-strong);padding:.35rem 0;transition:color .25s ease,border-color .25s ease;}
+            .maria-cta__detail:hover{color:var(--m-ivory);border-color:var(--m-terra);}
+            .maria-cta__note{font-family:var(--f-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--m-faint);}
+            </style>
+
+            <section class="maria" id="maria" style="scroll-margin-top:90px" aria-labelledby="maria-title">
+              <!-- HUD framing: vertical rails fill the side margins and contain the section as one module -->
+              <div class="maria__rail maria__rail--left" aria-hidden="true"><span>lorem</span></div>
+              <div class="maria__rail maria__rail--right" aria-hidden="true"><span>lorem</span></div>
+              <div class="maria__inner">
+
+                <!-- header (label/ref relocated to the side rails so this reads as a continuation of the pillars, not a new section) -->
+                <header class="maria__head">
+                  <div class="maria__eyebrow">lorem ipsum dolor</div>
+                  <h2 class="maria__title" id="maria-title">Lorem Ipsum <em>lorem ipsum dolor sit</em></h2>
+                  <p class="maria__sub">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis.</p>
+                </header>
+
+                <!-- split: device + aside -->
+                <div class="maria__split">
+
+                  <!-- LEFT: the interactive deck -->
+                  <div class="maria-player" data-maria-carousel data-slides='[
+                         {&quot;src&quot;:&quot;maria/slides/01-meet-maria.html&quot;,&quot;title&quot;:&quot;Meet Aria&quot;},
+                         {&quot;src&quot;:&quot;maria/slides/02-harness.html&quot;,&quot;title&quot;:&quot;The Harness&quot;},
+                         {&quot;src&quot;:&quot;maria/slides/03-workforce.html&quot;,&quot;title&quot;:&quot;The Workforce&quot;},
+                         {&quot;src&quot;:&quot;maria/slides/04-lead-sales.html&quot;,&quot;title&quot;:&quot;Nova · Lead + Sales&quot;},
+                         {&quot;src&quot;:&quot;maria/slides/05-content.html&quot;,&quot;title&quot;:&quot;Vera · Content + Marketing&quot;},
+                         {&quot;src&quot;:&quot;maria/slides/06-assistant.html&quot;,&quot;title&quot;:&quot;Esme · Personal Assistant&quot;},
+                         {&quot;src&quot;:&quot;maria/slides/07-chief-of-staff.html&quot;,&quot;title&quot;:&quot;The Chief of Staff&quot;},
+                         {&quot;src&quot;:&quot;maria/slides/08-memory.html&quot;,&quot;title&quot;:&quot;Shared Memory&quot;},
+                         {&quot;src&quot;:&quot;maria/slides/09-surfaces.html&quot;,&quot;title&quot;:&quot;Where It Lives&quot;},
+                         {&quot;src&quot;:&quot;maria/slides/10-finale.html&quot;,&quot;title&quot;:&quot;Your AI Workforce&quot;}
+                       ]'>
+                    <div class="maria-device">
+                      <div class="maria-device__bar">
+                        <div class="maria-device__dots"><i></i><i></i><i></i></div>
+                        <div class="maria-device__meta"><span data-maria-counter>01 / 10</span><b data-maria-label>lorem ipsum</b></div>
+                      </div>
+
+                      <div class="maria-stage" data-maria-stage>
+                        <div class="maria-stage__skeleton"><span>lorem ipsum dolor</span></div>
+                        <button class="maria-stage__zone maria-stage__zone--prev" data-maria-prev aria-label="Lorem Ipsum"></button>
+                        <button class="maria-stage__zone maria-stage__zone--next" data-maria-next aria-label="Lorem Ipsum"></button>
+                      </div>
+
+                      <div class="maria-device__controls">
+                        <div class="maria-navgroup">
+                          <button class="maria-nav" data-maria-prev aria-label="Lorem Ipsum">
+                            <svg viewbox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+                          </button>
+                          <span class="maria-navlabel" data-maria-prev aria-hidden="true">&rarr;</span>
+                        </div>
+                        <div class="maria-progress" data-maria-dots role="tablist" aria-label="Lorem"></div>
+                        <div class="maria-navgroup maria-navgroup--next">
+                          <span class="maria-navlabel" data-maria-next aria-hidden="true">&rarr;</span>
+                          <button class="maria-nav maria-nav--next" data-maria-next aria-label="Lorem Ipsum">
+                            <svg viewbox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- RIGHT: substance -->
+                  <aside class="maria-aside">
+                    <p class="maria-aside__lead">Lorem ipsum dolor <b>lorem ipsum</b></p>
+                    <p class="maria-aside__body">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris.</p>
+
+                    <div class="maria-rail-heading">
+                      <h3>Lorem Ipsum Dolor Sit</h3>
+                      <p>Lorem ipsum dolor sit amet consectetur adipiscing.</p>
+                    </div>
+                    <div id="maria-team-rail" class="maria-caps" data-mobile-rail tabindex="0" aria-label="Lorem Ipsum Dolor Sit">
+                      <div class="maria-cap">
+                        <span class="maria-cap__k">// Chief of Staff</span>
+                        <div class="maria-cap__t">lorem</div>
+                        <p class="maria-cap__d">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim.</p>
+                      </div>
+                      <div class="maria-cap">
+                        <span class="maria-cap__k">// Sales</span>
+                        <div class="maria-cap__t">Nova</div>
+                        <p class="maria-cap__d">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      </div>
+                      <div class="maria-cap">
+                        <span class="maria-cap__k">// Marketing</span>
+                        <div class="maria-cap__t">lorem</div>
+                        <p class="maria-cap__d">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut.</p>
+                      </div>
+                      <div class="maria-cap">
+                        <span class="maria-cap__k">// Personal Assistant</span>
+                        <div class="maria-cap__t">lorem</div>
+                        <p class="maria-cap__d">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      </div>
+                    </div>
+                    <div class="wb-scroll-hint-wrap mobile-rail-controls" data-rail-controls="maria-team-rail">
+                      <p class="wb-scroll-hint">
+                        <button type="button" class="wb-scroll-arrow" data-rail-direction="left" aria-label="Lorem Ipsum Dolor Sit"><i data-lucide="arrow-left"></i></button>
+                        <span>lorem ipsum dolor</span>
+                        <button type="button" class="wb-scroll-arrow" data-rail-direction="right" aria-label="Lorem Ipsum Dolor Sit"><i data-lucide="arrow-right"></i></button>
+</p>
+                    </div>
+                  </aside>
+
+                </div>
+
+                <section class="maria-system" aria-label="Lorem Ipsum Dolor Sit">
+                  <div class="maria-rail-heading">
+                    <h3 id="maria-system-title">Lorem Ipsum Dolor Sit</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do.</p>
+                  </div>
+                  <div id="maria-system-rail" class="maria-system-grid" data-mobile-rail tabindex="0" aria-label="Lorem Ipsum Dolor Sit Amet">
+                    <article class="maria-system-card">
+                      <span class="maria-cap__k">// 01 – Orchestration</span>
+                      <div class="maria-cap__t">lorem ipsum dolor</div>
+                      <p class="maria-cap__d">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut.</p>
+                    </article>
+                    <article class="maria-system-card">
+                      <span class="maria-cap__k">// 02 – Shared memory</span>
+                      <div class="maria-cap__t">lorem ipsum dolor</div>
+                      <p class="maria-cap__d">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et.</p>
+                    </article>
+                    <article class="maria-system-card">
+                      <span class="maria-cap__k">// 03 – Where it lives</span>
+                      <div class="maria-cap__t">lorem ipsum dolor</div>
+                      <p class="maria-cap__d">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut.</p>
+                    </article>
+                    <article class="maria-system-card">
+                      <span class="maria-cap__k">// 04 – Governed</span>
+                      <div class="maria-cap__t">lorem ipsum dolor</div>
+                      <p class="maria-cap__d">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                    </article>
+                  </div>
+                  <div class="wb-scroll-hint-wrap mobile-rail-controls" data-rail-controls="maria-system-rail">
+                    <p class="wb-scroll-hint">
+                      <button type="button" class="wb-scroll-arrow" data-rail-direction="left" aria-label="Lorem Ipsum Dolor"><i data-lucide="arrow-left"></i></button>
+                      <span>lorem ipsum dolor</span>
+                      <button type="button" class="wb-scroll-arrow" data-rail-direction="right" aria-label="Lorem Ipsum Dolor"><i data-lucide="arrow-right"></i></button>
+</p>
+                  </div>
+                </section>
+
+                <!-- CTA -->
+                <div class="maria-cta">
+                  <a class="maria-cta__detail" href="/ai-assistants">lorem ipsum</a>
+                  <a class="maria-cta__btn" href="inquire.html#inquiry-form">lorem <svg viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                  <span class="maria-cta__note">Lorem ipsum dolor sit amet consectetur adipiscing elit.</span>
+                </div>
+              </div>
+
+              <!-- large orbital artifact in the bottom-right, sits behind the (now translucent) cards -->
+              <div class="wp-orbit wp-orbit--maria" aria-hidden="true">
+                <div class="wp-orbit__ring wp-orbit__ring--orange">
+                  <span class="wp-orbit__node wp-orbit__node--top wp-orbit__node--orange"></span>
+                  <span class="wp-orbit__node wp-orbit__node--bottom wp-orbit__node--violet"></span>
+                  <span class="wp-orbit__node wp-orbit__node--left wp-orbit__node--violet"></span>
+                  <span class="wp-orbit__node wp-orbit__node--right wp-orbit__node--orange"></span>
+                </div>
+                <div class="wp-orbit__ring wp-orbit__ring--inner wp-orbit__ring--violet">
+                  <span class="wp-orbit__node wp-orbit__node--top wp-orbit__node--violet"></span>
+                  <span class="wp-orbit__node wp-orbit__node--bottom wp-orbit__node--orange"></span>
+                </div>
+              </div>
+            </section>
+
+            <!-- What We Build — horizontal rail (dark mode, ported from ai-development) -->
+            <style>
+                .wb-section { margin-top: 5rem; position: relative; z-index: 10; }
+                .wb-section .work-cases__label { color: #f97316; border-color: rgba(249,115,22,0.45); background: rgba(249,115,22,0.06); }
+                .wb-section .work-cases__title { color: #fff; }
+                .wb-section .work-cases__intro { color: #d4d4d4; }
+                .wb-section .wp-process { margin-top: 1.75rem; padding-top: 0.25rem; }
+                .wb-common-heading { margin-top: clamp(2.5rem,5vw,4.25rem); }
+                .wb-common-heading__label {
+                    font-family: 'JetBrains Mono', ui-monospace, monospace;
+                    font-size: 0.72rem;
+                    font-weight: 700;
+                    letter-spacing: 0.22em;
+                    text-transform: uppercase;
+                    color: #f97316;
+                }
+                .wb-common-heading__copy {
+                    max-width: 52rem;
+                    margin-top: 0.75rem;
+                    font-family: 'Cormorant Garamond', Georgia, serif;
+                    font-size: clamp(1.15rem,2vw,1.4rem);
+                    line-height: 1.55;
+                    color: #d4d4d4;
+                }
+
+                .wb-rail-wrap {
+                    position: relative;
+                    margin-top: 2rem;
+                    -webkit-mask-image: linear-gradient(to right, transparent 0px, #000 96px, #000 calc(100% - 96px), transparent 100%);
+                            mask-image: linear-gradient(to right, transparent 0px, #000 96px, #000 calc(100% - 96px), transparent 100%);
+                }
+                @media (max-width: 767px) {
+                    .wb-rail-wrap {
+                        -webkit-mask-image: linear-gradient(to right, transparent 0px, #000 40px, #000 calc(100% - 40px), transparent 100%);
+                                mask-image: linear-gradient(to right, transparent 0px, #000 40px, #000 calc(100% - 40px), transparent 100%);
+                    }
+                }
+                .wb-rail-track {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    gap: 1.5rem;
+                    overflow-x: auto;
+                    scroll-snap-type: x proximity;
+                    scroll-behavior: smooth;
+                    scroll-padding-inline: 1.5rem;
+                    padding: 0.5rem 1.5rem 1.5rem;
+                    margin: 0;
+                    list-style: none;
+                    scrollbar-width: none;
+                    -webkit-overflow-scrolling: touch;
+                    touch-action: pan-x pan-y pinch-zoom;
+                    cursor: grab;
+                }
+                .wb-rail-track::-webkit-scrollbar { display: none; }
+                .wb-rail-track.is-pointer-down, .wb-rail-track.is-dragging { cursor: grabbing; }
+                .wb-rail-track.is-dragging, .wb-rail-track.is-dragging * { user-select: none; -webkit-user-select: none; }
+                .wb-rail-track:focus-visible { outline: 2px solid rgba(249,115,22,0.45); outline-offset: 4px; }
+
+                .wb-card {
+                    flex: 0 0 auto;
+                    width: min(78vw, 270px);
+                    max-width: 270px;
+                    scroll-snap-align: start;
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+                    overflow: visible;
+                    background: rgba(249,115,22,0.14);
+                    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%);
+                    padding: 1.4rem 1.4rem 1.65rem;
+                    min-height: 280px;
+                    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), background 0.4s ease;
+                }
+                @media (min-width: 768px) {
+                    .wb-card { width: 280px; max-width: 280px; padding: 1.55rem 1.55rem 1.75rem; min-height: 290px; }
+                }
+                .wb-card::before {
+                    content: '';
+                    position: absolute;
+                    inset: 1px;
+                    z-index: 0;
+                    pointer-events: none;
+                    background-color: rgba(15,15,18,0.88);
+                    backdrop-filter: blur(12px);
+                    -webkit-backdrop-filter: blur(12px);
+                    box-shadow: inset 28px 18px 48px -16px rgba(139,92,246,0.10);
+                    background-image:
+                        linear-gradient(90deg, rgba(249,115,22,0.55), rgba(249,115,22,0.55)),
+                        linear-gradient(180deg, rgba(249,115,22,0.55), rgba(249,115,22,0.55)),
+                        linear-gradient(90deg, rgba(249,115,22,0.55), rgba(249,115,22,0.55)),
+                        linear-gradient(180deg, rgba(249,115,22,0.55), rgba(249,115,22,0.55)),
+                        linear-gradient(90deg, rgba(249,115,22,0.55), rgba(249,115,22,0.55)),
+                        linear-gradient(180deg, rgba(249,115,22,0.55), rgba(249,115,22,0.55)),
+                        linear-gradient(-45deg, transparent calc(50% - 0.75px), rgba(212,175,55,0.55) calc(50% - 0.75px), rgba(212,175,55,0.55) calc(50% + 0.75px), transparent calc(50% + 0.75px));
+                    background-size: 18px 1.5px, 1.5px 18px, 18px 1.5px, 1.5px 18px, 18px 1.5px, 1.5px 18px, 24px 24px;
+                    background-position:
+                        10px 10px, 10px 10px,
+                        calc(100% - 10px) 10px, calc(100% - 10px) 10px,
+                        10px calc(100% - 10px), 10px calc(100% - 10px),
+                        calc(100% - 1px) calc(100% - 1px);
+                    background-repeat: no-repeat;
+                    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+                }
+                .wb-card:hover { transform: translateY(-4px); background: rgba(249,115,22,0.28); }
+                .wb-card:hover::before { box-shadow: inset 28px 18px 48px -16px rgba(139,92,246,0.20); }
+
+                .wb-card-body { position: relative; z-index: 1; display: flex; flex-direction: column; flex: 1 1 auto; gap: 0.85rem; }
+                .wb-card-header { display: flex; align-items: center; justify-content: space-between; gap: 0.65rem; margin-bottom: 0.4rem; }
+                .wb-card-num {
+                    display: inline-flex; align-items: center; flex: 1 1 auto; min-width: 0; gap: 0.4rem;
+                    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+                    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+                    color: #e5e5e5; font-variant-numeric: tabular-nums; line-height: 1.1; margin: 0; white-space: nowrap;
+                }
+                .wb-card-num::before {
+                    content: ''; width: 1.05rem; flex: 0 0 1.05rem; height: 1px;
+                    background: linear-gradient(90deg, rgba(249,115,22,0.85), rgba(249,115,22,0.18));
+                }
+                .wb-card-icon {
+                    display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto;
+                    width: 2.4rem; height: 2.4rem;
+                    color: #fff; background: #f97316;
+                    transition: background 0.35s ease, transform 0.35s cubic-bezier(0.16,1,0.3,1);
+                }
+                .wb-card-icon svg, .wb-card-icon i { width: 1.05rem; height: 1.05rem; stroke-width: 1.95; color: #fff; }
+                .wb-card:hover .wb-card-icon { background: #8b5cf6; transform: translateY(-1px); }
+                .wb-card-title {
+                    font-family: 'Cormorant Garamond', Georgia, serif;
+                    font-size: 1.55rem; line-height: 1.05; letter-spacing: -0.015em;
+                    color: #fff; margin: 0; font-weight: 500; text-wrap: balance;
+                }
+                @media (min-width: 768px) {
+                    .wb-card-header { gap: 0.85rem; }
+                    .wb-card-num { gap: 0.55rem; font-size: 0.78rem; letter-spacing: 0.18em; }
+                    .wb-card-num::before { width: 1.6rem; flex-basis: 1.6rem; }
+                    .wb-card-title { font-size: 1.7rem; }
+                }
+                .wb-card-subtitle {
+                    font-family: 'Open Sans', system-ui, sans-serif;
+                    font-size: 0.875rem; line-height: 1.6;
+                    color: #a3a3a3; margin: 0; flex: 1 1 auto;
+                }
+                @media (prefers-reduced-motion: reduce) {
+                    .wb-card { transition: none !important; }
+                    .wb-card:hover { transform: none; }
+                }
+
+                .wb-scroll-hint-wrap { display: flex; justify-content: center; margin-top: 1.35rem; }
+                .wb-scroll-hint-wrap.mobile-rail-controls { display: none; }
+                .wb-scroll-hint {
+                    display: inline-flex; align-items: center; gap: 0.55rem;
+                    padding: 0.52rem 0.85rem;
+                    border: 1px solid rgba(249,115,22,0.30);
+                    border-radius: 999px;
+                    background: linear-gradient(135deg, rgba(15,15,18,0.85), rgba(28,25,23,0.9));
+                    box-shadow: 0 10px 28px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.04);
+                    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+                    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+                    color: rgba(229,229,229,0.88); white-space: nowrap;
+                }
+                .wb-scroll-arrow {
+                    display: inline-flex; align-items: center; justify-content: center;
+                    width: 1.75rem; height: 1.75rem; padding: 0;
+                    appearance: none; -webkit-appearance: none;
+                    border: 1px solid rgba(249,115,22,0.30); border-radius: 999px;
+                    background: rgba(15,15,18,0.6); color: #f97316;
+                    box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+                    cursor: pointer;
+                    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+                }
+                .wb-scroll-arrow:hover {
+                    background: #f97316; border-color: #f97316; color: #0B0A08;
+                    box-shadow: 0 8px 18px rgba(249,115,22,0.30), inset 0 1px 0 rgba(255,255,255,0.12);
+                    transform: translateY(-1px);
+                }
+                .wb-scroll-arrow:focus-visible { outline: 2px solid rgba(249,115,22,0.45); outline-offset: 2px; }
+                .wb-scroll-arrow:active { transform: translateY(0); box-shadow: 0 4px 10px rgba(249,115,22,0.18), inset 0 1px 0 rgba(255,255,255,0.06); }
+                .wb-scroll-arrow svg, .wb-scroll-arrow i { width: 0.78rem; height: 0.78rem; stroke-width: 1.9; }
+                @media (min-width: 768px) {
+                    .wb-scroll-hint { gap: 0.7rem; padding: 0.62rem 1rem; font-size: 0.72rem; letter-spacing: 0.22em; }
+                    .wb-scroll-arrow { width: 1.9rem; height: 1.9rem; }
+                }
+                @media (max-width: 767px) {
+                    .wb-scroll-hint { gap: 0.7rem; padding: 0.5rem 0.75rem; }
+                    .wb-scroll-arrow { width: 44px; height: 44px; }
+                }
+                @media (max-width: 639px) {
+                    .wb-scroll-hint-wrap.mobile-rail-controls { display: flex; }
+                }
+            </style>
+            <section id="what-we-build" class="wb-section" style="scroll-margin-top:90px" aria-labelledby="wb-section-title">
+                <div class="work-cases__header">
+                    <span class="work-cases__label">// What We Build</span>
+                    <div class="work-cases__rule"></div>
+                    <span class="work-cases__archival">Ref. Builds_LOG.v1</span>
+                </div>
+                <h3 id="wb-section-title" class="work-cases__title">Lorem Ipsum Dolor <em>lorem ipsum</em></h3>
+                <p class="work-cases__intro">Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+
+                <div class="wp-process">
+                    <div class="wp-orbit wp-orbit--left" aria-hidden="true">
+                        <div class="wp-orbit__ring wp-orbit__ring--orange">
+                            <span class="wp-orbit__node wp-orbit__node--top wp-orbit__node--orange"></span>
+                            <span class="wp-orbit__node wp-orbit__node--bottom wp-orbit__node--violet"></span>
+                            <span class="wp-orbit__node wp-orbit__node--left wp-orbit__node--orange"></span>
+                            <span class="wp-orbit__node wp-orbit__node--right wp-orbit__node--violet"></span>
+                        </div>
+                        <div class="wp-orbit__ring wp-orbit__ring--inner wp-orbit__ring--violet">
+                            <span class="wp-orbit__node wp-orbit__node--top wp-orbit__node--violet"></span>
+                            <span class="wp-orbit__node wp-orbit__node--bottom wp-orbit__node--orange"></span>
+                        </div>
+                    </div>
+                    <div class="wp-orbit wp-orbit--right" aria-hidden="true">
+                        <div class="wp-orbit__ring wp-orbit__ring--violet">
+                            <span class="wp-orbit__node wp-orbit__node--top wp-orbit__node--violet"></span>
+                            <span class="wp-orbit__node wp-orbit__node--bottom wp-orbit__node--orange"></span>
+                        </div>
+                        <div class="wp-orbit__ring wp-orbit__ring--inner wp-orbit__ring--orange">
+                            <span class="wp-orbit__node wp-orbit__node--top wp-orbit__node--orange"></span>
+                        </div>
+                    </div>
+
+                    <div class="wp-steps-wrap">
+                        <div class="wp-line hidden md:block" aria-hidden="true"></div>
+                        <div id="four-things-rail" class="wp-steps-grid" data-mobile-rail tabindex="0" aria-label="Lorem Ipsum Dolor">
+                            <article class="wp-step">
+                                <div class="wp-num"><span>01</span></div>
+                                <div class="wp-step__copy">
+                                    <div class="wp-step__header-row">
+                                        <div class="wp-step__status">lorem ipsum dolor</div>
+                                        <span class="wp-step__icon" aria-hidden="true"><i data-lucide="package"></i></span>
+                                    </div>
+                                    <div class="wp-step__body">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco.</p>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="wp-step">
+                                <div class="wp-num"><span>02</span></div>
+                                <div class="wp-step__copy">
+                                    <div class="wp-step__header-row">
+                                        <div class="wp-step__status">lorem ipsum dolor</div>
+                                        <span class="wp-step__icon" aria-hidden="true"><i data-lucide="megaphone"></i></span>
+                                    </div>
+                                    <div class="wp-step__body">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi.</p>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="wp-step">
+                                <div class="wp-num"><span>03</span></div>
+                                <div class="wp-step__copy">
+                                    <div class="wp-step__header-row">
+                                        <div class="wp-step__status">lorem ipsum dolor</div>
+                                        <span class="wp-step__icon" aria-hidden="true"><i data-lucide="trending-up"></i></span>
+                                    </div>
+                                    <div class="wp-step__body">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim.</p>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="wp-step">
+                                <div class="wp-num"><span>04</span></div>
+                                <div class="wp-step__copy">
+                                    <div class="wp-step__header-row">
+                                        <div class="wp-step__status">lorem ipsum dolor</div>
+                                        <span class="wp-step__icon" aria-hidden="true"><i data-lucide="settings-2"></i></span>
+                                    </div>
+                                    <div class="wp-step__body">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.</p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="wb-scroll-hint-wrap mobile-rail-controls" data-rail-controls="four-things-rail">
+                        <p class="wb-scroll-hint">
+                            <button type="button" class="wb-scroll-arrow" data-rail-direction="left" aria-label="Lorem Ipsum Dolor"><i data-lucide="arrow-left"></i></button>
+                            <span>lorem ipsum dolor</span>
+                            <button type="button" class="wb-scroll-arrow" data-rail-direction="right" aria-label="Lorem Ipsum Dolor"><i data-lucide="arrow-right"></i></button>
+</p>
+                    </div>
+                </div>
+
+                <div class="wb-common-heading">
+                    <h4 class="wb-common-heading__label">Lorem Ipsum</h4>
+                    <p class="wb-common-heading__copy">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et.</p>
+                </div>
+
+                <div class="wb-rail-wrap">
+                    <ul id="common-solutions-rail" class="wb-rail-track" tabindex="0" aria-label="What we build">
+                        <li class="wb-card">
+                            <div class="wb-card-body">
+                                <div class="wb-card-header">
+                                    <span class="wb-card-num">lorem ipsum dolor</span>
+                                    <span class="wb-card-icon" aria-hidden="true"><i data-lucide="layers"></i></span>
+                                </div>
+                                <h3 class="wb-card-title">Lorem Ipsum Dolor</h3>
+                                <p class="wb-card-subtitle">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore.</p>
+                            </div>
+</li>
+                        <li class="wb-card">
+                            <div class="wb-card-body">
+                                <div class="wb-card-header">
+                                    <span class="wb-card-num">lorem ipsum dolor</span>
+                                    <span class="wb-card-icon" aria-hidden="true"><i data-lucide="message-circle"></i></span>
+                                </div>
+                                <h3 class="wb-card-title">Lorem Ipsum</h3>
+                                <p class="wb-card-subtitle">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut.</p>
+                            </div>
+</li>
+                        <li class="wb-card">
+                            <div class="wb-card-body">
+                                <div class="wb-card-header">
+                                    <span class="wb-card-num">lorem ipsum dolor</span>
+                                    <span class="wb-card-icon" aria-hidden="true"><i data-lucide="target"></i></span>
+                                </div>
+                                <h3 class="wb-card-title">Lorem Ipsum &amp; Lorem</h3>
+                                <p class="wb-card-subtitle">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut.</p>
+                            </div>
+</li>
+                        <li class="wb-card">
+                            <div class="wb-card-body">
+                                <div class="wb-card-header">
+                                    <span class="wb-card-num">lorem ipsum dolor</span>
+                                    <span class="wb-card-icon" aria-hidden="true"><i data-lucide="phone-call"></i></span>
+                                </div>
+                                <h3 class="wb-card-title">Lorem Ipsum Dolor</h3>
+                                <p class="wb-card-subtitle">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.</p>
+                            </div>
+</li>
+                        <li class="wb-card">
+                            <div class="wb-card-body">
+                                <div class="wb-card-header">
+                                    <span class="wb-card-num">lorem ipsum dolor</span>
+                                    <span class="wb-card-icon" aria-hidden="true"><i data-lucide="database"></i></span>
+                                </div>
+                                <h3 class="wb-card-title">Lorem &amp; Lorem Ipsum</h3>
+                                <p class="wb-card-subtitle">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut.</p>
+                            </div>
+</li>
+                        <li class="wb-card">
+                            <div class="wb-card-body">
+                                <div class="wb-card-header">
+                                    <span class="wb-card-num">lorem ipsum dolor</span>
+                                    <span class="wb-card-icon" aria-hidden="true"><i data-lucide="megaphone"></i></span>
+                                </div>
+                                <h3 class="wb-card-title">Lorem Ipsum</h3>
+                                <p class="wb-card-subtitle">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.</p>
+                            </div>
+</li>
+                        <li class="wb-card">
+                            <div class="wb-card-body">
+                                <div class="wb-card-header">
+                                    <span class="wb-card-num">lorem ipsum dolor</span>
+                                    <span class="wb-card-icon" aria-hidden="true"><i data-lucide="pen-tool"></i></span>
+                                </div>
+                                <h3 class="wb-card-title">Lorem Ipsum</h3>
+                                <p class="wb-card-subtitle">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et.</p>
+                            </div>
+</li>
+                        <li class="wb-card">
+                            <div class="wb-card-body">
+                                <div class="wb-card-header">
+                                    <span class="wb-card-num">lorem ipsum dolor</span>
+                                    <span class="wb-card-icon" aria-hidden="true"><i data-lucide="calendar-check"></i></span>
+                                </div>
+                                <h3 class="wb-card-title">Lorem Ipsum</h3>
+                                <p class="wb-card-subtitle">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor.</p>
+                            </div>
+</li>
+                        <li class="wb-card">
+                            <div class="wb-card-body">
+                                <div class="wb-card-header">
+                                    <span class="wb-card-num">lorem ipsum dolor</span>
+                                    <span class="wb-card-icon" aria-hidden="true"><i data-lucide="bar-chart-3"></i></span>
+                                </div>
+                                <h3 class="wb-card-title">Lorem Ipsum</h3>
+                                <p class="wb-card-subtitle">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore.</p>
+                            </div>
+</li>
+                        <li class="wb-card">
+                            <div class="wb-card-body">
+                                <div class="wb-card-header">
+                                    <span class="wb-card-num">lorem ipsum dolor</span>
+                                    <span class="wb-card-icon" aria-hidden="true"><i data-lucide="file-search"></i></span>
+                                </div>
+                                <h3 class="wb-card-title">Lorem Ipsum</h3>
+                                <p class="wb-card-subtitle">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut.</p>
+                            </div>
+</li>
+                        <li class="wb-card">
+                            <div class="wb-card-body">
+                                <div class="wb-card-header">
+                                    <span class="wb-card-num">lorem ipsum dolor</span>
+                                    <span class="wb-card-icon" aria-hidden="true"><i data-lucide="user-plus"></i></span>
+                                </div>
+                                <h3 class="wb-card-title">Lorem Ipsum</h3>
+                                <p class="wb-card-subtitle">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut.</p>
+                            </div>
+</li>
+                        <li class="wb-card">
+                            <div class="wb-card-body">
+                                <div class="wb-card-header">
+                                    <span class="wb-card-num">lorem ipsum dolor</span>
+                                    <span class="wb-card-icon" aria-hidden="true"><i data-lucide="layout-dashboard"></i></span>
+                                </div>
+                                <h3 class="wb-card-title">Lorem Ipsum</h3>
+                                <p class="wb-card-subtitle">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut.</p>
+                            </div>
+</li>
+                    </ul>
+                </div>
+                <div class="wb-scroll-hint-wrap" data-rail-controls="common-solutions-rail">
+                    <p class="wb-scroll-hint">
+                        <button type="button" class="wb-scroll-arrow" data-rail-direction="left" aria-label="Lorem Ipsum Dolor"><i data-lucide="arrow-left"></i></button>
+                        <span>lorem ipsum dolor</span>
+                        <button type="button" class="wb-scroll-arrow" data-rail-direction="right" aria-label="Lorem Ipsum Dolor"><i data-lucide="arrow-right"></i></button>
+</p>
+                </div>
+            </section>
+
+            <!-- New Explanatory Section -->
+            <style>
+                .dr-callout {
+                    position: relative;
+                }
+                /* gentle hover. id-qualified so it outranks the existing #products-page .dr-callout shadow
+                   (products.css) and the site.css .dr-callout:hover; a small lift + a soft intensification of
+                   the card's own teal/warm halo, with the corner brackets easing outward. */
+                #products-page .dr-callout {
+                    transition: transform 0.5s cubic-bezier(0.22,1,0.36,1), box-shadow 0.5s ease;
+                }
+                #products-page .dr-callout:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 26px 60px rgba(0,0,0,0.60), 0 0 46px rgba(64,214,200,0.24), 0 0 56px rgba(249,115,22,0.20);
+                }
+                #products-page .dr-callout:hover::before,
+                #products-page .dr-callout:hover::after {
+                    width: 27px;
+                    height: 27px;
+                }
+                .dr-callout::before,
+                .dr-callout::after {
+                    content: '';
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    pointer-events: none;
+                    z-index: 4;
+                    transition: width 0.45s cubic-bezier(0.22,1,0.36,1), height 0.45s cubic-bezier(0.22,1,0.36,1);
+                }
+                .dr-callout::before {
+                    top: 0;
+                    left: 0;
+                    border-top: 1px solid rgba(249,115,22,0.7);
+                    border-left: 1px solid rgba(249,115,22,0.7);
+                }
+                .dr-callout::after {
+                    bottom: 0;
+                    right: 0;
+                    border-bottom: 1px solid rgba(139,92,246,0.7);
+                    border-right: 1px solid rgba(139,92,246,0.7);
+                }
+                .dr-callout__directive {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.65rem;
+                    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+                    font-size: 10px;
+                    font-weight: 700;
+                    letter-spacing: 0.22em;
+                    text-transform: uppercase;
+                    color: rgba(249,115,22,0.85);
+                    margin-bottom: 1rem;
+                }
+                .dr-callout__directive::before {
+                    content: '';
+                    width: 28px;
+                    height: 1px;
+                    background: linear-gradient(to right, rgba(249,115,22,0.6), rgba(139,92,246,0.4));
+                }
+                .value-block {
+                    position: relative;
+                }
+                .value-block::before,
+                .value-block::after {
+                    content: '';
+                    position: absolute;
+                    width: 12px;
+                    height: 12px;
+                    pointer-events: none;
+                    z-index: 3;
+                    transition: width 0.35s ease, height 0.35s ease;
+                }
+                .value-block::before {
+                    top: 0;
+                    left: 0;
+                    border-top: 1px solid rgba(249,115,22,0.55);
+                    border-left: 1px solid rgba(249,115,22,0.55);
+                }
+                .value-block::after {
+                    bottom: 0;
+                    right: 0;
+                    border-bottom: 1px solid rgba(139,92,246,0.55);
+                    border-right: 1px solid rgba(139,92,246,0.55);
+                }
+                .value-block:hover::before,
+                .value-block:hover::after {
+                    width: 16px;
+                    height: 16px;
+                }
+                .value-block__head {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 0.75rem;
+                    margin-bottom: 0.5rem;
+                }
+                .value-block__status {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.45rem;
+                    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+                    font-size: 10px;
+                    font-weight: 700;
+                    letter-spacing: 0.18em;
+                    text-transform: uppercase;
+                    color: rgba(249,115,22,0.85);
+                }
+                .value-block__status::before {
+                    content: '';
+                    width: 18px;
+                    height: 1px;
+                    background: linear-gradient(to right, rgba(249,115,22,0.6), rgba(249,115,22,0.05));
+                }
+                .value-block .value-block__icon {
+                    margin-bottom: 0 !important;
+                }
+                .value-block__accent {
+                    background: linear-gradient(to right, rgba(249,115,22,0.5), rgba(139,92,246,0.4), transparent) !important;
+                    opacity: 0.85 !important;
+                }
+            </style>
+            <div class="products-explainer mt-24 mb-16 relative z-10">
+                <div class="products-explainer-grid">
+                    <!-- Digital Renaissance Callout -->
+                    <div class="dr-callout relative p-6 md:p-8 overflow-hidden rounded-sm border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm animate-on-scroll">
+                        <div class="dr-callout__border absolute inset-0 p-[1px] rounded-sm pointer-events-none" aria-hidden="true"></div>
+                        <div class="dr-callout__bg" aria-hidden="true"></div>
+                        <div class="dr-callout__grid" aria-hidden="true"></div>
+                        <div class="dr-callout__veil" aria-hidden="true"></div>
+
+                        <div class="dr-callout__content">
+                            <div>
+                                <div class="dr-callout__directive">// 00 — Transformation</div>
+                                <h3 class="font-serif italic text-3xl md:text-4xl text-white mb-3">Lorem Ipsum Dolor</h3>
+                                <p class="text-neutral-300 text-base md:text-lg leading-relaxed max-w-2xl font-light">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
+                                <p class="text-neutral-200 text-base md:text-lg leading-relaxed max-w-2xl font-light italic mt-4" style="padding-left: 0.95rem; border-left: 2px solid rgba(249,115,22,0.6);">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod.</p>
+                            </div>
+                            <a href="inquire.html#inquiry-form" class="dr-callout__cta inline-flex items-center gap-3 px-8 py-4 font-mono text-xs font-bold uppercase tracking-widest rounded-sm">lorem ipsum dolor                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="value-stack" data-value-accordion>
+                        <!-- Block 1: Built With You -->
+                        <div class="value-block p-4 md:p-5 bg-neutral-900/80 border border-neutral-800 relative group hover:border-violet-500/30 transition-colors duration-500 animate-on-scroll is-expanded" data-value-item role="button" tabindex="0" aria-expanded="true" aria-controls="value-body-1">
+                            <div class="value-block__head">
+                                <div class="value-block__status">// 01 — Partnership</div>
+                                <div class="value-block__icon text-violet-400">
+                                    <i data-lucide="users" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                            <h4 class="font-open-sans text-base font-semibold text-white mb-2">Lorem Ipsum Dolor</h4>
+                            <div class="value-block__accent h-[1px] bg-gradient-to-r from-violet-500 to-transparent opacity-50"></div>
+                            <div id="value-body-1" class="value-block-body">
+                                <p class="text-neutral-400 text-sm leading-relaxed">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi.</p>
+                            </div>
+                        </div>
+
+                        <!-- Block 2: Built to Adapt -->
+                        <div class="value-block p-4 md:p-5 bg-neutral-900/80 border border-neutral-800 relative group hover:border-cyan-400/30 transition-colors duration-500 animate-on-scroll" data-value-item role="button" tabindex="0" aria-expanded="false" aria-controls="value-body-2" style="transition-delay: 100ms;">
+                            <div class="value-block__head">
+                                <div class="value-block__status">// 02 — Modular</div>
+                                <div class="value-block__icon text-violet-400">
+                                    <i data-lucide="layers" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                            <h4 class="font-open-sans text-base font-semibold text-white mb-2">Lorem Ipsum Dolor</h4>
+                            <div class="value-block__accent h-[1px] bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+                            <div id="value-body-2" class="value-block-body">
+                                <p class="text-neutral-400 text-sm leading-relaxed">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut.</p>
+                            </div>
+                        </div>
+
+                        <!-- Block 3: Clear ownership -->
+                        <div class="value-block p-4 md:p-5 bg-neutral-900/80 border border-neutral-800 relative group hover:border-orange-400/30 transition-colors duration-500 animate-on-scroll" data-value-item role="button" tabindex="0" aria-expanded="false" aria-controls="value-body-3" style="transition-delay: 200ms;">
+                            <div class="value-block__head">
+                                <div class="value-block__status">// 03 — Ownership</div>
+                                <div class="value-block__icon text-violet-400">
+                                    <i data-lucide="key" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                            <h4 class="font-open-sans text-base font-semibold text-white mb-2">Lorem Ipsum</h4>
+                            <div class="value-block__accent h-[1px] bg-gradient-to-r from-orange-400 to-transparent opacity-50"></div>
+                            <div id="value-body-3" class="value-block-body">
+                                <p class="text-neutral-400 text-sm leading-relaxed">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
+                                <p class="text-neutral-400 text-sm leading-relaxed mt-2"><a href="data-security.html" class="text-neutral-200 underline decoration-orange-400/50 underline-offset-4 hover:text-white transition-colors">Data &amp; Security</a></p>
+                            </div>
+                        </div>
+
+                        <!-- Block 4: Grow New Skills -->
+                        <div class="value-block p-4 md:p-5 bg-neutral-900/80 border border-neutral-800 relative group hover:border-amber-200/30 transition-colors duration-500 animate-on-scroll" data-value-item role="button" tabindex="0" aria-expanded="false" aria-controls="value-body-4" style="transition-delay: 300ms;">
+                            <div class="value-block__head">
+                                <div class="value-block__status">// 04 — Enablement</div>
+                                <div class="value-block__icon text-violet-400">
+                                    <i data-lucide="sprout" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                            <h4 class="font-open-sans text-base font-semibold text-white mb-2">Lorem Ipsum Dolor</h4>
+                            <div class="value-block__accent h-[1px] bg-gradient-to-r from-amber-200 to-transparent opacity-50"></div>
+                            <div id="value-body-4" class="value-block-body">
+                                <p class="text-neutral-400 text-sm leading-relaxed">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Next Page -->
+            <a href="about-us.html" class="mt-8 flex justify-center hover:opacity-80 transition-opacity scroll-indicator" aria-label="Lorem Ipsum Dolor Sit">
+                <div class="flex items-center gap-3">
+                    <span class="font-mono text-[10px] text-white/40 tracking-[0.2em]">//</span>
+                    <i data-lucide="arrow-right" class="w-3 h-3 text-white/50 animate-nudge-right"></i>
+                    <div class="h-px w-12 bg-gradient-to-r from-amber-200/50 via-white/10 to-transparent"></div>
+                    <span class="font-mono text-[10px] uppercase tracking-[0.22em] text-white/60">About Us</span>
+                </div>
+            </a>
+
+            <!-- Footer (dark theme, full-width bar) -->
+            <footer class="mt-20 relative left-1/2 -translate-x-1/2 w-screen overflow-visible pt-20 md:pt-24 pb-12 md:pb-16 px-6 md:px-12 bg-black border-t border-white/20 text-stone">
+                <div class="max-w-5xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 text-left">
+                        <div class="flex flex-col gap-4">
+                            <a href="/" class="font-serif text-2xl md:text-3xl tracking-tight text-stone font-medium hover:text-white transition-colors">Studio</a>
+                            <p class="text-sm text-stone/80 font-open-sans leading-relaxed">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.</p>
+                            <a href="inquire.html#inquiry-form" class="inline-flex items-center justify-center font-serif italic text-lg px-8 py-2.5 border border-sepia bg-sepia hover:bg-amber-200 text-paper rounded-full shadow-sm transition-colors w-fit">Get in touch</a>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <p class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold font-mono">Lorem</p>
+                            <nav class="flex flex-col gap-2" aria-label="Footer navigation">
+                                <a href="ai-training.html" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">Build</a>
+                                <a href="ai-development.html" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">Design</a>
+                                <a href="ai-consulting.html" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">Strategy</a>
+                                <a href="ai-governance.html" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">Care</a>
+                                <a href="products.html" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">Our Work</a>
+                                <a href="how-we-work.html" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">How We Work</a>
+                                <a href="about-us.html" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">About Us</a>
+                                <a href="blog.html" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">Blog</a>
+                                <a href="data-security.html" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">Data &amp; Security</a>
+                                <a href="inquire.html#inquiry-form" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">Book a Call</a>
+                            </nav>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <p class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold font-mono">Lorem</p>
+                            <a href="mailto:hello@example.com" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">lorem</a>
+                            <a href="tel:+61000000000" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">+61 000 000 000</a>
+                            <a href="#" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">LinkedIn</a>
+                            <a href="#privacy-policy" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">lorem ipsum</a>
+                            <span class="text-sm text-stone/80 font-open-sans">Worldwide</span>
+                        </div>
+                    </div>
+                <div class="border-t border-ink/10 mt-10 pt-6">
+                    <p class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold font-mono mb-3">Lorem ipsum dolor</p>
+                    <nav class="flex flex-wrap gap-x-4 gap-y-2" aria-label="City pages">
+                        <a href="ai-consulting/sydney.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Sydney</a>
+                        <a href="ai-consulting/melbourne.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Melbourne</a>
+                        <a href="ai-consulting/brisbane.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Brisbane</a>
+                        <a href="ai-consulting/adelaide.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Adelaide</a>
+                        <a href="ai-consulting/canberra.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Canberra</a>
+                        <a href="ai-consulting/darwin.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Darwin</a>
+                        <a href="ai-consulting/hobart.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Hobart</a>
+                    </nav>
+                </div>
+
+                    <div class="border-t border-white/20 mt-10 pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm text-neutral-500 font-open-sans">
+                        <span>© 2026 Studio. All rights reserved.</span>
+                        <span>Worldwide</span>
+                    </div>
+        <p class="little-company-brand" aria-label="Studio"><span data-brand>Studio</span></p>
+                </div>
+            </footer>
+        </div>
+    </section>
+
+	    
+
+
+	<script>
+	(function () {
+	  const root = document.documentElement;
+	  if (root && root.dataset) {
+	    root.dataset.productsScramble = 'active';
+	    window.setTimeout(() => {
+	      if (root.dataset.productsScramble === 'active') delete root.dataset.productsScramble;
+	    }, 5000);
+	  }
+
+	  function createScrambleOverlay(element, originalText) {
+	    element.classList.add('scramble-reveal');
+	    element.textContent = '';
+	
+	    const ghost = document.createElement('span');
+	    ghost.className = 'scramble-reveal__ghost';
+	    ghost.textContent = originalText;
+	
+	    const overlay = document.createElement('span');
+	    overlay.className = 'scramble-reveal__anim';
+	    overlay.setAttribute('aria-hidden', 'true');
+	    overlay.textContent = '';
+	
+	    element.appendChild(ghost);
+	    element.appendChild(overlay);
+	
+	    return overlay;
+	  }
+	
+		  function scrambleRevealText(element, targetText, duration = 0.75) {
+		    if (!element) return Promise.resolve();
+		    const originalText = element.getAttribute('data-original') || targetText || element.textContent || '';
+		    element.setAttribute('data-original', originalText);
+	
+	    if (element._scrambleInterval) {
+	      clearInterval(element._scrambleInterval);
+	      delete element._scrambleInterval;
+	    }
+	
+		    const overlay = element.querySelector('.scramble-reveal__anim') || createScrambleOverlay(element, originalText);
+		
+		    const isMobile = window.matchMedia && window.matchMedia('(max-width: 767.98px)').matches;
+		    const chars = isMobile
+		      ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghiklmnorstuvwxz0123456789!@#$%^&*()+-=~'
+		      : 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()+-=~<>?/';
+		
+		    const randomChar = () => chars[Math.floor(Math.random() * chars.length)];
+		    const scrambledFull = originalText
+		      .split('')
+		      .map((char) => (char === ' ' ? ' ' : randomChar()))
+		      .join('');
+		    overlay.textContent = scrambledFull;
+		    element.classList.add('scramble-reveal--ready');
+		
+		    const frameMs = 16;
+		    const durationMs = Math.max(1, duration * 1000);
+		    const start = performance.now();
+		    let lastFrame = 0;
+		    const len = originalText.length;
+		    const scrambleLag = Math.max(3, Math.round(len * 0.24));
+
+		    const render = (now) => {
+		      const elapsed = now - start;
+		      const linear = Math.min(1, elapsed / durationMs);
+		      const progress = 1 - Math.pow(1 - linear, 3);
+
+		      if (now - lastFrame >= frameMs) {
+		        lastFrame = now;
+		        const revealCount = Math.floor(progress * len);
+		        const settleCount = Math.max(0, progress * len - scrambleLag);
+		
+		        overlay.textContent = originalText
+		          .split('')
+		          .map((char, index) => {
+		            if (char === ' ') return ' ';
+		            if (index >= revealCount) return randomChar();
+		            return index < settleCount ? originalText[index] : randomChar();
+		          })
+		          .join('');
+		      }
+
+		      if (elapsed >= durationMs) {
+		        overlay.textContent = originalText;
+		        return true;
+		      }
+		      return false;
+		    };
+
+		    return new Promise((resolve) => {
+		      const step = (now) => {
+		        if (render(now)) return resolve();
+		        requestAnimationFrame(step);
+		      };
+		      requestAnimationFrame(step);
+		    });
+		  }
+
+			  function scrambleTextInPlace(element, targetText, duration = 0.75) {
+			    if (!element) return Promise.resolve();
+			    const originalText = element.getAttribute('data-original') || targetText || element.textContent || '';
+			    element.setAttribute('data-original', originalText);
+
+	    if (element._scrambleInterval) {
+	      clearInterval(element._scrambleInterval);
+	      delete element._scrambleInterval;
+	    }
+
+		    const overlay = element.querySelector('.scramble-reveal__anim') || createScrambleOverlay(element, originalText);
+
+		    const isMobile = window.matchMedia && window.matchMedia('(max-width: 767.98px)').matches;
+		    const chars = isMobile
+		      ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghiklmnorstuvwxz0123456789!@#$%^&*()+-=~'
+		      : 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()+-=~<>?/';
+
+	    const randomChar = () => chars[Math.floor(Math.random() * chars.length)];
+	    const scrambledFull = originalText
+	      .split('')
+	      .map((char) => (char === ' ' ? ' ' : randomChar()))
+	      .join('');
+
+		    overlay.textContent = scrambledFull;
+		    element.classList.add('scramble-reveal--ready');
+
+		    const frameMs = 16;
+		    const durationMs = Math.max(1, duration * 1000);
+		    const start = performance.now();
+		    let lastFrame = 0;
+		    const len = originalText.length;
+	
+		    const render = (now) => {
+		      const elapsed = now - start;
+		      const linear = Math.min(1, elapsed / durationMs);
+		      const progress = 1 - Math.pow(1 - linear, 3);
+
+		      if (now - lastFrame >= frameMs) {
+		        lastFrame = now;
+		        const settleCount = progress * len;
+
+		        overlay.textContent = originalText
+	          .split('')
+	          .map((char, index) => {
+	            if (char === ' ') return ' ';
+	            return index < settleCount ? originalText[index] : randomChar();
+		          })
+		          .join('');
+		      }
+	
+		      if (elapsed >= durationMs) {
+		        overlay.textContent = originalText;
+		        return true;
+		      }
+		      return false;
+		    };
+	
+			    return new Promise((resolve) => {
+			      const step = (now) => {
+			        if (render(now)) return resolve();
+			        requestAnimationFrame(step);
+			      };
+			      requestAnimationFrame(step);
+			    });
+			  }
+
+			  function scrambleSequenceReveal(elements, duration = 1.2) {
+			    const targets = (elements || []).filter(Boolean);
+			    if (!targets.length) return Promise.resolve();
+			    const isMobile = window.matchMedia && window.matchMedia('(max-width: 767.98px)').matches;
+			    const chars = isMobile
+			      ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghiklmnorstuvwxz0123456789!@#$%^&*()+-=~'
+			      : 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()+-=~<>?/';
+			    const randomChar = () => chars[Math.floor(Math.random() * chars.length)];
+
+			    const data = targets.map((element) => {
+			      const originalText = element.getAttribute('data-original') || element.textContent || '';
+			      element.setAttribute('data-original', originalText);
+			      if (element._scrambleInterval) {
+			        clearInterval(element._scrambleInterval);
+			        delete element._scrambleInterval;
+			      }
+			      const overlay = element.querySelector('.scramble-reveal__anim') || createScrambleOverlay(element, originalText);
+			      const ghost = element.querySelector('.scramble-reveal__ghost');
+			      if (ghost) ghost.textContent = originalText;
+			      element.classList.add('scramble-reveal--ready');
+			      return { element, overlay, originalText, chars: originalText.split('') };
+			    });
+
+			    let offset = 0;
+			    data.forEach((item) => {
+			      item.offset = offset;
+			      offset += item.chars.length;
+			    });
+
+			    const totalLen = Math.max(1, offset);
+			    const frameMs = 16;
+			    const durationMs = Math.max(1, duration * 1000);
+			    const start = performance.now();
+			    let lastFrame = 0;
+			    const scrambleLag = Math.max(3, Math.round(totalLen * 0.22));
+			    const scrambleBand = Math.max(3, Math.round(totalLen * 0.06));
+
+			    const render = (now) => {
+			      const elapsed = now - start;
+			      const linear = Math.min(1, elapsed / durationMs);
+			      const progress = 1 - Math.pow(1 - linear, 3);
+			      const revealCount = progress * totalLen;
+			      const settleCount = Math.max(0, revealCount - scrambleLag);
+
+			      if (now - lastFrame >= frameMs) {
+			        lastFrame = now;
+			        data.forEach((item) => {
+			          item.overlay.style.opacity = (0.6 + progress * 0.4).toFixed(2);
+
+			          item.overlay.textContent = item.chars
+			            .map((char, index) => {
+			              if (char === ' ') return ' ';
+			              const globalIndex = item.offset + index;
+			              if (globalIndex < settleCount) return item.originalText[index];
+			              if (globalIndex < revealCount) {
+			                return revealCount - globalIndex <= scrambleBand ? randomChar() : item.originalText[index];
+			              }
+			              return randomChar();
+			            })
+			            .join('');
+			        });
+			      }
+
+			      if (elapsed >= durationMs) {
+			        data.forEach((item) => {
+			          item.overlay.textContent = item.originalText;
+			          item.overlay.style.opacity = '';
+			        });
+			        return true;
+			      }
+			      return false;
+			    };
+
+			    return new Promise((resolve) => {
+			      const step = (now) => {
+			        if (render(now)) return resolve();
+			        requestAnimationFrame(step);
+			      };
+			      requestAnimationFrame(step);
+			    });
+			  }
+	
+	  function whenFontsReady(timeoutMs = 2500) {
+	    const timeout = new Promise((resolve) => window.setTimeout(resolve, timeoutMs));
+	
+	    if (document.fonts && typeof document.fonts.ready?.then === 'function') {
+	      return Promise.race([document.fonts.ready.catch(() => {}), timeout]);
+	    }
+	
+	    return Promise.race([
+	      new Promise((resolve) => window.addEventListener('load', resolve, { once: true })),
+	      timeout,
+	    ]);
+	  }
+
+		  document.addEventListener('DOMContentLoaded', () => {
+		    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		    if (prefersReducedMotion) {
+		      if (root && root.dataset) delete root.dataset.productsScramble;
+		      return;
+		    }
+
+		    const worksIntro = document.getElementById('products-intro');
+		    const worksFourThings = document.getElementById('products-four-things');
+		    const worksTitleDigital = document.getElementById('products-title-digital');
+		    const worksTitleRenaissance = document.getElementById('products-title-renaissance');
+		    const wpSteps = document.querySelectorAll('.wp-step');
+		    const solutionsPanel = document.querySelector('.solutions-panel');
+		    const solutionsLayers = solutionsPanel
+		      ? solutionsPanel.querySelectorAll('.solutions-panel__bg, .solutions-panel__grid, .solutions-panel__glow')
+		      : [];
+		    const solutionsContent = solutionsPanel
+		      ? solutionsPanel.querySelectorAll('.solutions-panel__headline, .solutions-panel__hint, .solutions-panel__cta')
+		      : [];
+
+		    if (typeof gsap !== 'undefined') {
+		      const animElements = [];
+		      if (worksIntro) animElements.push(worksIntro);
+		      if (animElements.length) gsap.set(animElements, { opacity: 0 });
+		      if (wpSteps.length) gsap.set(wpSteps, { opacity: 0, y: 24, scale: 0.985, filter: 'blur(3px)' });
+		      if (solutionsPanel) {
+		        gsap.set(solutionsPanel, { opacity: 0, y: 28, scale: 0.98, filter: 'blur(6px)' });
+		        if (solutionsLayers.length) gsap.set(solutionsLayers, { scale: 1.06, filter: 'blur(8px)' });
+		        if (solutionsContent.length) gsap.set(solutionsContent, { opacity: 0, y: 10 });
+		      }
+	      
+		      whenFontsReady(2500).then(async () => {
+		        await Promise.all([
+		          scrambleTextInPlace(worksFourThings, worksFourThings?.textContent, 0.48),
+		        ]);
+		
+		        await scrambleSequenceReveal([worksTitleDigital, worksTitleRenaissance], 1.25);
+		
+		        if (root && root.dataset) root.dataset.productsScramble = 'ready';
+		      });
+
+		      if (worksIntro) gsap.to(worksIntro, { opacity: 1, duration: 0.6 });
+		      if (wpSteps.length) {
+		        gsap.to(wpSteps, {
+		          opacity: 1,
+		          y: 0,
+		          scale: 1,
+		          filter: 'blur(0px)',
+		          duration: 0.85,
+		          stagger: { each: 0.12 },
+		          ease: 'power3.out',
+		          delay: 0.35,
+		          clearProps: 'transform,filter',
+		        });
+		      }
+		      if (solutionsPanel) {
+		        const solutionsTimeline = gsap.timeline({ delay: 0.35 });
+		        solutionsTimeline
+		          .to(solutionsPanel, {
+		            opacity: 1,
+		            y: -2,
+		            scale: 1,
+		            filter: 'blur(0px)',
+		            duration: 1.05,
+		            ease: 'power3.out',
+		            clearProps: 'transform,filter',
+		          })
+		          .to(
+		            solutionsLayers,
+		            {
+		              scale: 1,
+		              filter: 'blur(0px)',
+		              duration: 1.1,
+		              ease: 'sine.out',
+		              stagger: 0.08,
+		              clearProps: 'transform,filter',
+		            },
+		            '<0.12'
+		          )
+		          .to(
+		            solutionsContent,
+		            {
+		              opacity: 1,
+		              y: 0,
+		              duration: 0.75,
+		              ease: 'power2.out',
+		              stagger: 0.06,
+		              clearProps: 'transform',
+		            },
+		            '<0.2'
+		          );
+		      }
+	    } else {
+	      // Fallback: ensure all hero elements are visible if GSAP fails to load.
+	      if (worksIntro) worksIntro.classList.remove('opacity-0');
+	      if (solutionsPanel) solutionsPanel.style.opacity = '1';
+	      solutionsContent.forEach(function(el) { el.style.opacity = '1'; });
+	      if (root && root.dataset) delete root.dataset.productsScramble;
+	    }
+
+    const valueItems = document.querySelectorAll('[data-value-item]');
+    if (valueItems.length) {
+      const setExpandedItem = (target) => {
+        valueItems.forEach((item) => {
+          const isActive = item === target;
+          item.classList.toggle('is-expanded', isActive);
+          item.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+        });
+      };
+
+      valueItems.forEach((item) => {
+        item.addEventListener('click', () => setExpandedItem(item));
+        item.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            setExpandedItem(item);
+          }
+        });
+      });
+
+      const initiallyExpanded = document.querySelector('[data-value-item].is-expanded') || valueItems[0];
+      if (initiallyExpanded) setExpandedItem(initiallyExpanded);
+    }
+
+  });
+})();
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const rails = document.querySelectorAll('.wb-rail-track, [data-mobile-rail]');
+  const railControls = document.querySelectorAll('[data-rail-controls]');
+
+  const updateActiveRailCard = (rail) => {
+    const cards = Array.from(rail.children);
+    const isMobile = window.matchMedia('(max-width: 639px)').matches;
+    if (!isMobile) {
+      cards.forEach((card) => card.classList.remove('is-rail-active', 'is-rail-arriving'));
+      return;
+    }
+
+    const railBounds = rail.getBoundingClientRect();
+    const railCentre = railBounds.left + (railBounds.width / 2);
+    let closest = null;
+    let closestDistance = Number.POSITIVE_INFINITY;
+
+    cards.forEach((card) => {
+      const cardBounds = card.getBoundingClientRect();
+      const cardCentre = cardBounds.left + (cardBounds.width / 2);
+      const distance = Math.abs(cardCentre - railCentre);
+      if (distance < closestDistance) {
+        closest = card;
+        closestDistance = distance;
+      }
+    });
+
+    const previousActive = cards.find((card) => card.classList.contains('is-rail-active'));
+    cards.forEach((card) => {
+      card.classList.toggle('is-rail-active', card === closest);
+      if (card !== closest) card.classList.remove('is-rail-arriving');
+    });
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (closest && closest !== previousActive && !prefersReducedMotion) {
+      const title = closest.querySelector('.maria-cap__t');
+      closest.classList.add('is-rail-arriving');
+      title.addEventListener('animationend', () => {
+        closest.classList.remove('is-rail-arriving');
+      }, { once: true });
+    }
+  };
+
+  const getRailStep = (rail) => {
+    const firstCard = rail.querySelector(':scope > *');
+    const gap = Number.parseFloat(window.getComputedStyle(rail).gap || '0') || 0;
+    return firstCard ? firstCard.getBoundingClientRect().width + gap : Math.max(rail.clientWidth * 0.8, 240);
+  };
+
+  railControls.forEach((controls) => {
+    const rail = document.getElementById(controls.dataset.railControls);
+    if (!rail) return;
+    controls.querySelectorAll('[data-rail-direction]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const direction = button.dataset.railDirection === 'left' ? -1 : 1;
+        rail.scrollBy({ left: direction * getRailStep(rail), behavior: 'smooth' });
+      });
+    });
+  });
+
+  rails.forEach((rail) => {
+    if (rail.dataset.mouseDragReady === 'true') return;
+    rail.dataset.mouseDragReady = 'true';
+
+    if (rail.matches('#maria-team-rail, #maria-system-rail')) {
+      let activeCardFrame = null;
+      const scheduleActiveCard = () => {
+        if (activeCardFrame !== null) window.cancelAnimationFrame(activeCardFrame);
+        activeCardFrame = window.requestAnimationFrame(() => {
+          activeCardFrame = null;
+          updateActiveRailCard(rail);
+        });
+      };
+      rail.addEventListener('scroll', scheduleActiveCard, { passive: true });
+      window.addEventListener('resize', scheduleActiveCard, { passive: true });
+      scheduleActiveCard();
+    }
+
+    let pointerId = null;
+    let startX = 0;
+    let startScrollLeft = 0;
+    let isPointerDown = false;
+    let isDragging = false;
+
+    const endDrag = () => {
+      isPointerDown = false;
+      pointerId = null;
+      rail.classList.remove('is-pointer-down');
+      window.setTimeout(() => {
+        isDragging = false;
+        rail.classList.remove('is-dragging');
+      }, 0);
+    };
+
+    rail.addEventListener('pointerdown', (event) => {
+      if (event.pointerType === 'touch') return;
+      if (event.button !== 0) return;
+      if (rail.scrollWidth <= rail.clientWidth + 4) return;
+
+      pointerId = event.pointerId;
+      isPointerDown = true;
+      isDragging = false;
+      startX = event.clientX;
+      startScrollLeft = rail.scrollLeft;
+      rail.classList.add('is-pointer-down');
+
+      if (typeof rail.setPointerCapture === 'function') {
+        rail.setPointerCapture(pointerId);
+      }
+    });
+
+    rail.addEventListener('pointermove', (event) => {
+      if (!isPointerDown || event.pointerId !== pointerId) return;
+      const deltaX = event.clientX - startX;
+      if (!isDragging && Math.abs(deltaX) > 6) {
+        isDragging = true;
+        rail.classList.add('is-dragging');
+      }
+      if (!isDragging) return;
+      rail.scrollLeft = startScrollLeft - deltaX;
+      event.preventDefault();
+    });
+
+    rail.addEventListener('pointerup', (event) => {
+      if (event.pointerId !== pointerId) return;
+      endDrag();
+    });
+
+    rail.addEventListener('pointercancel', endDrag);
+    rail.addEventListener('lostpointercapture', endDrag);
+    rail.addEventListener('dragstart', (event) => { event.preventDefault(); });
+    rail.addEventListener('keydown', (event) => {
+      const isNext = event.key === 'ArrowRight';
+      const isPrevious = event.key === 'ArrowLeft';
+      if (!isNext && !isPrevious) return;
+      event.preventDefault();
+      const direction = isPrevious ? -1 : 1;
+      rail.scrollBy({ left: direction * getRailStep(rail), behavior: 'smooth' });
+    });
+    rail.addEventListener('click', (event) => {
+      if (!isDragging) return;
+      event.preventDefault();
+      event.stopPropagation();
+    }, true);
+  });
+});
+</script>
+
+<script defer src="https://va.vercel-scripts.com/v1/speed-insights/script.js"></script>
+</body>
+</html>

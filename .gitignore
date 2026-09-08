@@ -1,0 +1,73 @@
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+.cursor/
+.agent/
+.grok/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Node modules
+node_modules/
+npm-debug.log
+yarn-error.log
+# Note: package-lock.json should be committed
+
+# Build files
+dist/
+build/
+*.min.js.map
+
+# Tailwind build (keep source files, ignore node_modules)
+# Note: css/output.css should be committed for deployment
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Editor / workspace files
+*.code-workspace
+
+# Diffs and patches
+*.diff
+*.patch
+
+# One-off reports and prompts
+PRODUCTION_*.md
+RUN_PRODUCTION_*.md
+STAGING_DEPLOYMENT.md
+
+# Server logs
+server.log
+/tmp/
+.vercel
+.env*.local
+maria-v1-backup/
+
+# Local tool artifacts (regenerable) — Lighthouse audits, Playwright screenshots/CLI output
+.lighthouse/
+.playwright-cli/
+.superpowers/
+output/
+
+# Working notes, tickets and mockups. There is no build step, so anything
+# committed here is served publicly at its own path.
+.scratch/

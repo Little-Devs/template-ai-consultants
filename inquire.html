@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+<!-- Primary Meta Tags -->
+<title>Lorem Ipsum Dolor Sit Amet Consectetur Lorem Lorem Ipsum Dolor Sit</title>
+<meta name="title" content="Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod."/>
+<meta name="description" content="Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim."/>
+<meta name="keywords" content="studio, template, consultancy"/>
+<meta name="author" content="Studio"/>
+<meta name="robots" content="Lorem ipsum dolor sit amet consectetur adipiscing elit."/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://example.com/inquire"/>
+<meta property="og:title" content="Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod."/>
+<meta property="og:description" content="Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim."/>
+<meta property="og:image" content="https://example.com/assets/images/og-card.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:alt" content="Studio"/>
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image"/>
+<meta property="twitter:url" content="https://example.com/inquire"/>
+<meta property="twitter:title" content="Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod."/>
+<meta property="twitter:description" content="Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim."/>
+<meta property="twitter:image" content="https://example.com/assets/images/og-card.png"/>
+<meta property="twitter:image:alt" content="Studio"/>
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="assets/icons/brand-favicon.svg"/>
+<link rel="apple-touch-icon" href="assets/icons/brand-favicon.svg"/>
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://example.com/inquire"/>
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://example.com/#organization",
+  "name": "Studio",
+  "url": "https://example.com",
+  "logo": "https://example.com/assets/icons/brand-mark.svg",
+  "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Perth",
+    "addressRegion": "WA",
+    "addressCountry": "AU"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "hello@example.com",
+    "contactType": "sales"
+  },
+  "areaServed": "AU",
+  "sameAs": []
+}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://example.com/"},{"@type":"ListItem","position":2,"name": "Lorem ipsum dolor sit","item":"https://example.com/inquire"}]}
+</script>
+
+<!-- DNS Prefetch for External Resources -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+<link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com"/>
+<link rel="dns-prefetch" href="https://unpkg.com"/>
+
+<!-- Preload Critical Resources -->
+<link rel="preload" href="css/output.css" as="style"/>
+<link rel="preload" href="css/site.css" as="style"/>
+<link rel="preload" href="js/site.min.js" as="script"/>
+<link rel="preload" href="js/gsap/gsap.min.js" as="script"/>
+<link rel="preload" href="assets/icons/brand-favicon.svg" as="image" type="image/png"/>
+
+<!-- Fonts with Optimized Loading -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/> 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&amp;family=Inter:wght@200;300;400;500;600;700&amp;family=JetBrains+Mono:wght@200;300;400;500;600;700&amp;family=Open+Sans:wght@300;400;500;600;700&amp;display=swap"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&amp;family=Inter:wght@200;300;400;500;600;700&amp;family=JetBrains+Mono:wght@200;300;400;500;600;700&amp;family=Open+Sans:wght@300;400;500;600;700&amp;display=swap"/></noscript>
+
+<!-- Tailwind CSS (Production Build) -->
+<link rel="stylesheet" href="css/output.css"/>
+<link rel="stylesheet" href="css/site.css"/>
+<link rel="stylesheet" href="css/tokens.css"/>
+
+<!-- Fix scroll behavior for inquire page -->
+<style>
+  html, body {
+    height: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: none;
+    position: fixed;
+    width: 100%;
+  }
+  #inquire-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+</style>
+
+<!-- External Libraries -->
+<script src="js/gsap/gsap.min.js" defer></script>
+<script src="https://unpkg.com/lucide@0.577.0" defer onerror="console.warn(&#x27;Lucide failed to load&#x27;)"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer onerror="console.warn(&#x27;Lottie failed to load&#x27;)"></script>
+<script src="js/brand.js"></script>
+<script src="js/site.min.js" defer></script>
+
+<!-- Supabase Configuration -->
+<script>
+    // Configure Supabase URL and Anon Key
+    // Anon key is safe to use in frontend code (public by design)
+    window.SUPABASE_URL = window.SUPABASE_URL || 'https://ilpvybdqaepzbkgvaqxy.supabase.co';
+    window.SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlscHZ5YmRxYWVwemJrZ3ZhcXh5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjgxMzMyMTksImV4cCI6MjA4MzcwOTIxOX0.MAlbgedEGZqe70xipJUNy3m2Jw72HMyFfGQ_ZdsTaiE';
+</script>
+
+<script>
+  // Animate-on-scroll helper
+  (function () {
+    const style = document.createElement("style");
+    style.textContent = `
+      .animate-on-scroll { animation-play-state: paused !important; }
+      .animate-on-scroll.animate { animation-play-state: running !important; }
+    `;
+    document.head.appendChild(style);
+
+    const once = true;
+    if (!window.__inViewIO) {
+      window.__inViewIO = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
+            if (once) window.__inViewIO.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
+    }
+
+    window.initInViewAnimations = function (selector = ".animate-on-scroll") {
+      document.querySelectorAll(selector).forEach((el) => {
+        window.__inViewIO.observe(el);
+      });
+    };
+
+    document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
+  })();
+</script>
+</head>
+<body class="antialiased font-sans bg-paper">
+
+    <!-- Header - Fixed across pages -->
+    <header class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-3 py-2 md:px-12 md:py-6 transition-all duration-300">
+        <!-- Background Gradient & Blur with Soft Masked Edge -->
+        <div class="absolute inset-x-0 top-0 h-32 md:h-48 bg-gradient-to-b from-paper via-paper/90 to-transparent backdrop-blur-md -z-10 pointer-events-none [mask-image:linear-gradient(to_bottom,black_20%,transparent_90%)]"></div>
+
+        <a href="/" class="flex items-center gap-2 md:gap-4 cursor-pointer" id="logo-home" aria-label="Studio">
+            <div class="w-8 h-8 md:w-10 md:h-10 border border-neutral-800 flex items-center justify-center rounded-sm bg-paper relative overflow-hidden">
+                <span class="brand-mark" data-brand-mark></span>
+            </div>
+            <span class="font-serif text-2xl md:text-4xl tracking-tight text-ink font-medium" data-brand>Studio</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-10 relative">
+            <div class="relative group">
+                <a href="services.html" id="nav-services" class="flex items-center gap-1 font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase py-2">
+                    Services
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-neutral-400 group-hover:text-ink transition-colors"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <!-- Dropdown -->
+                <div class="absolute top-full left-0 mt-2 w-56 bg-paper border border-neutral-200 shadow-xl rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <div class="flex flex-col py-2">
+                        <a href="ai-opportunity-map.html" id="nav-start-here" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest border-b border-neutral-200 mb-1"><span class="block" style="color:#5B2FA8;font-size:9px;letter-spacing:0.2em;margin-bottom:2px;">Start here</span>AI Opportunity Map</a>
+                        <a href="/products#maria" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">AI Assistants</a>
+                        <a href="ai-training.html" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Build</a>
+                        <a href="ai-development.html" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Design</a>
+                        <a href="ai-consulting.html" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Strategy</a>
+                        <a href="ai-governance.html" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Care</a>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group">
+                <a href="how-we-work.html" id="nav-how-we-work" class="flex items-center gap-1 font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase py-2">
+                    How We Work
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-neutral-400 group-hover:text-ink transition-colors"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <!-- Dropdown -->
+                <div id="nav-how-we-work-dropdown" class="absolute top-full left-0 mt-2 w-56 bg-paper border border-neutral-200 shadow-xl rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <div class="flex flex-col py-2">
+                        <a href="how-we-work.html#method" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">The four phases</a>
+                        <a href="data-security.html" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Data &amp; Security</a>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group">
+                <a href="products.html" id="nav-products" class="flex items-center gap-1 font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase py-2">
+                    Our Work
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-neutral-400 group-hover:text-ink transition-colors"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <!-- Dropdown -->
+                <div class="absolute top-full left-0 mt-2 w-56 bg-paper border border-neutral-200 shadow-xl rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <div class="flex flex-col py-2">
+                        <a href="/products#case-studies" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Client Results</a>
+                        <a href="/products#maria" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">AI Assistants</a>
+                        <a href="/products#what-we-build" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Lorem Ipsum</a>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group" style="display:none">
+                <a id="nav-industries" class="flex items-center gap-1 font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase py-2 cursor-default">
+                    Industries
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-neutral-400 group-hover:text-ink transition-colors"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <!-- Dropdown -->
+                <div class="absolute top-full left-0 mt-2 w-56 bg-paper border border-neutral-200 shadow-xl rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <div class="flex flex-col py-2">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Law</a>
+                    </div>
+                </div>
+            </div>
+            <a href="about-us.html" id="nav-about" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase">About Us</a>
+            <a href="blog.html" id="nav-blog" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase">Blog</a>
+            <a id="nav-inquire" href="inquire.html#inquiry-form" class="font-serif italic text-lg px-8 py-2 border border-transparent bg-sepia hover:bg-ink transition-colors text-paper rounded-full shadow-sm">Book a Call</a>
+        </nav>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="md:hidden w-8 h-8 flex items-center justify-center" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu"></button>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="absolute top-14 right-3 md:top-24 md:right-6 md:hidden pointer-events-auto transition-all duration-300 opacity-0 translate-y-[-10px] invisible z-[60]">
+            <div class="flex flex-col items-end gap-3 md:gap-4 bg-paper/95 backdrop-blur-md border border-neutral-200 shadow-xl p-6 rounded-md min-w-[160px] transition-[min-width] duration-300">
+                <div class="flex flex-col items-end w-full">
+                    <div class="flex items-center justify-end gap-2 w-full">
+                        <a href="services.html" id="mobile-services" class="font-serif text-xl text-ink hover:text-sepia transition-colors" style="min-width: 6.25rem; text-align: right;">Services</a>
+                        <button id="mobile-services-toggle" class="p-1 focus:outline-none" aria-label="Toggle Services Menu">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-collapsed w-5 h-5 text-neutral-400"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-expanded w-5 h-5 text-neutral-400 hidden"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                    </div>
+                    <!-- Mobile Services Dropdown -->
+                    <div id="mobile-services-dropdown" class="flex flex-col items-end gap-2 overflow-hidden max-h-0 opacity-0 transition-all duration-300 w-full">
+                        <a href="ai-opportunity-map.html" id="mobile-start-here" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1 mt-2"><span class="block text-right" style="color:#5B2FA8;font-size:9px;letter-spacing:0.2em;">Start here</span>AI Opportunity Map</a>
+                        <a href="/products#maria" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">AI Assistants</a>
+                        <a href="ai-training.html" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Build</a>
+                        <a href="ai-development.html" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Design</a>
+                        <a href="ai-consulting.html" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Strategy</a>
+                        <a href="ai-governance.html" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Care</a>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-end w-full">
+
+                    <div class="flex items-center justify-end gap-2 w-full">
+
+                        <a href="how-we-work.html" id="mobile-how-we-work" class="font-serif text-xl text-ink hover:text-sepia transition-colors" style="min-width: 6.25rem; text-align: right;">How We Work</a>
+
+                        <button id="mobile-how-we-work-toggle" class="p-1 focus:outline-none" aria-label="Toggle How We Work Menu">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-collapsed w-5 h-5 text-neutral-400"><polyline points="6 9 12 15 18 9"></polyline></svg>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-expanded w-5 h-5 text-neutral-400 hidden"><polyline points="6 9 12 15 18 9"></polyline></svg>
+
+                        </button>
+
+                    </div>
+
+                    <div id="mobile-how-we-work-dropdown" class="flex flex-col items-end gap-2 overflow-hidden max-h-0 opacity-0 transition-all duration-300 w-full">
+
+                        <a href="how-we-work.html#method" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1 mt-2">The four phases</a>
+
+                        <a href="data-security.html" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Data &amp; Security</a>
+
+                    </div>
+
+                </div>
+
+                <div class="flex flex-col items-end w-full">
+
+                    <div class="flex items-center justify-end gap-2 w-full">
+
+                        <a href="products.html" id="mobile-products" class="font-serif text-xl text-ink hover:text-sepia transition-colors" style="min-width: 6.25rem; text-align: right;">Our Work</a>
+
+                        <button id="mobile-our-work-toggle" class="p-1 focus:outline-none" aria-label="Toggle Our Work Menu">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-collapsed w-5 h-5 text-neutral-400"><polyline points="6 9 12 15 18 9"></polyline></svg>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-expanded w-5 h-5 text-neutral-400 hidden"><polyline points="6 9 12 15 18 9"></polyline></svg>
+
+                        </button>
+
+                    </div>
+
+                    <!-- Mobile Our Work Dropdown -->
+
+                    <div id="mobile-our-work-dropdown" class="flex flex-col items-end gap-2 overflow-hidden max-h-0 opacity-0 transition-all duration-300 w-full">
+
+                        <a href="/products#case-studies" id="mobile-case-studies" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1 mt-2">Client Results</a>
+
+                        <a href="/products#maria" id="mobile-maria" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">AI Assistants</a>
+
+                        <a href="/products#what-we-build" id="mobile-what-we-build" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Lorem Ipsum</a>
+
+                    </div>
+
+                </div>
+                <div class="flex flex-col items-end w-full" style="display:none">
+                    <div class="flex items-center justify-end gap-2 w-full">
+                        <span id="mobile-industries" class="font-serif text-xl text-ink hover:text-sepia transition-colors" style="min-width: 6.25rem; text-align: right;">Industries</span>
+                        <button id="mobile-industries-toggle" class="p-1 focus:outline-none" aria-label="Toggle Industries Menu">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-collapsed w-5 h-5 text-neutral-400"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-expanded w-5 h-5 text-neutral-400 hidden"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                    </div>
+                    <div id="mobile-industries-dropdown" class="flex flex-col items-end gap-2 overflow-hidden max-h-0 opacity-0 transition-all duration-300 w-full">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1 mt-2">Law</a>
+                    </div>
+                </div>
+                <a href="about-us.html" id="mobile-about" class="font-serif text-xl text-ink hover:text-sepia transition-colors">About Us</a>
+                <a href="blog.html" id="mobile-blog" class="font-serif text-xl text-ink hover:text-sepia transition-colors">Blog</a>
+                <a id="mobile-inquire" href="inquire.html#inquiry-form" class="font-serif italic text-lg px-6 py-1 border border-transparent bg-sepia text-paper rounded-full mt-2">Book a Call</a>
+            </div>
+        </div>
+    </header>
+
+
+<!-- Inquire Page (initially hidden) -->
+    <section id="inquire-page" class="relative overflow-hidden h-screen">
+        <!-- Grid Overlay -->
+        <div class="absolute inset-0 pointer-events-none z-0 grid-overlay opacity-40"></div>
+        
+        <!-- Rust/Purple Gradient Background -->
+        <div class="absolute inset-0 pointer-events-none z-[-1]">
+            <!-- Rust on the left -->
+            <div class="absolute inset-0 bg-[radial-gradient(1200px_circle_at_0%_30%,rgba(91,47,168,0.25)_0%,transparent_75%)]"></div>
+            <!-- Purple on the bottom right -->
+            <div class="absolute inset-0 bg-[radial-gradient(1100px_circle_at_100%_100%,rgba(139,92,246,0.20)_0%,transparent_75%)]"></div>
+        </div>
+        <div class="absolute inset-0 pointer-events-none z-[-1] bg-cover bg-center opacity-[0.05] lazy-bg" data-bg-webp="assets/images/isometric-sketch-of-cloud-data-infrastructure-4k_opt.webp" data-bg-fallback="assets/images/isometric-sketch-of-cloud-data-infrastructure-4k_opt.jpg"></div>
+
+        <!-- Technical/Architectural Elements (Light Mode) -->
+        <div class="absolute inset-0 pointer-events-none z-0 opacity-70">
+            <!-- Circular Drafting Element - Top Right -->
+            <div class="absolute top-8 right-8 md:top-12 md:right-16 w-80 h-80 md:w-[32rem] md:h-[32rem] opacity-60">
+                <svg viewbox="0 0 100 100" class="w-full h-full text-rust animate-spin-slow" style="animation-duration: 90s;">
+                    <defs>
+                        <lineargradient id="inquire-drafting-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#5B2FA8"/>
+                            <stop offset="50%" stop-color="#8b5cf6"/>
+                            <stop offset="100%" stop-color="#D4AF37"/>
+                        </lineargradient>
+                    </defs>
+                    <circle cx="50" cy="50" r="48" fill="none" stroke="url(#inquire-drafting-gradient)" stroke-width="0.4" stroke-dasharray="2 4"></circle>
+                    <circle cx="50" cy="50" r="35" fill="none" stroke="url(#inquire-drafting-gradient)" stroke-width="0.2"></circle>
+                    <rect x="25" y="25" width="50" height="50" fill="none" stroke="url(#inquire-drafting-gradient)" stroke-width="0.2" transform="rotate(45 50 50)"></rect>
+                    <path d="M50 2 L50 98 M2 50 L98 50" stroke="url(#inquire-drafting-gradient)" stroke-width="0.08" opacity="0.5"></path>
+                </svg>
+            </div>
+
+            <!-- Circular Drafting Element - Bottom Left -->
+            <div class="absolute bottom-8 left-8 md:bottom-12 md:left-16 w-64 h-64 md:w-96 md:h-96 opacity-55 animate-spin-reverse" style="animation-duration: 120s;">
+                <svg viewbox="0 0 100 100" class="w-full h-full text-violet-500">
+                    <defs>
+                        <lineargradient id="inquire-drafting-gradient-2" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#8b5cf6"/>
+                            <stop offset="100%" stop-color="#5B2FA8"/>
+                        </lineargradient>
+                    </defs>
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="url(#inquire-drafting-gradient-2)" stroke-width="0.35" stroke-dasharray="3 3"></circle>
+                    <circle cx="50" cy="50" r="30" fill="none" stroke="url(#inquire-drafting-gradient-2)" stroke-width="0.2"></circle>
+                    <path d="M50 5 L50 95 M5 50 L95 50" stroke="url(#inquire-drafting-gradient-2)" stroke-width="0.12" opacity="0.5"></path>
+                </svg>
+            </div>
+
+            <!-- Tech Lines -->
+            <div class="absolute left-1/4 top-0 w-px h-64 bg-gradient-to-b from-rust/25 via-purple-500/20 to-transparent"></div>
+            <div class="absolute right-1/4 top-0 w-px h-64 bg-gradient-to-b from-violet-500/25 via-rust/20 to-transparent"></div>
+            <div class="absolute left-1/3 bottom-0 w-px h-64 bg-gradient-to-t from-rust/25 via-violet-500/20 to-transparent"></div>
+            <div class="absolute right-1/3 bottom-0 w-px h-64 bg-gradient-to-t from-violet-500/25 via-rust/20 to-transparent"></div>
+
+            <!-- Center Rotating Rings Container -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+                <!-- Outer Rotating Ring -->
+                <div class="absolute -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] md:w-[600px] md:h-[600px] border border-rust/25 rounded-full opacity-60" style="animation: spin-60s 60s linear infinite; box-shadow: 0 0 15px rgba(91,47,168,0.1);">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full transition-all duration-700" style="background-color: #5B2FA8; box-shadow: 0 0 10px rgba(91,47,168,0.5);"></div>
+                    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full transition-all duration-700" style="background-color: #8b5cf6; box-shadow: 0 0 10px rgba(139,92,246,0.5);"></div>
+                    <div class="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-rust/70 rounded-full" style="box-shadow: 0 0 6px rgba(91,47,168,0.4);"></div>
+                    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-violet-500/70 rounded-full" style="box-shadow: 0 0 6px rgba(139,92,246,0.4);"></div>
+                </div>
+                
+                <!-- Inner Rotating Ring - counter-rotating -->
+                <div class="absolute -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] md:w-[420px] md:h-[420px] border border-violet-500/25 rounded-full opacity-55" style="animation: spin-40s-reverse 40s linear infinite; box-shadow: 0 0 15px rgba(139,92,246,0.1);">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full transition-all duration-700" style="background-color: #8b5cf6; box-shadow: 0 0 8px rgba(139,92,246,0.5);"></div>
+                    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full transition-all duration-700" style="background-color: #5B2FA8; box-shadow: 0 0 8px rgba(91,47,168,0.5);"></div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="relative z-10 h-screen w-full flex items-center justify-center overflow-hidden px-6 md:px-12 pt-20 md:pt-32 pb-16 flex-shrink-0">
+            <div class="relative z-10 w-full max-w-5xl">
+                <div class="flex items-center gap-3 mb-10">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 bg-rust rounded-full animate-pulse shadow-[0_0_8px_rgba(91,47,168,0.2)]"></span>
+                        <span class="font-mono text-[10px] text-paper font-bold uppercase tracking-[0.2em] px-3 py-1 border border-rust bg-rust shadow-md">lorem</span>
+                    </div>
+                    <div class="flex flex-col border-l border-rust/20 pl-4 ml-2 mt-1">
+                        <span class="font-mono text-[10px] text-rust font-bold tracking-[0.2em] leading-none">// 04</span>
+                        <span class="font-mono text-[7px] text-neutral-500 uppercase tracking-widest mt-1 hidden sm:block">Ref. Inquiry_SYS.v1</span>
+                    </div>
+                    <div class="h-px flex-1 bg-gradient-to-r from-rust/80 via-gold/50 to-transparent"></div>
+                </div>
+
+                <div class="text-center overflow-visible py-4">
+                    <button type="button" id="inquiry-badge" class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-ink/10 bg-paper/60 backdrop-blur-sm mb-8 opacity-0 cursor-pointer hover:border-rust/30 hover:bg-paper/80 transition-colors focus:outline-none focus:ring-2 focus:ring-rust/30 focus:ring-offset-2" aria-label="Lorem Ipsum Dolor">
+                        <div class="w-1.5 h-1.5 rounded-full bg-rust animate-pulse"></div>
+                        <i data-lucide="arrow-down" class="w-3 h-3 text-rust/70 animate-bounce"></i>
+                        <span class="text-[10px] uppercase tracking-widest text-neutral-600 font-mono font-semibold">Get in touch</span>
+                        <i data-lucide="arrow-down" class="w-3 h-3 text-rust/70 animate-bounce"></i>
+                        <div class="w-1.5 h-1.5 rounded-full bg-rust animate-pulse"></div>
+                    </button>
+                    
+                    <a href="#inquiry-form" id="open-inquiry-form" class="block group w-full overflow-visible">
+                        <h2 id="inquiry-headline" class="font-serif text-[clamp(3.75rem,12vw,6.75rem)] md:text-[clamp(3rem,8vw,7rem)] leading-[0.85] font-semibold tracking-tight text-ink mix-blend-multiply group-hover:text-neutral-700 transition-colors duration-500 py-2 opacity-0">
+                            Get in touch
+</h2>
+                        <div class="h-[1px] w-0 group-hover:w-full bg-ink/30 mx-auto transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] mt-4"></div>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-20 text-left border-t border-ink/10 pt-10">
+                    <div class="flex flex-col gap-4">
+                        <span class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold font-mono">lorem</span>
+                        <a href="#" class="text-xs text-neutral-600 hover:text-ink transition-colors font-open-sans">Instagram</a>
+                        <a href="#" class="text-xs text-neutral-600 hover:text-ink transition-colors font-open-sans">LinkedIn</a>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <span class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold font-mono">lorem</span>
+                        <a href="mailto:hello@example.com" class="text-xs text-neutral-600 hover:text-ink transition-colors font-open-sans">lorem</a>
+                        <a href="tel:+61000000000" class="text-xs text-neutral-600 hover:text-ink transition-colors font-open-sans">+61 000 000 000</a>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <span class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold font-mono">© 2025</span>
+                        <div class="text-[10px] text-neutral-500 uppercase tracking-widest font-mono">Studio</div>
+                    </div>
+                </div>
+        <p class="little-company-brand" aria-label="Studio"><span data-brand>Studio</span></p>
+            </div>
+        </footer>
+    </section>
+
+        <!-- Inquiry Modal (outside #inquire-page so panel width is not overridden) -->
+        <div id="inquiry-modal" class="fixed inset-0 z-[100] hidden" role="dialog" aria-modal="true" aria-hidden="true">
+            <div id="inquiry-modal-backdrop" class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+            <div class="relative flex items-start justify-center h-full w-full overflow-y-auto px-4 sm:px-6 py-14 sm:py-20">
+                <div id="inquiry-modal-panel" class="relative w-full max-w-xl bg-paper text-ink rounded-[30px] shadow-2xl border border-stone/70 overflow-hidden my-auto">
+                    <button type="button" id="close-inquiry-modal" class="absolute right-5 top-5 z-10 inline-flex items-center justify-center w-10 h-10 rounded-full border border-stone/70 bg-white/80 text-neutral-700 hover:text-ink hover:border-ink/30 hover:bg-white transition-colors">
+                        <span class="sr-only">lorem ipsum dolor</span>
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                    <div class="p-8 sm:p-12 space-y-12">
+                            <div class="flex flex-col gap-6">
+                                <div class="space-y-3">
+                                    <p class="font-mono text-[11px] uppercase tracking-[0.24em] text-neutral-500">Lorem ipsum</p>
+                                    <div>
+                                        <h3 id="inquiry-title" class="text-3xl sm:text-4xl font-serif text-ink leading-tight">Lorem</h3>
+                                        <p class="mt-2 text-sm text-neutral-600 font-open-sans">Lorem ipsum dolor sit amet consectetur adipiscing elit sed.</p>
+                                    </div>
+                                </div>
+                                <div class="inline-flex items-center gap-2 rounded-full border border-stone/70 bg-white/80 px-4 py-2 shadow-sm w-fit">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.35)]"></span>
+                                    <span class="text-xs font-semibold tracking-[0.18em] text-ink uppercase font-mono">lorem ipsum</span>
+                                </div>
+                            </div>
+
+                            <form id="inquiry-form" class="space-y-12">
+                                <!-- Success/Error Messages -->
+                                <div id="inquiry-message" class="hidden rounded-2xl border px-4 py-3 text-sm font-open-sans"></div>
+                                
+                                <div class="grid grid-cols-1 gap-6">
+                                    <label class="flex flex-col gap-2">
+                                        <span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-500">lorem <span class="text-rust">lorem</span></span>
+                                        <input id="inquiry-name" name="name" type="text" placeholder="Lorem Ipsum Dolor" required class="w-full rounded-2xl border border-stone/70 bg-white/80 px-4 py-3 text-sm font-open-sans text-ink placeholder-neutral-400 focus:border-rust focus:ring-2 focus:ring-rust/20 focus:outline-none shadow-[inset_0_1px_0_rgba(255,255,255,0.7)]"/>
+                                        <span id="inquiry-name-error" class="hidden text-xs text-red-600 mt-1"></span>
+                                    </label>
+                                    <label class="flex flex-col gap-2">
+                                        <span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-500">lorem <span class="text-rust">lorem</span></span>
+                                        <input id="inquiry-email" name="email" type="email" placeholder="Lorem" required class="w-full rounded-2xl border border-stone/70 bg-white/80 px-4 py-3 text-sm font-open-sans text-ink placeholder-neutral-400 focus:border-rust focus:ring-2 focus:ring-rust/20 focus:outline-none shadow-[inset_0_1px_0_rgba(255,255,255,0.7)]"/>
+                                        <span id="inquiry-email-error" class="hidden text-xs text-red-600 mt-1"></span>
+                                    </label>
+                                </div>
+
+                                <div class="space-y-4">
+                                    <div class="flex items-center justify-between">
+                                        <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-500">Lorem ipsum dolor sit amet.</p>
+                                        <span class="text-[11px] text-neutral-500 uppercase tracking-[0.14em] font-mono">lorem</span>
+                                    </div>
+                                    <textarea id="inquiry-notes" name="notes" rows="5" maxlength="2000" placeholder="Lorem Ipsum Dolor Sit Amet" class="w-full rounded-2xl border border-stone/70 bg-white/80 px-4 py-3 text-sm font-open-sans text-ink placeholder-neutral-400 focus:border-rust focus:ring-2 focus:ring-rust/20 focus:outline-none shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] resize-none"></textarea>
+                                </div>
+
+                                <div class="space-y-5">
+                                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                                        <div>
+                                            <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-500">Lorem ipsum <span class="text-rust">lorem</span></p>
+                                            <p class="text-sm text-neutral-600 font-open-sans mt-0.5">Lorem ipsum dolor sit</p>
+                                        </div>
+                                        <div class="text-[11px] text-neutral-500 uppercase tracking-[0.18em] font-mono">lorem</div>
+                                    </div>
+                                    <span id="inquiry-services-error" class="hidden text-xs text-red-600"></span>
+                                    <div class="grid grid-cols-1 gap-5">
+                                        <button type="button" data-service-option="Strategy" class="inquiry-service-card relative flex items-start gap-4 p-5 rounded-2xl border border-stone/70 bg-white/80 hover:border-rust/70 hover:shadow-lg transition-colors">
+                                            <div class="flex items-center justify-center w-12 h-12 rounded-xl border border-stone/70 bg-white/90 text-rust">
+                                                <i data-lucide="target" class="w-5 h-5"></i>
+                                            </div>
+                                            <div class="text-left space-y-1">
+                                                <span class="block text-sm font-semibold text-ink">lorem</span>
+                                                <span class="block text-xs text-neutral-600 font-open-sans">lorem ipsum dolor</span>
+                                            </div>
+                                            <span class="check-icon absolute top-3 right-3 w-7 h-7 rounded-full border border-rust/25 bg-rust/10 text-rust flex items-center justify-center opacity-0">
+                                                <i data-lucide="check" class="w-4 h-4"></i>
+</span>
+                                        </button>
+
+                                        <button type="button" data-service-option="Design" class="inquiry-service-card relative flex items-start gap-4 p-5 rounded-2xl border border-stone/70 bg-white/80 hover:border-rust/70 hover:shadow-lg transition-colors">
+                                            <div class="flex items-center justify-center w-12 h-12 rounded-xl border border-stone/70 bg-white/90 text-rust">
+                                                <i data-lucide="pen-tool" class="w-5 h-5"></i>
+                                            </div>
+                                            <div class="text-left space-y-1">
+                                                <span class="block text-sm font-semibold text-ink">Design</span>
+                                                <span class="block text-xs text-neutral-600 font-open-sans">lorem ipsum dolor</span>
+                                            </div>
+                                            <span class="check-icon absolute top-3 right-3 w-7 h-7 rounded-full border border-rust/25 bg-rust/10 text-rust flex items-center justify-center opacity-0">
+                                                <i data-lucide="check" class="w-4 h-4"></i>
+</span>
+                                        </button>
+
+                                        <button type="button" data-service-option="Development" class="inquiry-service-card relative flex items-start gap-4 p-5 rounded-2xl border border-stone/70 bg-white/80 hover:border-rust/70 hover:shadow-lg transition-colors">
+                                            <div class="flex items-center justify-center w-12 h-12 rounded-xl border border-stone/70 bg-white/90 text-rust">
+                                                <i data-lucide="code-2" class="w-5 h-5"></i>
+                                            </div>
+                                            <div class="text-left space-y-1">
+                                                <span class="block text-sm font-semibold text-ink">lorem lorem lorem</span>
+                                                <span class="block text-xs text-neutral-600 font-open-sans">lorem ipsum lorem lorem</span>
+                                            </div>
+                                            <span class="check-icon absolute top-3 right-3 w-7 h-7 rounded-full border border-rust/25 bg-rust/10 text-rust flex items-center justify-center opacity-0">
+                                                <i data-lucide="check" class="w-4 h-4"></i>
+</span>
+                                        </button>
+
+                                        <button type="button" data-service-option="Marketing" class="inquiry-service-card relative flex items-start gap-4 p-5 rounded-2xl border border-stone/70 bg-white/80 hover:border-rust/70 hover:shadow-lg transition-colors">
+                                            <div class="flex items-center justify-center w-12 h-12 rounded-xl border border-stone/70 bg-white/90 text-rust">
+                                                <i data-lucide="megaphone" class="w-5 h-5"></i>
+                                            </div>
+                                            <div class="text-left space-y-1">
+                                                <span class="block text-sm font-semibold text-ink">lorem</span>
+                                                <span class="block text-xs text-neutral-600 font-open-sans">lorem lorem lorem ipsum</span>
+                                            </div>
+                                            <span class="check-icon absolute top-3 right-3 w-7 h-7 rounded-full border border-rust/25 bg-rust/10 text-rust flex items-center justify-center opacity-0">
+                                                <i data-lucide="check" class="w-4 h-4"></i>
+</span>
+                                        </button>
+
+                                        <button type="button" data-service-option="Automation" class="inquiry-service-card relative flex items-start gap-4 p-5 rounded-2xl border border-stone/70 bg-white/80 hover:border-rust/70 hover:shadow-lg transition-colors">
+                                            <div class="flex items-center justify-center w-12 h-12 rounded-xl border border-stone/70 bg-white/90 text-rust">
+                                                <i data-lucide="bot" class="w-5 h-5"></i>
+                                            </div>
+                                            <div class="text-left space-y-1">
+                                                <span class="block text-sm font-semibold text-ink">Strategy</span>
+                                                <span class="block text-xs text-neutral-600 font-open-sans">lorem lorem lorem</span>
+                                            </div>
+                                            <span class="check-icon absolute top-3 right-3 w-7 h-7 rounded-full border border-rust/25 bg-rust/10 text-rust flex items-center justify-center opacity-0">
+                                                <i data-lucide="check" class="w-4 h-4"></i>
+</span>
+                                        </button>
+
+                                        <button type="button" data-service-option="Custom" class="inquiry-service-card relative flex items-start gap-4 p-5 rounded-2xl border border-stone/70 bg-white/80 hover:border-rust/70 hover:shadow-lg transition-colors">
+                                            <div class="flex items-center justify-center w-12 h-12 rounded-xl border border-stone/70 bg-white/90 text-rust">
+                                                <i data-lucide="sparkles" class="w-5 h-5"></i>
+                                            </div>
+                                            <div class="text-left space-y-1">
+                                                <span class="block text-sm font-semibold text-ink">lorem ipsum</span>
+                                                <span class="block text-xs text-neutral-600 font-open-sans">lorem ipsum dolor sit amet</span>
+                                            </div>
+                                            <span class="check-icon absolute top-3 right-3 w-7 h-7 rounded-full border border-rust/25 bg-rust/10 text-rust flex items-center justify-center opacity-0">
+                                                <i data-lucide="check" class="w-4 h-4"></i>
+</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-4">
+                                    <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-500">Lorem ipsum</p>
+                                    <div class="flex flex-wrap gap-3">
+                                        <button type="button" data-goal-option="Scale &amp; Revenue" class="inquiry-goal-pill inline-flex items-center gap-2 px-4 py-2 rounded-full border border-stone/70 bg-white/70 text-sm text-neutral-700 hover:border-rust hover:text-ink">lorem lorem lorem                                        </button>
+                                        <button type="button" data-goal-option="Learn AI" class="inquiry-goal-pill inline-flex items-center gap-2 px-4 py-2 rounded-full border border-stone/70 bg-white/70 text-sm text-neutral-700 hover:border-rust hover:text-ink">lorem ipsum                                        </button>
+                                        <button type="button" data-goal-option="Automate Processes" class="inquiry-goal-pill inline-flex items-center gap-2 px-4 py-2 rounded-full border border-stone/70 bg-white/70 text-sm text-neutral-700 hover:border-rust hover:text-ink">lorem ipsum                                        </button>
+                                        <button type="button" data-goal-option="Improve Efficiency" class="inquiry-goal-pill inline-flex items-center gap-2 px-4 py-2 rounded-full border border-stone/70 bg-white/70 text-sm text-neutral-700 hover:border-rust hover:text-ink">lorem ipsum                                        </button>
+                                        <button type="button" data-goal-option="Develop Tools" class="inquiry-goal-pill inline-flex items-center gap-2 px-4 py-2 rounded-full border border-stone/70 bg-white/70 text-sm text-neutral-700 hover:border-rust hover:text-ink">lorem ipsum                                        </button>
+                                        <button type="button" data-goal-option="Customer Acquisition" class="inquiry-goal-pill inline-flex items-center gap-2 px-4 py-2 rounded-full border border-stone/70 bg-white/70 text-sm text-neutral-700 hover:border-rust hover:text-ink">lorem ipsum                                        </button>
+                                        <button type="button" data-goal-option="Content &amp; Socials" class="inquiry-goal-pill inline-flex items-center gap-2 px-4 py-2 rounded-full border border-stone/70 bg-white/70 text-sm text-neutral-700 hover:border-rust hover:text-ink">lorem lorem lorem                                        </button>
+                                        <button type="button" data-goal-option="Other" class="inquiry-goal-pill inline-flex items-center gap-2 px-4 py-2 rounded-full border border-stone/70 bg-white/70 text-sm text-neutral-700 hover:border-rust hover:text-ink">lorem                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-stone/60">
+                                    <div class="flex items-center gap-2 text-sm text-neutral-600 font-open-sans">
+                                        <i data-lucide="clock-3" class="w-4 h-4 text-rust"></i>
+                                        <span>lorem ipsum dolor sit amet</span>
+                                    </div>
+                                    <button type="submit" id="inquiry-submit-btn" class="inline-flex items-center gap-2 rounded-full bg-rust text-paper px-6 py-3 text-sm font-semibold tracking-[0.08em] shadow-lg shadow-rust/20 hover:shadow-xl hover:-translate-y-0.5 transition-transform duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0">
+                                        <span id="submit-text">lorem ipsum</span>
+                                        <span id="submit-loading" class="hidden">
+                                            <svg class="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24">
+                                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                            </svg>
+</span>
+                                        <i data-lucide="arrow-right" id="submit-arrow" class="w-4 h-4"></i>
+                                    </button>
+                                </div>
+                            </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+
+
+<script>
+(function () {
+  document.addEventListener('DOMContentLoaded', () => {
+    function whenFontsReady(timeoutMs = 2000) {
+      const timeout = new Promise((resolve) => window.setTimeout(resolve, timeoutMs));
+      if (document.fonts && typeof document.fonts.ready?.then === 'function') {
+        return Promise.race([document.fonts.ready.catch(() => {}), timeout]);
+      }
+      return Promise.race([
+        new Promise((resolve) => window.addEventListener('load', resolve, { once: true })),
+        timeout,
+      ]);
+    }
+
+    // Entry animation
+    const badge = document.getElementById('inquiry-badge');
+    const headline = document.getElementById('inquiry-headline');
+    const runEntry = () => {
+      if (typeof gsap !== 'undefined') {
+        const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
+
+        // Headline first ("LET'S BUILD")
+        if (headline) {
+          tl.addLabel('headlineIn', 0);
+          tl.fromTo(
+            headline,
+            { opacity: 0, y: 60 },
+            { opacity: 1, y: 0, duration: 2.2 },
+            'headlineIn'
+          );
+        }
+
+        // Then badge ("Click below to Inquire") shortly after
+        if (badge) {
+          tl.fromTo(
+            badge,
+            { opacity: 0, y: 40, scale: 0.8 },
+            { opacity: 1, y: 0, scale: 1, duration: 1.8 },
+            headline ? 'headlineIn+=0.50' : 0
+          );
+        }
+      } else {
+        badge?.classList.remove('opacity-0');
+        headline?.classList.remove('opacity-0');
+      }
+    };
+
+    // Prevent brief fallback-font flash on headline/badge reveal.
+    whenFontsReady(2000).then(runEntry);
+
+    const serviceOptions = document.querySelectorAll('[data-service-option]');
+    const goalOptions = document.querySelectorAll('[data-goal-option]');
+
+    serviceOptions.forEach((button) => {
+      button.setAttribute('aria-pressed', 'false');
+      const checkIcon = button.querySelector('.check-icon');
+      button.addEventListener('click', () => {
+        const isSelected = button.classList.toggle('selected');
+        button.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
+        if (checkIcon) checkIcon.style.opacity = isSelected ? '1' : '0';
+      });
+    });
+
+    goalOptions.forEach((button) => {
+      button.setAttribute('aria-pressed', 'false');
+      button.addEventListener('click', () => {
+        const isActive = button.classList.toggle('active');
+        button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+    });
+
+    const inquiryForm = document.getElementById('inquiry-form');
+    const inquiryNameInput = document.getElementById('inquiry-name');
+    const inquiryEmailInput = document.getElementById('inquiry-email');
+    const inquiryNotesInput = document.getElementById('inquiry-notes');
+    const inquirySubmitBtn = document.getElementById('inquiry-submit-btn');
+    const submitText = document.getElementById('submit-text');
+    const submitLoading = document.getElementById('submit-loading');
+    const submitArrow = document.getElementById('submit-arrow');
+    const inquiryMessage = document.getElementById('inquiry-message');
+    const nameError = document.getElementById('inquiry-name-error');
+    const emailError = document.getElementById('inquiry-email-error');
+    const servicesError = document.getElementById('inquiry-services-error');
+
+    const inquiryModal = document.getElementById('inquiry-modal');
+    const inquiryModalBackdrop = document.getElementById('inquiry-modal-backdrop');
+    const inquiryModalPanel = document.getElementById('inquiry-modal-panel');
+    const openInquiryFormBtn = document.getElementById('open-inquiry-form');
+    const closeInquiryModalBtn = document.getElementById('close-inquiry-modal');
+
+    let lastFocusedElement = null;
+
+    const openInquiryModal = () => {
+      if (!inquiryModal) return;
+      if (!inquiryModal.classList.contains('hidden')) return;
+
+      lastFocusedElement = document.activeElement;
+      inquiryModal.classList.remove('hidden');
+      inquiryModal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('overflow-hidden');
+
+      setTimeout(() => inquiryNameInput?.focus({ preventScroll: true }), 0);
+    };
+
+    const closeInquiryModal = () => {
+      if (!inquiryModal) return;
+      if (inquiryModal.classList.contains('hidden')) return;
+
+      inquiryModal.classList.add('hidden');
+      inquiryModal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('overflow-hidden');
+
+      if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+        lastFocusedElement.focus();
+      }
+    };
+
+	    openInquiryFormBtn?.addEventListener('click', (e) => {
+	      e.preventDefault();
+	      openInquiryModal();
+	    });
+
+	    badge?.addEventListener('click', openInquiryModal);
+
+	    if (window.location.hash === '#inquiry-form') {
+	      openInquiryModal();
+	    }
+
+	    window.addEventListener('hashchange', () => {
+	      if (window.location.hash === '#inquiry-form') {
+	        openInquiryModal();
+	      }
+	    });
+
+    closeInquiryModalBtn?.addEventListener('click', closeInquiryModal);
+    inquiryModalBackdrop?.addEventListener('click', closeInquiryModal);
+    inquiryModal?.addEventListener('click', (e) => {
+      if (e.target === inquiryModal) closeInquiryModal();
+    });
+    inquiryModalPanel?.addEventListener('click', (e) => e.stopPropagation());
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      if (inquiryModal?.classList.contains('hidden')) return;
+      closeInquiryModal();
+    });
+
+    const showMessage = (message, isError = false) => {
+      if (!inquiryMessage) return;
+      inquiryMessage.textContent = message;
+      inquiryMessage.classList.remove('hidden');
+      inquiryMessage.classList.toggle('border-red-200', isError);
+      inquiryMessage.classList.toggle('bg-red-50', isError);
+      inquiryMessage.classList.toggle('text-red-700', isError);
+      inquiryMessage.classList.toggle('border-emerald-200', !isError);
+      inquiryMessage.classList.toggle('bg-emerald-50', !isError);
+      inquiryMessage.classList.toggle('text-emerald-700', !isError);
+    };
+
+    const hideMessage = () => {
+      inquiryMessage?.classList.add('hidden');
+      if (inquiryMessage) inquiryMessage.textContent = '';
+    };
+
+    const setLoadingState = (loading) => {
+      if (!inquirySubmitBtn) return;
+      inquirySubmitBtn.disabled = !!loading;
+      submitText?.classList.toggle('hidden', !!loading);
+      submitLoading?.classList.toggle('hidden', !loading);
+      submitArrow?.classList.toggle('hidden', !!loading);
+    };
+
+    const validateEmail = (email) => /^\S+@\S+\.\S+$/.test(email.trim());
+
+    inquiryForm?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      hideMessage();
+
+      const name = inquiryNameInput?.value?.trim() || '';
+      const email = inquiryEmailInput?.value?.trim().toLowerCase() || '';
+
+      let valid = true;
+      if (!name) {
+        valid = false;
+        if (nameError) { nameError.textContent = 'Name is required'; nameError.classList.remove('hidden'); }
+        inquiryNameInput?.classList.add('inquiry-form-error');
+      } else {
+        nameError?.classList.add('hidden');
+        inquiryNameInput?.classList.remove('inquiry-form-error');
+      }
+
+      if (!email || !validateEmail(email)) {
+        valid = false;
+        if (emailError) { emailError.textContent = 'A valid email is required'; emailError.classList.remove('hidden'); }
+        inquiryEmailInput?.classList.add('inquiry-form-error');
+      } else {
+        emailError?.classList.add('hidden');
+        inquiryEmailInput?.classList.remove('inquiry-form-error');
+      }
+
+      const selectedServices = Array.from(document.querySelectorAll('[data-service-option].selected'))
+        .map(btn => btn.getAttribute('data-service-option'))
+        .filter(Boolean);
+
+      if (!selectedServices.length) {
+        valid = false;
+        if (servicesError) { servicesError.textContent = 'Please select at least one service'; servicesError.classList.remove('hidden'); }
+      } else {
+        servicesError?.classList.add('hidden');
+      }
+
+      if (!valid) {
+        showMessage('Please fix the errors above', true);
+        return;
+      }
+
+      const selectedGoals = Array.from(document.querySelectorAll('[data-goal-option].active'))
+        .map(btn => btn.getAttribute('data-goal-option'))
+        .filter(Boolean);
+
+      const formData = {
+        name,
+        email,
+        services: selectedServices,
+        goals: selectedGoals.length ? selectedGoals : undefined,
+        notes: inquiryNotesInput?.value?.trim() || undefined,
+      };
+
+      setLoadingState(true);
+
+      try {
+        const supabaseUrl = window.SUPABASE_URL || 'https://ilpvybdqaepzbkgvaqxy.supabase.co';
+        const supabaseAnonKey = window.SUPABASE_ANON_KEY || '';
+        if (!supabaseAnonKey) throw new Error('Supabase configuration missing.');
+
+        const response = await fetch(`${supabaseUrl}/functions/v1/submit-inquiry`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${supabaseAnonKey}`,
+          },
+          body: JSON.stringify(formData),
+        });
+
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(data.error || `Server error: ${response.status}`);
+        if (data.error) throw new Error(data.error);
+
+        // Success -> redirect
+        window.location.href = 'thank-you';
+      } catch (err) {
+        console.error('Form submission error:', err);
+        showMessage(err.message || 'Failed to submit inquiry. Please try again later.', true);
+      } finally {
+        setLoadingState(false);
+      }
+    });
+  });
+
+  // Prevent browser scroll restoration
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+})();
+</script>
+
+
+</body>
+</html>

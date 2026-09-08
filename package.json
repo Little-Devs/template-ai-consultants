@@ -1,0 +1,30 @@
+{
+  "name": "studio-template",
+  "version": "1.0.0",
+  "description": "Static multi-page studio template. Rebrand via css/tokens.css and js/brand.js.",
+  "main": "server.js",
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./src/input.css -o ./css/output.css --minify",
+    "build:custom-css": "npx postcss css/site.css css/products.css css/read-more.css --use cssnano --no-map --replace",
+    "build:js": "npx terser js/site.js -o js/site.min.js --compress --mangle && npx terser js/services.js -o js/services.min.js --compress --mangle",
+    "watch:css": "npx tailwindcss -i ./src/input.css -o ./css/output.css --watch",
+    "build": "npm run build:css && npm run build:custom-css && npm run build:js",
+    "dev": "node server.js",
+    "check:agent-skills": "node scripts/agent-skills-index.mjs",
+    "update:agent-skills": "node scripts/agent-skills-index.mjs --write"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@vercel/functions": "^3.4.4",
+    "autoprefixer": "^10.4.23",
+    "cssnano": "^7.1.2",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "supabase": "^2.72.4",
+    "tailwindcss": "^3.4.19",
+    "terser": "^5.46.0"
+  }
+}

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Lorem Ipsum Dolor Sit</title>
+<meta name="robots" content="noindex, nofollow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<style>
+/* ============================================================
+   PROTOTYPE-ONLY page shell. The real integration lives in an
+   inline <style> + section markup inside products.html, and
+   js/maria-carousel.js. This file is for look/feel sign-off.
+   ============================================================ */
+:root{
+  --m-base:#15171E;        /* section bg (darker than the slide) */
+  --m-surface:#1A1D25;     /* device / slide bg */
+  --m-surface-2:#21252F;
+  --m-ivory:#FDFAF7;
+  --m-muted:rgba(253,250,247,0.62);
+  --m-faint:rgba(253,250,247,0.34);
+  --m-hair:rgba(253,250,247,0.10);
+  --m-hair-strong:rgba(253,250,247,0.20);
+  --m-terra:#CF5430;       /* the product's own UI accent (matches the deck) */
+  --m-terra-soft:#E07A50;
+  --m-hot:#FF6A38;         /* brighter accent for headline / emphasis */
+  --m-orange:#F97316;      /* the Studio page chrome accent */
+  --m-violet:#8B5CF6;
+  --f-display:'Cormorant Garamond',Georgia,serif;
+  --f-body:'DM Sans',system-ui,sans-serif;
+  --f-mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#0E1014;color:var(--m-ivory);font-family:var(--f-body);-webkit-font-smoothing:antialiased;}
+.proto-note{font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--m-faint);
+  text-align:center;padding:14px;border-bottom:1px solid var(--m-hair);}
+
+/* ======================  Aria SECTION  ====================== */
+.maria{
+  position:relative;
+  background:
+    radial-gradient(120% 80% at 50% -10%,rgba(207,84,48,0.10),transparent 55%),
+    linear-gradient(rgba(253,250,247,0.018) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(253,250,247,0.018) 1px,transparent 1px),
+    var(--m-base);
+  background-size:100% 100%,64px 64px,64px 64px,100% 100%;
+  padding:clamp(4rem,9vw,8rem) clamp(1.25rem,5vw,5rem);
+  overflow:hidden;
+}
+.maria__inner{max-width:1240px;margin:0 auto;}
+
+/* --- section header (HUD chrome) --- */
+.maria__head{max-width:860px;margin:0 auto clamp(2.5rem,5vw,4rem);text-align:center;}
+.maria__eyebrow{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--f-mono);font-size:11px;font-weight:700;
+  letter-spacing:.24em;text-transform:uppercase;color:rgba(249,115,22,0.9);margin-bottom:1.4rem;}
+.maria__eyebrow::before{content:'';width:32px;height:1px;
+  background:linear-gradient(to right,rgba(249,115,22,0.7),rgba(139,92,246,0.4));}
+.maria__eyebrow::after{content:'';width:32px;height:1px;
+  background:linear-gradient(to left,rgba(249,115,22,0.7),rgba(139,92,246,0.4));}
+.maria__ref{font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--m-faint);margin-bottom:1.1rem;}
+.maria__title{font-family:var(--f-display);font-weight:500;font-size:clamp(2.4rem,5.4vw,4rem);line-height:1.04;letter-spacing:-.01em;}
+.maria__title em{font-style:italic;color:var(--m-hot);white-space:nowrap;text-shadow:0 0 32px rgba(255,106,56,0.35);}
+@media (max-width:560px){.maria__title em{white-space:normal;}}
+.maria__sub{font-family:var(--f-display);font-style:italic;font-weight:400;font-size:clamp(1.15rem,2.3vw,1.6rem);
+  line-height:1.5;color:var(--m-muted);margin-top:1.4rem;}
+
+/* --- split layout --- */
+.maria__split{display:grid;grid-template-columns:minmax(0,650px) minmax(0,1fr);gap:clamp(1.75rem,4vw,3.5rem);align-items:start;}
+@media (max-width:900px){
+  .maria__split{grid-template-columns:minmax(0,1fr);gap:2.5rem;align-items:stretch;}
+  .maria__split > .maria-player,.maria__split > .maria-aside{min-width:0;}
+}
+
+/* --- the carousel device --- */
+.maria-player{position:relative;}
+.maria-device{
+  position:relative;width:100%;max-width:650px;margin:0 auto;
+  border:1px solid rgba(253,250,247,0.12);border-radius:20px;
+  /* dark gradient bezel (purple top-left, orange bottom-right) so the inner screen pops */
+  background:
+    radial-gradient(70% 55% at 12% 0%,rgba(139,92,246,0.20),transparent 55%),
+    radial-gradient(75% 65% at 100% 100%,rgba(255,106,56,0.22),transparent 55%),
+    linear-gradient(160deg,#0A0C11 0%,#14101A 52%,#0A0C11 100%);
+  box-shadow:0 50px 140px -40px rgba(0,0,0,0.85),0 0 0 1px rgba(0,0,0,0.4),
+    0 0 60px -20px rgba(207,84,48,0.25),inset 0 1px 0 rgba(253,250,247,0.06);
+  padding:16px;
+}
+/* faint animated sheen across the bezel to hint "this is alive / interactive" */
+.maria-device::before{content:'';position:absolute;inset:0;border-radius:20px;pointer-events:none;z-index:0;
+  background:linear-gradient(115deg,transparent 30%,rgba(255,106,56,0.06) 48%,transparent 66%);
+  background-size:280% 280%;animation:maria-sheen 7s ease-in-out infinite;}
+@keyframes maria-sheen{0%{background-position:120% 0;}100%{background-position:-120% 0;}}
+.maria-device__bar,.maria-stage,.maria-device__controls{position:relative;z-index:1;}
+@media (prefers-reduced-motion:reduce){.maria-device::before{animation:none;}}
+/* device top chrome */
+.maria-device__bar{display:flex;align-items:center;justify-content:space-between;padding:4px 6px 12px;}
+.maria-device__dots{display:flex;gap:6px;}
+.maria-device__dots i{width:8px;height:8px;border-radius:50%;background:var(--m-hair-strong);}
+.maria-device__dots i:first-child{background:rgba(207,84,48,0.7);}
+.maria-device__meta{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--m-faint);
+  display:flex;align-items:center;gap:.5rem;min-width:0;}
+.maria-device__meta [data-maria-counter]{color:var(--m-hot);font-weight:700;white-space:nowrap;flex:0 0 auto;}
+.maria-device__meta b{color:var(--m-ivory);font-weight:500;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.maria-device__meta b::before{content:'·';margin-right:.5rem;color:var(--m-faint);font-weight:400;}
+
+/* the stage: 4:5 portrait */
+.maria-stage{position:relative;width:100%;aspect-ratio:4/5;border-radius:9px;overflow:hidden;background:var(--m-surface);
+  border:1px solid var(--m-hair);}
+.maria-stage__skeleton{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  background:
+    radial-gradient(70% 50% at 50% 38%,rgba(207,84,48,0.10),transparent 60%),
+    var(--m-surface);
+  z-index:1;transition:opacity .6s ease;}
+.maria-stage__skeleton span{font-family:var(--f-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--m-faint);
+  animation:mp-pulse 2.4s ease-in-out infinite;}
+@keyframes mp-pulse{0%,100%{opacity:.35;}50%{opacity:.8;}}
+.maria-player.is-booted .maria-stage__skeleton{opacity:0;pointer-events:none;}
+/* Transition lives ONLY on .is-active, so the incoming slide fades in cleanly
+   while the outgoing one snaps away instantly (no content bleed = each slide
+   visibly starts from frame 0). */
+.maria-frame{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:2;
+  opacity:0;pointer-events:none;}
+.maria-frame.is-active{opacity:1;pointer-events:auto;z-index:3;transition:opacity .3s ease;}
+@media (prefers-reduced-motion:reduce){.maria-frame.is-active{transition:none;}}
+
+/* tap zones for prev/next (story-style) */
+.maria-stage__zone{position:absolute;top:0;bottom:0;width:30%;z-index:4;cursor:pointer;border:0;background:transparent;
+  -webkit-tap-highlight-color:transparent;}
+.maria-stage__zone--prev{left:0;}
+.maria-stage__zone--next{right:0;}
+
+/* device bottom controls */
+.maria-device__controls{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:14px 6px 4px;}
+.maria-navgroup{display:inline-flex;align-items:center;gap:.75rem;flex:0 0 auto;}
+.maria-navlabel{font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--m-muted);cursor:pointer;transition:color .25s ease;user-select:none;}
+.maria-navgroup:hover .maria-navlabel{color:var(--m-ivory);}
+.maria-nav{position:relative;display:inline-flex;align-items:center;justify-content:center;width:50px;height:50px;border-radius:50%;
+  border:1px solid rgba(207,84,48,0.5);background:rgba(207,84,48,0.10);color:var(--m-ivory);cursor:pointer;flex:0 0 auto;
+  box-shadow:0 0 18px -4px rgba(207,84,48,0.35);
+  transition:border-color .25s ease,background .25s ease,transform .15s ease,box-shadow .25s ease;}
+.maria-nav:hover{border-color:var(--m-hot);background:rgba(255,106,56,0.18);box-shadow:0 0 26px -2px rgba(255,106,56,0.55);transform:scale(1.06);}
+.maria-nav:active{transform:scale(0.94);}
+.maria-nav svg{width:20px;height:20px;stroke:currentColor;stroke-width:2;fill:none;position:relative;z-index:1;}
+/* pulsing ring — draws the eye to the controls */
+.maria-nav::after{content:'';position:absolute;inset:-1px;border-radius:50%;border:1.5px solid #9B7BF0;
+  opacity:0;pointer-events:none;animation:maria-ring 2.8s cubic-bezier(0.22,1,0.36,1) infinite;}
+.maria-nav--next::after{animation-delay:1.4s;}
+@keyframes maria-ring{0%{transform:scale(1);opacity:.6;}70%{opacity:0;}100%{transform:scale(1.65);opacity:0;}}
+.maria-nav:hover::after{animation-play-state:paused;}
+@media (prefers-reduced-motion:reduce){.maria-nav::after{animation:none;display:none;}}
+/* phones: the Back/Next text + 10 dots + buttons won't fit a portrait device,
+   so drop the labels (arrows, tap-zones and swipe remain) and tighten the dots */
+@media (max-width:560px){
+  .maria-navlabel{display:none;}
+  .maria-nav{width:44px;height:44px;}
+  .maria-progress{gap:6px;}
+  .maria-progress button{width:7px;height:7px;}
+  /* drop the slide label in the device bar so the counter never gets squished */
+  .maria-device__meta b{display:none;}
+  .maria-device__meta{font-size:11px;}
+}
+.maria-progress{display:flex;gap:7px;flex:1;justify-content:center;align-items:center;}
+.maria-progress button{width:9px;height:9px;border-radius:50%;border:0;padding:0;cursor:pointer;
+  background:var(--m-hair-strong);transition:background .25s ease,transform .2s ease;}
+.maria-progress button:hover{background:var(--m-muted);}
+.maria-progress button.is-on{background:var(--m-terra);transform:scale(1.25);}
+
+/* --- right column: copy + capabilities + CTA --- */
+.maria-aside__lead{font-family:var(--f-display);font-weight:400;font-size:clamp(1.3rem,2.6vw,1.75rem);line-height:1.4;
+  color:var(--m-ivory);margin-bottom:.6rem;}
+.maria-aside__lead b{color:var(--m-hot);font-weight:500;text-shadow:0 0 28px rgba(255,106,56,0.3);}
+.maria-aside__body{font-size:clamp(.95rem,1.5vw,1.05rem);line-height:1.65;color:var(--m-muted);max-width:46ch;margin-bottom:2rem;}
+
+.maria-caps{display:grid;grid-template-columns:1fr;gap:1px;background:var(--m-hair);border:1px solid var(--m-hair);
+  border-radius:4px;overflow:hidden;margin-bottom:2.2rem;}
+.maria-cap{position:relative;background:var(--m-base);padding:1.35rem 1.5rem 1.45rem;
+  display:grid;grid-template-columns:1fr;gap:.3rem;--c:var(--m-terra);
+  transition:background .3s ease;}
+.maria-cap:nth-child(1){--c:#FF6A38;}   /* terra/orange */
+.maria-cap:nth-child(2){--c:#9B7BF0;}   /* violet */
+.maria-cap:nth-child(3){--c:#5FB8C4;}   /* cyan */
+.maria-cap:nth-child(4){--c:#6FBF8E;}   /* green */
+.maria-cap:hover{background:rgba(253,250,247,0.022);}
+/* corner brackets that light on hover (echoes the page's value-block chrome) */
+.maria-cap::before,.maria-cap::after{content:'';position:absolute;width:11px;height:11px;pointer-events:none;
+  opacity:0;transition:opacity .3s ease;}
+.maria-cap::before{top:9px;left:9px;border-top:1px solid var(--c);border-left:1px solid var(--c);}
+.maria-cap::after{bottom:9px;right:9px;border-bottom:1px solid var(--c);border-right:1px solid var(--c);}
+.maria-cap:hover::before,.maria-cap:hover::after{opacity:.85;}
+.maria-cap__k{font-family:var(--f-mono);font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--c);margin-bottom:.4rem;display:block;}
+.maria-cap__t{font-family:var(--f-display);font-size:1.32rem;font-weight:500;color:var(--m-ivory);margin-bottom:.15rem;}
+.maria-cap__t::after{content:'';display:block;width:34px;height:1px;margin-top:.5rem;
+  background:linear-gradient(to right,var(--c),transparent);opacity:.85;transition:width .35s cubic-bezier(0.22,1,0.36,1);}
+.maria-cap:hover .maria-cap__t::after{width:72px;}
+.maria-cap__d{font-size:.95rem;line-height:1.55;color:var(--m-muted);max-width:52ch;}
+
+.maria-cta{display:flex;align-items:center;gap:1.3rem;flex-wrap:wrap;}
+.maria-cta__btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--f-display);font-style:italic;font-size:1.15rem;
+  padding:.7rem 2rem;border-radius:999px;background:var(--m-terra);color:var(--m-ivory);text-decoration:none;
+  box-shadow:0 10px 30px -8px rgba(207,84,48,0.6);transition:background .25s ease,transform .15s ease,box-shadow .25s ease;}
+.maria-cta__btn:hover{background:var(--m-terra-soft);transform:translateY(-1px);box-shadow:0 14px 38px -8px rgba(207,84,48,0.7);}
+.maria-cta__btn svg{width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none;}
+.maria-cta__note{font-family:var(--f-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--m-faint);}
+</style>
+</head>
+<body>
+
+<div class="proto-note">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod. &amp; lorem ipsum</div>
+
+<!-- shown ONLY when opened as a file:// page, where the browser blocks slide control -->
+<div id="maria-coguard" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(14,16,23,0.94);
+  backdrop-filter:blur(4px);align-items:center;justify-content:center;text-align:center;padding:2rem;">
+  <div style="max-width:560px;font-family:&#x27;DM Sans&#x27;,system-ui,sans-serif;color:#FDFAF7;">
+    <div style="font-family:&#x27;JetBrains Mono&#x27;,monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#FF6A38;margin-bottom:1.2rem;">lorem ipsum dolor sit amet</div>
+    <p style="font-size:1.15rem;line-height:1.6;color:rgba(253,250,247,0.85);">Lorem ipsum dolor sit amet. <b>lorem</b>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis.</p>
+    <p style="font-family:&#x27;JetBrains Mono&#x27;,monospace;font-size:1rem;margin-top:1.4rem;color:#E07A50;">Lorem</p>
+    <p style="font-size:.85rem;margin-top:1.2rem;color:rgba(253,250,247,0.5);">Lorem <span style="font-family:monospace;">lorem ipsum dolor</span> Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+  </div>
+</div>
+
+<!-- ============================================================
+     Aria SECTION (this block + the inline <style> above port
+     into products.html at line 711; JS becomes js/maria-carousel.js)
+     ============================================================ -->
+<section class="maria" aria-labelledby="maria-title">
+  <div class="maria__inner">
+
+    <!-- header -->
+    <header class="maria__head">
+      <div class="maria__eyebrow">lorem ipsum dolor</div>
+      <div class="maria__ref">Ref. MARIA_SYS.v1</div>
+      <h2 class="maria__title" id="maria-title">Lorem Ipsum Dolor <em>lorem ipsum dolor</em></h2>
+      <p class="maria__sub">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis.</p>
+    </header>
+
+    <!-- split: device + aside -->
+    <div class="maria__split">
+
+      <!-- LEFT: the interactive deck -->
+      <div class="maria-player" data-maria-carousel data-slides='[
+             {&quot;src&quot;:&quot;slides/01-meet-maria.html&quot;,&quot;title&quot;:&quot;Meet Aria&quot;},
+             {&quot;src&quot;:&quot;slides/02-harness.html&quot;,&quot;title&quot;:&quot;The Harness&quot;},
+             {&quot;src&quot;:&quot;slides/03-workforce.html&quot;,&quot;title&quot;:&quot;The Workforce&quot;},
+             {&quot;src&quot;:&quot;slides/04-lead-sales.html&quot;,&quot;title&quot;:&quot;Nova · Lead + Sales&quot;},
+             {&quot;src&quot;:&quot;slides/05-content.html&quot;,&quot;title&quot;:&quot;Vera · Content + Marketing&quot;},
+             {&quot;src&quot;:&quot;slides/06-assistant.html&quot;,&quot;title&quot;:&quot;Esme · Personal Assistant&quot;},
+             {&quot;src&quot;:&quot;slides/07-chief-of-staff.html&quot;,&quot;title&quot;:&quot;The Chief of Staff&quot;},
+             {&quot;src&quot;:&quot;slides/08-memory.html&quot;,&quot;title&quot;:&quot;Shared Memory&quot;},
+             {&quot;src&quot;:&quot;slides/09-surfaces.html&quot;,&quot;title&quot;:&quot;Where It Lives&quot;},
+             {&quot;src&quot;:&quot;slides/10-finale.html&quot;,&quot;title&quot;:&quot;Your AI Workforce&quot;}
+           ]'>
+        <div class="maria-device">
+          <div class="maria-device__bar">
+            <div class="maria-device__dots"><i></i><i></i><i></i></div>
+            <div class="maria-device__meta"><span data-maria-counter>01 / 10</span><b data-maria-label>lorem ipsum</b></div>
+          </div>
+
+          <div class="maria-stage" data-maria-stage>
+            <div class="maria-stage__skeleton"><span>lorem ipsum dolor</span></div>
+            <button class="maria-stage__zone maria-stage__zone--prev" data-maria-prev aria-label="Lorem Ipsum"></button>
+            <button class="maria-stage__zone maria-stage__zone--next" data-maria-next aria-label="Lorem Ipsum"></button>
+          </div>
+
+          <div class="maria-device__controls">
+            <div class="maria-navgroup">
+              <button class="maria-nav" data-maria-prev aria-label="Lorem Ipsum">
+                <svg viewbox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <span class="maria-navlabel" data-maria-prev aria-hidden="true">&rarr;</span>
+            </div>
+            <div class="maria-progress" data-maria-dots role="tablist" aria-label="Lorem"></div>
+            <div class="maria-navgroup maria-navgroup--next">
+              <span class="maria-navlabel" data-maria-next aria-hidden="true">&rarr;</span>
+              <button class="maria-nav maria-nav--next" data-maria-next aria-label="Lorem Ipsum">
+                <svg viewbox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: substance -->
+      <aside class="maria-aside">
+        <p class="maria-aside__lead">Lorem ipsum dolor <b>lorem ipsum</b></p>
+        <p class="maria-aside__body">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+
+        <div class="maria-caps">
+          <div class="maria-cap">
+            <span class="maria-cap__k">// 01 — Named roles</span>
+            <div class="maria-cap__t">lorem ipsum dolor sit amet</div>
+            <p class="maria-cap__d">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore.</p>
+          </div>
+          <div class="maria-cap">
+            <span class="maria-cap__k">// 02 — Shared memory</span>
+            <div class="maria-cap__t">lorem ipsum dolor sit</div>
+            <p class="maria-cap__d">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore.</p>
+          </div>
+          <div class="maria-cap">
+            <span class="maria-cap__k">// 03 — Where you are</span>
+            <div class="maria-cap__t">lorem ipsum dolor sit amet</div>
+            <p class="maria-cap__d">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut.</p>
+          </div>
+          <div class="maria-cap">
+            <span class="maria-cap__k">// 04 — Governed</span>
+            <div class="maria-cap__t">lorem ipsum dolor</div>
+            <p class="maria-cap__d">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore.</p>
+          </div>
+        </div>
+
+        <div class="maria-cta">
+          <a class="maria-cta__btn" href="../inquire.html#inquiry-form">lorem <svg viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <span class="maria-cta__note">Lorem ipsum dolor sit amet consectetur adipiscing elit.</span>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<script>
+/* ============================================================
+   Aria carousel player  —  becomes js/maria-carousel.js
+   iframe-per-slide · lazy boot · only active + neighbours live
+   ============================================================ */
+(function () {
+  'use strict';
+  var root = document.querySelector('[data-maria-carousel]');
+  if (!root) return;
+
+  var slides;
+  try { slides = JSON.parse(root.dataset.slides); } catch (e) { return; }
+  if (!slides || !slides.length) return;
+
+  var stage    = root.querySelector('[data-maria-stage]');
+  var dotsWrap = root.querySelector('[data-maria-dots]');
+  var counter  = root.querySelector('[data-maria-counter]');
+  var label    = root.querySelector('[data-maria-label]');
+  var reduce   = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var frames = new Map();   // n -> iframe
+  var cur = -1, booted = false;   // cur = -1 so the first show(0) is never short-circuited
+  var pad = function (n) { return (n + 1 < 10 ? '0' : '') + (n + 1); };
+
+  /* build the dot strip */
+  slides.forEach(function (s, n) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-label', pad(n) + ' ' + s.title);
+    b.addEventListener('click', function () { show(n); });
+    dotsWrap.appendChild(b);
+  });
+  var dots = Array.prototype.slice.call(dotsWrap.children);
+
+  function mount(n) {
+    if (n < 0 || n >= slides.length || frames.has(n)) return;
+    var f = document.createElement('iframe');
+    f.src = slides[n].src;
+    f.title = slides[n].title;
+    f.className = 'maria-frame';
+    f.loading = 'lazy';
+    f.setAttribute('scrolling', 'no');
+    f.dataset.n = n;
+    stage.appendChild(f);
+    frames.set(n, f);
+  }
+
+  function tl(n) {
+    var f = frames.get(n);
+    try { return f && f.contentWindow && f.contentWindow.__MARIA__ ? f.contentWindow.__MARIA__ : null; }
+    catch (e) { return null; }
+  }
+  // fromStart=true restarts the slide's loop from frame 0 (used on navigation, so a
+  // slide never appears mid-animation). fromStart=false resumes (used on scroll re-entry).
+  function play(n, fromStart) {
+    var m = tl(n); if (!m) return;
+    if (reduce) { try { m.tl.pause(); m.tl.time(m.cycle * 0.5); } catch (e) {} return; }
+    try { fromStart ? m.tl.play(0) : m.tl.play(); } catch (e) {}
+  }
+  function pause(n) { var m = tl(n); if (m) { try { m.tl.pause(); } catch (e) {} } }
+
+  // keep a freshly-mounted neighbour from free-running in the background: pause it as
+  // soon as it loads (unless it has since become the active slide).
+  function parkOnLoad(n) {
+    var f = frames.get(n); if (!f) return;
+    if (tl(n)) { if (n !== cur) pause(n); }
+    else f.addEventListener('load', function () { if (n !== cur) pause(n); }, { once: true });
+  }
+
+  function show(n) {
+    n = (n % slides.length + slides.length) % slides.length;
+    if (booted && n === cur) return;
+    pause(cur);
+    mount(n); mount(n + 1); mount(n - 1);
+    Array.prototype.forEach.call(stage.querySelectorAll('.maria-frame'), function (f) {
+      f.classList.toggle('is-active', +f.dataset.n === n);
+    });
+    cur = n;
+    // park the (now non-active) neighbours, then restart the active slide from frame 0
+    parkOnLoad(n + 1); parkOnLoad(n - 1);
+    var f = frames.get(n);
+    if (f) {
+      if (tl(n)) play(n, true);
+      else f.addEventListener('load', function () { if (cur === n) play(n, true); }, { once: true });
+    }
+    sync();
+  }
+
+  function sync() {
+    counter.textContent = pad(cur) + ' / ' + slides.length;
+    label.textContent = slides[cur].title;
+    dots.forEach(function (d, i) {
+      var on = i === cur;
+      d.classList.toggle('is-on', on);
+      d.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+  }
+
+  function next() { show(cur + 1); }
+  function prev() { show(cur - 1); }
+
+  /* controls (there are two prev/next pairs: tap-zones + nav buttons) */
+  Array.prototype.forEach.call(root.querySelectorAll('[data-maria-next]'), function (b) { b.addEventListener('click', next); });
+  Array.prototype.forEach.call(root.querySelectorAll('[data-maria-prev]'), function (b) { b.addEventListener('click', prev); });
+
+  /* keyboard — only when the player has focus within (no scroll/page hijack) */
+  root.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') { e.preventDefault(); next(); }
+    else if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+  });
+
+  /* touch swipe — only fire when the gesture is dominantly horizontal, so a
+     vertical page-scroll that grazes the card never flips the slide */
+  var sx = null, sy = null;
+  stage.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
+  stage.addEventListener('touchend', function (e) {
+    if (sx === null) return;
+    var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+    if (Math.abs(dx) > 44 && Math.abs(dx) > Math.abs(dy) * 1.4) { dx < 0 ? next() : prev(); }
+    sx = sy = null;
+  }, { passive: true });
+
+  /* lazy boot on first in-view */
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es, o) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { boot(); o.disconnect(); }
+      });
+    }, { threshold: 0.2 });
+    io.observe(root);
+  } else { boot(); }
+
+  function boot() {
+    if (booted) return;
+    booted = true;
+    root.classList.add('is-booted');
+    show(0);
+    // if we can't reach into the slide iframes (file:// = cross-origin), the carousel
+    // can't pause/restart them — warn the viewer instead of looking broken.
+    setTimeout(function () {
+      var f = frames.get(cur);
+      if (!f) return;
+      try { void f.contentWindow.__MARIA__; }       // throws SecurityError under cross-origin
+      catch (e) {
+        if (/cross-origin|security/i.test(e.name + ' ' + e.message)) {
+          var g = document.getElementById('maria-coguard');
+          if (g) g.style.display = 'flex';
+        }
+      }
+    }, 1000);
+  }
+
+  /* pause everything when the whole section scrolls away (battery / CPU) */
+  if ('IntersectionObserver' in window) {
+    var vis = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!booted) return;
+        if (e.isIntersecting) play(cur, false); else pause(cur);
+      });
+    }, { threshold: 0.01 });
+    vis.observe(root);
+  }
+})();
+</script>
+</body>
+</html>

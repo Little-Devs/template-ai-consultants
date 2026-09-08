@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit Sed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500&amp;family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&amp;family=JetBrains+Mono:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --base:#0E1117; --surface:#21252F; --surface-2:#262B36; --ivory:#FDFAF7;
+  --muted:rgba(253,250,247,0.6); --faint:rgba(253,250,247,0.34);
+  --hair:rgba(253,250,247,0.10); --hair-strong:rgba(253,250,247,0.18);
+  --grid:rgba(253,250,247,0.04);
+  --terra:#CF5430; --terra-deep:#B84020; --terra-soft:#E07A50; --hot:#FF6A38;
+  --good:#6FBF8E;
+  --f-display:'Cormorant Garamond',Georgia,serif; --f-body:'DM Sans',system-ui,sans-serif; --f-mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{background:#000;height:100%;}
+body{overflow:hidden;color:var(--ivory);font-family:var(--f-body);}
+.frame{position:relative;width:100%;height:100vh;display:flex;align-items:center;justify-content:center;background:#000;overflow:hidden;}
+.stage{
+  position:relative;width:1080px;height:1350px;flex:0 0 auto;
+  transform:scale(var(--s,1));transform-origin:center center;overflow:hidden;
+  background:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px),
+    radial-gradient(72% 38% at 50% 16%,rgba(207,84,48,0.10),transparent 60%),
+    var(--base);
+  background-size:60px 60px,60px 60px,100% 100%,100% 100%;
+}
+
+/* chrome */
+.ch{position:absolute;font-family:var(--f-mono);font-size:21px;letter-spacing:.24em;text-transform:uppercase;z-index:7;}
+.ch.tl{top:60px;left:72px;color:var(--faint);}
+.ch.tl b{color:var(--terra);font-weight:500;}
+.ch.tr{top:60px;right:72px;color:var(--muted);}
+.ch.bc{bottom:60px;left:0;width:100%;text-align:center;color:var(--faint);font-size:18px;letter-spacing:.3em;}
+
+/* sweep line */
+.sweep{position:absolute;left:40px;width:1000px;height:3px;top:0;z-index:8;opacity:0;
+  background:linear-gradient(90deg,transparent,var(--hot),transparent);box-shadow:0 0 26px 2px rgba(255,106,56,0.55);}
+#content{position:absolute;inset:0;}
+
+/* Aria, the chief of staff (apex HUD core) */
+.hud{position:absolute;left:330px;top:126px;width:420px;height:198px;z-index:4;}
+.hud svg{width:420px;height:198px;display:block;}
+.mcore{position:absolute;left:360px;top:150px;width:360px;height:150px;border-radius:18px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;
+  background:linear-gradient(180deg,rgba(207,84,48,0.17),rgba(207,84,48,0.04));border:1.5px solid var(--terra);z-index:6;}
+.mcore .mn{font-family:var(--f-display);font-weight:500;font-size:50px;line-height:1;color:var(--terra-soft);}
+.mcore .mr{font-family:var(--f-mono);font-size:17px;letter-spacing:.24em;text-transform:uppercase;color:var(--terra);}
+.mcore .msubw{display:flex;align-items:center;gap:9px;}
+.mcore .pd{width:8px;height:8px;border-radius:50%;background:var(--good);box-shadow:0 0 8px rgba(111,191,142,.8);}
+.mcore .msub{font-family:var(--f-mono);font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+
+/* flanking HUD widgets: security self-watch (left) + weekly insight (right) */
+.wid{position:absolute;border-radius:12px;background:var(--surface);border:1px solid var(--hair-strong);z-index:5;opacity:0;padding:15px 18px;display:flex;flex-direction:column;gap:9px;}
+.wid.wl{left:72px;top:178px;width:270px;height:104px;}
+.wid.wr{left:738px;top:178px;width:270px;height:104px;}
+.wid .wtop{display:flex;align-items:center;gap:10px;}
+.wid .wt{font-family:var(--f-mono);font-size:16px;letter-spacing:.13em;text-transform:uppercase;color:var(--ivory);white-space:nowrap;}
+.wid .ws{font-family:var(--f-mono);font-size:14px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);white-space:nowrap;}
+.wid svg{display:block;}
+
+/* sightlines from Aria into each head */
+.sight{position:absolute;inset:0;z-index:2;}
+
+/* the three head monitors */
+.mon{position:absolute;top:402px;width:300px;height:278px;border-radius:16px;
+  display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:9px;padding:22px 16px 0;
+  background:var(--surface);border:1px solid var(--hair-strong);z-index:5;opacity:0;}
+.mon.m0{left:70px;} .mon.m1{left:390px;} .mon.m2{left:710px;}
+.mon .hg{width:36px;height:36px;}
+.mon .hg svg{width:36px;height:36px;display:block;}
+.mon .hn{font-family:var(--f-display);font-weight:500;font-size:40px;line-height:1;color:var(--terra-soft);}
+.mon .hr{font-family:var(--f-mono);font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);}
+.mon .sep{width:78%;height:1px;background:var(--hair);margin:8px 0 4px;}
+.mon .st{display:flex;align-items:center;gap:10px;height:24px;}
+.mon .dot{width:9px;height:9px;border-radius:50%;background:var(--good);flex:0 0 auto;}
+.mon .sx{font-family:var(--f-mono);font-size:18px;letter-spacing:.04em;text-transform:uppercase;color:var(--ivory);white-space:nowrap;}
+.mon .mv{display:flex;align-items:center;gap:8px;height:22px;}
+.mon .mk{font-family:var(--f-mono);font-size:17px;line-height:1;flex:0 0 auto;}
+.mon .mx{font-family:var(--f-mono);font-size:16px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+
+/* needs-you panel (the few decisions only you can make) */
+.ny{position:absolute;left:170px;top:708px;width:740px;height:196px;border-radius:16px;
+  background:linear-gradient(180deg,rgba(207,84,48,0.09),rgba(207,84,48,0.02));border:1px solid var(--terra);z-index:5;opacity:0;
+  padding:19px 26px;display:flex;flex-direction:column;gap:13px;}
+.ny .nyh{font-family:var(--f-mono);font-size:19px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);}
+.nycard{display:flex;align-items:center;gap:14px;background:var(--surface-2);border:1px solid var(--hair-strong);border-radius:11px;padding:13px 18px;}
+.nycard .nmk{color:var(--terra);font-family:var(--f-mono);font-size:21px;line-height:1;flex:0 0 auto;}
+.nycard .nx{font-family:var(--f-mono);font-size:21px;letter-spacing:.02em;color:var(--ivory);white-space:nowrap;}
+.nycard .ntag{font-family:var(--f-mono);font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-left:auto;white-space:nowrap;}
+
+/* headline */
+.headline{position:absolute;bottom:112px;left:0;width:100%;text-align:center;z-index:6;opacity:0;}
+.headline .tag{font-family:var(--f-mono);font-size:18px;letter-spacing:.26em;text-transform:uppercase;color:var(--terra);margin-bottom:18px;}
+.headline .t{font-family:var(--f-mono);font-weight:500;font-size:44px;letter-spacing:.05em;text-transform:uppercase;color:var(--ivory);line-height:1.16;}
+</style>
+</head>
+<body>
+<div class="frame"><div class="stage" id="stage">
+
+  <div class="ch tl"><b>lorem</b> STUDIO</div>
+  <div class="ch tr">Lorem ipsum dolor sit amet consectetur.</div>
+  <div class="ch bc">lorem ipsum dolor sit amet</div>
+
+  <div class="sweep" id="sweep"></div>
+
+  <div id="content">
+
+    <!-- sightlines from Aria into each head -->
+    <svg class="sight" id="sightsvg" viewbox="0 0 1080 1350" fill="none">
+      <path id="sl0" d="M540 300 L540 360 L220 402" stroke="#CF5430" stroke-width="2" opacity="0.55"/>
+      <path id="sl1" d="M540 300 L540 402" stroke="#CF5430" stroke-width="2" opacity="0.55"/>
+      <path id="sl2" d="M540 300 L540 360 L860 402" stroke="#CF5430" stroke-width="2" opacity="0.55"/>
+    </svg>
+
+    <!-- Aria HUD core -->
+    <svg class="hud" id="hudsvg" viewbox="0 0 420 198" fill="none">
+      <path id="hud" d="M14 46 L14 14 L56 14 M364 14 L406 14 L406 46 M406 152 L406 184 L364 184 M56 184 L14 184 L14 152" stroke="#CF5430" stroke-width="2" opacity="0.7" stroke-linecap="round"/>
+    </svg>
+    <div class="mcore" id="mcore">
+      <span class="mn" id="mname">Aria</span>
+      <span class="mr" id="mrole">lorem ipsum dolor</span>
+      <span class="msubw"><i class="pd"></i><span class="msub" id="msub">lorem ipsum dolor</span></span>
+    </div>
+
+    <!-- security self-watch widget -->
+    <div class="wid wl" id="wl">
+      <div class="wtop">
+        <svg width="22" height="22" viewbox="0 0 24 24" fill="none" stroke="#6FBF8E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path id="shield" d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        <span class="wt" id="shtitle">lorem ipsum</span>
+      </div>
+      <span class="ws">Lorem ipsum dolor sit amet consectetur.</span>
+    </div>
+
+    <!-- weekly insight widget -->
+    <div class="wid wr" id="wr">
+      <span class="wt" id="swtitle">lorem ipsum</span>
+      <svg width="212" height="40" viewbox="0 0 212 40" fill="none">
+        <path id="spark" d="M3 33 L44 27 L84 29 L124 16 L160 20 L208 5" stroke="#E07A50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="208" cy="5" r="3.4" fill="#FF6A38"/>
+      </svg>
+    </div>
+
+    <!-- head monitors -->
+    <div class="mon m0" id="m0">
+      <span class="hg"><svg viewbox="0 0 24 24" fill="none" stroke="#E07A50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M16 8h5v5"/></svg></span>
+      <span class="hn" id="n0">Nova</span>
+      <span class="hr" id="r0">lorem ipsum dolor</span>
+      <span class="sep"></span>
+      <span class="st"><i class="dot" id="dot0"></i><span class="sx" id="s0">lorem ipsum dolor sit</span></span>
+      <span class="mv" id="mv0"><span class="mk" style="color:var(--terra)" id="mk0">lorem</span><span class="mx" id="m0x">lorem ipsum dolor</span></span>
+    </div>
+    <div class="mon m1" id="m1">
+      <span class="hg"><svg viewbox="0 0 24 24" fill="none" stroke="#E07A50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.4"/><path d="M7 7.5a7 7 0 0 0 0 9"/><path d="M17 7.5a7 7 0 0 1 0 9"/><path d="M3.4 4a12 12 0 0 0 0 16"/><path d="M20.6 4a12 12 0 0 1 0 16"/></svg></span>
+      <span class="hn" id="n1">lorem</span>
+      <span class="hr" id="r1">lorem ipsum dolor</span>
+      <span class="sep"></span>
+      <span class="st"><i class="dot" id="dot1"></i><span class="sx" id="s1">lorem ipsum dolor sit</span></span>
+      <span class="mv" id="mv1"><span class="mk" style="color:var(--good)" id="mk1">lorem</span><span class="mx" id="m1x">lorem ipsum dolor</span></span>
+    </div>
+    <div class="mon m2" id="m2">
+      <span class="hg"><svg viewbox="0 0 24 24" fill="none" stroke="#E07A50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.6 8.4l-2.3 4.9-4.9 2.3 2.3-4.9z"/></svg></span>
+      <span class="hn" id="n2">lorem</span>
+      <span class="hr" id="r2">lorem ipsum</span>
+      <span class="sep"></span>
+      <span class="st"><i class="dot" id="dot2"></i><span class="sx" id="s2">lorem ipsum</span></span>
+      <span class="mv" id="mv2"><span class="mk" style="color:var(--terra)" id="mk2">lorem</span><span class="mx" id="m2x">lorem ipsum dolor</span></span>
+    </div>
+
+    <!-- needs-you panel -->
+    <div class="ny" id="nypanel">
+      <span class="nyh" id="nytitle">lorem ipsum dolor sit amet</span>
+      <div class="nycard" id="nyc0"><span class="nmk">lorem</span><span class="nx" id="ny0">Lorem ipsum dolor sit amet consectetur.</span><span class="ntag" id="nyt0">Nova</span></div>
+      <div class="nycard" id="nyc1"><span class="nmk">lorem</span><span class="nx" id="ny1">lorem ipsum dolor sit</span><span class="ntag" id="nyt1">lorem</span></div>
+    </div>
+
+    <div class="headline" id="hl">
+      <div class="tag" id="hltag">lorem ipsum dolor sit amet</div>
+      <div class="t" id="hl1">lorem ipsum</div>
+      <div class="t" id="hl2">lorem ipsum dolor sit</div>
+    </div>
+
+  </div><!-- /#content -->
+
+</div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrambleTextPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>
+<script>
+(function(){
+  'use strict';
+  var root=document.documentElement;
+  function scale(){ root.style.setProperty('--s', Math.min(innerWidth/1080, innerHeight/1350).toFixed(4)); }
+  scale(); addEventListener('resize',scale);
+  gsap.registerPlugin(DrawSVGPlugin, ScrambleTextPlugin, TextPlugin);
+
+  var HEADS=[
+    {box:'#m0',sl:'#sl0',n:'#n0',r:'#r0',s:'#s0',m:'#m0x',mvwrap:'#mv0',dot:'#dot0',name:'Nova',flare:'Lead cold · 3d',     move:'Sent to you'},
+    {box:'#m1',sl:'#sl1',n:'#n1',r:'#r1',s:'#s1',m:'#m1x',mvwrap:'#mv1',dot:'#dot1',name:'Vera',  flare:'Thu + Fri gap',    move:'Aria filled it'},
+    {box:'#m2',sl:'#sl2',n:'#n2',r:'#r2',s:'#s2',m:'#m2x',mvwrap:'#mv2',dot:'#dot2',name:'Esme',  flare:'Approval waiting', move:'Sent to you'}
+  ];
+  // mono single-line runs that digitise away (constant width => no reflow).
+  // Cormorant names, glyphs, dots, markers and the SVG graphics just fade.
+  var AWAY=['#mrole','#msub','#shtitle','#swtitle','#r0','#r1','#r2','#s0','#s1','#s2',
+            '#m0x','#m1x','#m2x','#nytitle','#ny0','#ny1','#hltag','#hl1','#hl2'];
+  var ORIG=AWAY.map(function(s){ var el=document.querySelector(s); return el?el.textContent:''; });
+  var NOISE=ORIG.map(function(t){ var C='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', o='';
+    for(var i=0;i<t.length;i++){ o+= /\s/.test(t[i]) ? ' ' : C[(Math.random()*C.length)|0]; } return o; });
+
+  /* ========================================================================
+     SHARED LOOP ENGINE  —  identical in every Aria slide.
+     ======================================================================== */
+  function revealIn(tl){
+    tl.to('#sweep',{opacity:1,duration:.3,ease:'power2.out'},0);
+    tl.to('#sweep',{top:1340,duration:1.7,ease:'power1.inOut'},0);
+    tl.to('#sweep',{opacity:0,duration:.45,ease:'power1.in'},1.35);
+    revealHero(tl);
+  }
+  function clearOut(tl){
+    tl.set('#sweep',{top:1320,opacity:0})
+      .to('#sweep',{opacity:1,duration:.3,ease:'power2.out'},'<')
+      .to('#sweep',{top:60,duration:1.3,ease:'power1.inOut'},'<')
+      .to('#content',{opacity:0,duration:.95,ease:'none'},'<+0.2');
+    AWAY.forEach(function(sel,i){
+      tl.to(sel,{scrambleText:{text:NOISE[i],chars:'upperCase',speed:2.4},duration:.95,ease:'none'},'<');
+    });
+    tl.to('#sweep',{opacity:0,duration:.3,ease:'power1.in'},'>-0.25');
+  }
+  var DECCH='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  function decodeAll(tl, sel, finalText, dur, pos){
+    var el=document.querySelector(sel), n=finalText.length, thr=[];
+    for(var i=0;i<n;i++){ thr.push(/\s/.test(finalText[i]) ? -1 : (0.55+Math.random()*0.4)); }
+    var st={p:0};
+    tl.to(st,{p:1,duration:dur,ease:'none',onUpdate:function(){
+      var p=st.p, out='';
+      for(var i=0;i<n;i++){ var c=finalText[i]; out += /\s/.test(c) ? ' ' : (p>=thr[i] ? c : DECCH[(Math.random()*DECCH.length)|0]); }
+      el.textContent=out;
+    }}, pos);
+  }
+
+  /* ========================================================================
+     SLIDE 07 · THE CHIEF OF STAFF  —  the oversight console.
+     ======================================================================== */
+  // HERO: Aria reveals as the Chief of Staff, HUD brackets draw in
+  function revealHero(tl){
+    tl.fromTo('#mcore',{opacity:0,scale:.92,y:-10},{opacity:1,scale:1,y:0,duration:.6,ease:'power3.out',immediateRender:false},0.66);
+    tl.fromTo('#hud',{drawSVG:'0%'},{drawSVG:'100%',duration:.6,ease:'power2.out',immediateRender:false},0.7);
+    tl.to('#mname',{scrambleText:{text:'Aria',chars:'upperCase',speed:1},duration:.55,ease:'none'},0.72);
+    tl.to('#mname',{color:'#FDFAF7',duration:.6,ease:'power1.out'},0.9);
+    tl.to('#mrole',{scrambleText:{text:'{original}',chars:'upperCase',speed:1},duration:.5,ease:'none'},0.92);
+    tl.to('#msub',{opacity:1,duration:.4,ease:'power1.out'},1.04);
+    tl.to({},{duration:0.4});
+  }
+
+  // BODY: watch -> catch the blind spots -> keep it moving -> surface what needs you
+  function body(tl){
+    // 1. self-watch + weekly insight come online
+    tl.to('#wl',{opacity:1,duration:.5,ease:'power2.out'},'+=0.05');
+    tl.fromTo('#shield',{drawSVG:'0%'},{drawSVG:'100%',duration:.5,ease:'power2.out',immediateRender:false},'<');
+    tl.to('#wr',{opacity:1,duration:.5,ease:'power2.out'},'<+0.12');
+    tl.fromTo('#spark',{drawSVG:'0%'},{drawSVG:'100%',duration:.75,ease:'power2.out',immediateRender:false},'<+0.05');
+
+    // 2. sightlines draw down; the heads come up monitoring
+    HEADS.forEach(function(h,i){
+      tl.to(h.sl,{drawSVG:'100%',duration:.42,ease:'power2.out'}, i===0?'+=0.05':'-=0.28');
+      tl.fromTo(h.box,{opacity:0,scale:.9,y:10},{opacity:1,scale:1,y:0,duration:.46,ease:'power3.out',immediateRender:false},'<');
+      tl.to(h.n,{scrambleText:{text:h.name,chars:'upperCase',speed:1},duration:.46,ease:'none'},'<');
+      tl.to(h.n,{color:'#FDFAF7',duration:.46,ease:'power1.out'},'<+0.16');
+      tl.to(h.r,{scrambleText:{text:'{original}',chars:'upperCase',speed:.8},duration:.4,ease:'none'},'<+0.05');
+    });
+
+    // 3. each head flares the thing it can't see about itself
+    HEADS.forEach(function(h,i){
+      tl.to(h.s,{scrambleText:{text:h.flare,chars:'upperCase',speed:1.2},duration:.5,ease:'none'}, i===0?'+=0.25':'-=0.12');
+      tl.to(h.s,{color:'#E07A50',duration:.3,ease:'power1.out'},'<+0.1');
+      tl.to(h.dot,{backgroundColor:'#CF5430',boxShadow:'0 0 10px rgba(207,84,48,.85)',duration:.3,ease:'power1.out'},'<');
+      tl.fromTo(h.box,{borderColor:'rgba(253,250,247,0.18)'},{borderColor:'#CF5430',duration:.32,yoyo:true,repeat:1,ease:'sine.inOut'},'<');
+      tl.to(h.sl,{opacity:1,duration:.3,yoyo:true,repeat:1,ease:'sine.inOut'},'<');
+    });
+
+    // 4. Aria acts: fills Vera's gap herself, sends the two human calls to you
+    HEADS.forEach(function(h,i){
+      tl.to(h.mvwrap,{opacity:1,duration:.4,ease:'power2.out'}, i===0?'+=0.2':'-=0.22');
+      tl.to(h.m,{scrambleText:{text:'{original}',chars:'upperCase',speed:1},duration:.42,ease:'none'},'<');
+    });
+
+    // 5. the few decisions only you can make collect in NEEDS YOU
+    tl.to('#nypanel',{opacity:1,duration:.45,ease:'power2.out'},'+=0.2');
+    tl.to('#nytitle',{scrambleText:{text:'{original}',chars:'upperCase',speed:1},duration:.45,ease:'none'},'<+0.05');
+    tl.fromTo('#nyc0',{opacity:0,y:14},{opacity:1,y:0,duration:.46,ease:'power3.out',immediateRender:false},'<+0.12');
+    tl.to('#ny0',{scrambleText:{text:'{original}',chars:'upperCase',speed:.8},duration:.46,ease:'none'},'<');
+    tl.to('#nyt0',{opacity:1,duration:.3,ease:'power1.out'},'<+0.12');
+    tl.fromTo('#nyc1',{opacity:0,y:14},{opacity:1,y:0,duration:.46,ease:'power3.out',immediateRender:false},'-=0.18');
+    tl.to('#ny1',{scrambleText:{text:'{original}',chars:'upperCase',speed:.8},duration:.46,ease:'none'},'<');
+    tl.to('#nyt1',{opacity:1,duration:.3,ease:'power1.out'},'<+0.12');
+
+    // 6. headline decodes in, then hold
+    tl.to('#hl',{opacity:1,duration:.3},'+=0.25')
+      .fromTo('#hltag',{opacity:0,y:10},{opacity:1,y:0,duration:.45,ease:'power3.out',immediateRender:false},'<');
+    decodeAll(tl,'#hl1',ORIG[AWAY.indexOf('#hl1')],1.0,'<');
+    decodeAll(tl,'#hl2',ORIG[AWAY.indexOf('#hl2')],1.0,'<+0.18');
+    tl.to({},{duration:8.0});
+  }
+
+  /* ---- start state (position 0; re-established every repeat) ---- */
+  function setStart(tl){
+    tl.set('#content',{opacity:1},0);
+    tl.set('#sweep',{top:90,opacity:0},0);
+    tl.set('#mcore',{opacity:0,scale:.92,y:-10},0);
+    tl.set('#mname',{color:'#E07A50'},0);
+    tl.set('#hud',{drawSVG:'0%'},0);
+    tl.set('#msub',{opacity:0},0);
+    tl.set('#wl',{opacity:0},0); tl.set('#shield',{drawSVG:'0%'},0);
+    tl.set('#wr',{opacity:0},0); tl.set('#spark',{drawSVG:'0%'},0);
+    HEADS.forEach(function(h){
+      tl.set(h.box,{opacity:0,scale:.9,y:10,borderColor:'rgba(253,250,247,0.18)'},0);
+      tl.set(h.sl,{drawSVG:'0%',opacity:0.55},0);
+      tl.set(h.n,{color:'#E07A50'},0);
+      tl.set(h.s,{color:'#FDFAF7'},0);
+      tl.set(h.dot,{backgroundColor:'#6FBF8E',boxShadow:'none'},0);
+      tl.set(h.mvwrap,{opacity:0},0);
+    });
+    tl.set('#nypanel',{opacity:0},0);
+    tl.set('#nyc0',{opacity:0,y:14},0); tl.set('#nyc1',{opacity:0,y:14},0);
+    tl.set('#nyt0',{opacity:0},0); tl.set('#nyt1',{opacity:0},0);
+    tl.set('#hl',{opacity:0},0);
+    tl.set('#hltag',{opacity:0,y:10},0);
+    tl.set(['#hl1','#hl2'],{opacity:1},0);
+    AWAY.forEach(function(s,i){ tl.set(s,{text:ORIG[i]},0); });
+    // flare status lines start in a calm 'monitoring' state (override generic reset)
+    tl.set('#s0',{text:'Monitoring'},0);
+    tl.set('#s1',{text:'Monitoring'},0);
+    tl.set('#s2',{text:'Monitoring'},0);
+  }
+
+  /* ---- build the single master loop + expose it for the renderer ---- */
+  function build(){
+    var tl=gsap.timeline();
+    setStart(tl);
+    revealIn(tl);
+    body(tl);
+    clearOut(tl);
+    return tl;
+  }
+  var master=build();
+  master.repeat(-1).repeatDelay(0.35);
+  window.__MARIA__={ tl:master, cycle:master.duration() };
+  master.play(0);
+})();
+</script>
+</body>
+</html>

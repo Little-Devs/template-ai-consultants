@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://example.com/blog/ai-training-tips-for-australian-businesses</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://example.com/assets/images/Cute-robot-toy-on-a-yellow-background-4k_opt.webp</image:loc>
+      <image:caption>AI training tips for Australian businesses</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://example.com/blog/what-is-ai</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://example.com/assets/images/abstract-data-network-wave-visualization-4k.webp</image:loc>
+      <image:caption>What is artificial intelligence — an abstract data network visualisation</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://example.com/blog/what-is-agentic-ai</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://example.com/assets/images/abstract-teal-network-with-golden-nodes-4k.webp</image:loc>
+      <image:caption>What is agentic AI — abstract teal network with golden nodes</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://example.com/blog/what-is-generative-ai</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://example.com/assets/images/abstract-neon-light-wave-on-black-4k.webp</image:loc>
+      <image:caption>What is generative AI — abstract neon light wave</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://example.com/blog/how-does-ai-work</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://example.com/assets/images/isometric-sketch-of-cloud-data-infrastructure-4k_opt.webp</image:loc>
+      <image:caption>How does AI work — isometric cloud data infrastructure sketch</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://example.com/blog/how-to-use-ai</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://example.com/assets/images/smartphone-with-vibrant-gradient-screen-in-hand-4k_opt.webp</image:loc>
+      <image:caption>How to use AI — smartphone with vibrant gradient screen</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://example.com/blog/how-do-ai-detectors-work</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://example.com/assets/images/abstract-glowing-rounded-bar-pillars-on-dark-background-4k_opt.webp</image:loc>
+      <image:caption>How do AI detectors work — abstract glowing bar pillars</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://example.com/blog/ai-consulting-vs-hiring-developers</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://example.com/blog/ai-training-roi-guide</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://example.com/blog/best-ai-tools-for-small-business-australia</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://example.com/blog/ai-governance-requirements-australia</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>

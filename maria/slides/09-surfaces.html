@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500&amp;family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&amp;family=JetBrains+Mono:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --base:#0E1117; --surface:#21252F; --surface-2:#262B36; --ivory:#FDFAF7;
+  --muted:rgba(253,250,247,0.6); --faint:rgba(253,250,247,0.34);
+  --hair:rgba(253,250,247,0.10); --hair-strong:rgba(253,250,247,0.18);
+  --grid:rgba(253,250,247,0.04);
+  --terra:#CF5430; --terra-deep:#B84020; --terra-soft:#E07A50; --hot:#FF6A38;
+  --good:#6FBF8E;
+  --f-display:'Cormorant Garamond',Georgia,serif; --f-body:'DM Sans',system-ui,sans-serif; --f-mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{background:#000;height:100%;}
+body{overflow:hidden;color:var(--ivory);font-family:var(--f-body);}
+.frame{position:relative;width:100%;height:100vh;display:flex;align-items:center;justify-content:center;background:#000;overflow:hidden;}
+.stage{
+  position:relative;width:1080px;height:1350px;flex:0 0 auto;
+  transform:scale(var(--s,1));transform-origin:center center;overflow:hidden;
+  background:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px),
+    radial-gradient(60% 34% at 50% 32%,rgba(207,84,48,0.12),transparent 62%),
+    var(--base);
+  background-size:60px 60px,60px 60px,100% 100%,100% 100%;
+}
+
+/* chrome */
+.ch{position:absolute;font-family:var(--f-mono);font-size:21px;letter-spacing:.24em;text-transform:uppercase;z-index:9;}
+.ch.tl{top:60px;left:72px;color:var(--faint);}
+.ch.tl b{color:var(--terra);font-weight:500;}
+.ch.tr{top:60px;right:72px;color:var(--muted);}
+.ch.bc{bottom:60px;left:0;width:100%;text-align:center;color:var(--faint);font-size:18px;letter-spacing:.3em;}
+
+/* sweep line */
+.sweep{position:absolute;left:40px;width:1000px;height:3px;top:0;z-index:10;opacity:0;
+  background:linear-gradient(90deg,transparent,var(--hot),transparent);box-shadow:0 0 26px 2px rgba(255,106,56,0.55);}
+#content{position:absolute;inset:0;}
+
+/* radiating rings + spokes */
+.radial{position:absolute;inset:0;z-index:2;}
+
+/* Aria core (centre) */
+.core{position:absolute;left:405px;top:370px;width:270px;height:270px;border-radius:50%;z-index:5;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  background:radial-gradient(60% 60% at 50% 42%,rgba(207,84,48,0.26),rgba(207,84,48,0.04));border:1.5px solid var(--terra);}
+.core .cn{font-family:var(--f-display);font-weight:500;font-size:62px;line-height:1;color:var(--ivory);}
+.core .cw{display:flex;align-items:center;gap:9px;}
+.core .cd{width:8px;height:8px;border-radius:50%;background:var(--good);box-shadow:0 0 8px rgba(111,191,142,.85);}
+.core .cl{font-family:var(--f-mono);font-size:17px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
+
+/* surface chips around the core */
+.surf{position:absolute;width:188px;height:64px;border-radius:14px;z-index:5;
+  display:flex;align-items:center;justify-content:center;gap:11px;
+  background:var(--surface);border:1px solid var(--hair-strong);}
+.surf svg{width:23px;height:23px;display:block;}
+.surf span{font-family:var(--f-mono);font-size:18px;letter-spacing:.02em;color:var(--ivory);white-space:nowrap;}
+.surf.s0{left:446px;top:178px;} .surf.s1{left:697px;top:323px;} .surf.s2{left:697px;top:613px;}
+.surf.s3{left:446px;top:758px;} .surf.s4{left:195px;top:613px;} .surf.s5{left:195px;top:323px;}
+
+/* conversation panel (the teammate thread) */
+.chat{position:absolute;left:265px;top:236px;width:550px;height:566px;border-radius:26px;z-index:6;
+  background:var(--surface);border:1px solid var(--hair-strong);box-shadow:0 30px 80px rgba(0,0,0,0.45);}
+.chat .chh{position:absolute;left:0;top:0;width:100%;height:62px;border-bottom:1px solid var(--hair);
+  display:flex;align-items:center;gap:11px;padding:0 26px;}
+.chat .chh .ca{width:30px;height:30px;border-radius:50%;background:radial-gradient(60% 60% at 50% 42%,rgba(207,84,48,0.5),rgba(207,84,48,0.1));border:1px solid var(--terra);}
+.chat .chh .cnm{font-family:var(--f-mono);font-size:18px;letter-spacing:.1em;text-transform:uppercase;color:var(--ivory);}
+.chat .chh .cst{font-family:var(--f-mono);font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--good);margin-left:auto;}
+.bub{position:absolute;max-width:404px;padding:13px 18px;border-radius:19px;font-family:var(--f-body);font-size:21px;line-height:1.35;}
+.bub.you{right:24px;background:var(--terra);color:var(--ivory);border-bottom-right-radius:6px;}
+.bub.her{left:24px;background:var(--surface-2);color:var(--ivory);border:1px solid var(--hair);border-bottom-left-radius:6px;}
+.b1{top:84px;} .b2{top:168px;} .b3{top:300px;} .b4{top:380px;} .b5{top:470px;}
+.bub.her.flag{border-color:rgba(255,106,56,0.5);}
+.typing{position:absolute;left:24px;top:170px;padding:14px 18px;border-radius:19px;background:var(--surface-2);border:1px solid var(--hair);display:flex;gap:6px;z-index:6;}
+.typing i{width:8px;height:8px;border-radius:50%;background:var(--muted);display:block;}
+
+/* others coda: she talks to your world too */
+.otherlab{position:absolute;left:0;top:236px;width:100%;text-align:center;z-index:5;
+  font-family:var(--f-mono);font-size:21px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);}
+.person{position:absolute;width:288px;border-radius:16px;padding:17px 21px;z-index:5;
+  background:var(--surface);border:1px solid var(--hair-strong);}
+.person .pn{font-family:var(--f-mono);font-size:16px;letter-spacing:.12em;text-transform:uppercase;color:var(--terra);margin-bottom:7px;}
+.person .pm{font-family:var(--f-body);font-size:21px;color:var(--ivory);line-height:1.3;}
+.person .pk{font-family:var(--f-mono);font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--good);margin-top:9px;}
+.person.p0{left:116px;top:436px;} .person.p1{left:676px;top:436px;} .person.p2{left:396px;top:792px;}
+
+/* headline */
+.headline{position:absolute;bottom:104px;left:0;width:100%;text-align:center;z-index:8;opacity:0;}
+.headline .tag{font-family:var(--f-mono);font-size:18px;letter-spacing:.26em;text-transform:uppercase;color:var(--terra);margin-bottom:18px;}
+.headline .t{font-family:var(--f-mono);font-weight:500;font-size:46px;letter-spacing:.05em;text-transform:uppercase;color:var(--ivory);line-height:1.16;}
+</style>
+</head>
+<body>
+<div class="frame"><div class="stage" id="stage">
+
+  <div class="ch tl"><b>lorem</b> STUDIO</div>
+  <div class="ch tr">lorem ipsum dolor sit amet</div>
+  <div class="ch bc">lorem ipsum dolor sit amet</div>
+
+  <div class="sweep" id="sweep"></div>
+
+  <div id="content">
+
+    <!-- radiating rings + spokes -->
+    <svg class="radial" id="radialsvg" viewbox="0 0 1080 1350" fill="none">
+      <circle id="ring0" cx="540" cy="505" r="133" stroke="#CF5430" stroke-width="2"/>
+      <circle id="ring1" cx="540" cy="505" r="133" stroke="#CF5430" stroke-width="2"/>
+      <circle id="ring2" cx="540" cy="505" r="133" stroke="#CF5430" stroke-width="2"/>
+      <path id="sp0" d="M540 505 L540 210" stroke="#CF5430" stroke-width="1.5" opacity="0.32"/>
+      <path id="sp1" d="M540 505 L791 355" stroke="#CF5430" stroke-width="1.5" opacity="0.32"/>
+      <path id="sp2" d="M540 505 L791 645" stroke="#CF5430" stroke-width="1.5" opacity="0.32"/>
+      <path id="sp3" d="M540 505 L540 790" stroke="#CF5430" stroke-width="1.5" opacity="0.32"/>
+      <path id="sp4" d="M540 505 L289 645" stroke="#CF5430" stroke-width="1.5" opacity="0.32"/>
+      <path id="sp5" d="M540 505 L289 355" stroke="#CF5430" stroke-width="1.5" opacity="0.32"/>
+    </svg>
+
+    <!-- Aria core -->
+    <div class="core" id="core">
+      <span class="cn" id="cname">Aria</span>
+      <span class="cw"><i class="cd"></i><span class="cl">lorem</span></span>
+    </div>
+
+    <!-- surfaces -->
+    <div class="surf s0" id="surf0"><svg viewbox="0 0 24 24" fill="none" stroke="#E07A50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 20l1.4-4.2A8.4 8.4 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/></svg><span id="sl0">lorem</span></div>
+    <div class="surf s1" id="surf1"><svg viewbox="0 0 24 24" fill="none" stroke="#E07A50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span id="sl1">lorem</span></div>
+    <div class="surf s2" id="surf2"><svg viewbox="0 0 24 24" fill="none" stroke="#E07A50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3 8 21M16 3l-2 18M3.5 9h17M2.5 15h17"/></svg><span id="sl2">Slack</span></div>
+    <div class="surf s3" id="surf3"><svg viewbox="0 0 24 24" fill="none" stroke="#E07A50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span id="sl3">lorem</span></div>
+    <div class="surf s4" id="surf4"><svg viewbox="0 0 24 24" fill="none" stroke="#E07A50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a8 8 0 0 1 16 0M8 12v3M16 12v3M5 11v2a2 2 0 0 0 2 2M19 11v2a2 2 0 0 1-2 2"/></svg><span id="sl4">lorem</span></div>
+    <div class="surf s5" id="surf5"><svg viewbox="0 0 24 24" fill="none" stroke="#E07A50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg><span id="sl5">lorem</span></div>
+
+    <!-- conversation -->
+    <div class="chat" id="chat">
+      <div class="chh"><i class="ca"></i><span class="cnm">Aria</span><span class="cst">lorem</span></div>
+      <div class="typing" id="typing"><i></i><i></i><i></i></div>
+      <div class="bub you b1" id="bub1">lorem ipsum dolor sit amet</div>
+      <div class="bub her b2" id="bub2">Lorem ipsum dolor sit amet consectetur adipiscing elit sed.</div>
+      <div class="bub you b3" id="bub3">lorem ipsum</div>
+      <div class="bub her b4" id="bub4">Lorem ipsum dolor sit amet consectetur adipiscing.</div>
+      <div class="bub her flag b5" id="bub5">Lorem ipsum dolor sit amet consectetur adipiscing elit.</div>
+    </div>
+
+    <!-- others: she talks to your world too -->
+    <div class="otherlab" id="otherlab">Lorem ipsum dolor sit amet consectetur adipiscing.</div>
+    <div class="person p0" id="person0"><div class="pn">lorem ipsum</div><div class="pm">lorem ipsum dolor sit</div><div class="pk">lorem ipsum</div></div>
+    <div class="person p1" id="person1"><div class="pn">lorem ipsum</div><div class="pm">lorem ipsum dolor sit</div><div class="pk">lorem ipsum</div></div>
+    <div class="person p2" id="person2"><div class="pn">lorem</div><div class="pm">lorem ipsum dolor sit</div><div class="pk">lorem ipsum</div></div>
+
+    <div class="headline" id="hl">
+      <div class="tag" id="hltag">lorem ipsum dolor sit</div>
+      <div class="t" id="hl1">lorem ipsum</div>
+      <div class="t" id="hl2">lorem ipsum dolor</div>
+    </div>
+
+  </div><!-- /#content -->
+
+</div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrambleTextPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>
+<script>
+(function(){
+  'use strict';
+  var root=document.documentElement;
+  function scale(){ root.style.setProperty('--s', Math.min(innerWidth/1080, innerHeight/1350).toFixed(4)); }
+  scale(); addEventListener('resize',scale);
+  gsap.registerPlugin(DrawSVGPlugin, ScrambleTextPlugin, TextPlugin);
+
+  var SURF=[{box:'#surf0',l:'#sl0',sp:'#sp0',name:'iMessage'},
+            {box:'#surf1',l:'#sl1',sp:'#sp1',name:'WhatsApp'},
+            {box:'#surf2',l:'#sl2',sp:'#sp2',name:'Slack'},
+            {box:'#surf3',l:'#sl3',sp:'#sp3',name:'Email'},
+            {box:'#surf4',l:'#sl4',sp:'#sp4',name:'Voice'},
+            {box:'#surf5',l:'#sl5',sp:'#sp5',name:'Dashboard'}];
+  var RINGS=['#ring0','#ring1','#ring2'];
+  var PERSON=['#person0','#person1','#person2'];
+
+  // mono single-line runs that digitise away (constant width => no reflow).
+  // the Cormorant name, the DM Sans chat bubbles, and the SVG graphics just fade.
+  var AWAY=['#sl0','#sl1','#sl2','#sl3','#sl4','#sl5','#hltag','#hl1','#hl2'];
+  var ORIG=AWAY.map(function(s){ var el=document.querySelector(s); return el?el.textContent:''; });
+  var NOISE=ORIG.map(function(t){ var C='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', o='';
+    for(var i=0;i<t.length;i++){ o+= /\s/.test(t[i]) ? ' ' : C[(Math.random()*C.length)|0]; } return o; });
+
+  /* ========================================================================
+     SHARED LOOP ENGINE  —  identical in every Aria slide.
+     ======================================================================== */
+  function revealIn(tl){
+    tl.to('#sweep',{opacity:1,duration:.3,ease:'power2.out'},0);
+    tl.to('#sweep',{top:1340,duration:1.7,ease:'power1.inOut'},0);
+    tl.to('#sweep',{opacity:0,duration:.45,ease:'power1.in'},1.35);
+    revealHero(tl);
+  }
+  function clearOut(tl){
+    tl.set('#sweep',{top:1320,opacity:0})
+      .to('#sweep',{opacity:1,duration:.3,ease:'power2.out'},'<')
+      .to('#sweep',{top:60,duration:1.3,ease:'power1.inOut'},'<')
+      .to('#content',{opacity:0,duration:.95,ease:'none'},'<+0.2');
+    AWAY.forEach(function(sel,i){
+      tl.to(sel,{scrambleText:{text:NOISE[i],chars:'upperCase',speed:2.4},duration:.95,ease:'none'},'<');
+    });
+    tl.to('#sweep',{opacity:0,duration:.3,ease:'power1.in'},'>-0.25');
+  }
+  var DECCH='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  function decodeAll(tl, sel, finalText, dur, pos){
+    var el=document.querySelector(sel), n=finalText.length, thr=[];
+    for(var i=0;i<n;i++){ thr.push(/\s/.test(finalText[i]) ? -1 : (0.55+Math.random()*0.4)); }
+    var st={p:0};
+    tl.to(st,{p:1,duration:dur,ease:'none',onUpdate:function(){
+      var p=st.p, out='';
+      for(var i=0;i<n;i++){ var c=finalText[i]; out += /\s/.test(c) ? ' ' : (p>=thr[i] ? c : DECCH[(Math.random()*DECCH.length)|0]); }
+      el.textContent=out;
+    }}, pos);
+  }
+
+  /* ========================================================================
+     SLIDE 09 · WHERE IT LIVES  —  radial reach, a teammate conversation.
+     ======================================================================== */
+  // HERO: the Aria core reveals at the centre, online
+  function revealHero(tl){
+    tl.fromTo('#core',{opacity:0,scale:.85},{opacity:1,scale:1,duration:.65,ease:'power3.out',immediateRender:false},0.66);
+    tl.to('#cname',{scrambleText:{text:'Aria',chars:'upperCase',speed:1},duration:.55,ease:'none'},0.74);
+    tl.to({},{duration:0.3});
+  }
+
+  function body(tl){
+    /* ---- ACT 1 · SHE'S ON EVERYTHING YOU ALREADY USE ---- */
+    SURF.forEach(function(s,i){
+      tl.to(s.sp,{drawSVG:'100%',duration:.4,ease:'power2.out'}, i===0?'+=0.2':'-=0.26');
+      tl.fromTo(s.box,{opacity:0,scale:.8},{opacity:1,scale:1,duration:.5,ease:'back.out(1.7)',immediateRender:false},'<+0.05');
+      tl.to(s.l,{scrambleText:{text:s.name,chars:'upperCase',speed:1},duration:.42,ease:'none'},'<+0.05');
+    });
+    tl.to({},{duration:1.8});   // hold the full radial, take it in
+
+    /* ---- ACT 2 · MESSAGE HER LIKE A TEAMMATE (the round trip) ---- */
+    // focus shifts: surfaces + rings settle back, the conversation takes centre
+    tl.to(['#surf0','#surf1','#surf2','#surf3','#surf4','#surf5'],{opacity:0.16,duration:.5,ease:'power1.out'},'+=0.1');
+    tl.to(['#sp0','#sp1','#sp2','#sp3','#sp4','#sp5'],{opacity:0.08,duration:.5},'<');
+    tl.to('#core',{opacity:0.18,duration:.5,ease:'power1.out'},'<');
+    tl.fromTo('#chat',{opacity:0,scale:.95,y:14},{opacity:1,scale:1,y:0,duration:.55,ease:'power3.out',immediateRender:false},'<+0.1');
+    // you ask
+    tl.fromTo('#bub1',{opacity:0,scale:.9,y:10},{opacity:1,scale:1,y:0,duration:.4,ease:'back.out(1.6)',immediateRender:false},'+=0.3');
+    tl.to({},{duration:.6});
+    // she's typing, then replies
+    tl.fromTo('#typing',{opacity:0},{opacity:1,duration:.3,ease:'power1.out',immediateRender:false},'+=0.1');
+    tl.to('#typing i',{y:-5,duration:.32,repeat:3,yoyo:true,stagger:0.12,ease:'sine.inOut'},'<');
+    tl.to('#typing',{opacity:0,duration:.25,ease:'power1.in'},'+=0.45');
+    tl.fromTo('#bub2',{opacity:0,scale:.9,y:10},{opacity:1,scale:1,y:0,duration:.42,ease:'back.out(1.6)',immediateRender:false},'<+0.05');
+    tl.to({},{duration:.85});
+    // you confirm
+    tl.fromTo('#bub3',{opacity:0,scale:.9,y:10},{opacity:1,scale:1,y:0,duration:.4,ease:'back.out(1.6)',immediateRender:false},'+=0.2');
+    tl.to({},{duration:.55});
+    tl.fromTo('#bub4',{opacity:0,scale:.9,y:10},{opacity:1,scale:1,y:0,duration:.42,ease:'back.out(1.6)',immediateRender:false},'+=0.3');
+    tl.to({},{duration:.85});
+    // she reaches out, proactive
+    tl.fromTo('#bub5',{opacity:0,scale:.9,y:10},{opacity:1,scale:1,y:0,duration:.45,ease:'back.out(1.6)',immediateRender:false},'+=0.4');
+    tl.fromTo('#bub5',{boxShadow:'0 0 0 rgba(255,106,56,0)'},{boxShadow:'0 0 22px rgba(255,106,56,0.4)',duration:.5,yoyo:true,repeat:1,ease:'sine.inOut'},'<+0.1');
+    tl.to({},{duration:1.1});
+
+    /* ---- ACT 3 · SHE TALKS TO YOUR WORLD TOO (lighter coda) ---- */
+    tl.to('#chat',{opacity:0,scale:.97,duration:.5,ease:'power2.in'},'+=0.1');
+    tl.to('#core',{opacity:1,duration:.5,ease:'power2.out'},'<');
+    tl.to('#otherlab',{opacity:1,duration:.45,ease:'power1.out'},'<+0.1');
+    PERSON.forEach(function(p,i){
+      tl.fromTo(p,{opacity:0,scale:.85,y:10},{opacity:1,scale:1,y:0,duration:.45,ease:'back.out(1.6)',immediateRender:false}, i===0?'+=0.15':'+=0.4');
+    });
+    tl.to({},{duration:2.4});   // hold so all three are readable
+
+    /* ---- HEADLINE (appears while the three messages stay up — they don't fade) ---- */
+    tl.to('#hl',{opacity:1,duration:.3},'+=0.4')
+      .fromTo('#hltag',{opacity:0,y:10},{opacity:1,y:0,duration:.45,ease:'power3.out',immediateRender:false},'<');
+    decodeAll(tl,'#hl1',ORIG[AWAY.indexOf('#hl1')],1.0,'<');
+    decodeAll(tl,'#hl2',ORIG[AWAY.indexOf('#hl2')],1.0,'<+0.18');
+    tl.to({},{duration:4.8});
+
+    /* ---- ambient rings (added last, ABSOLUTE positions, so they don't shove the beats) ---- */
+    RINGS.forEach(function(r,i){
+      tl.fromTo(r,{scale:0.55,opacity:0.5,transformOrigin:'50% 50%'},
+        {scale:2.5,opacity:0,duration:2.1,ease:'power1.out',repeat:6,immediateRender:false}, 0.7 + i*0.7);
+    });
+  }
+
+  /* ---- start state (position 0; re-established every repeat) ---- */
+  function setStart(tl){
+    tl.set('#content',{opacity:1},0);
+    tl.set('#sweep',{top:90,opacity:0},0);
+    tl.set('#core',{opacity:0,scale:.85},0);
+    tl.set('#cname',{color:'#FDFAF7'},0);
+    RINGS.forEach(function(r){ tl.set(r,{scale:0.55,opacity:0,transformOrigin:'50% 50%'},0); });
+    SURF.forEach(function(s){
+      tl.set(s.box,{opacity:0,scale:.8},0);
+      tl.set(s.sp,{drawSVG:'0%',opacity:0.32},0);
+    });
+    tl.set('#chat',{opacity:0,scale:.95,y:14},0);
+    tl.set('#typing',{opacity:0},0);
+    ['#bub1','#bub2','#bub3','#bub4','#bub5'].forEach(function(b){ tl.set(b,{opacity:0,scale:.9,y:10},0); });
+    tl.set('#bub5',{boxShadow:'0 0 0 rgba(255,106,56,0)'},0);
+    tl.set('#otherlab',{opacity:0},0);
+    PERSON.forEach(function(p){ tl.set(p,{opacity:0,scale:.85,y:10},0); });
+    tl.set('#hl',{opacity:0},0);
+    tl.set('#hltag',{opacity:0,y:10},0);
+    tl.set(['#hl1','#hl2'],{opacity:1},0);
+    AWAY.forEach(function(s,i){ tl.set(s,{text:ORIG[i]},0); });
+  }
+
+  /* ---- build the single master loop + expose it for the renderer ---- */
+  function build(){
+    var tl=gsap.timeline();
+    setStart(tl);
+    revealIn(tl);
+    body(tl);
+    clearOut(tl);
+    return tl;
+  }
+  var master=build();
+  master.repeat(-1).repeatDelay(0.35);
+  window.__MARIA__={ tl:master, cycle:master.duration() };
+  master.play(0);
+})();
+</script>
+</body>
+</html>

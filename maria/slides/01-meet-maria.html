@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500&amp;family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&amp;family=JetBrains+Mono:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --base:#0E1117; --surface:#21252F; --surface-2:#262B36; --ivory:#FDFAF7;
+  --muted:rgba(253,250,247,0.6); --faint:rgba(253,250,247,0.34);
+  --hair:rgba(253,250,247,0.10); --hair-strong:rgba(253,250,247,0.18);
+  --grid:rgba(253,250,247,0.04);
+  --terra:#CF5430; --terra-deep:#B84020; --terra-soft:#E07A50; --hot:#FF6A38;
+  --f-display:'Cormorant Garamond',Georgia,serif; --f-body:'DM Sans',system-ui,sans-serif; --f-mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{background:#000;height:100%;}
+body{overflow:hidden;color:var(--ivory);font-family:var(--f-body);}
+.frame{position:relative;width:100%;height:100vh;display:flex;align-items:center;justify-content:center;background:#000;overflow:hidden;}
+.stage{
+  position:relative;width:1080px;height:1350px;flex:0 0 auto;
+  transform:scale(var(--s,1));transform-origin:center center;overflow:hidden;
+  background:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px),
+    radial-gradient(78% 52% at 50% 36%,rgba(207,84,48,0.12),transparent 62%),
+    #0E1117;
+  background-size:60px 60px,60px 60px,100% 100%,100% 100%;
+}
+
+/* chrome */
+.ch{position:absolute;font-family:var(--f-mono);font-size:21px;letter-spacing:.24em;text-transform:uppercase;z-index:7;}
+.ch.tl{top:60px;left:72px;color:var(--faint);}
+.ch.tl b{color:var(--terra);font-weight:500;}
+.ch.tr{top:60px;right:72px;color:var(--muted);}
+.ch.bc{bottom:60px;left:0;width:100%;text-align:center;color:var(--faint);font-size:18px;letter-spacing:.3em;}
+
+/* sweep line (loop bookend: down = reveal, up = clear) */
+.sweep{position:absolute;left:40px;width:1000px;height:3px;top:0;z-index:6;opacity:0;
+  background:linear-gradient(90deg,transparent,var(--hot),transparent);box-shadow:0 0 26px 2px rgba(255,106,56,0.55);}
+/* the whole slide body — the sweep clears this as a unit */
+#content{position:absolute;inset:0;}
+
+/* title: the Aria acronym + a lede */
+.title{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:5;}
+.acro{display:flex;gap:0;justify-content:center;}
+.acro .ac{display:flex;flex-direction:column;align-items:center;gap:18px;width:176px;}
+.acro .ltr{font-family:var(--f-display);font-weight:300;font-size:152px;line-height:.78;color:var(--terra-soft);}
+.acro .wd{font-family:var(--f-mono);font-size:18px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+.lede{font-family:var(--f-body);font-weight:300;font-size:40px;line-height:1.5;color:var(--muted);
+  max-width:860px;text-align:center;margin-top:96px;opacity:0;}
+.lede b{color:var(--ivory);font-weight:500;}
+</style>
+</head>
+<body>
+<div class="frame"><div class="stage" id="stage">
+
+  <div class="ch tl"><b>lorem</b> STUDIO</div>
+  <div class="ch tr">lorem ipsum dolor</div>
+  <div class="ch bc">lorem ipsum dolor sit amet</div>
+
+  <div class="sweep" id="sweep"></div>
+
+  <div id="content">
+    <div class="title" id="title">
+      <div class="acro" id="acro">
+        <div class="ac"><span class="ltr" data-l="M">lorem</span><span class="wd">lorem</span></div>
+        <div class="ac"><span class="ltr" data-l="A">lorem</span><span class="wd">lorem</span></div>
+        <div class="ac"><span class="ltr" data-l="R">lorem</span><span class="wd">lorem</span></div>
+        <div class="ac"><span class="ltr" data-l="I">lorem</span><span class="wd">lorem</span></div>
+        <div class="ac"><span class="ltr" data-l="A">lorem</span><span class="wd">lorem</span></div>
+      </div>
+      <p class="lede" id="lede"><b>lorem ipsum dolor</b> Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud.</p>
+    </div>
+  </div><!-- /#content -->
+
+</div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrambleTextPlugin.min.js"></script>
+<script>
+(function(){
+  'use strict';
+  var root=document.documentElement;
+  function scale(){ root.style.setProperty('--s', Math.min(innerWidth/1080, innerHeight/1350).toFixed(4)); }
+  scale(); addEventListener('resize',scale);
+  gsap.registerPlugin(ScrambleTextPlugin);
+
+  /* ========================================================================
+     SHARED LOOP ENGINE  —  identical in every Aria slide. Do not edit per slide.
+     revealIn (sweep DOWN reveals the hero) -> body -> clearOut (sweep UP wipes
+     #content). Then resets and loops forever. A slide supplies only:
+     revealHero(tl), body(tl), resetSlide().
+     ======================================================================== */
+  function revealIn(tl){
+    tl.set('#sweep',{top:90,opacity:0},0);
+    tl.to('#sweep',{opacity:1,duration:.3,ease:'power2.out'},0);
+    tl.to('#sweep',{top:1340,duration:1.7,ease:'power1.inOut'},0);
+    tl.to('#sweep',{opacity:0,duration:.45,ease:'power1.in'},1.35);
+    revealHero(tl);
+  }
+  function clearOut(tl){
+    tl.set('#sweep',{top:1320,opacity:0})
+      .to('#sweep',{opacity:1,duration:.3,ease:'power2.out'},'<')
+      .to('#sweep',{top:60,duration:1.3,ease:'power1.inOut'},'<')
+      .to('#content',{opacity:0,duration:1.1,ease:'power1.in'},'<+0.18')
+      .to('#sweep',{opacity:0,duration:.3,ease:'power1.in'},'>-0.25');
+  }
+  /* ========================================================================
+     SLIDE 01 · MEET Aria
+     ======================================================================== */
+  var ltrs=gsap.utils.toArray('#acro .ltr');
+  var wds=gsap.utils.toArray('#acro .wd');
+
+  // HERO: the Aria acronym decodes (terra -> white) as the sweep passes it
+  function revealHero(tl){
+    ltrs.forEach(function(el,i){
+      var at=0.66+i*0.04;
+      tl.to(el,{opacity:1,duration:.35,ease:'power2.out'},at);
+      tl.to(el,{scrambleText:{text:el.dataset.l,chars:'upperCase',speed:1},duration:.5,ease:'none'},at);
+      tl.to(el,{color:'#FDFAF7',duration:.6,ease:'power1.out'},at+0.18);
+    });
+    wds.forEach(function(el,i){
+      tl.to(el,{opacity:1,y:0,duration:.45,ease:'power2.out'},1.18+i*0.05);
+    });
+    tl.to({},{duration:0.7});
+  }
+
+  // BODY: the lede rises in under the acronym, holds
+  function body(tl){
+    tl.fromTo('#lede',{opacity:0,y:24},{opacity:1,y:0,duration:.9,ease:'power2.out',immediateRender:false},'+=0.15');
+    tl.to({},{duration:8.3});
+  }
+
+  /* ---- start state (position 0; re-established every repeat) ---- */
+  function setStart(tl){
+    tl.set('#content',{opacity:1},0);
+    tl.set('#sweep',{top:90,opacity:0},0);
+    tl.set('#acro .ltr',{opacity:0,color:'#E07A50'},0);
+    tl.set('#acro .wd',{opacity:0,y:10},0);
+    tl.set('#lede',{opacity:0,y:24},0);
+  }
+
+  /* ---- build the single master loop + expose it for the renderer ---- */
+  function build(){
+    var tl=gsap.timeline();
+    setStart(tl);
+    revealIn(tl);
+    body(tl);
+    clearOut(tl);
+    return tl;
+  }
+  var master=build();
+  master.repeat(-1).repeatDelay(0.35);
+  window.__MARIA__={ tl:master, cycle:master.duration() };
+  master.play(0);
+})();
+</script>
+</body>
+</html>

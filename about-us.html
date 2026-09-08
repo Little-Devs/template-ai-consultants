@@ -1,0 +1,2271 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+<!-- Primary Meta Tags -->
+<title>Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit Sed</title>
+<meta name="title" content="Lorem ipsum dolor sit amet consectetur adipiscing elit sed."/>
+<meta name="description" content="Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim." <meta name="keywords" content="studio, template, consultancy"/>
+<meta name="author" content="Studio"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://example.com/about-us"/>
+<meta property="og:title" content="Lorem ipsum dolor sit amet consectetur adipiscing elit."/>
+<meta property="og:description" content="Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
+<meta property="og:image" content="https://example.com/assets/images/og-card.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:alt" content="Studio"/>
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image"/>
+<meta property="twitter:url" content="https://example.com/about-us"/>
+<meta property="twitter:title" content="Lorem ipsum dolor sit amet consectetur adipiscing elit."/>
+<meta property="twitter:description" content="Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
+<meta property="twitter:image" content="https://example.com/assets/images/og-card.png"/>
+<meta property="twitter:image:alt" content="Studio"/>
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="assets/icons/brand-favicon.svg"/>
+<link rel="apple-touch-icon" href="assets/icons/brand-favicon.svg"/>
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://example.com/about-us"/>
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://example.com/#organization",
+  "name": "Studio",
+  "url": "https://example.com",
+  "logo": "https://example.com/assets/icons/brand-mark.svg",
+  "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Perth",
+    "addressRegion": "WA",
+    "addressCountry": "AU"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "hello@example.com",
+    "contactType": "sales"
+  },
+  "areaServed": "AU",
+  "sameAs": []
+}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://example.com/"},{"@type":"ListItem","position":2,"name":"About Us","item":"https://example.com/about-us"}]}
+</script>
+
+<!-- DNS Prefetch for External Resources -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+<link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
+<link rel="dns-prefetch" href="https://unpkg.com"/>
+
+<!-- Preload Critical Resources -->
+<link rel="preload" href="css/output.css?v=20260411" as="style"/>
+<link rel="preload" href="css/site.css?v=20260411" as="style"/>
+<link rel="preload" href="js/site.min.js" as="script"/>
+<link rel="preload" href="js/gsap/gsap.min.js" as="script"/>
+<link rel="preload" href="assets/images/night-zen-garden-about-hero-1400.webp" as="image" type="image/webp"/>
+<!-- No hero image preload needed (gradient-based background) -->
+
+<!-- Fonts with Optimized Loading -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&amp;family=Inter:wght@200;300;400;500;600;700&amp;family=JetBrains+Mono:wght@200;300;400;500;600;700&amp;family=Open+Sans:wght@300;400;500;600;700&amp;display=swap"/>
+
+
+<!-- Tailwind CSS (Production Build) -->
+<link rel="stylesheet" href="css/output.css?v=20260411"/>
+<link rel="stylesheet" href="css/site.css?v=20260411"/>
+<link rel="stylesheet" href="css/tokens.css"/>
+<style>
+  #mobile-menu-btn path, #mobile-menu-btn rect { fill: #f5f0e8 !important; }
+  #mobile-menu-btn svg.mobile-menu-fallback { display: block; }
+  #mobile-menu-btn svg + svg.mobile-menu-fallback,
+  #mobile-menu-btn .mobile-menu-fallback:not(:only-child) { display: none; }
+
+  /* Team cards use .founder-card CSS from site.css (is-active state) */
+  .team-bio {
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+  }
+  .team-bio.is-open {
+    opacity: 1;
+  }
+
+  #about-build-next { display: none !important; }
+
+  /* Show "Build Your Next" on desktop only */
+  @media (min-width: 1024px) {
+    #about-build-next { display: flex !important; }
+  }
+
+  /* Custom utility overrides (Tailwind build unavailable) */
+  .about-card-bg { background-color: rgba(255,255,255,0.08); }
+  .about-bio-bg { background-color: rgba(255,255,255,0.05); }
+  .about-bio-border { border-color: rgba(255,255,255,0.05); }
+  .about-tile-bg { background-color: rgba(255,255,255,0.06); }
+  .about-tile-bg:hover { background-color: rgba(255,255,255,0.10); }
+  .about-tile-bg:hover { border-color: rgba(255,255,255,0.15); }
+
+  /* === A1: Ember Flow - visible blurred color blobs === */
+  .about-glow-blob {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: lighten;
+  }
+
+  /* === B2: Gradient text for STUDIO title (ivory / stone / sage) === */
+  .about-title-gradient {
+    line-height: 1.5 !important;
+    text-shadow: none;
+    opacity: 0.72;
+    mix-blend-mode: overlay;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  /* Z→E→N→I→A→S: ivory → gold → sage, one flat colour per letter */
+  .about-title-gradient span[data-char] {
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  .about-title-gradient span[data-char]:nth-child(1) { background: rgba(235,228,210,0.62); -webkit-background-clip: text; background-clip: text; }
+  .about-title-gradient span[data-char]:nth-child(2) { background: rgba(220,192,122,0.55); -webkit-background-clip: text; background-clip: text; }
+  .about-title-gradient span[data-char]:nth-child(3) { background: rgba(185,162,95,0.44); -webkit-background-clip: text; background-clip: text; }
+  .about-title-gradient span[data-char]:nth-child(4) { background: rgba(172,166,120,0.50); -webkit-background-clip: text; background-clip: text; }
+  .about-title-gradient span[data-char]:nth-child(5) { background: rgba(138,154,118,0.48); -webkit-background-clip: text; background-clip: text; }
+  .about-title-gradient span[data-char]:nth-child(6) { background: rgba(100,125,100,0.44); -webkit-background-clip: text; background-clip: text; }
+  .about-title-gradient:not([data-chars-split="1"]) {
+    background: linear-gradient(90deg, rgba(248,242,228,0.90) 0%, rgba(222,188,100,0.85) 40%, rgba(152,168,132,0.72) 75%, rgba(110,138,110,0.62) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* === C1: Floating micro-particles === */
+  .about-particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    animation: particleFloat linear infinite;
+  }
+  @keyframes particleFloat {
+    0%   { transform: translateY(0) translateX(0); opacity: 0; }
+    10%  { opacity: var(--p-opacity, 0.2); }
+    90%  { opacity: var(--p-opacity, 0.2); }
+    100% { transform: translateY(calc(-100vh - 40px)) translateX(var(--p-drift, 20px)); opacity: 0; }
+  }
+
+
+  /* === D1+D3: Enhanced value cards === */
+  .values-tile {
+    position: relative;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.08);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 4px 24px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: all 0.5s cubic-bezier(0.16,1,0.3,1);
+    overflow: hidden;
+  }
+  .values-tile:hover {
+    background: rgba(255,255,255,0.11);
+    border-color: var(--tile-accent, rgba(255,255,255,0.15));
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.1),
+      0 8px 32px rgba(0,0,0,0.4),
+      0 0 30px var(--tile-accent, rgba(212,175,55,0.1));
+    transform: translateY(-3px);
+  }
+  /* Shimmer sweep on hover */
+  .values-tile::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+    transition: left 0.6s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .values-tile:hover::after {
+    left: 100%;
+  }
+  /* Hover glow on icon circles */
+  .values-tile:hover .tile-icon {
+    box-shadow: 0 0 20px var(--tile-accent, rgba(212,175,55,0.3));
+    transform: scale(1.1);
+    transition: all 0.4s ease;
+  }
+  /* Description text brightens on hover */
+  .values-tile:hover .tile-desc {
+    color: rgba(255,255,255,0.85);
+  }
+  .values-tile h3 {
+    text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+  }
+  .values-tile .tile-desc {
+    text-shadow: 0 1px 6px rgba(0,0,0,0.4);
+  }
+
+  @media (min-width: 1024px) {
+    .about-values-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+
+  .about-hero-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    --about-desktop-panel-height: 31rem;
+  }
+
+  #about-page .about-content-frame {
+    width: 100%;
+    max-width: 2200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  #about-page .about-section-shell {
+    width: 100%;
+    max-width: 2296px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-hero-copy,
+  .about-team-rail {
+    display: contents;
+  }
+
+  .about-positioning-band {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 62rem;
+    margin: 0 auto 0.75rem;
+    text-align: center;
+  }
+
+  .about-positioning-band p:first-child {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.625rem;
+    letter-spacing: 0.2em;
+    line-height: 1.6;
+    text-transform: uppercase;
+    color: rgba(253,230,138,0.9);
+  }
+
+  .about-positioning-band p:last-child {
+    max-width: 52rem;
+    margin: 0.8rem auto 0;
+    font-family: 'Open Sans', system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.75);
+  }
+
+  .about-directory-proof {
+    position: relative;
+    z-index: 10;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.55rem;
+    padding: 0.85rem 1.1rem;
+    border: 1px solid rgba(255,255,255,0.16);
+    background: rgba(255,255,255,0.025);
+  }
+
+  .about-directory-proof__copy {
+    margin-top: 0.45rem;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: rgba(244,237,226,0.88);
+  }
+
+  .about-story-heading {
+    position: relative;
+    z-index: 11;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .about-story-heading #about-zen-subtitle {
+    margin: 0 !important;
+    font-size: clamp(1.45rem, 2vw, 1.9rem) !important;
+    line-height: 0.98 !important;
+    letter-spacing: 0.04em !important;
+    font-weight: 300 !important;
+    color: rgba(244, 237, 226, 0.78) !important;
+    text-shadow: 0 0 16px rgba(121, 145, 111, 0.05);
+    position: relative;
+    z-index: 11;
+  }
+
+  .about-story-heading #about-zen-subtitle .subtitle-word {
+    display: inline;
+  }
+
+  .about-subtitle-anchor {
+    width: min(100%, 28rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.1rem;
+    margin-top: 0.05rem;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 11;
+  }
+
+  .about-subtitle-anchor-label {
+    flex: 0 0 auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: transparent;
+    background: linear-gradient(90deg, rgba(239, 198, 108, 0.95) 0%, rgba(214, 182, 111, 0.92) 38%, rgba(156, 184, 145, 0.95) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 14px rgba(157, 186, 146, 0.12);
+    white-space: nowrap;
+  }
+
+  .about-subtitle-anchor-line {
+    flex: 0 0 auto;
+    height: 1px;
+    width: clamp(2.8rem, 6vw, 4.4rem);
+    background: linear-gradient(90deg, rgba(244, 237, 226, 0.06) 0%, rgba(244, 237, 226, 0.28) 20%, rgba(244, 237, 226, 0.34) 50%, rgba(244, 237, 226, 0.2) 80%, rgba(244, 237, 226, 0.04) 100%);
+    box-shadow: 0 0 8px rgba(244, 237, 226, 0.06);
+    opacity: 0.72;
+  }
+
+  .about-hero-card {
+    width: 100%;
+    margin-top: 0;
+    height: 32rem;
+  }
+
+  .about-team-rail-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 0 0;
+    white-space: nowrap;
+  }
+
+  .about-team-rail-header > span {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .about-team-rail-header > div {
+    min-width: clamp(1.25rem, 3vw, 3rem);
+  }
+
+  .about-team-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    transition: gap 0.46s cubic-bezier(0.2, 0, 0, 1);
+  }
+
+  .about-team-rail-body {
+    position: relative;
+  }
+
+  .about-team-detail {
+    display: none;
+  }
+
+  .about-team-stack .team-card {
+    transition: flex 0.45s ease, transform 0.45s ease;
+  }
+
+  .about-team-stack .founder-card {
+    position: relative;
+    padding-right: 4.25rem !important;
+    transition:
+      transform 0.35s ease,
+      border-color 0.35s ease,
+      background-color 0.35s ease,
+      box-shadow 0.35s ease;
+  }
+
+  .about-team-stack .founder-card:hover,
+  .about-team-stack .founder-card:focus-visible {
+    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.095);
+    border-color: rgba(231, 196, 112, 0.22);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.06),
+      0 12px 26px rgba(0, 0, 0, 0.24),
+      0 0 18px rgba(130, 161, 121, 0.08);
+  }
+
+  .about-team-stack .founder-photo-wrap,
+  .about-team-detail-header-slot .founder-photo-wrap {
+    isolation: isolate;
+  }
+
+  .about-team-stack .founder-photo-glow,
+  .about-team-detail-header-slot .founder-photo-glow {
+    background: radial-gradient(circle at 50% 50%, rgba(127, 165, 124, 0.28) 0%, rgba(209, 186, 126, 0.18) 42%, rgba(209, 186, 126, 0.08) 66%, rgba(209, 186, 126, 0) 80%);
+    filter: blur(18px);
+    opacity: 0.44;
+    transform: scale(1.12);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    z-index: 0;
+  }
+
+  .founder-photo-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    border: 1px solid rgba(244, 237, 226, 0.24);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.08),
+      0 0 0 1px rgba(255,255,255,0.03),
+      0 0 24px rgba(127, 165, 124, 0.08);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .about-team-stack .founder-card:hover .founder-photo-glow,
+  .about-team-stack .founder-card:focus-visible .founder-photo-glow,
+  .about-team-stack .founder-card.is-active .founder-photo-glow,
+  .about-team-detail-header-slot .founder-card:hover .founder-photo-glow,
+  .about-team-detail-header-slot .founder-card:focus-visible .founder-photo-glow,
+  .about-team-detail-header-slot .founder-card.is-active .founder-photo-glow {
+    opacity: 0.62;
+    transform: scale(1.18);
+  }
+
+  .about-team-stack .founder-card img.founder-photo,
+  .about-team-detail-header-slot .founder-card img.founder-photo {
+    filter: grayscale(1) saturate(0.82) contrast(1.04);
+    transition: filter 0.7s ease, transform 0.7s ease;
+  }
+
+  .about-team-stack .founder-card:hover img.founder-photo,
+  .about-team-stack .founder-card:focus-visible img.founder-photo,
+  .about-team-stack .founder-card.is-active img.founder-photo,
+  .about-team-detail-header-slot .founder-card:hover img.founder-photo,
+  .about-team-detail-header-slot .founder-card:focus-visible img.founder-photo,
+  .about-team-detail-header-slot .founder-card.is-active img.founder-photo {
+    filter: grayscale(0) saturate(1.02) contrast(1.02);
+  }
+
+  .team-card-affordance {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    width: 2.35rem;
+    height: 2.35rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+    color: rgba(243, 233, 214, 0.72);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.05),
+      0 0 18px rgba(0,0,0,0.12);
+    transition:
+      transform 0.35s ease,
+      border-color 0.35s ease,
+      background-color 0.35s ease,
+      color 0.35s ease,
+      box-shadow 0.35s ease;
+    pointer-events: none;
+  }
+
+  .team-card-affordance svg {
+    width: 0.95rem;
+    height: 0.95rem;
+    transition: transform 0.35s ease;
+  }
+
+  .about-team-stack .founder-card:hover .team-card-affordance,
+  .about-team-stack .founder-card:focus-visible .team-card-affordance {
+    border-color: rgba(231, 196, 112, 0.28);
+    background: linear-gradient(180deg, rgba(231,196,112,0.12) 0%, rgba(128,157,118,0.08) 100%);
+    color: rgba(248, 239, 223, 0.92);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.06),
+      0 0 18px rgba(157, 186, 146, 0.12);
+  }
+
+  .about-team-stack .team-card.is-open .team-card-affordance {
+    border-color: rgba(231, 196, 112, 0.3);
+    background: linear-gradient(180deg, rgba(231,196,112,0.14) 0%, rgba(128,157,118,0.1) 100%);
+    color: rgba(248, 239, 223, 0.96);
+  }
+
+  .about-team-stack .team-card.is-open .team-card-affordance svg {
+    transform: rotate(180deg);
+  }
+
+  .about-team-stack .team-bio {
+    opacity: 0;
+    transition: max-height 0.48s cubic-bezier(0.2, 0, 0, 1), opacity 0.32s ease, margin-top 0.32s ease;
+  }
+
+  .about-team-stack .team-card.is-open .team-bio {
+    opacity: 1;
+  }
+
+  /* Mobile: card-swap with proper sequenced fade */
+  @media (max-width: 1023px) {
+    .about-team-stack .team-card {
+      opacity: 1;
+      transition: opacity 0.2s ease;
+      overflow: hidden;
+    }
+    .about-team-stack .team-card.mobile-hiding {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .about-team-stack .team-card.mobile-hidden {
+      opacity: 0;
+      max-height: 0 !important;
+      pointer-events: none;
+      margin: 0 !important;
+      padding: 0 !important;
+      border: none !important;
+      overflow: hidden;
+    }
+    .about-team-stack .team-card.mobile-showing {
+      opacity: 0;
+      transition: opacity 0.22s ease;
+    }
+    .about-team-stack .team-bio {
+      overflow: hidden;
+    }
+    .about-team-stack .team-bio .team-bio-inner {
+      opacity: 0;
+      transform: translateY(-6px);
+      transition: opacity 0.22s ease, transform 0.22s ease;
+    }
+    .about-team-stack .team-card.is-open .team-bio .team-bio-inner {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .about-team-stack .founder-card {
+      transition: none;
+    }
+    .about-team-stack .founder-card:hover,
+    .about-team-stack .founder-card:focus-visible {
+      transform: none;
+      box-shadow: none;
+    }
+    .about-team-stack .founder-photo-glow {
+      transition: none;
+    }
+    .about-team-stack .founder-card img.founder-photo {
+      transition: filter 0.22s ease;
+    }
+    .team-card-affordance {
+      transition: none;
+    }
+    .team-card-affordance svg {
+      transition: transform 0.2s ease;
+    }
+    /* Mobile GPU budget: keep visuals, drop expensive compositing */
+    .founder-card {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+    .team-bio-inner {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+    .values-tile {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+    .about-glow-blob {
+      display: none !important;
+    }
+    .about-particle {
+      display: none !important;
+    }
+    .animate-spin-slow {
+      display: none !important;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .about-hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.24fr) minmax(22rem, 0.9fr);
+      grid-template-areas:
+        "masthead masthead"
+        "positioning directory-proof"
+        "story-heading team-heading"
+        "story-panel team-panel";
+      column-gap: clamp(2.5rem, 4vw, 4rem);
+      row-gap: clamp(0.7rem, 1.25vw, 1rem);
+      align-items: start;
+    }
+
+    #about-studio-title-block {
+      grid-area: masthead;
+    }
+
+    .about-positioning-band {
+      grid-area: positioning;
+      max-width: 68rem;
+      margin: -2.35rem 0 0.75rem;
+      text-align: left;
+    }
+
+    .about-positioning-band p:first-child {
+      font-size: 0.72rem;
+    }
+
+    .about-positioning-band p:last-child {
+      max-width: 64rem;
+      margin: 0.75rem 0 0;
+      font-size: 1.08rem;
+    }
+
+    .about-directory-proof {
+      grid-area: directory-proof;
+      align-self: start;
+      margin-top: -2.75rem;
+      padding: 0.7rem 1.1rem 0.8rem;
+    }
+
+    .about-story-heading {
+      grid-area: story-heading;
+      align-items: flex-start;
+      align-self: stretch;
+    }
+
+    .about-story-heading #about-zen-subtitle {
+      margin: 0 !important;
+      width: min(100%, 39.25rem);
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.9rem;
+      white-space: nowrap;
+      margin-left: clamp(2rem, 4.6vw, 5.35rem);
+    }
+
+    .about-subtitle-anchor {
+      width: min(100%, 39.25rem);
+      justify-content: space-between;
+      margin-top: 0.05rem;
+      margin-bottom: 0.95rem;
+      margin-left: clamp(2rem, 4.6vw, 5.35rem);
+    }
+
+    .about-subtitle-anchor-line {
+      width: clamp(3.1rem, 6.2vw, 4.9rem);
+      max-width: none;
+    }
+
+    .about-team-rail-header {
+      grid-area: team-heading;
+      align-self: stretch;
+      margin: 0;
+    }
+
+    .about-hero-card {
+      grid-area: story-panel;
+      margin: 0;
+      height: var(--about-desktop-panel-height);
+      min-height: var(--about-desktop-panel-height);
+      max-height: var(--about-desktop-panel-height);
+    }
+
+    .about-team-rail-body {
+      grid-area: team-panel;
+      position: relative;
+      height: var(--about-desktop-panel-height);
+      min-height: var(--about-desktop-panel-height);
+      max-height: var(--about-desktop-panel-height);
+      overflow: hidden;
+    }
+
+    .about-team-stack {
+      --about-team-stack-gap: 0.38rem;
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      gap: var(--about-team-stack-gap);
+      transition:
+        opacity 0.42s cubic-bezier(0.2, 0, 0, 1),
+        transform 0.42s cubic-bezier(0.2, 0, 0, 1),
+        filter 0.42s cubic-bezier(0.2, 0, 0, 1);
+    }
+
+    .about-team-stack .team-card {
+      /* Lock the three founder rows to exact equal heights on desktop. */
+      flex: 0 0 calc((100% - (var(--about-team-stack-gap) * 2)) / 3);
+      min-height: 0;
+      max-height: calc((100% - (var(--about-team-stack-gap) * 2)) / 3);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition:
+        flex 0.56s cubic-bezier(0.2, 0, 0, 1),
+        opacity 0.42s cubic-bezier(0.2, 0, 0, 1),
+        transform 0.42s cubic-bezier(0.2, 0, 0, 1);
+    }
+
+    .about-team-stack .founder-card {
+      flex: 0 0 auto;
+    }
+
+    .about-team-stack .founder-card {
+      padding: 0.88rem !important;
+      padding-right: 4rem !important;
+    }
+
+    .about-team-stack .team-card:not(.is-open) .founder-card {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .about-team-stack .team-card:not(.is-open) .founder-card > .flex {
+      width: 100%;
+      align-items: center;
+    }
+
+    .about-team-stack .founder-card .flex.items-center.gap-4 {
+      gap: 0.85rem !important;
+    }
+
+    .about-team-stack .founder-card .w-20.h-20,
+    .about-team-stack .founder-card .md\:w-24.md\:h-24 {
+      width: 5rem !important;
+      height: 5rem !important;
+    }
+
+    .about-team-stack .founder-card h3 {
+      font-size: clamp(1.55rem, 1.7vw, 2rem) !important;
+    }
+
+    .about-team-stack .founder-card p {
+      margin-top: 0.45rem !important;
+    }
+
+    .about-team-stack .team-bio {
+      flex: 1 1 auto;
+      min-height: 0;
+      max-height: none !important;
+      overflow: hidden;
+      margin-top: 0.65rem;
+    }
+
+    .about-team-stack .team-bio > div {
+      height: 100%;
+      overflow: auto;
+      margin-top: 0;
+    }
+
+    .about-team-stack .founder-card,
+    .about-team-stack .team-bio {
+      transition:
+        opacity 0.38s cubic-bezier(0.2, 0, 0, 1),
+        transform 0.38s cubic-bezier(0.2, 0, 0, 1),
+        border-color 0.35s ease,
+        background-color 0.35s ease,
+        box-shadow 0.35s ease;
+    }
+
+    .about-team-detail {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.48rem;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition:
+        opacity 0.42s cubic-bezier(0.2, 0, 0, 1),
+        transform 0.42s cubic-bezier(0.2, 0, 0, 1);
+    }
+
+    .about-team-detail-header-slot {
+      flex: 0 0 var(--team-card-header-height, 8.75rem);
+      min-height: var(--team-card-header-height, 8.75rem);
+    }
+
+    .about-team-detail-header-slot .founder-card {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0.88rem !important;
+      padding-right: 4rem !important;
+      cursor: pointer;
+    }
+
+    .about-team-detail-header-slot .founder-card > .flex {
+      width: 100%;
+      align-items: center;
+    }
+
+    .about-team-detail-header-slot .founder-card .flex.items-center.gap-4 {
+      gap: 0.85rem !important;
+    }
+
+    .about-team-detail-header-slot .founder-card .w-20.h-20,
+    .about-team-detail-header-slot .founder-card .md\:w-24.md\:h-24 {
+      width: 5rem !important;
+      height: 5rem !important;
+    }
+
+    .about-team-detail-header-slot .founder-card h3 {
+      font-size: clamp(1.55rem, 1.7vw, 2rem) !important;
+    }
+
+    .about-team-detail-header-slot .founder-card p {
+      margin-top: 0.45rem !important;
+    }
+
+    .about-team-detail-header-slot .team-card-affordance {
+      border-color: rgba(231, 196, 112, 0.3);
+      background: linear-gradient(180deg, rgba(231,196,112,0.14) 0%, rgba(128,157,118,0.1) 100%);
+      color: rgba(248, 239, 223, 0.96);
+    }
+
+    .about-team-detail-header-slot .team-card-affordance svg {
+      transform: rotate(180deg);
+    }
+
+    .about-team-detail-body-slot {
+      flex: 1 1 auto;
+      min-height: 0;
+      opacity: 0;
+      transform: translateY(12px);
+      transition:
+        opacity 0.34s cubic-bezier(0.2, 0, 0, 1) 0.08s,
+        transform 0.34s cubic-bezier(0.2, 0, 0, 1) 0.08s;
+    }
+
+    .about-team-detail-body-slot > * {
+      height: 100%;
+      overflow: auto;
+    }
+
+    .about-team-rail.has-detail-open .about-team-stack {
+      opacity: 0;
+      transform: translateY(8px);
+      filter: blur(4px);
+      pointer-events: none;
+    }
+
+    .about-team-rail.has-detail-open .about-team-detail {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .about-team-rail.has-detail-open .about-team-detail-body-slot {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (min-width: 1024px) and (max-width: 1511px) {
+    .about-team-rail-header {
+      gap: 0.55rem;
+    }
+
+    .about-team-rail-header > span:first-child {
+      font-size: clamp(0.78rem, 1.05vw, 1rem) !important;
+      letter-spacing: 0.24em !important;
+    }
+
+    .about-team-rail-header > span:last-child {
+      font-size: clamp(0.58rem, 0.82vw, 0.78rem) !important;
+      letter-spacing: 0.18em !important;
+    }
+
+    .about-team-rail-header > div {
+      min-width: 0.75rem;
+    }
+  }
+
+  /* Values cards — numbered clipped-corner cards */
+  .av-steps-wrap {
+    position: relative;
+    z-index: 2;
+    margin-top: 1.25rem;
+  }
+  .av-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(0.85rem, 1.25vw, 1.5rem);
+  }
+  .av-step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.15rem;
+    padding: 0;
+  }
+  .av-step__copy {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    flex: 1 1 auto;
+    min-height: 14.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.85rem;
+    text-align: left;
+    padding: clamp(1.4rem,2vw,1.9rem) clamp(1.2rem,2vw,1.75rem) clamp(1.35rem,1.8vw,1.65rem);
+    background: rgba(20,16,12,0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.1);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%);
+    transition-property: transform, background, border-color;
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0.16,1,0.3,1);
+  }
+  .av-step__copy::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(90deg, rgba(212,175,55,0.55), rgba(212,175,55,0.55)) 10px 10px / 18px 1px no-repeat,
+      linear-gradient(180deg, rgba(212,175,55,0.55), rgba(212,175,55,0.55)) 10px 10px / 1px 18px no-repeat,
+      linear-gradient(90deg, rgba(212,175,55,0.55), rgba(212,175,55,0.55)) calc(100% - 28px) 10px / 18px 1px no-repeat,
+      linear-gradient(180deg, rgba(212,175,55,0.55), rgba(212,175,55,0.55)) calc(100% - 10px) 10px / 1px 18px no-repeat,
+      linear-gradient(90deg, rgba(91,47,168,0.55), rgba(91,47,168,0.55)) 10px calc(100% - 10px) / 18px 1px no-repeat,
+      linear-gradient(180deg, rgba(91,47,168,0.55), rgba(91,47,168,0.55)) 10px calc(100% - 28px) / 1px 18px no-repeat,
+      linear-gradient(-45deg, transparent calc(50% - 0.75px), rgba(184,134,11,0.6) calc(50% - 0.75px), rgba(184,134,11,0.6) calc(50% + 0.75px), transparent calc(50% + 0.75px)) calc(100% - 1px) calc(100% - 1px) / 22px 22px no-repeat;
+    transition: opacity 0.4s ease;
+  }
+  .av-step__header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.85rem;
+    width: 100%;
+    margin-bottom: 0.15rem;
+    position: relative;
+    z-index: 2;
+  }
+  .av-step__status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(244,237,226,0.92);
+    font-variant-numeric: tabular-nums;
+  }
+  .av-step__status::before {
+    content: '';
+    width: 2rem;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(212,175,55,0.75), rgba(212,175,55,0.1));
+  }
+  .av-step__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid var(--av-icon-border, rgba(212,175,55,0.28));
+    background: var(--av-icon-bg, rgba(212,175,55,0.08));
+    transition-property: filter, transform, border-color;
+    transition-duration: 0.35s;
+    transition-timing-function: cubic-bezier(0.16,1,0.3,1);
+  }
+  .av-step__icon svg {
+    width: 1.3rem;
+    height: 1.3rem;
+    stroke-width: 1.8;
+  }
+  .av-step__body {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    align-items: flex-start;
+    padding: 0.9rem 0.95rem 0.85rem;
+    border: 1px solid rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.015);
+  }
+  .av-step__body p {
+    font-family: 'Open Sans', system-ui, sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: rgba(229,229,229,0.9);
+    margin: 0;
+    text-wrap: pretty;
+  }
+  .av-step:hover .av-step__copy {
+    transform: translateY(-4px);
+    background: rgba(255,255,255,0.045);
+    border-color: rgba(255,255,255,0.12);
+  }
+  .av-step:hover .av-step__icon {
+    filter: brightness(1.15);
+    transform: translateY(-1px);
+  }
+  @media (max-width: 1023px) {
+    .av-steps-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem 0.5rem;
+    }
+  }
+  @media (max-width: 639px) {
+    .av-steps-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+</style>
+
+<!-- External Libraries -->
+<script src="js/gsap/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer onerror="console.warn(&#x27;Lottie failed to load&#x27;)"></script>
+<script src="https://unpkg.com/lucide@0.577.0" defer onerror="console.warn(&#x27;Lucide failed to load&#x27;)"></script>
+<script src="js/brand.js"></script>
+<script src="js/site.min.js" defer></script>
+
+<script>
+  // Animate-on-scroll helper
+  (function () {
+    const style = document.createElement("style");
+    style.textContent = `
+      .animate-on-scroll { animation-play-state: paused !important; }
+      .animate-on-scroll.animate { animation-play-state: running !important; }
+    `;
+    document.head.appendChild(style);
+
+    const once = true;
+    if (!window.__inViewIO) {
+      window.__inViewIO = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
+            if (once) window.__inViewIO.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
+    }
+
+    window.initInViewAnimations = function (selector = ".animate-on-scroll") {
+      document.querySelectorAll(selector).forEach((el) => {
+        window.__inViewIO.observe(el);
+      });
+    };
+
+    document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
+  })();
+</script>
+</head>
+<body class="antialiased font-sans bg-paper min-h-screen">
+
+    <!-- Header - Fixed across pages -->
+    <header class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-3 py-2 md:px-12 md:py-6 transition-all duration-300 header-dark about-active">
+        <!-- Background Gradient & Blur with Soft Masked Edge -->
+        <div class="absolute inset-x-0 top-0 h-32 md:h-48 bg-gradient-to-b from-paper via-paper/90 to-transparent backdrop-blur-md -z-10 pointer-events-none [mask-image:linear-gradient(to_bottom,black_20%,transparent_90%)]"></div>
+
+        <a href="/" class="flex items-center gap-2 md:gap-4 cursor-pointer" id="logo-home" aria-label="Studio">
+            <div class="w-8 h-8 md:w-10 md:h-10 border border-neutral-800 flex items-center justify-center rounded-sm bg-paper relative overflow-hidden">
+                <span class="brand-mark" data-brand-mark></span>
+            </div>
+            <span class="font-serif text-2xl md:text-4xl tracking-tight text-ink font-medium" data-brand>Studio</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-10 relative">
+            <div class="relative group">
+                <a href="services.html" id="nav-services" class="flex items-center gap-1 font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase py-2">
+                    Services
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-neutral-400 group-hover:text-ink transition-colors"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <!-- Dropdown -->
+                <div class="absolute top-full left-0 mt-2 w-56 bg-paper border border-neutral-200 shadow-xl rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <div class="flex flex-col py-2">
+                        <a href="ai-opportunity-map.html" id="nav-start-here" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest border-b border-neutral-200 mb-1"><span class="block" style="color:#5B2FA8;font-size:9px;letter-spacing:0.2em;margin-bottom:2px;">Start here</span>AI Opportunity Map</a>
+                        <a href="/products#maria" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">AI Assistants</a>
+                        <a href="ai-training.html" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Build</a>
+                        <a href="ai-development.html" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Design</a>
+                        <a href="ai-consulting.html" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Strategy</a>
+                        <a href="ai-governance.html" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Care</a>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group">
+                <a href="how-we-work.html" id="nav-how-we-work" class="flex items-center gap-1 font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase py-2">
+                    How We Work
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-neutral-400 group-hover:text-ink transition-colors"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <!-- Dropdown -->
+                <div id="nav-how-we-work-dropdown" class="absolute top-full left-0 mt-2 w-56 bg-paper border border-neutral-200 shadow-xl rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <div class="flex flex-col py-2">
+                        <a href="how-we-work.html#method" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">The four phases</a>
+                        <a href="data-security.html" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Data &amp; Security</a>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group">
+                <a href="products.html" id="nav-products" class="flex items-center gap-1 font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase py-2">
+                    Our Work
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-neutral-400 group-hover:text-ink transition-colors"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <!-- Dropdown -->
+                <div class="absolute top-full left-0 mt-2 w-56 bg-paper border border-neutral-200 shadow-xl rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <div class="flex flex-col py-2">
+                        <a href="/products#case-studies" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Client Results</a>
+                        <a href="/products#maria" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">AI Assistants</a>
+                        <a href="/products#what-we-build" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Lorem Ipsum</a>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group" style="display:none">
+                <a id="nav-industries" class="flex items-center gap-1 font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase py-2 cursor-default">
+                    Industries
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-neutral-400 group-hover:text-ink transition-colors"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <!-- Dropdown -->
+                <div class="absolute top-full left-0 mt-2 w-56 bg-paper border border-neutral-200 shadow-xl rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <div class="flex flex-col py-2">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Law</a>
+                    </div>
+                </div>
+            </div>
+            <a href="about-us.html" id="nav-about" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase">About Us</a>
+            <a href="blog.html" id="nav-blog" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase">Blog</a>
+            <a id="nav-inquire" href="inquire.html#inquiry-form" class="font-serif italic text-lg px-8 py-2 border border-transparent bg-sepia hover:bg-ink transition-colors text-paper rounded-full shadow-sm">Book a Call</a>
+        </nav>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="md:hidden w-8 h-8 flex items-center justify-center" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu"><svg class="mobile-menu-fallback" viewbox="0 0 24 24" width="20" height="20" style="fill:none;stroke:#f5f0e8;stroke-width:2;stroke-linecap:round;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="absolute top-14 right-3 md:top-24 md:right-6 md:hidden pointer-events-auto transition-all duration-300 opacity-0 translate-y-[-10px] invisible z-[60]">
+            <div class="flex flex-col items-end gap-3 md:gap-4 bg-paper/95 backdrop-blur-md border border-neutral-200 shadow-xl p-6 rounded-md min-w-[160px] transition-[min-width] duration-300">
+                <div class="flex flex-col items-end w-full">
+                    <div class="flex items-center justify-end gap-2 w-full">
+                        <a href="services.html" id="mobile-services" class="font-serif text-xl text-ink hover:text-sepia transition-colors">Services</a>
+                        <button id="mobile-services-toggle" class="p-1 focus:outline-none" aria-label="Toggle Services Menu">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-collapsed w-5 h-5 text-neutral-400"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-expanded w-5 h-5 text-neutral-400 hidden"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                    </div>
+                    <!-- Mobile Services Dropdown -->
+                    <div id="mobile-services-dropdown" class="flex flex-col items-end gap-2 overflow-hidden max-h-0 opacity-0 transition-all duration-300 w-full">
+                        <a href="ai-opportunity-map.html" id="mobile-start-here" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1 mt-2"><span class="block text-right" style="color:#5B2FA8;font-size:9px;letter-spacing:0.2em;">Start here</span>AI Opportunity Map</a>
+                        <a href="/products#maria" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">AI Assistants</a>
+                        <a href="ai-training.html" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Build</a>
+                        <a href="ai-development.html" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Design</a>
+                        <a href="ai-consulting.html" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Strategy</a>
+                        <a href="ai-governance.html" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Care</a>
+                    </div>
+                </div>
+                <div class="flex flex-col items-end w-full">
+                    <div class="flex items-center justify-end gap-2 w-full">
+                        <a href="how-we-work.html" id="mobile-how-we-work" class="font-serif text-xl text-ink hover:text-sepia transition-colors" style="min-width: 6.25rem; text-align: right;">How We Work</a>
+                        <button id="mobile-how-we-work-toggle" class="p-1 focus:outline-none" aria-label="Toggle How We Work Menu">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-collapsed w-5 h-5 text-neutral-400"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-expanded w-5 h-5 text-neutral-400 hidden"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                    </div>
+                    <div id="mobile-how-we-work-dropdown" class="flex flex-col items-end gap-2 overflow-hidden max-h-0 opacity-0 transition-all duration-300 w-full">
+                        <a href="how-we-work.html#method" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1 mt-2">The four phases</a>
+                        <a href="data-security.html" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Data &amp; Security</a>
+                    </div>
+                </div>
+                <div class="flex flex-col items-end w-full">
+                    <div class="flex items-center justify-end gap-2 w-full">
+                        <a href="products.html" id="mobile-products" class="font-serif text-xl text-ink hover:text-sepia transition-colors" style="min-width: 6.25rem; text-align: right;">Our Work</a>
+                        <button id="mobile-our-work-toggle" class="p-1 focus:outline-none" aria-label="Toggle Our Work Menu">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-collapsed w-5 h-5 text-neutral-400"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-expanded w-5 h-5 text-neutral-400 hidden"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                    </div>
+                    <!-- Mobile Our Work Dropdown -->
+                    <div id="mobile-our-work-dropdown" class="flex flex-col items-end gap-2 overflow-hidden max-h-0 opacity-0 transition-all duration-300 w-full">
+                        <a href="/products#case-studies" id="mobile-case-studies" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1 mt-2">Client Results</a>
+                        <a href="/products#maria" id="mobile-maria" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">AI Assistants</a>
+                        <a href="/products#what-we-build" id="mobile-what-we-build" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Lorem Ipsum</a>
+                    </div>
+                </div>
+                <div class="flex flex-col items-end w-full" style="display:none">
+                    <div class="flex items-center justify-end gap-2 w-full">
+                        <span id="mobile-industries" class="font-serif text-xl text-ink hover:text-sepia transition-colors" style="min-width: 6.25rem; text-align: right;">Industries</span>
+                        <button id="mobile-industries-toggle" class="p-1 focus:outline-none" aria-label="Toggle Industries Menu">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-collapsed w-5 h-5 text-neutral-400"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-expanded w-5 h-5 text-neutral-400 hidden"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                    </div>
+                    <div id="mobile-industries-dropdown" class="flex flex-col items-end gap-2 overflow-hidden max-h-0 opacity-0 transition-all duration-300 w-full">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1 mt-2">Law</a>
+                    </div>
+                </div>
+                <a href="about-us.html" id="mobile-about" class="font-serif text-xl text-ink hover:text-sepia transition-colors">About Us</a>
+                <a href="blog.html" id="mobile-blog" class="font-serif text-xl text-ink hover:text-sepia transition-colors">Blog</a>
+                <a id="mobile-inquire" href="inquire.html#inquiry-form" class="font-serif italic text-lg px-6 py-1 border border-transparent bg-sepia text-paper rounded-full mt-2">Book a Call</a>
+            </div>
+        </div>
+    </header>
+
+
+<!-- About Us Page -->
+    <section id="about-page" class="relative overflow-x-hidden bg-dark text-stone">
+        <!-- A1: Ember Flow - visible color blobs -->
+        <div class="absolute inset-0 pointer-events-none z-[1] overflow-hidden" aria-hidden="true">
+            <!-- Gold glow - top left (hero area) -->
+            <div class="about-glow-blob" style="width:900px;height:900px;top:-10%;left:-5%;background:rgba(212,175,55,0.15);filter:blur(150px);"></div>
+            <!-- Rust glow - center right (team area) -->
+            <div class="about-glow-blob" style="width:700px;height:700px;top:25%;right:-8%;background:rgba(91,47,168,0.12);filter:blur(130px);"></div>
+            <!-- Violet glow - lower center (philosophy area) -->
+            <div class="about-glow-blob" style="width:800px;height:800px;top:55%;left:30%;background:rgba(139,92,246,0.10);filter:blur(160px);"></div>
+            <!-- Emerald glow - bottom left -->
+            <div class="about-glow-blob" style="width:600px;height:600px;top:75%;left:-5%;background:rgba(16,185,129,0.08);filter:blur(140px);"></div>
+            <!-- Secondary gold - mid right -->
+            <div class="about-glow-blob" style="width:500px;height:500px;top:40%;right:10%;background:rgba(212,175,55,0.06);filter:blur(120px);"></div>
+        </div>
+        <div class="absolute inset-0 pointer-events-none z-[2] grid-overlay-dark opacity-60"></div>
+
+        <!-- C1: Floating micro-particles (above content, non-interactive) -->
+        <div class="absolute inset-0 pointer-events-none z-[15] overflow-hidden" aria-hidden="true">
+            <div class="about-particle" style="left:12%;bottom:-10px;background:rgba(212,175,55,0.7);animation-duration:18s;animation-delay:0s;--p-opacity:0.25;--p-drift:15px;"></div>
+            <div class="about-particle" style="left:28%;bottom:-10px;background:rgba(139,92,246,0.6);animation-duration:22s;animation-delay:3s;--p-opacity:0.18;--p-drift:-20px;"></div>
+            <div class="about-particle" style="left:45%;bottom:-10px;background:rgba(212,175,55,0.5);animation-duration:25s;animation-delay:7s;--p-opacity:0.15;--p-drift:10px;"></div>
+            <div class="about-particle" style="left:62%;bottom:-10px;background:rgba(16,185,129,0.6);animation-duration:20s;animation-delay:2s;--p-opacity:0.2;--p-drift:-15px;"></div>
+            <div class="about-particle" style="left:78%;bottom:-10px;background:rgba(91,47,168,0.6);animation-duration:28s;animation-delay:5s;--p-opacity:0.18;--p-drift:25px;"></div>
+            <div class="about-particle" style="left:88%;bottom:-10px;background:rgba(139,92,246,0.5);animation-duration:24s;animation-delay:10s;--p-opacity:0.15;--p-drift:-12px;"></div>
+            <div class="about-particle" style="left:35%;bottom:-10px;background:rgba(212,175,55,0.6);animation-duration:30s;animation-delay:12s;--p-opacity:0.2;--p-drift:18px;"></div>
+            <div class="about-particle" style="left:55%;bottom:-10px;background:rgba(16,185,129,0.5);animation-duration:19s;animation-delay:8s;--p-opacity:0.16;--p-drift:-22px;"></div>
+            <div class="about-particle" style="left:8%;bottom:-10px;background:rgba(91,47,168,0.5);animation-duration:26s;animation-delay:15s;--p-opacity:0.14;--p-drift:8px;"></div>
+            <div class="about-particle" style="left:72%;bottom:-10px;background:rgba(212,175,55,0.5);animation-duration:21s;animation-delay:4s;--p-opacity:0.2;--p-drift:-10px;width:2px;height:2px;"></div>
+            <div class="about-particle" style="left:18%;bottom:-10px;background:rgba(139,92,246,0.5);animation-duration:32s;animation-delay:18s;--p-opacity:0.12;--p-drift:30px;width:2px;height:2px;"></div>
+            <div class="about-particle" style="left:50%;bottom:-10px;background:rgba(212,175,55,0.4);animation-duration:35s;animation-delay:20s;--p-opacity:0.15;--p-drift:-8px;width:2px;height:2px;"></div>
+        </div>
+
+        <div class="relative z-10">
+
+            <!-- ========== HERO + TEAM (shared background) ========== -->
+            <section class="about-section-shell relative px-6 md:px-12 pt-16 md:pt-20 pb-10 md:pb-12 overflow-hidden">
+                <div class="absolute inset-0 -z-10 pointer-events-none">
+                    <div class="absolute -right-20 -top-20 w-[32rem] h-[32rem] opacity-20 hidden md:block">
+                        <svg viewbox="0 0 100 100" class="w-full h-full animate-spin-slow" style="animation-duration: 90s; color: rgba(139,92,246,0.5);">
+                            <circle cx="50" cy="50" r="48" fill="none" stroke="currentColor" stroke-width="0.3" stroke-dasharray="2 4"></circle>
+                            <circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" stroke-width="0.15"></circle>
+                            <rect x="25" y="25" width="50" height="50" fill="none" stroke="currentColor" stroke-width="0.15" transform="rotate(45 50 50)"></rect>
+                            <path d="M50 2 L50 98 M2 50 L98 50" stroke="currentColor" stroke-width="0.05" opacity="0.5"></path>
+                        </svg>
+                    </div>
+                    <div class="absolute left-1/4 top-0 w-px h-full bg-gradient-to-b from-transparent via-amber-500/8 to-transparent"></div>
+                    <div class="absolute right-1/3 top-0 w-px h-full bg-gradient-to-b from-transparent via-violet-500/6 to-transparent"></div>
+                </div>
+
+                <div class="about-content-frame overflow-visible">
+                    <div class="about-hero-layout" style="position: relative;">
+                        <!-- Build Your Next — positioned next to STUDIO title -->
+                        <div id="about-build-next" class="select-none pointer-events-none" style="display: none; position: absolute; right: 4rem; top: 1.5rem; flex-direction: column; align-items: center; z-index: 12; padding: 1.2rem 1.8rem;" aria-hidden="true">
+                            <div style="position: absolute; top: 0; left: 0; width: 8px; height: 8px; border-top: 1px solid rgba(212,175,55,0.4); border-left: 1px solid rgba(212,175,55,0.4);"></div>
+                            <div style="position: absolute; bottom: 0; right: 0; width: 8px; height: 8px; border-bottom: 1px solid rgba(16,185,129,0.4); border-right: 1px solid rgba(16,185,129,0.4);"></div>
+                            <div style="display: flex; align-items: baseline; gap: 0.35em;">
+                                <span id="build-your-text" class="font-serif" style="font-size: clamp(2.4rem,4vw,3.8rem); font-weight: 300; letter-spacing: 0.04em; color: rgba(245,240,232,0.44);">lorem ipsum</span>
+                                <span id="next-text" class="font-serif italic font-light" style="font-size: clamp(2.8rem,5vw,4.5rem); line-height: 0.85; letter-spacing: -0.02em; color: rgba(220,192,122,0.68);">lorem</span>
+                            </div>
+                            <div style="margin-top: 0.6rem; display: flex; align-items: center; gap: 0.8rem; width: 100%; opacity: 0.55;">
+                                <span class="about-subtitle-anchor-label" style="flex: 0 0 auto;">lorem ipsum dolor</span>
+                                <span class="about-subtitle-anchor-line" style="flex: 1 1 auto;"></span>
+                            </div>
+                        </div>
+                        <div class="about-hero-copy">
+                            <div id="about-studio-title-block" class="relative inline-block overflow-visible w-full" style="padding-right: 0.15em;">
+                                <div class="absolute -inset-10 pointer-events-none opacity-75">
+                                    <div class="absolute hidden md:block opacity-65" style="left:-18rem; top:-8rem; width:42rem; height:42rem;">
+                                        <svg viewbox="0 0 100 100" class="w-full h-full animate-spin-slow" style="animation-duration: 90s; color: rgba(255,255,255,0.42);">
+                                            <circle cx="50" cy="50" r="48" fill="none" stroke="currentColor" stroke-width="0.25" stroke-dasharray="2 4"></circle>
+                                            <path d="M50 2 L50 98 M2 50 L98 50" stroke="currentColor" stroke-width="0.05" opacity="0.55"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="absolute left-1/4 top-0 w-px h-48 bg-gradient-to-b from-white/25 to-transparent"></div>
+                                    <div class="absolute right-1/4 top-0 w-px h-48 bg-gradient-to-b from-white/25 to-transparent"></div>
+                                </div>
+
+                                <h1 id="about-studio-title" class="relative z-10 font-orange-avenue text-[clamp(4.5rem,14vw,11rem)] leading-[0.88] tracking-[0.08em] opacity-0 select-none about-title-gradient text-center md:text-left">
+                                    STUDIO
+</h1>
+                            </div>
+
+                            <div class="about-positioning-band">
+                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim.</p>
+                            </div>
+
+                            <div id="about-directory-proof" class="about-directory-proof">
+                                <div>
+                                    <p class="font-mono text-[10px] uppercase tracking-[0.22em]" style="color: rgba(152,85,255,0.72);">Lorem ipsum dolor</p>
+                                    <p class="about-directory-proof__copy">Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                                </div>
+                                <a href="https://example.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest transition-colors" style="color: rgba(244,237,226,0.55);" aria-label="Lorem Ipsum Dolor Sit Amet Consectetur">lorem <span aria-hidden="true">&rarr;</span></a>
+                            </div>
+
+                            <div class="about-story-heading">
+                                <p id="about-zen-subtitle" class="font-serif text-[clamp(3.2rem,5vw,4.9rem)] leading-[0.95] text-stone italic tracking-[0.03em] font-light opacity-0 text-center md:text-left">
+                                    <span class="subtitle-word">lorem</span>
+                                    <span class="subtitle-word">lorem</span>
+                                    <span class="subtitle-word">lorem</span>
+                                    <span class="subtitle-word">lorem ipsum dolor</span>
+</p>
+
+                                <div id="about-subtitle-anchor" class="about-subtitle-anchor opacity-0" aria-hidden="true">
+                                    <span class="about-subtitle-anchor-line"></span>
+                                    <span class="about-subtitle-anchor-line"></span>
+                                    <span class="about-subtitle-anchor-line"></span>
+                                    <span class="about-subtitle-anchor-line"></span>
+                                </div>
+                            </div>
+
+                            <div class="about-hero-card overflow-visible relative rounded-2xl border border-white/10 bg-transparent group select-none cursor-pointer shadow-2xl transition-all duration-700 hover:border-white/20" id="zen-tech-container" style="--zen-theme: 157, 122, 35; --zen-glow: 157, 122, 35; overflow: hidden;">
+                                <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+                                    <div aria-hidden="true" class="absolute inset-0 opacity-40 mix-blend-soft-light" style="background-image: url(&#x27;assets/images/night-zen-garden-about-hero-1400.jpg&#x27;); background-image: image-set(url(&#x27;assets/images/night-zen-garden-about-hero-1400.webp&#x27;) type(&#x27;image/webp&#x27;), url(&#x27;assets/images/night-zen-garden-about-hero-1400.jpg&#x27;) type(&#x27;image/jpeg&#x27;)); background-size: cover; background-position: center; filter: saturate(1.05) contrast(1.18);"></div>
+                                    <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/25"></div>
+                                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] rounded-full blur-[100px] animate-pulse-slow transition-all duration-1000 group-hover:scale-125" style="background-color: rgba(var(--zen-theme), 0.25);"></div>
+                                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] rounded-full blur-[60px] animate-pulse-slow" style="animation-delay: 0.5s; background-color: rgba(var(--zen-theme), 0.15);"></div>
+                                    <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:40px_40px] opacity-70"></div>
+                                    <div class="absolute inset-0 opacity-50" style="background-image: linear-gradient(rgba(var(--zen-theme), 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--zen-theme), 0.1) 1px, transparent 1px); background-size: 80px 80px;"></div>
+                                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] border-2 border-white/30 rounded-full opacity-90" style="animation: spin-60s 60s linear infinite;">
+                                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full transition-all duration-700" style="background-color: rgba(var(--zen-theme), 0.5); box-shadow: 0 0 12px rgba(var(--zen-theme), 0.5);"></div>
+                                        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full transition-all duration-700" style="background-color: rgba(var(--zen-theme), 0.5); box-shadow: 0 0 12px rgba(var(--zen-theme), 0.5);"></div>
+                                        <div class="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-white/60 rounded-full"></div>
+                                        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-white/60 rounded-full"></div>
+                                    </div>
+                                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] border rounded-full opacity-80" style="animation: spin-40s-reverse 40s linear infinite; border-color: rgba(var(--zen-theme), 0.25);">
+                                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full transition-all duration-700" style="background-color: rgba(var(--zen-theme), 0.4);"></div>
+                                        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full transition-all duration-700" style="background-color: rgba(var(--zen-theme), 0.4);"></div>
+                                    </div>
+                                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-transparent pointer-events-none" style="animation: scan 8s linear infinite;"></div>
+                                    <div class="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 opacity-60 transition-all duration-700" style="border-color: rgba(var(--zen-theme), 0.4);"></div>
+                                    <div class="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 opacity-60 transition-all duration-700" style="border-color: rgba(var(--zen-theme), 0.4);"></div>
+                                    <div class="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 opacity-60 transition-all duration-700" style="border-color: rgba(var(--zen-theme), 0.4);"></div>
+                                    <div class="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 opacity-60 transition-all duration-700" style="border-color: rgba(var(--zen-theme), 0.4);"></div>
+                                </div>
+
+                                <div class="absolute inset-0 z-10 flex flex-col items-center justify-center text-center p-6 md:p-10 transition-all duration-500" id="zen-content-wrapper">
+                                    <div class="zen-slide absolute inset-0 flex flex-col items-center justify-center p-6 opacity-100 pointer-events-none transition-all duration-700 transform scale-100" style="padding-left: clamp(1.5rem, 8vw, 5rem); padding-right: clamp(1.5rem, 8vw, 5rem);" data-index="0">
+                                        <div class="w-12 h-12 rounded-full border flex items-center justify-center mb-6 backdrop-blur-sm transition-all duration-700" style="border-color: rgba(var(--zen-theme), 0.2); background-color: rgba(var(--zen-theme), 0.08); box-shadow: 0 0 18px rgba(var(--zen-theme), 0.12);">
+                                            <svg viewbox="0 0 24 24" aria-hidden="true" class="w-6 h-6 transition-colors duration-700" style="color: rgba(255,255,255,0.96); filter: drop-shadow(0 0 16px rgba(var(--zen-theme), 0.45)) drop-shadow(0 0 4px rgba(255,255,255,0.35)); fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                        </div>
+                                        <h3 class="font-serif text-2xl md:text-3xl text-white mb-3 tracking-tight">Lorem Ipsum</h3>
+                                        <p class="font-open-sans text-base md:text-lg text-white/70 leading-relaxed" style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate.</p>
+                                    </div>
+                                    <div class="zen-slide absolute inset-0 flex flex-col items-center justify-center p-6 opacity-0 pointer-events-none transition-all duration-700 transform scale-95" style="padding-left: clamp(1.5rem, 8vw, 5rem); padding-right: clamp(1.5rem, 8vw, 5rem);" data-index="1">
+                                        <div class="w-12 h-12 rounded-full border flex items-center justify-center mb-6 backdrop-blur-sm transition-all duration-700" style="border-color: rgba(var(--zen-theme), 0.2); background-color: rgba(var(--zen-theme), 0.08); box-shadow: 0 0 18px rgba(var(--zen-theme), 0.12);">
+                                            <svg viewbox="0 0 24 24" aria-hidden="true" class="w-6 h-6 transition-colors duration-700" style="color: rgba(255,255,255,0.96); filter: drop-shadow(0 0 16px rgba(var(--zen-theme), 0.45)) drop-shadow(0 0 4px rgba(255,255,255,0.35)); fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+                                        </div>
+                                        <h3 class="font-serif text-2xl md:text-3xl text-white mb-3 tracking-tight">Lorem Ipsum</h3>
+                                        <p class="font-open-sans text-base md:text-lg text-white/70 leading-relaxed" style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis.</p>
+                                    </div>
+                                    <div class="zen-slide absolute inset-0 flex flex-col items-center justify-center p-6 opacity-0 pointer-events-none transition-all duration-700 transform scale-95" style="padding-left: clamp(1.5rem, 8vw, 5rem); padding-right: clamp(1.5rem, 8vw, 5rem);" data-index="2">
+                                        <div class="w-12 h-12 rounded-full border flex items-center justify-center mb-6 backdrop-blur-sm transition-all duration-700" style="border-color: rgba(var(--zen-theme), 0.2); background-color: rgba(var(--zen-theme), 0.08); box-shadow: 0 0 18px rgba(var(--zen-theme), 0.12);">
+                                            <svg viewbox="0 0 24 24" aria-hidden="true" class="w-6 h-6 transition-colors duration-700" style="color: rgba(255,255,255,0.96); filter: drop-shadow(0 0 16px rgba(var(--zen-theme), 0.45)) drop-shadow(0 0 4px rgba(255,255,255,0.35)); fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                        </div>
+                                        <h3 class="font-serif text-2xl md:text-3xl text-white mb-3 tracking-tight">Lorem Ipsum</h3>
+                                        <p class="font-open-sans text-base md:text-lg text-white/70 leading-relaxed" style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit.</p>
+                                    </div>
+                                    <div class="zen-slide absolute inset-0 flex flex-col items-center justify-center p-6 opacity-0 pointer-events-none transition-all duration-700 transform scale-95" style="padding-left: clamp(1.5rem, 8vw, 5rem); padding-right: clamp(1.5rem, 8vw, 5rem);" data-index="3">
+                                        <div class="w-12 h-12 rounded-full border flex items-center justify-center mb-6 backdrop-blur-sm transition-all duration-700" style="border-color: rgba(var(--zen-theme), 0.2); background-color: rgba(var(--zen-theme), 0.08); box-shadow: 0 0 18px rgba(var(--zen-theme), 0.12);">
+                                            <svg viewbox="0 0 24 24" aria-hidden="true" class="w-6 h-6 transition-colors duration-700" style="color: rgba(255,255,255,0.96); filter: drop-shadow(0 0 16px rgba(var(--zen-theme), 0.45)) drop-shadow(0 0 4px rgba(255,255,255,0.35)); fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"></path><path d="m18 15-2-2"></path><path d="m15 18-2-2"></path></svg>
+                                        </div>
+                                        <h3 class="font-serif text-2xl md:text-3xl text-white mb-3 tracking-tight">Lorem Ipsum Dolor</h3>
+                                        <p class="font-open-sans text-base md:text-lg text-white/70 leading-relaxed" style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute.</p>
+                                    </div>
+                                </div>
+
+                                <div class="overflow-visible absolute top-6 left-6 font-mono text-[11px] text-white/70 tracking-widest uppercase flex items-center gap-2 pointer-events-none" style="max-width:none!important">
+                                    <span class="w-1.5 h-1.5 rounded-full animate-pulse transition-all duration-700" style="background-color: rgba(var(--zen-theme), 0.9); box-shadow: 0 0 8px rgba(var(--zen-theme), 0.6);"></span>lorem                                </div>
+                                <div class="overflow-visible absolute top-6 right-6 font-mono text-[11px] text-white/70 tracking-widest uppercase pointer-events-none" id="zen-phase-indicator" style="max-width:none!important">lorem ipsum dolor sit amet</div>
+
+                                <div class="overflow-visible absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 pointer-events-none" style="max-width:none!important">
+                                    <div class="flex gap-2" id="zen-dots">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-white/80 transition-all duration-300"></div>
+                                        <div class="w-1.5 h-1.5 rounded-full bg-white/20 transition-all duration-300"></div>
+                                        <div class="w-1.5 h-1.5 rounded-full bg-white/20 transition-all duration-300"></div>
+                                        <div class="w-1.5 h-1.5 rounded-full bg-white/20 transition-all duration-300"></div>
+                                    </div>
+                                    <div class="text-xs font-mono uppercase tracking-[0.2em] animate-pulse" style="color: rgba(255,255,255,0.7);">lorem ipsum dolor sit amet                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="about-team" class="about-team-rail">
+                            <div class="about-team-rail-header">
+                                <span class="font-mono uppercase tracking-[0.32em]" style="font-size: clamp(0.85rem,1.4vw,1.2rem); color: rgba(252,211,77,0.35);">lorem ipsum</span>
+                                <div class="h-px flex-1 bg-gradient-to-r from-amber-400/30 via-white/10 to-transparent"></div>
+                                <span class="font-mono uppercase tracking-[0.24em] hidden md:block" style="font-size: clamp(0.7rem,1.2vw,1rem); color: rgba(255,255,255,0.15);">lorem ipsum dolor sit amet</span>
+                            </div>
+                            <div id="about-team-rail-body" class="about-team-rail-body">
+                                <div id="team-cards-grid" class="about-team-stack">
+                                    <div class="team-card opacity-0" data-team-index="0">
+                                        <div class="founder-card p-4 rounded-xl relative overflow-hidden backdrop-blur-md bg-white/[0.08] border border-white/10 shadow-xl transition-all duration-700 cursor-pointer" role="button" tabindex="0" aria-pressed="false">
+                                            <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-amber-500/40"></div>
+                                            <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-emerald-500/40"></div>
+                                            <div class="team-card-affordance" aria-hidden="true">
+                                                <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="m6 9 6 6 6-6"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="flex items-center gap-4">
+                                                <div class="founder-photo-wrap relative w-20 h-20 md:w-24 md:h-24 flex-shrink-0">
+                                                    <div class="founder-photo-glow absolute -inset-1.5 rounded-full bg-gradient-to-tr from-amber-500/30 to-emerald-500/30 blur opacity-40 transition-opacity duration-700"></div>
+                                                    <div class="relative w-full h-full rounded-full border border-white/20 overflow-hidden shadow-inner">
+                                                        <img src="assets/images/abstract-portrait-with-geometric-glitch-layers-4k.webp" alt="Alex Rivera" class="founder-photo w-full h-full object-cover grayscale transition-all duration-700 scale-105" width="320" height="320" loading="lazy" decoding="async" srcset="assets/images/abstract-portrait-with-geometric-glitch-layers-4k.webp 320w" sizes="(min-width: 768px) 96px, 80px"/>
+                                                    </div>
+                                                    <div class="founder-photo-ring"></div>
+                                                </div>
+                                                <div class="flex-1 min-w-0">
+                                                    <div class="font-mono text-[9px] text-amber-500/60 tracking-[0.3em] mb-1 founder-text-reveal" style="animation-delay: 0.1s;">lorem ipsum</div>
+                                                    <h3 class="font-serif text-[clamp(2rem,2.4vw,2.7rem)] text-[#FDFCF8] tracking-tight leading-none founder-text-reveal" style="animation-delay: 0.2s;">Alex Rivera</h3>
+                                                    <p class="font-open-sans text-[10px] text-white/40 uppercase tracking-[0.25em] mt-2 font-semibold founder-text-reveal" style="animation-delay: 0.3s;">Lorem Lorem Lorem</p>
+                                                    <div class="mt-4 flex items-center gap-2 founder-text-reveal" style="animation-delay: 0.4s;">
+                                                        <div class="h-[1px] w-12 bg-gradient-to-r from-amber-500/40 to-transparent"></div>
+                                                        <span class="font-mono text-[8px] text-white/20 uppercase tracking-widest">lorem ipsum</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="absolute inset-0 bg-[linear-gradient(transparent_0%,rgba(255,255,255,0.02)_50%,transparent_100%)] bg-[size:100%_4px] pointer-events-none opacity-20"></div>
+                                        </div>
+                                        <div id="team-bio-0" class="team-bio overflow-hidden" style="max-height: 0px;">
+                                            <div class="team-bio-inner p-4 rounded-xl backdrop-blur-md about-bio-bg border about-bio-border font-open-sans text-sm text-white/70 leading-relaxed space-y-4">
+                                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate.</p>
+                                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur.</p>
+                                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="team-card opacity-0" data-team-index="1">
+                                        <div class="founder-card p-4 rounded-xl relative overflow-hidden backdrop-blur-md bg-white/[0.08] border border-white/10 shadow-xl transition-all duration-700 cursor-pointer" role="button" tabindex="0" aria-pressed="false">
+                                            <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-amber-500/40"></div>
+                                            <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-emerald-500/40"></div>
+                                            <div class="team-card-affordance" aria-hidden="true">
+                                                <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="m6 9 6 6 6-6"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="flex items-center gap-4">
+                                                <div class="founder-photo-wrap relative w-20 h-20 md:w-24 md:h-24 flex-shrink-0">
+                                                    <div class="founder-photo-glow absolute -inset-1.5 rounded-full bg-gradient-to-tr from-amber-500/20 to-emerald-500/20 blur opacity-30 transition-opacity duration-700"></div>
+                                                    <div class="relative w-full h-full rounded-full border border-white/20 overflow-hidden shadow-inner">
+                                                        <img src="assets/images/abstract-red-orange-glow-on-curved-forms-4k (1).webp" alt="Jordan Hale" class="founder-photo w-full h-full object-cover grayscale transition-all duration-700 scale-105" width="320" height="320" loading="lazy" decoding="async" srcset="assets/images/abstract-red-orange-glow-on-curved-forms-4k (1).webp 320w" sizes="(min-width: 768px) 96px, 80px"/>
+                                                    </div>
+                                                    <div class="founder-photo-ring"></div>
+                                                </div>
+                                                <div class="flex-1 min-w-0">
+                                                    <div class="font-mono text-[9px] text-amber-500/60 tracking-[0.3em] mb-1 founder-text-reveal" style="animation-delay: 0.1s;">lorem ipsum</div>
+                                                    <h3 class="font-serif text-[clamp(2rem,2.4vw,2.7rem)] text-[#FDFCF8] tracking-tight leading-none founder-text-reveal" style="animation-delay: 0.2s;">Jordan Hale</h3>
+                                                    <p class="font-open-sans text-[10px] text-white/40 uppercase tracking-[0.25em] mt-2 font-semibold founder-text-reveal" style="animation-delay: 0.3s;">Lorem ipsum dolor&amp;Lorem</p>
+                                                    <div class="mt-4 flex items-center gap-2 founder-text-reveal" style="animation-delay: 0.4s;">
+                                                        <div class="h-[1px] w-12 bg-gradient-to-r from-amber-500/40 to-transparent"></div>
+                                                        <span class="font-mono text-[8px] text-white/20 uppercase tracking-widest">lorem ipsum</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="absolute inset-0 bg-[linear-gradient(transparent_0%,rgba(255,255,255,0.02)_50%,transparent_100%)] bg-[size:100%_4px] pointer-events-none opacity-20"></div>
+                                        </div>
+                                            <div id="team-bio-1" class="team-bio overflow-hidden" style="max-height: 0px;">
+                                                <div class="team-bio-inner p-4 rounded-xl backdrop-blur-md about-bio-bg border about-bio-border font-open-sans text-sm text-white/70 leading-relaxed space-y-4">
+                                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non.</p>
+                                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    <div class="team-card opacity-0" data-team-index="2">
+                                        <div class="founder-card p-4 rounded-xl relative overflow-hidden backdrop-blur-md bg-white/[0.08] border border-white/10 shadow-xl transition-all duration-700 cursor-pointer" role="button" tabindex="0" aria-pressed="false">
+                                            <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-amber-500/40"></div>
+                                            <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-emerald-500/40"></div>
+                                            <div class="team-card-affordance" aria-hidden="true">
+                                                <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="m6 9 6 6 6-6"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="flex items-center gap-4">
+                                                <div class="founder-photo-wrap relative w-20 h-20 md:w-24 md:h-24 flex-shrink-0">
+                                                    <div class="founder-photo-glow absolute -inset-1.5 rounded-full bg-gradient-to-tr from-amber-500/20 to-emerald-500/20 blur opacity-30 transition-opacity duration-700"></div>
+                                                    <div class="relative w-full h-full rounded-full border border-white/20 overflow-hidden shadow-inner">
+                                                        <img src="assets/images/abstract-teal-network-with-golden-nodes-4k.webp" alt="Sam Chen" class="founder-photo w-full h-full object-cover grayscale transition-all duration-700 scale-105" width="320" height="320" loading="lazy" decoding="async" srcset="assets/images/abstract-teal-network-with-golden-nodes-4k.webp 320w" sizes="(min-width: 768px) 96px, 80px"/>
+                                                    </div>
+                                                    <div class="founder-photo-ring"></div>
+                                                </div>
+                                                <div class="flex-1 min-w-0">
+                                                    <div class="font-mono text-[9px] text-amber-500/60 tracking-[0.3em] mb-1 founder-text-reveal" style="animation-delay: 0.1s;">lorem ipsum</div>
+                                                    <h3 class="font-serif text-[clamp(2rem,2.4vw,2.7rem)] text-[#FDFCF8] tracking-tight leading-none founder-text-reveal" style="animation-delay: 0.2s;">Sam Chen</h3>
+                                                    <p class="font-open-sans text-[10px] text-white/40 uppercase tracking-[0.25em] mt-2 font-semibold founder-text-reveal" style="animation-delay: 0.3s;">Lorem ipsum dolor sit</p>
+                                                    <div class="mt-4 flex items-center gap-2 founder-text-reveal" style="animation-delay: 0.4s;">
+                                                        <div class="h-[1px] w-12 bg-gradient-to-r from-amber-500/40 to-transparent"></div>
+                                                        <span class="font-mono text-[8px] text-white/20 uppercase tracking-widest">lorem ipsum</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="absolute inset-0 bg-[linear-gradient(transparent_0%,rgba(255,255,255,0.02)_50%,transparent_100%)] bg-[size:100%_4px] pointer-events-none opacity-20"></div>
+                                        </div>
+                                            <div id="team-bio-2" class="team-bio overflow-hidden" style="max-height: 0px;">
+                                                <div class="team-bio-inner p-4 rounded-xl backdrop-blur-md about-bio-bg border about-bio-border font-open-sans text-sm text-white/70 leading-relaxed space-y-4">
+                                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex.</p>
+                                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+
+                                <div id="about-team-detail" class="about-team-detail" aria-hidden="true">
+                                    <div id="about-team-detail-header" class="about-team-detail-header-slot"></div>
+                                    <div id="about-team-detail-body" class="about-team-detail-body-slot"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- ========== PHILOSOPHY: Values (left 2x2) + Zen-Tech (right) ========== -->
+            <section id="about-values" class="about-section-shell relative pt-6 md:pt-8 pb-12 md:pb-16 px-6 md:px-12 overflow-visible">
+                <!-- Section divider + subtle glyph -->
+                <div class="absolute inset-0 -z-10 pointer-events-none">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent"></div>
+                    <div class="absolute -left-16 bottom-10 w-[20rem] h-[20rem] opacity-10 hidden md:block">
+                        <svg viewbox="0 0 100 100" class="w-full h-full animate-spin-slow" style="animation-duration: 120s; color: rgba(212,175,55,0.4);">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="0.2" stroke-dasharray="3 6"></circle>
+                            <circle cx="50" cy="50" r="28" fill="none" stroke="currentColor" stroke-width="0.1"></circle>
+                        </svg>
+                    </div>
+                </div>
+                <div class="about-values-layout about-content-frame overflow-visible">
+
+                    <!-- Values section header -->
+                    <div class="mb-4 md:mb-5">
+                        <p class="font-serif italic font-light tracking-wide" style="font-size: clamp(1.6rem,3vw,2.4rem); color: rgba(244,237,226,0.55);">Lorem ipsum dolor sit</p>
+                        <div class="flex items-center gap-4 mt-2">
+                            <span class="font-mono uppercase tracking-[0.28em]" style="font-size: clamp(0.7rem,1.2vw,1rem); color: rgba(252,211,77,0.35);">lorem ipsum dolor</span>
+                            <div class="h-px flex-1 bg-gradient-to-r from-amber-400/40 via-white/15 to-transparent"></div>
+                            <span class="font-mono uppercase tracking-[0.24em] hidden md:block" style="font-size: clamp(0.6rem,1vw,0.85rem); color: rgba(255,255,255,0.15);">lorem ipsum dolor sit amet</span>
+                        </div>
+                    </div>
+
+                    <div class="av-steps-wrap">
+                        <div class="av-steps-grid">
+                            <div class="av-step animate-on-scroll">
+                                <div class="av-step__copy">
+                                    <div class="av-step__header-row">
+                                        <div class="av-step__status">lorem ipsum dolor</div>
+                                        <span class="av-step__icon" style="--av-icon-border: rgba(245,158,11,0.3); --av-icon-bg: rgba(245,158,11,0.1); color: rgba(251,191,36,0.9);" aria-hidden="true">
+                                            <svg viewbox="0 0 24 24" style="fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><path d="m12 3 9 5-9 5-9-5 9-5z"></path><path d="m3 12 9 5 9-5"></path><path d="m3 16 9 5 9-5"></path></svg>
+</span>
+                                    </div>
+                                    <div class="av-step__body">
+                                        <p><strong style="color: rgba(244,237,226,0.95); font-weight: 600;">lorem ipsum</strong> Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="av-step animate-on-scroll">
+                                <div class="av-step__copy">
+                                    <div class="av-step__header-row">
+                                        <div class="av-step__status">lorem ipsum dolor</div>
+                                        <span class="av-step__icon" style="--av-icon-border: rgba(16,185,129,0.3); --av-icon-bg: rgba(16,185,129,0.1); color: rgba(52,211,153,0.9);" aria-hidden="true">
+                                            <svg viewbox="0 0 24 24" style="fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><path d="M10 14.5 7.5 12a2.1 2.1 0 0 0-3 3l3.5 3.5"></path><path d="m14 9 2.2-2.2a2.8 2.8 0 0 1 4 4L16 15"></path><path d="m8.5 12.5 2-2a2.2 2.2 0 0 1 3 0l2 2"></path><path d="m12 20 5-5"></path><path d="m7 15 5 5"></path></svg>
+</span>
+                                    </div>
+                                    <div class="av-step__body">
+                                        <p><strong style="color: rgba(244,237,226,0.95); font-weight: 600;">lorem</strong> Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="av-step animate-on-scroll">
+                                <div class="av-step__copy">
+                                    <div class="av-step__header-row">
+                                        <div class="av-step__status">lorem ipsum dolor</div>
+                                        <span class="av-step__icon" style="--av-icon-border: rgba(91,47,168,0.35); --av-icon-bg: rgba(91,47,168,0.12); color: rgba(220,100,50,0.95);" aria-hidden="true">
+                                            <svg viewbox="0 0 24 24" style="fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><circle cx="12" cy="12" r="9"></circle><path d="m16.5 7.5-3 6-6 3 3-6 6-3z"></path></svg>
+</span>
+                                    </div>
+                                    <div class="av-step__body">
+                                        <p><strong style="color: rgba(244,237,226,0.95); font-weight: 600;">lorem</strong> Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="av-step animate-on-scroll">
+                                <div class="av-step__copy">
+                                    <div class="av-step__header-row">
+                                        <div class="av-step__status">lorem ipsum dolor</div>
+                                        <span class="av-step__icon" style="--av-icon-border: rgba(139,92,246,0.3); --av-icon-bg: rgba(139,92,246,0.1); color: rgba(167,139,250,0.9);" aria-hidden="true">
+                                            <svg viewbox="0 0 24 24" style="fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><path d="M12 21s6-4.5 6-10a6 6 0 1 0-12 0c0 5.5 6 10 6 10z"></path><circle cx="12" cy="11" r="2.5"></circle></svg>
+</span>
+                                    </div>
+                                    <div class="av-step__body">
+                                        <p><strong style="color: rgba(244,237,226,0.95); font-weight: 600;">lorem</strong> Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rotating rings: anchored to bottom-right of last content section -->
+                <div class="pointer-events-none hidden md:block" style="position: absolute; bottom: -6rem; right: -6rem; width: 520px; height: 520px; opacity: 0.7;" aria-hidden="true">
+                    <div style="position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid rgba(91,47,168,0.11); animation: spin-60s 60s linear infinite; box-shadow: 0 0 20px rgba(91,47,168,0.04);">
+                        <div style="position: absolute; top: -5px; left: 50%; transform: translateX(-50%); width: 10px; height: 10px; border-radius: 50%; background: #5B2FA8; box-shadow: 0 0 12px rgba(91,47,168,0.5);"></div>
+                        <div style="position: absolute; bottom: -5px; left: 50%; transform: translateX(-50%); width: 10px; height: 10px; border-radius: 50%; background: #D4AF37; box-shadow: 0 0 12px rgba(212,175,55,0.5);"></div>
+                        <div style="position: absolute; left: -4px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; border-radius: 50%; background: rgba(91,47,168,0.5); box-shadow: 0 0 8px rgba(91,47,168,0.35);"></div>
+                        <div style="position: absolute; right: -4px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; border-radius: 50%; background: rgba(212,175,55,0.5); box-shadow: 0 0 8px rgba(212,175,55,0.35);"></div>
+                    </div>
+                    <div style="position: absolute; top: 95px; left: 95px; right: 95px; bottom: 95px; border-radius: 50%; border: 1px solid rgba(91,47,168,0.08); animation: spin-40s-reverse 40s linear infinite; box-shadow: 0 0 14px rgba(91,47,168,0.03);">
+                        <div style="position: absolute; top: -4px; left: 50%; transform: translateX(-50%); width: 8px; height: 8px; border-radius: 50%; background: #D4AF37; box-shadow: 0 0 10px rgba(212,175,55,0.45);"></div>
+                        <div style="position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%); width: 8px; height: 8px; border-radius: 50%; background: #5B2FA8; box-shadow: 0 0 10px rgba(91,47,168,0.45);"></div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Inquire CTA -->
+            <a href="inquire.html#inquiry-form" class="mt-8 flex justify-center hover:opacity-80 transition-opacity scroll-indicator" aria-label="Lorem Ipsum Dolor">
+                <div class="flex items-center gap-3">
+                    <span class="font-mono text-[10px] text-white/40 tracking-[0.2em]">//</span>
+                    <svg viewbox="0 0 24 24" aria-hidden="true" class="w-3 h-3 text-white/50 animate-nudge-right" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><path d="M5 12h14"></path><path d="m13 5 7 7-7 7"></path></svg>
+                    <div class="h-px w-12 bg-gradient-to-r from-emerald-400/40 via-amber-200/30 to-transparent"></div>
+                    <span class="font-mono text-[10px] uppercase tracking-[0.22em] text-white/60">lorem</span>
+                </div>
+            </a>
+
+            <!-- Footer (dark theme, full-width bar) -->
+            <footer class="mt-10 w-full pt-20 md:pt-24 pb-14 md:pb-16 px-6 md:px-12 bg-black border-t border-white/20 text-stone">
+                <div class="max-w-7xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 text-left">
+                        <div class="flex flex-col gap-4">
+                            <a href="/" class="font-serif text-2xl md:text-3xl tracking-tight text-stone font-medium hover:text-white transition-colors">Studio</a>
+                            <p class="text-sm text-stone/80 font-open-sans leading-relaxed">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.</p>
+                            <a href="inquire.html#inquiry-form" class="inline-flex items-center justify-center font-serif italic text-lg px-8 py-2.5 border border-sepia bg-sepia hover:bg-amber-200 text-paper rounded-full shadow-sm transition-colors w-fit">Get in touch</a>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <p class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold font-mono">Lorem</p>
+                            <nav class="flex flex-col gap-2" aria-label="Footer navigation">
+                                <a href="ai-training.html" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">Build</a>
+                                <a href="ai-development.html" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">Design</a>
+                                <a href="ai-consulting.html" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">Strategy</a>
+                                <a href="ai-governance.html" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">Care</a>
+                                <a href="products.html" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">Our Work</a>
+                                <a href="how-we-work.html" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">How We Work</a>
+                                <a href="about-us.html" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">About Us</a>
+                                <a href="blog.html" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">Blog</a>
+                                <a href="data-security.html" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">Data &amp; Security</a>
+                                <a href="inquire.html#inquiry-form" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">Book a Call</a>
+                            </nav>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <p class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold font-mono">Lorem</p>
+                            <a href="mailto:hello@example.com" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">lorem</a>
+                            <a href="tel:+61000000000" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">+61 000 000 000</a>
+                            <a href="#" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">LinkedIn</a>
+                            <a href="#privacy-policy" class="text-sm text-stone/80 hover:text-stone transition-colors font-open-sans">lorem ipsum</a>
+                            <span class="text-sm text-stone/80 font-open-sans">Worldwide</span>
+                        </div>
+                    </div>
+                <div class="border-t border-ink/10 mt-10 pt-6">
+                    <p class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold font-mono mb-3">Lorem ipsum dolor</p>
+                    <nav class="flex flex-wrap gap-x-4 gap-y-2" aria-label="City pages">
+                        <a href="ai-consulting/sydney.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Sydney</a>
+                        <a href="ai-consulting/melbourne.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Melbourne</a>
+                        <a href="ai-consulting/brisbane.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Brisbane</a>
+                        <a href="ai-consulting/adelaide.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Adelaide</a>
+                        <a href="ai-consulting/canberra.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Canberra</a>
+                        <a href="ai-consulting/darwin.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Darwin</a>
+                        <a href="ai-consulting/hobart.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Hobart</a>
+                    </nav>
+                </div>
+
+                    <div class="border-t border-white/20 mt-10 pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm text-neutral-500 font-open-sans">
+                        <span>&copy; 2026 Studio. Independent practice.</span>
+                        <span>Worldwide</span>
+                    </div>
+                </div>
+            </footer>
+
+
+        </div>
+    </section>
+
+
+
+<script>
+(function () {
+  function scrambleText(element, targetText, duration = 1.0) {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+';
+    const originalText = targetText;
+    if (element._scrambleInterval) clearInterval(element._scrambleInterval);
+    let iteration = 0;
+    element._scrambleInterval = setInterval(() => {
+      element.innerText = originalText
+        .split('')
+        .map((char, index) => index < iteration ? originalText[index] : (originalText[index] === ' ' ? ' ' : chars[Math.floor(Math.random() * chars.length)]))
+        .join('');
+      if (iteration >= originalText.length) {
+        clearInterval(element._scrambleInterval);
+        element.innerText = originalText;
+        delete element._scrambleInterval;
+      }
+      iteration += originalText.length / (duration * 33);
+    }, 30);
+  }
+
+  // Minimal character split + reveal (used only for the big "STUDIO" title).
+  function splitToCharsPreserveLayout(el) {
+    if (!el) return [];
+    if (el.dataset.charsSplit === '1') {
+      return Array.from(el.querySelectorAll('span[data-char]'));
+    }
+
+    el.classList.remove('opacity-0');
+    el.style.opacity = '1';
+    el.style.whiteSpace = 'nowrap';
+
+    const text = (el.dataset.originalText || el.textContent || '').trim();
+    el.dataset.originalText = text;
+    el.dataset.charsSplit = '1';
+
+    const frag = document.createDocumentFragment();
+    const spans = [];
+
+    for (const ch of text) {
+      const s = document.createElement('span');
+      s.dataset.char = '1';
+      s.setAttribute('aria-hidden', 'true');
+      s.textContent = ch === ' ' ? '\u00A0' : ch;
+      s.style.display = 'inline-block';
+      s.style.willChange = 'transform, opacity, filter';
+      frag.appendChild(s);
+      spans.push(s);
+    }
+
+    el.textContent = '';
+    el.appendChild(frag);
+    el.setAttribute('aria-label', text);
+    el.setAttribute('role', 'text');
+
+    return spans;
+  }
+
+  // --- Team Card Click (contained accordion in right rail) ---
+  function initTeamCards() {
+    const teamRail = document.getElementById('about-team');
+    const teamStack = document.getElementById('team-cards-grid');
+    const teamDetail = document.getElementById('about-team-detail');
+    const detailHeaderHost = document.getElementById('about-team-detail-header');
+    const detailBodyHost = document.getElementById('about-team-detail-body');
+    const teamCards = Array.from(document.querySelectorAll('.team-card'));
+    const isDesktopAccordion = () => window.matchMedia('(min-width: 1024px)').matches;
+    let activeDesktopCard = null;
+
+    const syncDesktopHeaderHeight = () => {
+      if (!teamRail) return;
+      if (!isDesktopAccordion()) {
+        teamRail.style.removeProperty('--team-card-header-height');
+        return;
+      }
+      const sourceCard = activeDesktopCard || teamCards[0];
+      const sourceFounderCard = sourceCard?.querySelector('.founder-card');
+      if (!sourceFounderCard) return;
+      teamRail.style.setProperty('--team-card-header-height', `${sourceFounderCard.getBoundingClientRect().height}px`);
+    };
+
+    const closeMobileCards = () => {
+      teamCards.forEach(c => c.classList.remove('mobile-hiding', 'mobile-hidden', 'mobile-showing'));
+      teamCards.forEach(card => {
+        const founderCard = card.querySelector('.founder-card');
+        const bio = document.getElementById('team-bio-' + card.dataset.teamIndex);
+        card.classList.remove('is-open');
+        founderCard?.classList.remove('is-active');
+        founderCard?.setAttribute('aria-pressed', 'false');
+        if (bio) {
+          bio.style.maxHeight = '0px';
+          bio.classList.remove('is-open');
+        }
+      });
+    };
+
+    const clearDesktopPressedState = () => {
+      teamCards.forEach(card => {
+        const founderCard = card.querySelector('.founder-card');
+        founderCard?.classList.remove('is-active');
+        founderCard?.setAttribute('aria-pressed', 'false');
+      });
+    };
+
+    const populateDesktopDetail = card => {
+      if (!detailHeaderHost || !detailBodyHost) return;
+      const founderCard = card.querySelector('.founder-card');
+      const bio = document.getElementById('team-bio-' + card.dataset.teamIndex);
+      const bioContent = bio?.firstElementChild;
+      if (!founderCard || !bioContent) return;
+
+      detailHeaderHost.innerHTML = '';
+      detailBodyHost.innerHTML = '';
+
+      const founderClone = founderCard.cloneNode(true);
+      founderClone.classList.add('is-active');
+      founderClone.setAttribute('aria-pressed', 'true');
+      founderClone.setAttribute('role', 'button');
+      founderClone.setAttribute('tabindex', '0');
+      detailHeaderHost.appendChild(founderClone);
+
+      const bioClone = bioContent.cloneNode(true);
+      detailBodyHost.appendChild(bioClone);
+
+      const closeDetail = e => {
+        if (e.type === 'keydown' && e.key !== 'Enter' && e.key !== ' ') return;
+        e.preventDefault();
+        closeDesktopDetail();
+      };
+      founderClone.addEventListener('click', closeDetail);
+      founderClone.addEventListener('keydown', closeDetail);
+    };
+
+    const openDesktopDetail = card => {
+      if (!teamRail || !teamDetail) return;
+      activeDesktopCard = card;
+      clearDesktopPressedState();
+      const founderCard = card.querySelector('.founder-card');
+      founderCard?.classList.add('is-active');
+      founderCard?.setAttribute('aria-pressed', 'true');
+      syncDesktopHeaderHeight();
+      populateDesktopDetail(card);
+      teamRail.classList.add('has-detail-open');
+      teamDetail.setAttribute('aria-hidden', 'false');
+    };
+
+    const closeDesktopDetail = () => {
+      if (!teamRail || !teamDetail) return;
+      teamRail.classList.remove('has-detail-open');
+      teamDetail.setAttribute('aria-hidden', 'true');
+      clearDesktopPressedState();
+      activeDesktopCard = null;
+      window.setTimeout(() => {
+        if (teamRail.classList.contains('has-detail-open')) return;
+        detailHeaderHost.innerHTML = '';
+        detailBodyHost.innerHTML = '';
+      }, 460);
+    };
+
+    teamCards.forEach(card => {
+      const founderCard = card.querySelector('.founder-card');
+      const bioIndex = card.dataset.teamIndex;
+      const bio = document.getElementById('team-bio-' + bioIndex);
+
+      if (!founderCard) return;
+
+      const setMobileActive = isActive => {
+        card.classList.toggle('is-open', isActive);
+        founderCard.classList.toggle('is-active', isActive);
+        founderCard.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        if (bio) {
+          if (isActive) {
+            let target = bio.scrollHeight;
+            if (target === 0) {
+              bio.style.maxHeight = 'none';
+              target = bio.scrollHeight;
+              bio.style.maxHeight = '0px';
+            }
+            requestAnimationFrame(() => {
+              bio.style.maxHeight = target + 'px';
+              bio.classList.add('is-open');
+            });
+          } else {
+            bio.style.maxHeight = '0px';
+            bio.classList.remove('is-open');
+          }
+        }
+      };
+
+      founderCard.addEventListener('click', () => {
+        if (isDesktopAccordion()) {
+          if (activeDesktopCard === card && teamRail?.classList.contains('has-detail-open')) {
+            closeDesktopDetail();
+          } else {
+            openDesktopDetail(card);
+          }
+          return;
+        }
+
+        const isActive = founderCard.classList.contains('is-active');
+
+        if (!isActive) {
+          // OPENING: fade siblings out, then expand bio
+          teamCards.forEach(otherCard => {
+            if (otherCard === card) return;
+            const otherFounder = otherCard.querySelector('.founder-card');
+            const otherBioIndex = otherCard.dataset.teamIndex;
+            const otherBio = document.getElementById('team-bio-' + otherBioIndex);
+            if (otherFounder && otherFounder.classList.contains('is-active')) {
+              otherCard.classList.remove('is-open');
+              otherFounder.classList.remove('is-active');
+              otherFounder.setAttribute('aria-pressed', 'false');
+              if (otherBio) { otherBio.style.maxHeight = '0px'; otherBio.classList.remove('is-open'); }
+            }
+            // Step 1: fade siblings out (opacity transition)
+            otherCard.classList.add('mobile-hiding');
+          });
+          // Step 2: after fade, collapse siblings and expand bio
+          setTimeout(() => {
+            teamCards.forEach(otherCard => {
+              if (otherCard === card) return;
+              otherCard.classList.remove('mobile-hiding');
+              otherCard.classList.add('mobile-hidden');
+            });
+            setMobileActive(true);
+          }, 200);
+        } else {
+          // CLOSING: fade bio out, then show siblings
+          setMobileActive(false);
+          setTimeout(() => {
+            teamCards.forEach(otherCard => {
+              if (otherCard === card) return;
+              otherCard.classList.remove('mobile-hidden');
+              otherCard.classList.add('mobile-showing');
+            });
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                teamCards.forEach(otherCard => {
+                  if (otherCard === card) return;
+                  otherCard.classList.remove('mobile-showing');
+                });
+              });
+            });
+          }, 180);
+        }
+      });
+
+      founderCard.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          founderCard.click();
+        }
+      });
+    });
+
+    const desktopMq = window.matchMedia('(min-width: 1024px)');
+    const handleMqChange = () => {
+      if (isDesktopAccordion()) {
+        closeMobileCards();
+        syncDesktopHeaderHeight();
+      } else {
+        closeDesktopDetail();
+        if (teamRail) {
+          teamRail.classList.remove('has-detail-open');
+          teamRail.style.removeProperty('--team-card-header-height');
+        }
+      }
+    };
+    if (typeof desktopMq.addEventListener === 'function') {
+      desktopMq.addEventListener('change', handleMqChange);
+    } else if (typeof desktopMq.addListener === 'function') {
+      desktopMq.addListener(handleMqChange);
+    }
+
+    window.addEventListener('resize', syncDesktopHeaderHeight);
+
+    syncDesktopHeaderHeight();
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const aboutTitle = document.getElementById('about-studio-title');
+    const aboutSubtitle = document.getElementById('about-zen-subtitle');
+    const aboutSubtitleAnchor = document.getElementById('about-subtitle-anchor');
+    const teamCards = document.querySelectorAll('.team-card');
+
+    // Initialize team card accordion
+    initTeamCards();
+
+    const noGsapFallback = () => {
+      aboutTitle?.classList.remove('opacity-0');
+      aboutSubtitle?.classList.remove('opacity-0');
+      aboutSubtitleAnchor?.classList.remove('opacity-0');
+      teamCards.forEach(c => c.classList.remove('opacity-0'));
+    };
+
+    if (typeof gsap === 'undefined') {
+      noGsapFallback();
+      return;
+    }
+
+    try {
+      const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
+
+      // STUDIO: character-by-character reveal
+      if (aboutTitle) {
+        aboutTitle.classList.remove('opacity-0');
+        const chars = splitToCharsPreserveLayout(aboutTitle);
+        gsap.set(chars, { opacity: 0, y: 46, filter: 'blur(10px)' });
+        tl.to(chars, {
+          opacity: 1,
+          y: 0,
+          filter: 'blur(0px)',
+          duration: 1.35,
+          stagger: { each: 0.045, from: 'start' },
+          ease: 'power3.out'
+        }, 0);
+      }
+
+      // Zen Inspired Agentic Systems: slower reveal
+      if (aboutSubtitle) {
+        aboutSubtitle.classList.remove('opacity-0');
+        tl.fromTo(
+          aboutSubtitle,
+          { opacity: 0, y: 45 },
+          { opacity: 0.78, y: 0, duration: 2.8, ease: 'power3.out' },
+          0.25
+        );
+      }
+
+      if (aboutSubtitleAnchor) {
+        aboutSubtitleAnchor.classList.remove('opacity-0');
+        tl.fromTo(
+          aboutSubtitleAnchor,
+          { opacity: 0, y: 18, scaleX: 0.92, transformOrigin: 'left center' },
+          { opacity: 1, y: 0, scaleX: 1, duration: 1.4, ease: 'power3.out' },
+          0.52
+        );
+      }
+
+      // "Build your Next." scramble + fade in
+      const buildNextEl = document.getElementById('about-build-next');
+      const buildYourText = document.getElementById('build-your-text');
+      const nextText = document.getElementById('next-text');
+      if (buildNextEl && buildYourText && nextText) {
+        // Lock span widths to prevent reflow during scramble
+        [buildYourText, nextText].forEach(function (span) {
+          span.style.display = 'inline-block';
+          span.style.width = span.offsetWidth + 'px';
+          span.style.overflow = 'hidden';
+          span.style.whiteSpace = 'nowrap';
+        });
+        gsap.set(buildNextEl, { opacity: 0 });
+        tl.to(buildNextEl, {
+          opacity: 1,
+          duration: 1.2,
+          ease: 'power3.out',
+          onStart: function () {
+            scrambleText(buildYourText, 'Build your', 1.3);
+            scrambleText(nextText, 'Next.', 1.3);
+          }
+        }, 0.8);
+      }
+
+      // Team cards: staggered reveal with founder-card text animation
+      if (teamCards.length) {
+        teamCards.forEach(card => {
+          const fc = card.querySelector('.founder-card');
+          if (fc) fc.classList.remove('play-founder-card');
+        });
+        gsap.set(teamCards, { opacity: 0, y: 30 });
+        tl.to(teamCards, {
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          stagger: {
+            each: 0.2,
+            onStart: function () {
+              const card = this.targets()[0];
+              const fc = card?.querySelector('.founder-card');
+              if (fc) {
+                void fc.offsetWidth;
+                fc.classList.add('play-founder-card');
+              }
+            }
+          },
+          ease: 'power3.out',
+        }, 1.5);
+      }
+
+    } catch (_) {
+      noGsapFallback();
+    }
+  });
+
+  // Provide scrambleText for Zen tech code block
+  window.scrambleText = scrambleText;
+})();
+
+// --- Zen Tech Component Logic ---
+        const zenContainer = document.getElementById('zen-tech-container');
+        if (zenContainer) {
+            let currentZenIndex = 0;
+            const zenSlides = document.querySelectorAll('.zen-slide');
+            const zenDots = document.querySelectorAll('#zen-dots div');
+	            const zenPhaseIndicator = document.getElementById('zen-phase-indicator');
+	            const phases = [
+	                "PHASE: 01 // THE PROBLEM",
+	                "PHASE: 02 // OUR MISSION",
+	                "PHASE: 03 // OUR TEAM",
+	                "PHASE: 04 // WHO WE SERVE"
+	            ];
+
+            // Atmosphere palette (loop):
+            const themeColors = [
+                "157, 122, 35",   // Muted Gold
+                "38, 142, 107",   // Muted Sage
+                "151, 70, 36",    // Muted Copper
+                "73, 70, 156"     // Muted Slate
+            ];
+            let themeIndex = 0;
+            zenContainer.style.setProperty('--zen-theme', themeColors[themeIndex]);
+
+            const zenAutoRotateMs = 10000;
+            const zenSlideTransitionDelayMs = 300;
+            let zenInterval = null;
+            let zenShowTimeout = null;
+            let zenRotationVersion = 0;
+
+            const stopZenAutoRotate = () => {
+                if (zenInterval !== null) {
+                    clearInterval(zenInterval);
+                    zenInterval = null;
+                }
+            };
+
+            const startZenAutoRotate = () => {
+                stopZenAutoRotate();
+                zenInterval = setInterval(() => {
+                    rotateZenContent();
+                }, zenAutoRotateMs);
+            };
+
+            function rotateZenContent() {
+                if (!zenSlides.length) {
+                    return;
+                }
+
+                if (zenShowTimeout !== null) {
+                    clearTimeout(zenShowTimeout);
+                    zenShowTimeout = null;
+                }
+
+                zenRotationVersion += 1;
+                const rotationVersion = zenRotationVersion;
+
+                // Hide current
+                if (zenSlides.length > currentZenIndex) {
+                    const currentSlide = zenSlides[currentZenIndex];
+                    currentSlide.style.opacity = '0';
+                    currentSlide.style.transform = 'scale(0.95)';
+                    currentSlide.style.pointerEvents = 'none';
+
+                    if (zenDots[currentZenIndex]) {
+                        zenDots[currentZenIndex].classList.remove('bg-white/80');
+                        zenDots[currentZenIndex].classList.add('bg-white/20');
+                    }
+                }
+
+                // Increment index
+                currentZenIndex = (currentZenIndex + 1) % zenSlides.length;
+
+                // Cycle atmosphere color
+                themeIndex = (themeIndex + 1) % themeColors.length;
+                zenContainer.style.setProperty('--zen-theme', themeColors[themeIndex]);
+
+                // Show new
+                if (zenSlides.length > currentZenIndex) {
+                    const nextSlide = zenSlides[currentZenIndex];
+                    zenShowTimeout = setTimeout(() => {
+                        if (rotationVersion !== zenRotationVersion) {
+                            return;
+                        }
+                        nextSlide.style.opacity = '1';
+                        nextSlide.style.transform = 'scale(1)';
+                        nextSlide.style.pointerEvents = 'auto';
+                        zenShowTimeout = null;
+                    }, zenSlideTransitionDelayMs);
+
+                    if (zenDots[currentZenIndex]) {
+                        zenDots[currentZenIndex].classList.remove('bg-white/20');
+                        zenDots[currentZenIndex].classList.add('bg-white/80');
+                    }
+                }
+
+                // Update Phase Text
+                if (zenPhaseIndicator) {
+                    if (typeof scrambleText === 'function') {
+                        scrambleText(zenPhaseIndicator, phases[currentZenIndex], 0.5);
+                    } else {
+                        zenPhaseIndicator.textContent = phases[currentZenIndex];
+                    }
+                }
+            }
+
+            // Auto rotate
+            startZenAutoRotate();
+
+            zenContainer.addEventListener('mouseenter', () => {
+                stopZenAutoRotate();
+            });
+
+            zenContainer.addEventListener('mouseleave', () => {
+                startZenAutoRotate();
+            });
+
+            zenContainer.addEventListener('click', () => {
+                rotateZenContent();
+                startZenAutoRotate();
+            });
+        }
+
+
+</script>
+
+
+<script defer src="https://va.vercel-scripts.com/v1/speed-insights/script.js"></script>
+
+</body>
+</html>

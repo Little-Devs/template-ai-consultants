@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500&amp;family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&amp;family=JetBrains+Mono:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --base:#0E1117; --surface:#21252F; --surface-2:#262B36; --ivory:#FDFAF7;
+  --muted:rgba(253,250,247,0.6); --faint:rgba(253,250,247,0.34);
+  --hair:rgba(253,250,247,0.10); --hair-strong:rgba(253,250,247,0.18);
+  --grid:rgba(253,250,247,0.04);
+  --terra:#CF5430; --terra-deep:#B84020; --terra-soft:#E07A50; --hot:#FF6A38;
+  --good:#6FBF8E; --night:#8FA3C4;
+  --f-display:'Cormorant Garamond',Georgia,serif; --f-body:'DM Sans',system-ui,sans-serif; --f-mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{background:#000;height:100%;}
+body{overflow:hidden;color:var(--ivory);font-family:var(--f-body);}
+.frame{position:relative;width:100%;height:100vh;display:flex;align-items:center;justify-content:center;background:#000;overflow:hidden;}
+.stage{
+  position:relative;width:1080px;height:1350px;flex:0 0 auto;
+  transform:scale(var(--s,1));transform-origin:center center;overflow:hidden;
+  background:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px),
+    radial-gradient(70% 36% at 50% 22%,rgba(207,84,48,0.10),transparent 60%),
+    var(--base);
+  background-size:60px 60px,60px 60px,100% 100%,100% 100%;
+}
+
+/* chrome */
+.ch{position:absolute;font-family:var(--f-mono);font-size:21px;letter-spacing:.24em;text-transform:uppercase;z-index:7;}
+.ch.tl{top:60px;left:72px;color:var(--faint);}
+.ch.tl b{color:var(--terra);font-weight:500;}
+.ch.tr{top:60px;right:72px;color:var(--muted);}
+.ch.bc{bottom:60px;left:0;width:100%;text-align:center;color:var(--faint);font-size:18px;letter-spacing:.3em;}
+
+/* sweep line */
+.sweep{position:absolute;left:40px;width:1000px;height:3px;top:0;z-index:9;opacity:0;
+  background:linear-gradient(90deg,transparent,var(--hot),transparent);box-shadow:0 0 26px 2px rgba(255,106,56,0.55);}
+#content{position:absolute;inset:0;}
+
+/* structural tree: shared core to departments */
+.tree{position:absolute;inset:0;z-index:2;}
+/* retrieval flow: directed links, fired one at a time */
+.flow{position:absolute;inset:0;z-index:6;}
+
+/* persistent slide title (so it's always clear what this slide is) */
+.memtitle{position:absolute;top:152px;left:0;width:100%;text-align:center;z-index:6;
+  font-family:var(--f-mono);font-weight:500;font-size:30px;letter-spacing:.3em;text-transform:uppercase;color:var(--terra-soft);opacity:0;}
+
+/* you, the single source */
+.you{position:absolute;top:236px;left:0;width:100%;text-align:center;z-index:5;
+  font-family:var(--f-mono);font-size:21px;letter-spacing:.24em;text-transform:uppercase;color:var(--terra);}
+
+/* shared core (the trunk everyone reads) */
+.score{position:absolute;left:140px;top:290px;width:800px;height:200px;border-radius:18px;z-index:5;
+  background:linear-gradient(180deg,rgba(207,84,48,0.15),rgba(207,84,48,0.03));border:1.5px solid var(--terra);}
+.score .slabel{position:absolute;left:28px;top:24px;font-family:var(--f-mono);font-size:28px;letter-spacing:.04em;color:var(--terra-soft);}
+.score .ssub{position:absolute;left:30px;top:66px;font-family:var(--f-mono);font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+.score .idx{position:absolute;right:28px;top:30px;font-family:var(--f-mono);font-size:14px;letter-spacing:.1em;color:var(--faint);}
+.cc{position:absolute;width:170px;height:58px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+  background:var(--surface-2);border:1px solid var(--hair);font-family:var(--f-mono);font-size:17px;color:var(--ivory);}
+.cc.cc0{left:24px;top:110px;} .cc.cc1{left:214px;top:110px;} .cc.cc2{left:404px;top:110px;} .cc.cc3{left:594px;top:110px;}
+
+/* fact chips you tell it (transient, staged one at a time) */
+.fact{position:absolute;left:345px;top:328px;width:390px;border-radius:10px;padding:14px 20px;text-align:center;z-index:6;
+  background:var(--surface);border:1px solid var(--terra-soft);
+  font-family:var(--f-mono);font-size:17px;letter-spacing:.01em;color:var(--ivory);white-space:nowrap;}
+
+/* department folders */
+.fold{position:absolute;top:562px;width:300px;height:290px;border-radius:16px;z-index:5;
+  background:var(--surface);border:1px solid var(--hair-strong);}
+.fold.fold0{left:90px;} .fold.fold1{left:390px;} .fold.fold2{left:690px;}
+.fold .fh{position:absolute;left:22px;top:24px;display:flex;align-items:center;gap:11px;}
+.fold .fh svg{width:28px;height:28px;display:block;}
+.fold .flab{font-family:var(--f-mono);font-size:22px;letter-spacing:.06em;color:var(--terra-soft);}
+.fold .fname{position:absolute;left:24px;top:68px;font-family:var(--f-mono);font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+.fold .fsep{position:absolute;left:22px;right:22px;top:100px;height:1px;background:var(--hair);}
+.fold .task{position:absolute;right:18px;top:22px;z-index:7;font-family:var(--f-mono);font-size:13px;letter-spacing:.05em;
+  color:var(--hot);background:rgba(26,29,37,0.92);border:1px solid rgba(255,106,56,0.5);border-radius:6px;padding:5px 10px;white-space:nowrap;}
+.ff{position:absolute;left:25px;width:250px;height:48px;border-radius:9px;display:flex;align-items:center;padding:0 16px;
+  background:var(--surface-2);border:1px solid var(--hair);font-family:var(--f-mono);font-size:16px;color:var(--ivory);white-space:nowrap;}
+.ff .fdot{width:7px;height:7px;border-radius:50%;background:var(--terra);margin-right:11px;flex:0 0 auto;}
+.ff.r0{top:150px;} .ff.r1{top:214px;}
+
+/* nightly consolidation (the memory "dreams") — enlarged */
+.dream{position:absolute;left:0;top:900px;width:100%;text-align:center;z-index:5;}
+.dreamhead{display:flex;align-items:center;justify-content:center;gap:15px;margin-bottom:24px;}
+.dreamhead svg{width:30px;height:30px;display:block;}
+.dreamlab{font-family:var(--f-mono);font-size:20px;letter-spacing:.2em;text-transform:uppercase;color:var(--night);}
+.motes{position:relative;width:470px;height:34px;margin:0 auto 26px;display:flex;align-items:center;justify-content:space-between;}
+.mote{width:24px;height:24px;border-radius:7px;background:var(--surface-2);border:1px solid var(--hair-strong);flex:0 0 auto;}
+.scan{position:absolute;left:-22px;top:-12px;width:62px;height:58px;border-radius:14px;pointer-events:none;
+  background:radial-gradient(50% 50% at 50% 50%,rgba(143,163,196,0.45),transparent 70%);}
+.dreamstatus{font-family:var(--f-mono);font-size:29px;letter-spacing:.05em;color:var(--ivory);}
+
+/* headline */
+.headline{position:absolute;bottom:104px;left:0;width:100%;text-align:center;z-index:8;opacity:0;}
+.headline .tag{font-family:var(--f-mono);font-size:18px;letter-spacing:.26em;text-transform:uppercase;color:var(--terra);margin-bottom:18px;}
+.headline .t{font-family:var(--f-mono);font-weight:500;font-size:43px;letter-spacing:.04em;text-transform:uppercase;color:var(--ivory);line-height:1.18;}
+</style>
+</head>
+<body>
+<div class="frame"><div class="stage" id="stage">
+
+  <div class="ch tl"><b>lorem</b> STUDIO</div>
+  <div class="ch tr">lorem ipsum dolor sit</div>
+  <div class="ch bc">lorem ipsum dolor sit amet</div>
+
+  <div class="sweep" id="sweep"></div>
+
+  <div id="content">
+
+    <!-- structural tree: shared core branches to the departments -->
+    <svg class="tree" id="treesvg" viewbox="0 0 1080 1350" fill="none">
+      <path id="br0" d="M540 490 L540 532 L240 562" stroke="#CF5430" stroke-width="2" opacity="0.45"/>
+      <path id="br1" d="M540 490 L540 562" stroke="#CF5430" stroke-width="2" opacity="0.45"/>
+      <path id="br2" d="M540 490 L540 532 L840 562" stroke="#CF5430" stroke-width="2" opacity="0.45"/>
+    </svg>
+
+    <!-- retrieval flow: each link fires one at a time, then clears -->
+    <svg class="flow" id="flowsvg" viewbox="0 0 1080 1350" fill="none">
+      <path id="rl0" d="M800 442 C 660 562, 360 692, 246 782" stroke="#FF6A38" stroke-width="2.4" stroke-linecap="round"/>
+      <path id="rl1" d="M432 448 C 412 572, 300 692, 242 780" stroke="#FF6A38" stroke-width="2.4" stroke-linecap="round"/>
+      <path id="rl2" d="M616 448 C 520 572, 332 704, 252 784" stroke="#FF6A38" stroke-width="2.4" stroke-linecap="round"/>
+    </svg>
+
+    <!-- persistent slide title -->
+    <div class="memtitle" id="memtitle">lorem ipsum</div>
+
+    <!-- you, the single source -->
+    <div class="you" id="you">lorem ipsum dolor sit amet</div>
+
+    <!-- shared core -->
+    <div class="score" id="score">
+      <span class="slabel" id="slabel">lorem</span>
+      <span class="ssub" id="ssub">lorem ipsum</span>
+      <span class="idx" id="idx">lorem ipsum dolor sit</span>
+      <span class="cc cc0" id="cc0">lorem</span>
+      <span class="cc cc1" id="cc1">lorem</span>
+      <span class="cc cc2" id="cc2">lorem</span>
+      <span class="cc cc3" id="cc3">lorem</span>
+    </div>
+
+    <!-- fact chips (transient) -->
+    <div class="fact" id="fact0">lorem ipsum dolor sit amet</div>
+    <div class="fact" id="fact1">lorem ipsum dolor sit</div>
+    <div class="fact" id="fact2">lorem ipsum dolor sit</div>
+    <div class="fact" id="fact3">lorem ipsum dolor sit</div>
+
+    <!-- department folders -->
+    <div class="fold fold0" id="fold0">
+      <span class="fh"><svg viewbox="0 0 24 24" fill="none" stroke="#E07A50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span class="flab" id="flab0">lorem</span></span>
+      <span class="fname" id="fname0">lorem ipsum dolor sit amet</span>
+      <span class="task" id="task">lorem ipsum dolor sit</span>
+      <span class="fsep"></span>
+      <span class="ff r0" id="sf0"><i class="fdot"></i>lorem</span>
+      <span class="ff r1" id="sf1"><i class="fdot"></i>lorem</span>
+    </div>
+    <div class="fold fold1" id="fold1">
+      <span class="fh"><svg viewbox="0 0 24 24" fill="none" stroke="#E07A50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span class="flab" id="flab1">lorem</span></span>
+      <span class="fname" id="fname1">lorem ipsum dolor sit amet</span>
+      <span class="fsep"></span>
+      <span class="ff r0" id="mf0"><i class="fdot"></i>lorem</span>
+      <span class="ff r1" id="mf1"><i class="fdot"></i>lorem</span>
+    </div>
+    <div class="fold fold2" id="fold2">
+      <span class="fh"><svg viewbox="0 0 24 24" fill="none" stroke="#E07A50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span class="flab" id="flab2">lorem</span></span>
+      <span class="fname" id="fname2">lorem ipsum dolor sit</span>
+      <span class="fsep"></span>
+      <span class="ff r0" id="af0"><i class="fdot"></i>lorem</span>
+      <span class="ff r1" id="af1"><i class="fdot"></i>lorem</span>
+    </div>
+
+    <!-- nightly consolidation -->
+    <div class="dream" id="dream">
+      <div class="dreamhead">
+        <svg id="moon" viewbox="0 0 24 24" fill="none" stroke="#8FA3C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <span class="dreamlab" id="dreamlab">Lorem ipsum dolor sit amet consectetur.</span>
+      </div>
+      <div class="motes" id="motes">
+        <i class="mote" id="mote0"></i><i class="mote" id="mote1"></i><i class="mote" id="mote2"></i><i class="mote" id="mote3"></i><i class="mote" id="mote4"></i><i class="mote" id="mote5"></i><i class="mote" id="mote6"></i><i class="mote" id="mote7"></i>
+        <span class="scan" id="scan"></span>
+      </div>
+      <div class="dreamstatus" id="dreamstatus">lorem ipsum</div>
+    </div>
+
+    <div class="headline" id="hl">
+      <div class="tag" id="hltag">lorem ipsum dolor</div>
+      <div class="t" id="hl1">lorem ipsum dolor</div>
+      <div class="t" id="hl2">lorem ipsum dolor</div>
+    </div>
+
+  </div><!-- /#content -->
+
+</div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrambleTextPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>
+<script>
+(function(){
+  'use strict';
+  var root=document.documentElement;
+  function scale(){ root.style.setProperty('--s', Math.min(innerWidth/1080, innerHeight/1350).toFixed(4)); }
+  scale(); addEventListener('resize',scale);
+  gsap.registerPlugin(DrawSVGPlugin, ScrambleTextPlugin, TextPlugin);
+
+  var SC=['#cc0','#cc1','#cc2','#cc3'];
+  // ACT 1, store: each fact is filed into one shared chip (dx/dy from the staging spot)
+  var FACTS=[
+    {id:'#fact0',target:'#cc3',dx:260, dy:69},   // Acme is our biggest client -> customers/
+    {id:'#fact1',target:'#cc1',dx:-108,dy:69},   // We sell on value           -> business.md
+    {id:'#fact2',target:'#cc2',dx:76,  dy:69},   // Jane is Acme's CEO          -> people/
+    {id:'#fact3',target:'#cc0',dx:-292,dy:69}    // Never book before 9am       -> you.md
+  ];
+  var FOLDERS=[
+    {box:'#fold0',branch:'#br0',lab:'#flab0',name:'#fname0',files:['#sf0','#sf1']},
+    {box:'#fold1',branch:'#br1',lab:'#flab1',name:'#fname1',files:['#mf0','#mf1']},
+    {box:'#fold2',branch:'#br2',lab:'#flab2',name:'#fname2',files:['#af0','#af1']}
+  ];
+  // ACT 3, retrieve: the Acme-relevant facts, pulled one at a time into Nova's draft
+  var RET=[{src:'#cc3',link:'#rl0'},{src:'#cc1',link:'#rl1'},{src:'#cc2',link:'#rl2'}];
+  var LINKS=['#rl0','#rl1','#rl2'];
+  var DSTAGES=['reordering memories','merging duplicates','optimising links','rebuilding index.md'];
+
+  // mono single-line runs that digitise away (constant width => no reflow).
+  var AWAY=['#memtitle','#you','#slabel','#idx','#cc0','#cc1','#cc2','#cc3',
+            '#flab0','#flab1','#flab2','#sf0','#sf1','#mf0','#mf1','#af0','#af1',
+            '#hltag','#hl1','#hl2'];
+  var ORIG=AWAY.map(function(s){ var el=document.querySelector(s); return el?el.textContent:''; });
+  var NOISE=ORIG.map(function(t){ var C='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', o='';
+    for(var i=0;i<t.length;i++){ o+= /\s/.test(t[i]) ? ' ' : C[(Math.random()*C.length)|0]; } return o; });
+
+  /* ========================================================================
+     SHARED LOOP ENGINE  —  identical in every Aria slide.
+     ======================================================================== */
+  function revealIn(tl){
+    tl.to('#sweep',{opacity:1,duration:.3,ease:'power2.out'},0);
+    tl.to('#sweep',{top:1340,duration:1.7,ease:'power1.inOut'},0);
+    tl.to('#sweep',{opacity:0,duration:.45,ease:'power1.in'},1.35);
+    revealHero(tl);
+  }
+  function clearOut(tl){
+    tl.set('#sweep',{top:1320,opacity:0})
+      .to('#sweep',{opacity:1,duration:.3,ease:'power2.out'},'<')
+      .to('#sweep',{top:60,duration:1.3,ease:'power1.inOut'},'<')
+      .to('#content',{opacity:0,duration:.95,ease:'none'},'<+0.2');
+    AWAY.forEach(function(sel,i){
+      tl.to(sel,{scrambleText:{text:NOISE[i],chars:'upperCase',speed:2.4},duration:.95,ease:'none'},'<');
+    });
+    tl.to('#sweep',{opacity:0,duration:.3,ease:'power1.in'},'>-0.25');
+  }
+  var DECCH='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  function decodeAll(tl, sel, finalText, dur, pos){
+    var el=document.querySelector(sel), n=finalText.length, thr=[];
+    for(var i=0;i<n;i++){ thr.push(/\s/.test(finalText[i]) ? -1 : (0.55+Math.random()*0.4)); }
+    var st={p:0};
+    tl.to(st,{p:1,duration:dur,ease:'none',onUpdate:function(){
+      var p=st.p, out='';
+      for(var i=0;i<n;i++){ var c=finalText[i]; out += /\s/.test(c) ? ' ' : (p>=thr[i] ? c : DECCH[(Math.random()*DECCH.length)|0]); }
+      el.textContent=out;
+    }}, pos);
+  }
+
+  /* ========================================================================
+     SLIDE 08 · SHARED MEMORY  —  store it, then watch a retrieval orchestrate.
+     ======================================================================== */
+  // HERO: the shared core reveals (the trunk everyone reads)
+  function revealHero(tl){
+    // persistent slide title scrambles in first, so the slide reads clearly
+    tl.to('#memtitle',{opacity:1,duration:.3,ease:'power2.out'},0.45);
+    tl.to('#memtitle',{scrambleText:{text:'{original}',chars:'upperCase',speed:1.1},duration:.85,ease:'none'},0.5);
+    tl.fromTo('#score',{opacity:0,scale:.94,y:-10},{opacity:1,scale:1,y:0,duration:.6,ease:'power3.out',immediateRender:false},0.66);
+    tl.to('#slabel',{scrambleText:{text:'{original}',chars:'lowerCase',speed:1},duration:.5,ease:'none'},0.74);
+    tl.to('#ssub',{opacity:1,duration:.4,ease:'power1.out'},0.9);
+    tl.to('#idx',{opacity:1,duration:.4,ease:'power1.out'},1.02);
+    tl.to({},{duration:0.35});
+  }
+
+  function body(tl){
+    /* ---- ACT 1 · STORE (tell it once) ---- */
+    tl.to('#you',{opacity:1,duration:.4,ease:'power1.out'},'+=0.1');
+    SC.forEach(function(c,i){ tl.fromTo(c,{opacity:0,scale:.9},{opacity:.45,scale:1,duration:.4,ease:'power2.out',immediateRender:false}, i===0?'+=0.05':'-=0.3'); });
+    FACTS.forEach(function(f){
+      tl.fromTo(f.id,{opacity:0,scale:.96,y:-8},{opacity:1,scale:1,y:0,duration:.45,ease:'power3.out',immediateRender:false},'+=0.12');
+      tl.to({},{duration:.36});                                                             // hold, readable
+      tl.to(f.id,{x:f.dx,y:f.dy,opacity:0,scale:.82,duration:.5,ease:'power2.in'},'+=0.05'); // filed
+      tl.to(f.target,{opacity:1,scale:1.08,borderColor:'#CF5430',duration:.26,ease:'power2.out'},'<+0.2');
+      tl.to(f.target,{scale:1,duration:.3,ease:'power2.out'},'>');
+    });
+    tl.to('#you',{opacity:0.25,duration:.4,ease:'power1.out'},'+=0.05');
+
+    /* ---- ACT 2 · THE TEAM ---- */
+    FOLDERS.forEach(function(fo,i){
+      tl.to(fo.branch,{drawSVG:'100%',duration:.45,ease:'power2.out'}, i===0?'+=0.25':'-=0.26');
+      tl.fromTo(fo.box,{opacity:0,scale:.95,y:10},{opacity:1,scale:1,y:0,duration:.5,ease:'power3.out',immediateRender:false},'<');
+      tl.to(fo.lab,{scrambleText:{text:'{original}',chars:'upperCase',speed:1},duration:.42,ease:'none'},'<');
+      tl.to(fo.name,{opacity:1,duration:.4,ease:'power1.out'},'<+0.1');
+      fo.files.forEach(function(ff,j){ tl.fromTo(ff,{opacity:0,x:-8},{opacity:1,x:0,duration:.34,ease:'power2.out',immediateRender:false},'<+'+(0.06+j*0.12)); });
+    });
+
+    /* ---- ACT 3 · RETRIEVE (the orchestration) ---- */
+    // focus on Nova: settle the others back
+    tl.to(['#fold1','#fold2'],{opacity:0.38,duration:.5,ease:'power1.out'},'+=0.2');
+    tl.fromTo('#task',{opacity:0,scale:.85,y:-4},{opacity:1,scale:1,y:0,duration:.42,ease:'power3.out',immediateRender:false},'<+0.05');
+    // rotate SALES/ out so the active task badge owns the header (no clash)
+    tl.to('#flab0',{rotationX:-90,opacity:0,duration:.4,transformPerspective:500,transformOrigin:'50% 50%',ease:'power2.in'},'<');
+    tl.to('#sf1',{borderColor:'#FF6A38',duration:.35,ease:'power2.out'},'<+0.1');
+    // pull each relevant fact, one link at a time; each clears before the next
+    RET.forEach(function(r){
+      tl.to(r.src,{scale:1.09,borderColor:'#FF6A38',duration:.32,yoyo:true,repeat:1,ease:'sine.inOut'},'+=0.16');
+      tl.fromTo(r.link,{drawSVG:'0%',opacity:0.95},{drawSVG:'100%',duration:.58,ease:'power2.inOut',immediateRender:false},'<+0.08');
+      tl.to('#sf1',{scale:1.05,duration:.26,yoyo:true,repeat:1,ease:'sine.inOut'},'>-0.08');
+      tl.to(r.src,{borderColor:'rgba(253,250,247,0.10)',duration:.3},'<');
+      tl.to(r.link,{opacity:0,duration:.38,ease:'power1.in'},'+=0.1');
+    });
+    // draft is assembled, informed by all of it
+    tl.to('#task',{text:'✓ reply ready',duration:.01},'+=0.1');
+    tl.to('#task',{color:'#6FBF8E',borderColor:'rgba(111,191,142,0.55)',duration:.35,ease:'power1.out'},'<');
+    tl.fromTo('#task',{scale:.9},{scale:1,duration:.4,ease:'back.out(2)'},'<');
+    tl.to('#sf1',{borderColor:'rgba(253,250,247,0.10)',duration:.4,ease:'power1.out'},'+=0.3');
+    // reply sent: rotate the badge out and bring SALES/ back in
+    tl.to('#task',{rotationX:90,opacity:0,duration:.4,transformPerspective:500,transformOrigin:'50% 50%',ease:'power2.in'},'+=0.6');
+    tl.to('#flab0',{rotationX:0,opacity:1,duration:.5,transformPerspective:500,transformOrigin:'50% 50%',ease:'back.out(1.3)'},'<+0.12');
+
+    /* ---- ACT 4 · DREAM (nightly consolidation) ---- */
+    tl.to(['#fold1','#fold2'],{opacity:1,duration:.45,ease:'power2.out'},'+=0.2');
+    tl.to('#dream',{opacity:1,duration:.4,ease:'power1.out'},'+=0.15');
+    tl.fromTo('#moon',{opacity:0,scale:.7,rotate:-20},{opacity:1,scale:1,rotate:0,duration:.55,ease:'back.out(2)',immediateRender:false},'<');
+    tl.to('#dreamlab',{opacity:1,duration:.4,ease:'power1.out'},'<+0.05');
+    tl.fromTo('.mote',{opacity:0,scale:.6},{opacity:1,scale:1,duration:.4,stagger:0.04,ease:'power2.out',immediateRender:false},'<+0.1');
+    // the system works through the night: status steps, a scan sweeps, memory reorders
+    DSTAGES.forEach(function(s,i){
+      tl.to('#dreamstatus',{scrambleText:{text:s,chars:'lowerCase',speed:1.4},duration:.5,ease:'none'}, i===0?'+=0.2':'+=0.38');
+      tl.fromTo('#scan',{x:0,opacity:0.9},{x:436,opacity:0.9,duration:.72,ease:'power1.inOut',immediateRender:false},'<');
+      tl.to('#scan',{opacity:0,duration:.2,ease:'power1.in'},'>-0.12');
+    });
+    // a visible reorder: motes shuffle, then settle into place
+    tl.to('#mote2',{x:64,duration:.4,ease:'power2.inOut'},'-=2.1');
+    tl.to('#mote3',{x:-64,duration:.4,ease:'power2.inOut'},'<');
+    tl.to('#mote5',{x:64,duration:.4,ease:'power2.inOut'},'-=0.2');
+    tl.to('#mote6',{x:-64,duration:.4,ease:'power2.inOut'},'<');
+    tl.to(['#mote2','#mote3','#mote5','#mote6'],{x:0,duration:.45,ease:'power2.inOut'},'+=0.5');
+    // optimised: settle bright, memory is sharper
+    tl.to('#dreamstatus',{scrambleText:{text:'sharper every night',chars:'lowerCase',speed:1.4},duration:.5,ease:'none'},'+=0.35');
+    tl.to('#dreamstatus',{color:'#6FBF8E',duration:.35,ease:'power1.out'},'<');
+    tl.to('.mote',{backgroundColor:'rgba(207,84,48,0.45)',borderColor:'#CF5430',duration:.5,stagger:0.03,ease:'power1.out'},'<');
+
+    /* ---- HEADLINE ---- */
+    tl.to('#hl',{opacity:1,duration:.3},'+=0.3')
+      .fromTo('#hltag',{opacity:0,y:10},{opacity:1,y:0,duration:.45,ease:'power3.out',immediateRender:false},'<');
+    decodeAll(tl,'#hl1',ORIG[AWAY.indexOf('#hl1')],1.0,'<');
+    decodeAll(tl,'#hl2',ORIG[AWAY.indexOf('#hl2')],1.1,'<+0.18');
+    tl.to({},{duration:5.4});   /* hold the final "memory" line ~3.5s longer before the loop restarts */
+  }
+
+  /* ---- start state (position 0; re-established every repeat) ---- */
+  function setStart(tl){
+    tl.set('#content',{opacity:1},0);
+    tl.set('#sweep',{top:90,opacity:0},0);
+    tl.set('#score',{opacity:0,scale:.94,y:-10},0);
+    tl.set('#slabel',{color:'#E07A50'},0);
+    tl.set('#ssub',{opacity:0},0);
+    tl.set('#idx',{opacity:0},0);
+    tl.set('#memtitle',{opacity:0},0);
+    tl.set('#you',{opacity:0},0);
+    SC.forEach(function(c){ tl.set(c,{opacity:0,scale:.9,borderColor:'rgba(253,250,247,0.10)'},0); });
+    FACTS.forEach(function(f){ tl.set(f.id,{opacity:0,x:0,y:0,scale:.96},0); });
+    FOLDERS.forEach(function(fo){
+      tl.set(fo.box,{opacity:0,scale:.95,y:10},0);
+      tl.set(fo.branch,{drawSVG:'0%'},0);
+      tl.set(fo.lab,{color:'#E07A50'},0);
+      tl.set(fo.name,{opacity:0},0);
+      fo.files.forEach(function(ff){ tl.set(ff,{opacity:0,x:-8,borderColor:'rgba(253,250,247,0.10)',scale:1},0); });
+    });
+    LINKS.forEach(function(l){ tl.set(l,{drawSVG:'0%',opacity:0.9},0); });
+    tl.set('#task',{opacity:0,scale:.85,rotationX:0,color:'#FF6A38',borderColor:'rgba(255,106,56,0.5)'},0);
+    tl.set('#task',{text:'✎ reply to Acme'},0);
+    tl.set('#flab0',{rotationX:0,opacity:1},0);
+    tl.set('#dream',{opacity:0},0);
+    tl.set('#moon',{opacity:0},0);
+    tl.set('#dreamlab',{opacity:0},0);
+    tl.set('.mote',{opacity:0,scale:.6,x:0,backgroundColor:'#262B36',borderColor:'rgba(253,250,247,0.18)'},0);
+    tl.set('#scan',{opacity:0,x:0},0);
+    tl.set('#dreamstatus',{color:'#FDFAF7',text:'reordering memories'},0);
+    tl.set('#hl',{opacity:0},0);
+    tl.set('#hltag',{opacity:0,y:10},0);
+    tl.set(['#hl1','#hl2'],{opacity:1},0);
+    AWAY.forEach(function(s,i){ tl.set(s,{text:ORIG[i]},0); });
+  }
+
+  /* ---- build the single master loop + expose it for the renderer ---- */
+  function build(){
+    var tl=gsap.timeline();
+    setStart(tl);
+    revealIn(tl);
+    body(tl);
+    clearOut(tl);
+    return tl;
+  }
+  var master=build();
+  master.repeat(-1).repeatDelay(0.35);
+  window.__MARIA__={ tl:master, cycle:master.duration() };
+  master.play(0);
+})();
+</script>
+</body>
+</html>

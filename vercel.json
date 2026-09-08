@@ -1,0 +1,37 @@
+{
+  "buildCommand": "",
+  "installCommand": "",
+  "outputDirectory": ".",
+  "framework": null,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/jess",
+      "destination": "/book?utm_source=jess&utm_medium=referral&utm_campaign=melbourne",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/",
+      "headers": [{ "key": "Link", "value": "</.well-known/agent-skills/index.json>; rel=\"describedby\"" }]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/css/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
+    },
+    {
+      "source": "/js/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
+    },
+    {
+      "source": "/data/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    }
+  ]
+}

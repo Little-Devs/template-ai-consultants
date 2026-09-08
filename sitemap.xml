@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file redirects to the sitemap index. Search engines should use sitemap-index.xml -->
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://example.com/sitemap-pages.xml</loc>
+    <lastmod>2026-08-13</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://example.com/sitemap-posts.xml</loc>
+    <lastmod>2026-03-18</lastmod>
+  </sitemap>
+</sitemapindex>

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "site-navigation",
+      "type": "skill-md",
+      "description": "Navigate the Studio template and find the right top-level, service, city, industry, blog, and contact pages. Use when a user asks where information lives on the site.",
+      "url": "/.well-known/agent-skills/site-navigation/SKILL.md",
+      "digest": "sha256:53fdbe70ca22abe552c9feef9d3c258ba4ec118381866faa26309415c59368d4"
+    },
+    {
+      "name": "services-overview",
+      "type": "skill-md",
+      "description": "Explain Studio service lines and route users to the most relevant service, city, or industry page. Use when a user asks what the studio offers or which page matches their need.",
+      "url": "/.well-known/agent-skills/services-overview/SKILL.md",
+      "digest": "sha256:63459e4a907fd31bdeb18feac19aa2f8ee591623b406771a91ee1f03c41a45cb"
+    },
+    {
+      "name": "contact-and-inquiry",
+      "type": "skill-md",
+      "description": "Explain how to contact Studio and how the inquiry flow works. Use when a user needs the contact email, inquiry page, or form details.",
+      "url": "/.well-known/agent-skills/contact-and-inquiry/SKILL.md",
+      "digest": "sha256:867566fa75055626f4ba14c688f0dc1384cc1710bafa64424336a8dacffe9610"
+    }
+  ]
+}

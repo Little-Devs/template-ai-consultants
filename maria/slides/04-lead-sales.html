@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&amp;family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&amp;family=JetBrains+Mono:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --base:#0E1117; --surface:#21252F; --surface-2:#262B36; --ivory:#FDFAF7;
+  --muted:rgba(253,250,247,0.6); --faint:rgba(253,250,247,0.34);
+  --hair:rgba(253,250,247,0.10); --hair-strong:rgba(253,250,247,0.18);
+  --grid:rgba(253,250,247,0.04);
+  --terra:#CF5430; --terra-deep:#B84020; --terra-soft:#E07A50; --hot:#FF6A38;
+  --f-display:'Cormorant Garamond',Georgia,serif; --f-body:'DM Sans',system-ui,sans-serif; --f-mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{background:#000;height:100%;}
+body{overflow:hidden;color:var(--ivory);font-family:var(--f-body);}
+.frame{position:relative;width:100%;height:100vh;display:flex;align-items:center;justify-content:center;background:#000;overflow:hidden;}
+.stage{
+  position:relative;width:1080px;height:1350px;flex:0 0 auto;
+  transform:scale(var(--s,1));transform-origin:center center;overflow:hidden;
+  background:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px),
+    radial-gradient(78% 52% at 50% 32%,rgba(207,84,48,0.10),transparent 60%),
+    var(--base);
+  background-size:60px 60px,60px 60px,100% 100%,100% 100%;
+}
+
+/* chrome */
+.ch{position:absolute;font-family:var(--f-mono);font-size:21px;letter-spacing:.24em;text-transform:uppercase;z-index:7;}
+.ch.tl{top:60px;left:72px;color:var(--faint);}
+.ch.tl b{color:var(--terra);font-weight:500;}
+.ch.tr{top:60px;right:72px;color:var(--muted);}
+.ch.bc{bottom:60px;left:0;width:100%;text-align:center;color:var(--faint);font-size:18px;letter-spacing:.3em;}
+
+/* sweep line (loop bookend: down = reveal, up = clear) */
+.sweep{position:absolute;left:40px;width:1000px;height:3px;top:0;z-index:6;opacity:0;
+  background:linear-gradient(90deg,transparent,var(--hot),transparent);box-shadow:0 0 26px 2px rgba(255,106,56,0.55);}
+/* the whole slide body — the sweep clears this as a unit */
+#content{position:absolute;inset:0;}
+
+/* intro title */
+.title{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:5;}
+.heroname{font-family:var(--f-display);font-weight:400;font-size:172px;line-height:1;color:var(--terra-soft);opacity:0;}
+.herosub{font-family:var(--f-mono);font-size:26px;letter-spacing:.3em;text-transform:uppercase;color:var(--terra);margin-top:30px;opacity:0;}
+
+/* core chip */
+.core{position:absolute;top:176px;left:50%;transform:translateX(-50%);border:1px solid var(--terra);
+  padding:16px 46px;background:linear-gradient(180deg,rgba(207,84,48,0.15),rgba(207,84,48,0.03));text-align:center;opacity:0;z-index:5;}
+.core .cl{font-family:var(--f-display);font-weight:500;font-size:48px;line-height:.9;color:var(--terra-soft);}
+.core .cs{font-family:var(--f-mono);font-size:15px;letter-spacing:.2em;text-transform:uppercase;color:rgba(253,250,247,0.92);margin-top:5px;}
+
+/* pipeline */
+.rail{position:absolute;inset:0;z-index:2;}
+.node{position:absolute;left:300px;width:44px;height:44px;border-radius:50%;background:var(--surface);
+  border:2px solid var(--terra);z-index:4;transform:scale(0);}
+.node.n0{top:448px;} .node.n1{top:688px;} .node.n2{top:928px;}
+.ripple{position:absolute;left:300px;width:44px;height:44px;border-radius:50%;border:2px solid var(--hot);z-index:3;opacity:0;pointer-events:none;}
+.ripple.n0{top:448px;} .ripple.n1{top:688px;} .ripple.n2{top:928px;}
+.ball{position:absolute;left:302px;top:316px;width:40px;height:40px;border-radius:50%;background:var(--hot);
+  z-index:5;box-shadow:0 0 26px rgba(255,106,56,0.6);opacity:0;}
+
+/* example cards — the artifact at each stage */
+.card{position:absolute;left:410px;width:560px;z-index:5;opacity:0;}
+.card .k{font-family:var(--f-mono);font-size:23px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:14px;}
+.card.c0{top:418px;} .card.c1{top:658px;} .card.c2{top:898px;}
+/* message bubble */
+.bubble{background:var(--surface);border:1px solid var(--hair-strong);border-radius:20px 20px 20px 5px;
+  padding:20px 24px;font-family:var(--f-body);font-weight:300;font-size:30px;line-height:1.32;color:var(--ivory);}
+.bubble b{color:var(--terra-soft);font-weight:500;}
+/* note + calendar rows */
+.row{display:flex;align-items:center;gap:18px;}
+.row .ic{flex:0 0 auto;width:44px;height:44px;border-radius:11px;border:1px solid var(--hair-strong);
+  display:grid;place-items:center;background:var(--surface-2);}
+.row .ic svg{width:24px;height:24px;}
+.row .tx{font-family:var(--f-display);font-weight:400;font-size:38px;line-height:1.04;color:var(--ivory);}
+.row .tx small{display:block;font-family:var(--f-mono);font-size:17px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-top:5px;}
+
+/* headline */
+.headline{position:absolute;bottom:142px;left:0;width:100%;text-align:center;z-index:6;opacity:0;}
+.headline .tag{font-family:var(--f-mono);font-size:21px;letter-spacing:.24em;text-transform:uppercase;color:var(--terra);margin-bottom:20px;}
+.headline .t{font-family:var(--f-mono);font-weight:500;font-size:50px;letter-spacing:.08em;text-transform:uppercase;color:var(--ivory);}
+</style>
+</head>
+<body>
+<div class="frame"><div class="stage" id="stage">
+
+  <div class="ch tl"><b>lorem</b> STUDIO</div>
+  <div class="ch tr">lorem ipsum dolor sit amet</div>
+  <div class="ch bc">lorem ipsum dolor sit amet</div>
+
+  <div class="sweep" id="sweep"></div>
+
+  <div id="content">
+  <div class="title" id="title">
+    <div class="heroname" id="heroname">lorem</div>
+    <div class="herosub" id="herosub">lorem ipsum dolor</div>
+  </div>
+
+  <div class="core" id="core"><div class="cl">Nova</div><div class="cs">lorem ipsum dolor sit</div></div>
+
+  <svg class="rail" id="railsvg" viewbox="0 0 1080 1350" fill="none">
+    <path id="rail" d="M322 350 L322 1010" stroke="#CF5430" stroke-width="2" opacity="0.45"/>
+  </svg>
+  <span class="ripple n0" id="rp0"></span><span class="ripple n1" id="rp1"></span><span class="ripple n2" id="rp2"></span>
+  <div class="node n0" id="nd0"></div><div class="node n1" id="nd1"></div><div class="node n2" id="nd2"></div>
+  <div class="ball" id="ball"></div>
+
+  <!-- example artifacts -->
+  <div class="card c0" id="cd0">
+    <div class="k" id="k0">Lorem ipsum dolor sit amet consectetur.</div>
+    <div class="bubble"><span id="bw0">lorem ipsum dolor sit amet</span><b id="bb0">lorem ipsum dolor</b></div>
+  </div>
+  <div class="card c1" id="cd1">
+    <div class="k" id="k1">lorem</div>
+    <div class="row"><span class="ic"><svg viewbox="0 0 24 24" fill="none" stroke="#CF5430" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l5 5 9-11"/></svg></span>
+      <span class="tx"><span id="tm1">lorem ipsum dolor</span><small id="ts1">lorem &amp; lorem ipsum</small></span></div>
+  </div>
+  <div class="card c2" id="cd2">
+    <div class="k" id="k2">lorem ipsum</div>
+    <div class="row"><span class="ic"><svg viewbox="0 0 24 24" fill="none" stroke="#CF5430" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg></span>
+      <span class="tx"><span id="tm2">lorem ipsum dolor sit amet</span><small id="ts2">lorem ipsum dolor sit</small></span></div>
+  </div>
+
+  <div class="headline" id="hl">
+    <div class="tag" id="hltag">lorem ipsum dolor</div>
+    <div class="t" id="hltext">Lorem ipsum dolor sit amet consectetur.</div>
+  </div>
+  </div><!-- /#content -->
+
+</div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrambleTextPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>
+<script>
+(function(){
+  'use strict';
+  var root=document.documentElement;
+  function scale(){ root.style.setProperty('--s', Math.min(innerWidth/1080, innerHeight/1350).toFixed(4)); }
+  scale(); addEventListener('resize',scale);
+  gsap.registerPlugin(DrawSVGPlugin, ScrambleTextPlugin, TextPlugin);
+
+  var ball=document.getElementById('ball');
+  var KICK=['New enquiry · replied in 8s','Qualified','Call booked'];
+  // text that digitises away on the sweep-up. ONLY monospace single-line runs:
+  // in mono the width is constant no matter what characters scramble in, so the
+  // layout can never reflow. The proportional / multi-line runs (bubble message,
+  // serif confirmations, Aria) just fade out with #content instead of scrambling.
+  var AWAY=['#core .cs',
+            '#k0',
+            '#k1','#ts1',
+            '#k2','#ts2',
+            '#hltag','#hltext'];
+  // capture the real copy so we can restore it each loop, and pre-bake a
+  // same-length noise string per element to dissolve INTO (spaces preserved)
+  var ORIG=AWAY.map(function(s){ var el=document.querySelector(s); return el?el.textContent:''; });
+  var NOISE=ORIG.map(function(t){ var C='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', o='';
+    for(var i=0;i<t.length;i++){ o+= /\s/.test(t[i]) ? ' ' : C[(Math.random()*C.length)|0]; } return o; });
+
+  /* ========================================================================
+     SHARED LOOP ENGINE  —  identical in every Aria slide. One seekable master
+     timeline (repeat:-1) so it both autoplays in-browser AND renders frame-
+     perfect to MP4 via render.mjs (which seeks window.__MARIA__.tl). All start
+     state lives in setStart() at position 0, so every repeat is clean.
+     A slide supplies only: setStart hooks via ids, revealHero(tl), body(tl).
+     ======================================================================== */
+  function setStart(tl){
+    tl.set('#content',{opacity:1},0);
+    tl.set('#sweep',{top:90,opacity:0},0);
+    tl.set('#title',{y:0,opacity:1},0);
+    tl.set('#heroname',{opacity:0,color:'#E07A50'},0);
+    tl.set('#herosub',{opacity:0},0);
+    tl.set(['#core','#cd0','#cd1','#cd2','#hl'],{opacity:0},0);
+    tl.set('#core',{y:0,scale:1},0);
+    tl.set(['#cd0','#cd1','#cd2'],{x:0},0);
+    tl.set(['#nd0','#nd1','#nd2'],{scale:0},0);
+    tl.set(['#rp0','#rp1','#rp2'],{opacity:0,scale:1},0);
+    tl.set(ball,{opacity:0,x:0,y:0,scaleX:1,scaleY:1},0);
+    tl.set('#rail',{drawSVG:'0%'},0);
+    AWAY.forEach(function(s,i){ tl.set(s,{text:ORIG[i]},0); });  // restore real copy
+  }
+  function revealIn(tl){
+    tl.to('#sweep',{opacity:1,duration:.3,ease:'power2.out'},0);
+    tl.to('#sweep',{top:1340,duration:1.7,ease:'power1.inOut'},0);
+    tl.to('#sweep',{opacity:0,duration:.45,ease:'power1.in'},1.35);
+    revealHero(tl);                       // slide hero decodes in the sweep's wake
+  }
+  function clearOut(tl){
+    tl.set('#sweep',{top:1320,opacity:0})
+      .to('#sweep',{opacity:1,duration:.3,ease:'power2.out'},'<')
+      .to('#sweep',{top:60,duration:1.3,ease:'power1.inOut'},'<')
+      .to('#content',{opacity:0,duration:.95,ease:'none'},'<+0.2');
+    // digitise away: each mono run churns INTO noise on the SAME linear window
+    // as the fade, dissolving into static. (Mono => constant width => no reflow.)
+    AWAY.forEach(function(sel,i){
+      tl.to(sel,{scrambleText:{text:NOISE[i],chars:'upperCase',speed:2.4},duration:.95,ease:'none'},'<');
+    });
+    tl.to('#sweep',{opacity:0,duration:.3,ease:'power1.in'},'>-0.25');
+  }
+  /* All-at-once decode: the WHOLE string churns simultaneously, then every
+     character locks in a tight randomised cluster near the end (not the
+     left-to-right reveal ScrambleText does by default). */
+  var DECCH='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  function decodeAll(tl, sel, finalText, dur, pos){
+    var el=document.querySelector(sel), n=finalText.length, thr=[];
+    for(var i=0;i<n;i++){ thr.push(/\s/.test(finalText[i]) ? -1 : (0.55+Math.random()*0.4)); }
+    var st={p:0};
+    tl.to(st,{p:1,duration:dur,ease:'none',onUpdate:function(){
+      var p=st.p, out='';
+      for(var i=0;i<n;i++){
+        var c=finalText[i];
+        out += /\s/.test(c) ? ' ' : (p>=thr[i] ? c : DECCH[(Math.random()*DECCH.length)|0]);
+      }
+      el.textContent=out;
+    }}, pos);
+  }
+
+  /* ========================================================================
+     SLIDE 04 · LEAD + SALES  —  the only part that changes per slide.
+     ======================================================================== */
+  // HERO: the name "Nova" decodes (terra -> white) as the sweep passes it
+  function revealHero(tl){
+    tl.to('#heroname',{opacity:1,duration:.3,ease:'power2.out'},0.66);
+    tl.to('#heroname',{scrambleText:{text:'CASSIE',chars:'upperCase',speed:1},duration:.7,ease:'none'},0.66);
+    tl.to('#heroname',{color:'#FDFAF7',duration:.7,ease:'power1.out'},0.92);
+    tl.to('#herosub',{opacity:1,duration:.5,ease:'power2.out'},0.8);
+    tl.to('#herosub',{scrambleText:{text:'{original}',chars:'upperCase',speed:1},duration:.6,ease:'none'},0.8);
+    tl.to({},{duration:1.2});
+  }
+
+  // BODY: acronym lifts to the core chip, then the lead bounces the pipeline
+  function body(tl){
+    tl.to('#title',{y:-150,opacity:0,duration:.65,ease:'power2.inOut'})
+      .fromTo('#core',{y:22,opacity:0,scale:.95},{y:0,opacity:1,scale:1,duration:.6,ease:'back.out(1.4)',immediateRender:false},'-=0.35');
+
+    tl.to('#rail',{drawSVG:'100%',duration:.7,ease:'power1.inOut'},'-=0.1');
+
+    tl.fromTo(ball,{opacity:0,y:-50},{opacity:1,y:0,duration:.3,ease:'power2.out',immediateRender:false},'-=0.2');
+
+    // ball base centre = 336; node centres = 470 / 710 / 950  -> y offsets land it dead-on
+    var stops=[{y:134,nd:'#nd0',rp:'rp0',cd:'#cd0',k:'#k0'},
+               {y:374,nd:'#nd1',rp:'rp1',cd:'#cd1',k:'#k1'},
+               {y:614,nd:'#nd2',rp:'rp2',cd:'#cd2',k:'#k2'}];
+    stops.forEach(function(s,i){
+      tl.to(ball,{y:s.y,duration:.6,ease:'power1.in'});
+      var imp='imp'+i; tl.addLabel(imp);
+      tl.to(ball,{scaleX:1.5,scaleY:0.58,duration:.1,ease:'power2.in'},imp);
+      tl.to(ball,{scaleX:1,scaleY:1,duration:.55,ease:'elastic.out(1,0.4)'},imp+'+=0.1');
+      tl.fromTo(s.nd,{scale:0},{scale:1,duration:.62,ease:'elastic.out(1,0.45)',immediateRender:false},imp);
+      tl.fromTo('#'+s.rp,{opacity:.55,scale:1},{opacity:0,scale:2.4,duration:.7,ease:'power2.out',transformOrigin:'center',immediateRender:false},imp);
+      tl.to(s.cd,{opacity:1,duration:.5,ease:'power2.out'},imp+'+=0.08');
+      tl.fromTo(s.cd,{x:-22},{x:0,duration:.55,ease:'back.out(1.6)',immediateRender:false},imp+'+=0.08');
+      tl.to(s.k,{scrambleText:{text:KICK[i],chars:'upperCase',speed:0.8},duration:.55},imp+'+=0.08');
+      if(i<2) tl.to(ball,{y:s.y-46,duration:.34,ease:'power1.out'},imp+'+=0.66');
+    });
+
+    tl.to('#hl',{opacity:1,duration:.3},'-=0.2')
+      .fromTo('#hltag',{opacity:0,y:10},{opacity:1,y:0,duration:.45,ease:'power2.out',immediateRender:false},'<');
+    decodeAll(tl,'#hltext',ORIG[AWAY.indexOf('#hltext')],1.2,'<');
+    tl.to({},{duration:4.1});
+  }
+
+  /* ---- build the single master loop + expose it for the renderer ---- */
+  function build(){
+    var tl=gsap.timeline();
+    setStart(tl);
+    revealIn(tl);
+    body(tl);
+    clearOut(tl);
+    return tl;
+  }
+  var master=build();
+  master.repeat(-1).repeatDelay(0.35);
+  window.__MARIA__={ tl:master, cycle:master.duration() };   // cycle = one loop (excludes repeat)
+  master.play(0);
+})();
+</script>
+</body>
+</html>

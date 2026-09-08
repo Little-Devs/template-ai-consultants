@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="en-AU" class="home-lock">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+<!-- Primary Meta Tags -->
+<title>Lorem Ipsum Dolor Sit</title>
+<meta name="title" content="Lorem ipsum dolor sit amet consectetur adipiscing elit."/>
+<meta name="description" content="Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
+<meta name="keywords" content="studio, template, consultancy"/>
+<meta name="author" content="Studio"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://example.com/"/>
+<meta property="og:title" content="Lorem ipsum dolor sit amet consectetur adipiscing elit."/>
+<meta property="og:description" content="Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
+<meta property="og:image" content="https://example.com/assets/images/og-card.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:alt" content="Studio"/>
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image"/>
+<meta property="twitter:url" content="https://example.com/"/>
+<meta property="twitter:title" content="Lorem ipsum dolor sit amet consectetur adipiscing elit."/>
+<meta property="twitter:description" content="Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
+<meta property="twitter:image" content="https://example.com/assets/images/og-card.png"/>
+<meta property="twitter:image:alt" content="Studio"/>
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="assets/icons/brand-favicon.svg"/>
+<link rel="apple-touch-icon" href="assets/icons/brand-favicon.svg"/>
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://example.com/"/>
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://example.com/#organization",
+  "name": "Studio",
+  "url": "https://example.com",
+  "logo": "https://example.com/favicon.svg",
+  "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "hello@example.com",
+    "contactType": "sales"
+  },
+  "areaServed": "Worldwide",
+  "sameAs": ["https://example.com/"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://example.com/#website",
+  "url": "https://example.com",
+  "name": "Studio",
+  "inLanguage": "en-AU",
+  "publisher": {
+    "@id": "https://example.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://example.com/"}]}
+</script>
+
+<meta name="view-transition" content="same-origin"/>
+
+<!-- Speculation Rules (Chromium): prefetch/prerender Services for instant nav -->
+<script type="speculationrules">
+{
+  "prefetch": [
+    { "source": "list", "urls": ["services"] }
+  ],
+  "prerender": [
+    { "source": "list", "urls": ["services"] }
+  ]
+}
+</script>
+
+<!-- DNS Prefetch for External Resources -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+<link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com"/>
+<link rel="dns-prefetch" href="https://unpkg.com"/>
+
+<!-- Preload Critical Resources -->
+<link rel="preload" href="css/output.css" as="style"/>
+<link rel="preload" href="css/site.css" as="style"/>
+<link rel="preload" href="js/site.min.js" as="script"/>
+<link rel="preload" href="js/gsap/gsap.min.js" as="script"/>
+<link rel="preload" href="assets/fonts/Inter-Variable.ttf" as="font" type="font/ttf" crossorigin=""/>
+<link rel="preload" href="assets/icons/brand-favicon.svg" as="image" type="image/svg+xml"/>
+<link rel="prefetch" href="services.html"/>
+
+<!-- Fonts with Optimized Loading -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/> 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"/>
+
+
+<style>
+  /* Avoid a brief fallback-font flash on the home hero headline reveal. */
+  html:not(.fonts-ready) #hero-block,
+  html:not(.fonts-ready) #mobile-hero-cta {
+    opacity: 0 !important;
+  }
+  html:not(.fonts-ready) #hero-block.animate-fade-in,
+  html:not(.fonts-ready) #mobile-hero-cta.animate-fade-in {
+    animation: none !important;
+  }
+</style>
+
+<script>
+  (function () {
+    function markFontsReady() {
+      document.documentElement.classList.add('fonts-ready');
+    }
+
+    function whenFontsReady(timeoutMs) {
+      const timeout = new Promise((resolve) => window.setTimeout(resolve, timeoutMs));
+      if (document.fonts && typeof document.fonts.ready?.then === 'function') {
+        return Promise.race([document.fonts.ready.catch(() => {}), timeout]);
+      }
+      return Promise.race([
+        new Promise((resolve) => window.addEventListener('load', resolve, { once: true })),
+        timeout,
+      ]);
+    }
+
+    // Don’t block forever if fonts are slow/unavailable.
+    whenFontsReady(2000).then(markFontsReady);
+  })();
+</script>
+
+<!-- Tailwind CSS (Production Build) -->
+<link rel="stylesheet" href="css/output.css"/>
+<link rel="stylesheet" href="css/site.css"/>
+<link rel="stylesheet" href="css/tokens.css"/>
+
+<style>
+  /* Safe areas: must follow Tailwind — pairs with viewport-fit=cover */
+  body.home-lock .safe-area-header {
+    padding-top: calc(0.5rem + env(safe-area-inset-top, 0px));
+    padding-bottom: 0.5rem;
+    padding-left: max(0.75rem, env(safe-area-inset-left, 0px));
+    padding-right: max(0.75rem, env(safe-area-inset-right, 0px));
+  }
+  @media (min-width: 768px) {
+    body.home-lock .safe-area-header {
+      padding-top: calc(1.5rem + env(safe-area-inset-top, 0px));
+      padding-bottom: 1.5rem;
+      padding-left: max(3rem, env(safe-area-inset-left, 0px));
+      padding-right: max(3rem, env(safe-area-inset-right, 0px));
+    }
+  }
+  body.home-lock .header-backdrop-sheet {
+    top: calc(-1 * env(safe-area-inset-top, 0px));
+    height: calc(8rem + env(safe-area-inset-top, 0px));
+  }
+  @media (min-width: 768px) {
+    body.home-lock .header-backdrop-sheet {
+      height: calc(12rem + env(safe-area-inset-top, 0px));
+    }
+  }
+  /* Top inset: header .safe-area-header already clears the notch — avoid double offset */
+  body.home-lock .home-main-safe {
+    padding-top: 1.5rem;
+    padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
+    padding-left: calc(1.5rem + env(safe-area-inset-left, 0px));
+    padding-right: calc(1.5rem + env(safe-area-inset-right, 0px));
+  }
+  @media (min-width: 768px) {
+    body.home-lock .home-main-safe {
+      padding-top: 3rem;
+      padding-bottom: calc(3rem + env(safe-area-inset-bottom, 0px));
+      padding-left: calc(3rem + env(safe-area-inset-left, 0px));
+      padding-right: calc(3rem + env(safe-area-inset-right, 0px));
+    }
+  }
+  body.home-lock #mobile-menu {
+    top: calc(3.5rem + env(safe-area-inset-top, 0px));
+    right: calc(0.75rem + env(safe-area-inset-right, 0px));
+  }
+  @media (min-width: 768px) {
+    body.home-lock #mobile-menu {
+      top: calc(6rem + env(safe-area-inset-top, 0px));
+      right: calc(1.5rem + env(safe-area-inset-right, 0px));
+    }
+  }
+  body.home-lock #mobile-hero-cta {
+    bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
+    left: calc(1.5rem + env(safe-area-inset-left, 0px));
+    right: calc(1.5rem + env(safe-area-inset-right, 0px));
+  }
+  @media (max-width: 767px) {
+    body.home-lock #hero-block {
+      left: calc(1rem + env(safe-area-inset-left, 0px));
+      right: calc(1rem + env(safe-area-inset-right, 0px));
+    }
+  }
+  /* PERTH | GLOBAL coordinate HUD: pinned to the viewport bottom-left corner at EVERY width, so it
+     stays glued to the same screen spot and never drifts with the centered content column. top/right
+     are reset to override the stale insets from the Tailwind `.absolute` utility on the element. */
+  /* The PERTH | GLOBAL + LAT/LON HUD now flows in the document directly below the START block (see the
+     mt-[5.5rem] gap on #hero-coordinates), so it tracks START exactly through the 10vh hero margin, the
+     text-8xl->text-9xl breakpoint and any line-wrap, holding a constant gap and never being overrun. */
+  /* When the viewport is too short to show the HUD below the copy, hide it cleanly rather than letting
+     it clip against the bottom edge (the graceful disappear behaviour). */
+  @media (max-height: 768px) {
+    body.home-lock #hero-coordinates { display: none; }
+  }
+  #home-page .home-hero-subtext {
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+  #home-page .home-hero-distinction {
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: inherit;
+    color: #5B2FA8;
+  }
+  #home-page #home-services-desktop {
+    color: #525252;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    white-space: nowrap;
+  }
+  #home-page #home-services-mobile {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 1.25rem;
+    width: min(100%, 23rem);
+    border-top: 1px solid rgba(91,47,168,0.28);
+  }
+  #home-page #home-services-mobile .home-service-name {
+    display: flex; align-items: baseline; gap: 0.5rem;
+    padding: 0.5rem 0 0.55rem;
+    border-bottom: 1px solid rgba(91,47,168,0.14);
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+    font-size: 1.15rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1;
+    color: #1c1917; white-space: nowrap;
+  }
+  #home-page #home-services-mobile .home-service-name small {
+    font-family: Inter, system-ui, -apple-system, sans-serif; font-size: 0.6rem; letter-spacing: 0.12em; font-weight: 700; color: #5B2FA8;
+  }
+  @media (max-width: 767px) {
+    #home-page #hero-block { top: 2.5rem; }
+    #home-page .hero-title span { font-size: clamp(2.25rem, 8vw, 3.75rem) !important; }
+    #home-page #mobile-hero-cta .home-hero-subtext {
+      width: min(100%, 23rem);
+      max-width: none;
+      font-size: 0.9375rem;
+      line-height: 1.55;
+      margin-bottom: 1.25rem;
+    }
+  }
+
+  /* ===== START button: maroon base + a glitchy "signal pulse" — a thin chromatic ring that
+     stutters outward, synced with a slow label scramble (built in JS w/ GSAP). Retires the old
+     site.css pulse/throb; scoped to #home-page to outrank site.css. ===== */
+  #home-page .start-btn-pulse-wrap::before,
+  #home-page .start-btn-pulse-wrap::after { content: none !important; animation: none !important; }
+  #home-page .start-btn-hero::before,
+  #home-page .start-btn-hero::after { content: none !important; }
+
+  #home-page .start-btn-pulse-wrap { position: relative; overflow: visible; }
+
+  /* keep the maroon bg-sepia from the markup; just retire the throb + add a warm glow */
+  #home-page .start-btn-hero {
+    position: relative;
+    overflow: visible;
+    z-index: 1;                         /* sits above the rings so they're born from behind its edge */
+    animation: none !important;
+    box-shadow: 0 6px 20px -8px rgba(0,0,0,0.4), 0 0 22px -10px rgba(91,47,168,0.45);
+    transition: box-shadow .4s ease, transform .3s cubic-bezier(.22,1,.36,1);
+  }
+  #home-page .start-btn-hero:hover {
+    box-shadow: 0 8px 26px -8px rgba(0,0,0,0.45), 0 0 32px -6px rgba(91,47,168,0.6);
+  }
+  #home-page .start-btn-hero-label,
+  #home-page .start-btn-hero-arrow { position: relative; z-index: 2; }
+
+  /* Slightly enlarge the desktop START button + its signal rings together (home page only). */
+  #home-page .start-btn-pulse-wrap:has(#btn-start-desktop) { transform: scale(1.18); transform-origin: left center; }
+
+  /* circular radar rings (injected by JS): two staggered hairline circles, orange leading and violet
+     chasing, emitted from behind the button so each is born at its edge and ripples outward. */
+  #home-page .sb-ring {
+    position: absolute; left: 50%; top: 50%;
+    width: 120px; height: 120px; margin: -60px 0 0 -60px;
+    border-radius: 50%; border: 1px solid transparent;
+    /* very subtle warm fill that feathers to the middle, so each expanding ring carries a soft
+       glow of light rather than being a hollow hairline; alpha kept low so overlapping rings
+       don't blow out the centre. Travels + fades with the ring (GSAP animates scale + opacity). */
+    background: radial-gradient(circle at center,
+      rgba(249,115,22,0.70) 0%,
+      rgba(249,115,22,0.34) 46%,
+      rgba(249,115,22,0.00) 78%);
+    pointer-events: none; opacity: 0; z-index: 0;   /* BEHIND the button face (button is z-index 1), so the glow emanates from behind and shows as it expands past the edges */
+    transform-origin: center center; will-change: transform, opacity;
+  }
+
+  /* glitchy sparks that flick outward off the rings (alternating orange / violet, set in JS) */
+  #home-page .sb-particle {
+    position: absolute; left: 50%; top: 50%;
+    width: 3px; height: 3px; margin: -1.5px 0 0 -1.5px; border-radius: 1px;
+    pointer-events: none; opacity: 0; z-index: 0; will-change: transform, opacity;
+  }
+
+  /* label glitch — emulates the Aria hover-card title glitch (chromatic split + clip jumps) */
+  @keyframes sb-glitch {
+    0%   { transform: translate(0); text-shadow: none; clip-path: inset(0 0 0 0); }
+    18%  { transform: translate(-1.5px,0); text-shadow: 1.5px 0 #9855FF, -1.5px 0 #E63CFE; clip-path: inset(0 0 62% 0); }
+    36%  { transform: translate(1.5px,0); text-shadow: -1.5px 0 #9855FF, 1.5px 0 #E63CFE; clip-path: inset(40% 0 22% 0); }
+    54%  { transform: translate(-1px,0); text-shadow: 1px 0 #9855FF; clip-path: inset(74% 0 0 0); }
+    72%  { transform: translate(1px,0); text-shadow: none; clip-path: inset(0 0 0 0); }
+    100% { transform: translate(0); text-shadow: none; clip-path: inset(0 0 0 0); }
+  }
+  #home-page .start-btn-hero-label.sb-glitch { animation: sb-glitch .42s steps(2,end) both; }
+
+  @media (prefers-reduced-motion: reduce) {
+    #home-page .sb-ring, #home-page .sb-particle { display: none !important; }
+    #home-page .start-btn-hero-label.sb-glitch { animation: none; }
+  }
+  body.home-lock #transition-loader {
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px)
+      env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+  }
+</style>
+
+<!-- External Libraries -->
+<script src="js/gsap/gsap.min.js" defer></script>
+<script src="https://unpkg.com/lucide@0.577.0" defer onerror="console.warn(&#x27;Lucide failed to load&#x27;)"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer onerror="console.warn(&#x27;Three.js failed to load&#x27;)"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer onerror="console.warn(&#x27;Lottie failed to load&#x27;)"></script>
+<script src="js/brand.js"></script>
+<script src="js/site.min.js" defer></script>
+
+<script>
+  // Animate-on-scroll helper
+  (function () {
+    const style = document.createElement("style");
+    style.textContent = `
+      .animate-on-scroll { animation-play-state: paused !important; }
+      .animate-on-scroll.animate { animation-play-state: running !important; }
+    `;
+    document.head.appendChild(style);
+
+    const once = true;
+    if (!window.__inViewIO) {
+      window.__inViewIO = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
+            if (once) window.__inViewIO.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
+    }
+
+    window.initInViewAnimations = function (selector = ".animate-on-scroll") {
+      document.querySelectorAll(selector).forEach((el) => {
+        window.__inViewIO.observe(el);
+      });
+    };
+
+    document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
+  })();
+</script>
+</head>
+
+<!-- <body class="antialiased font-sans bg-paper min-h-screen"> -->
+<body class="home-lock antialiased font-sans bg-paper">
+
+    <!-- Subtle Grid Background -->
+    <div class="absolute inset-0 pointer-events-none grid-overlay z-0"></div>
+
+    <!-- Gradient Background Transition -->
+    <div class="absolute inset-0 pointer-events-none z-[-1] bg-gradient-to-b from-paper from-10% via-paper via-25% to-[#e8e3db] to-40%"></div>
+
+    <!-- Canvas -->
+    <div id="canvas-container" class="absolute inset-0 z-1"></div>
+
+
+    <!-- Header - Fixed across pages -->
+    <header class="safe-area-header fixed top-0 left-0 right-0 z-50 flex justify-between items-center transition-all duration-300">
+        <!-- Background Gradient & Blur with Soft Masked Edge -->
+        <div class="header-backdrop-sheet absolute inset-x-0 top-0 h-32 md:h-48 bg-gradient-to-b from-paper via-paper/90 to-transparent backdrop-blur-md -z-10 pointer-events-none [mask-image:linear-gradient(to_bottom,black_20%,transparent_90%)]"></div>
+
+        <a href="/" class="flex items-center gap-2 md:gap-4 cursor-pointer" id="logo-home" aria-label="Studio">
+            <div class="w-8 h-8 md:w-10 md:h-10 border border-neutral-800 flex items-center justify-center rounded-sm bg-paper relative overflow-hidden">
+                <span class="brand-mark" data-brand-mark></span>
+            </div>
+            <span class="text-2xl md:text-4xl tracking-tight text-ink" style="font-weight:700;letter-spacing:-0.02em;" data-brand>Studio</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-10 relative">
+            <div class="relative group">
+                <a href="services.html" id="nav-services" class="flex items-center gap-1 font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase py-2">
+                    Services
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-neutral-400 group-hover:text-ink transition-colors"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <!-- Dropdown -->
+                <div class="absolute top-full left-0 mt-2 w-56 bg-paper border border-neutral-200 shadow-xl rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <div class="flex flex-col py-2">
+                        <a href="how-we-work.html#discover" id="nav-start-here" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest border-b border-neutral-200 mb-1"><span class="block" style="color:#5B2FA8;font-size:9px;letter-spacing:0.2em;margin-bottom:2px;">Start here</span>Discovery</a>
+                        <a href="ai-consulting.html" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Strategy</a>
+                        <a href="ai-development.html" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Design</a>
+                        <a href="ai-training.html" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Build</a>
+                        <a href="ai-governance.html" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Care</a>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group">
+                <a href="how-we-work.html" id="nav-how-we-work" class="flex items-center gap-1 font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase py-2">
+                    How We Work
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-neutral-400 group-hover:text-ink transition-colors"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <!-- Dropdown -->
+                <div id="nav-how-we-work-dropdown" class="absolute top-full left-0 mt-2 w-56 bg-paper border border-neutral-200 shadow-xl rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <div class="flex flex-col py-2">
+                        <a href="how-we-work.html#method" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">The four phases</a>
+                        <a href="data-security.html" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Data &amp; Security</a>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group">
+                <a href="products.html" id="nav-products" class="flex items-center gap-1 font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase py-2">
+                    Our Work
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-neutral-400 group-hover:text-ink transition-colors"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <!-- Dropdown -->
+                <div class="absolute top-full left-0 mt-2 w-56 bg-paper border border-neutral-200 shadow-xl rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <div class="flex flex-col py-2">
+                        <a href="/products#case-studies" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Client Results</a>
+                        <a href="/products#maria" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">AI Assistants</a>
+                        <a href="/products#what-we-build" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Lorem Ipsum</a>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group" style="display:none">
+                <a id="nav-industries" class="flex items-center gap-1 font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase py-2 cursor-default">
+                    Industries
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-neutral-400 group-hover:text-ink transition-colors"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <!-- Dropdown -->
+                <div class="absolute top-full left-0 mt-2 w-56 bg-paper border border-neutral-200 shadow-xl rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <div class="flex flex-col py-2">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="px-4 py-2 font-mono text-xs text-neutral-500 hover:text-ink hover:bg-neutral-50 transition-colors uppercase tracking-widest">Law</a>
+                    </div>
+                </div>
+            </div>
+            <a href="about-us.html" id="nav-about" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase">About Us</a>
+            <a href="blog.html" id="nav-blog" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors tracking-widest uppercase">Blog</a>
+            <a id="nav-inquire" href="inquire.html#inquiry-form" class="px-8 py-2 border border-transparent bg-sepia hover:bg-ink transition-colors text-paper rounded-full shadow-sm" style="font-weight:600;font-size:0.9rem;">Book a Call</a>
+        </nav>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="md:hidden w-8 h-8 flex items-center justify-center" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu"></button>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="absolute md:hidden pointer-events-auto transition-all duration-300 opacity-0 translate-y-[-10px] invisible z-[60]">
+            <div class="flex flex-col items-end gap-3 md:gap-4 bg-paper/95 backdrop-blur-md border border-neutral-200 shadow-xl p-6 rounded-md min-w-[160px] transition-[min-width] duration-300">
+                <div class="flex flex-col items-end w-full">
+                    <div class="flex items-center justify-end gap-2 w-full">
+                        <a href="services.html" id="mobile-services" class="font-serif text-xl text-ink hover:text-sepia transition-colors" style="min-width: 6.25rem; text-align: right;">Services</a>
+                        <button id="mobile-services-toggle" class="p-1 focus:outline-none" aria-label="Toggle Services Menu">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-collapsed w-5 h-5 text-neutral-400"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-expanded w-5 h-5 text-neutral-400 hidden"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                    </div>
+                    <!-- Mobile Services Dropdown -->
+                    <div id="mobile-services-dropdown" class="flex flex-col items-end gap-2 overflow-hidden max-h-0 opacity-0 transition-all duration-300 w-full">
+                        <a href="how-we-work.html#discover" id="mobile-start-here" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1 mt-2"><span class="block text-right" style="color:#5B2FA8;font-size:9px;letter-spacing:0.2em;">Start here</span>Discovery</a>
+                        <a href="ai-consulting.html" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Strategy</a>
+                        <a href="ai-development.html" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Design</a>
+                        <a href="ai-training.html" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Build</a>
+                        <a href="ai-governance.html" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Care</a>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-end w-full">
+
+                    <div class="flex items-center justify-end gap-2 w-full">
+
+                        <a href="how-we-work.html" id="mobile-how-we-work" class="font-serif text-xl text-ink hover:text-sepia transition-colors" style="min-width: 6.25rem; text-align: right;">How We Work</a>
+
+                        <button id="mobile-how-we-work-toggle" class="p-1 focus:outline-none" aria-label="Toggle How We Work Menu">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-collapsed w-5 h-5 text-neutral-400"><polyline points="6 9 12 15 18 9"></polyline></svg>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-expanded w-5 h-5 text-neutral-400 hidden"><polyline points="6 9 12 15 18 9"></polyline></svg>
+
+                        </button>
+
+                    </div>
+
+                    <div id="mobile-how-we-work-dropdown" class="flex flex-col items-end gap-2 overflow-hidden max-h-0 opacity-0 transition-all duration-300 w-full">
+
+                        <a href="how-we-work.html#method" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1 mt-2">The four phases</a>
+
+                        <a href="data-security.html" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Data &amp; Security</a>
+
+                    </div>
+
+                </div>
+
+                <div class="flex flex-col items-end w-full">
+
+                    <div class="flex items-center justify-end gap-2 w-full">
+
+                        <a href="products.html" id="mobile-products" class="font-serif text-xl text-ink hover:text-sepia transition-colors" style="min-width: 6.25rem; text-align: right;">Our Work</a>
+
+                        <button id="mobile-our-work-toggle" class="p-1 focus:outline-none" aria-label="Toggle Our Work Menu">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-collapsed w-5 h-5 text-neutral-400"><polyline points="6 9 12 15 18 9"></polyline></svg>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-expanded w-5 h-5 text-neutral-400 hidden"><polyline points="6 9 12 15 18 9"></polyline></svg>
+
+                        </button>
+
+                    </div>
+
+                    <!-- Mobile Our Work Dropdown -->
+
+                    <div id="mobile-our-work-dropdown" class="flex flex-col items-end gap-2 overflow-hidden max-h-0 opacity-0 transition-all duration-300 w-full">
+
+                        <a href="/products#case-studies" id="mobile-case-studies" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1 mt-2">Client Results</a>
+
+                        <a href="/products#maria" id="mobile-maria" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">AI Assistants</a>
+
+                        <a href="/products#what-we-build" id="mobile-what-we-build" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1">Lorem Ipsum</a>
+
+                    </div>
+
+                </div>
+                <div class="flex flex-col items-end w-full" style="display:none">
+                    <div class="flex items-center justify-end gap-2 w-full">
+                        <span id="mobile-industries" class="font-serif text-xl text-ink hover:text-sepia transition-colors" style="min-width: 6.25rem; text-align: right;">Industries</span>
+                        <button id="mobile-industries-toggle" class="p-1 focus:outline-none" aria-label="Toggle Industries Menu">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-collapsed w-5 h-5 text-neutral-400"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-chevron-expanded w-5 h-5 text-neutral-400 hidden"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                    </div>
+                    <div id="mobile-industries-dropdown" class="flex flex-col items-end gap-2 overflow-hidden max-h-0 opacity-0 transition-all duration-300 w-full">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-neutral-500 hover:text-ink transition-colors uppercase tracking-widest py-1 mt-2">Law</a>
+                    </div>
+                </div>
+                <a href="about-us.html" id="mobile-about" class="font-serif text-xl text-ink hover:text-sepia transition-colors">About Us</a>
+                <a href="blog.html" id="mobile-blog" class="font-serif text-xl text-ink hover:text-sepia transition-colors">Blog</a>
+                <a id="mobile-inquire" href="inquire.html#inquiry-form" class="px-6 py-1 border border-transparent bg-sepia text-paper rounded-full mt-2" style="font-weight:600;font-size:0.9rem;">Book a Call</a>
+            </div>
+        </div>
+    </header>
+
+
+<style>
+  /* Home page only — gentle extra horizontal padding on desktop, nudging the hero
+     text rightward toward the orb. Scoped to #home-hero-pad in index.html; no shared
+     CSS and no other page is affected. Vertical padding stays at md:p-12 (3rem). */
+  @media (min-width: 768px) {
+    #home-hero-pad { padding-left: clamp(3rem, 15vw - 8rem, 15rem); padding-right: 7rem; }
+  }
+  /* Desktop only (>=1600px): nudge the whole hero text column down so it sits more in line
+     with the orb. Laptops (<=1536px) and mobile keep the original md:mt-[10vh] alignment. */
+  @media (min-width: 1600px) {
+    #home-page #hero-block { margin-top: 15vh; }
+  }
+  #home-directory-link { display: none; }
+  @media (min-width: 768px) {
+    #home-directory-link { display: inline-flex; }
+  }
+</style>
+<main id="home-hero-pad" class="absolute inset-0 z-20 pointer-events-none p-6 md:p-12 h-full w-full">
+        <div id="home-page" class="relative overflow-visible h-full w-full" style="max-width: 2200px; margin-left: auto; margin-right: auto;">
+            <!-- Header removed from here -->
+
+            <!-- Hero Text -->
+            <div id="hero-block" class="absolute top-16 md:relative md:top-auto md:left-auto md:right-auto md:mt-[10vh] z-20 w-full max-w-4xl animate-fade-in opacity-0" style="animation-delay: 0.3s;">
+                <div class="hero-kicker-row flex flex-wrap md:flex-nowrap items-start gap-3 mb-4 md:mb-4">
+                    <div class="hidden md:block h-px w-8 md:w-12 bg-rust" style="margin-top: 0.45rem;"></div>
+                    <div class="min-w-0 flex flex-col items-start gap-1.5">
+                        <span class="hero-kicker min-w-0 font-mono text-[8px] md:text-xs text-rust uppercase tracking-[0.15em] md:tracking-[0.2em] max-w-full overflow-hidden">lorem ipsum dolor sit</span>
+                        <a id="home-directory-link" href="https://example.com/" target="_blank" rel="noopener noreferrer" class="pointer-events-auto items-center gap-2 font-mono text-[9px] uppercase tracking-[0.16em] text-neutral-500 hover:text-rust transition-colors" aria-label="Studio">lorem ipsum dolor <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </div>
+                
+                <!-- Title - Bigger on mobile -->
+                <h1 class="hero-title text-ink mix-blend-multiply" style="font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; padding-top: 2.25rem;">
+                    <span style="font-size: clamp(2.25rem, 5vw, 3.75rem);">lorem ipsum</span><br/>
+                    <span class="text-neutral-600" style="font-size: clamp(2.25rem, 5vw, 3.75rem);">lorem ipsum dolor</span>
+</h1>
+                
+                <!-- Desktop only: Description and CTA inline -->
+                <p class="home-hero-subtext hidden md:block mt-8 font-serif font-light text-xl text-neutral-700 leading-relaxed tracking-wide" style="font-size: 1.4rem; max-width: 40rem;">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <span class="home-hero-distinction">lorem ipsum dolor sit amet</span>
+</p>
+
+                <p id="home-services-desktop" class="hidden md:block mt-4 font-mono uppercase" aria-label="Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing">Lorem ipsum dolor sit amet consectetur adipiscing.</p>
+
+                <div class="hidden md:flex items-center gap-4 pointer-events-auto" style="margin-top: 4.125rem;">
+                    <span class="start-btn-pulse-wrap inline-flex">
+                        <button id="btn-start-desktop" class="start-btn-hero relative z-10 group flex items-center gap-3 bg-sepia text-paper pl-6 pr-5 py-3 rounded-sm hover:bg-ink transition-all duration-500">
+                            <span class="start-btn-hero-label font-mono text-xs tracking-widest uppercase">Our Services</span>
+                            <i data-lucide="arrow-right" class="start-btn-hero-arrow w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+</span>
+                    <div class="h-px w-16 bg-neutral-300"></div>
+                    <a href="inquire.html#inquiry-form" class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 hover:text-ink transition-colors">Get in touch</a>
+                </div>
+            </div>
+
+            <!-- Mobile only: Bottom section with description and CTA -->
+            <div id="mobile-hero-cta" class="absolute z-20 md:hidden animate-fade-in opacity-0 pointer-events-auto" style="animation-delay: 0.5s;">
+                <div id="home-services-mobile" class="mb-5" aria-label="Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing">
+                    <span class="home-service-name"><small>01</small>Strategy</span>
+                    <span class="home-service-name"><small>02</small>Design</span>
+                    <span class="home-service-name"><small>03</small>Build</span>
+                    <span class="home-service-name"><small>04</small>Care</span>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-4">
+                    <span class="start-btn-pulse-wrap inline-flex">
+                        <button id="btn-start-mobile" class="start-btn-hero relative z-10 group flex items-center gap-3 bg-sepia text-paper pl-6 pr-5 py-3 rounded-sm hover:bg-ink transition-all duration-500">
+                            <span class="start-btn-hero-label font-mono text-xs tracking-widest uppercase">Our Services</span>
+                            <i data-lucide="arrow-right" class="start-btn-hero-arrow w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+</span>
+                    <div class="h-px w-12 bg-neutral-300"></div>
+                    <a href="inquire.html#inquiry-form" class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 hover:text-ink transition-colors">Get in touch</a>
+                </div>
+            </div>
+
+            <!-- Footer Coordinates - Perth Global visible on all, Lat/Lon desktop only -->
+            <div id="hero-coordinates" class="hidden md:flex flex-col gap-1 z-10" style="margin-top: 4.125rem;">
+                <span class="hero-perth-global font-mono text-[12px] text-neutral-500 uppercase tracking-widest mb-1 font-medium" style="font-size: 14.5px;">lorem ipsum dolor</span>
+                <div class="hidden md:flex flex-col mt-3 opacity-40">
+                    <span class="font-mono text-[11px] text-neutral-400" style="font-size: 13.5px;">lorem</span>
+                    <span class="font-mono text-[11px] text-neutral-400" style="font-size: 13.5px;">lorem ipsum</span>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Transition Loader -->
+    <div id="transition-loader" class="fixed inset-0 z-[100] flex items-center justify-center pointer-events-none opacity-0">
+        <div class="relative flex flex-col items-center">
+            <!-- Cool element: Orbiting circles that mimic the orb's logic -->
+            <div class="loader-visual relative w-32 h-32 mb-8">
+                <div class="absolute inset-0 border border-sepia/20 rounded-full"></div>
+                <div class="absolute inset-2 border border-sepia/40 rounded-full"></div>
+                <div class="absolute inset-4 border border-sepia/10 rounded-full"></div>
+                <!-- Central dot -->
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-sepia rounded-full shadow-[0_0_15px_rgba(61,34,101,0.5)]"></div>
+            </div>
+            <div class="loader-text font-serif italic text-3xl text-ink tracking-[0.2em] ml-2">Loading...</div>
+        </div>
+    </div>
+
+<!-- Shaders -->
+    <script type="x-shader/x-vertex" id="vertexShader">
+        uniform float uTime;
+        uniform float uDistortion; 
+        uniform float uSize;       
+        uniform vec2 uMouse;
+
+        varying float vAlpha;
+        varying vec3 vPos;
+        varying float vNoise;
+
+        // Simplex Noise (Standard implementation)
+        vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+        vec4 mod289(vec4 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+        vec4 permute(vec4 x) { return mod289(((x*34.0)+1.0)*x); }
+        vec4 taylorInvSqrt(vec4 r) { return 1.79284291400159 - 0.85373472095314 * r; }
+        
+        float snoise(vec3 v) {
+            const vec2  C = vec2(1.0/6.0, 1.0/3.0) ;
+            const vec4  D = vec4(0.0, 0.5, 1.0, 2.0);
+            vec3 i  = floor(v + dot(v, C.yyy) );
+            vec3 x0 = v - i + dot(i, C.xxx) ;
+            vec3 g = step(x0.yzx, x0.xyz);
+            vec3 l = 1.0 - g;
+            vec3 i1 = min( g.xyz, l.zxy );
+            vec3 i2 = max( g.xyz, l.zxy );
+            vec3 x1 = x0 - i1 + 1.0 * C.xxx;
+            vec3 x2 = x0 - i2 + 2.0 * C.xxx;
+            vec3 x3 = x0 - 1.0 + 3.0 * C.xxx;
+            i = mod289(i);
+            vec4 p = permute( permute( permute(
+                        i.z + vec4(0.0, i1.z, i2.z, 1.0 ))
+                    + i.y + vec4(0.0, i1.y, i2.y, 1.0 ))
+                    + i.x + vec4(0.0, i1.x, i2.x, 1.0 ));
+            float n_ = 1.0/7.0;
+            vec3  ns = n_ * D.wyz - D.xzx;
+            vec4 j = p - 49.0 * floor(p * ns.z *ns.z);
+            vec4 x_ = floor(j * ns.z);
+            vec4 y_ = floor(j - 7.0 * x_ );
+            vec4 x = x_ *ns.x + ns.yyyy;
+            vec4 y = y_ *ns.x + ns.yyyy;
+            vec4 h = 1.0 - abs(x) - abs(y);
+            vec4 b0 = vec4( x.xy, y.xy );
+            vec4 b1 = vec4( x.zw, y.zw );
+            vec4 s0 = floor(b0)*2.0 + 1.0;
+            vec4 s1 = floor(b1)*2.0 + 1.0;
+            vec4 sh = -step(h, vec4(0.0));
+            vec4 a0 = b0.xzyw + s0.xzyw*sh.xxyy ;
+            vec4 a1 = b1.xzyw + s1.xzyw*sh.zzww ;
+            vec3 p0 = vec3(a0.xy,h.x);
+            vec3 p1 = vec3(a0.zw,h.y);
+            vec3 p2 = vec3(a1.xy,h.z);
+            vec3 p3 = vec3(a1.zw,h.w);
+            vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2, p2), dot(p3,p3)));
+            p0 *= norm.x; p1 *= norm.y; p2 *= norm.z; p3 *= norm.w;
+            vec4 m = max(0.6 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0);
+            m = m * m;
+            return 42.0 * dot( m*m, vec4( dot(p0,x0), dot(p1,x1), dot(p2,x2), dot(p3,x3) ) );
+        }
+
+        void main() {
+            vec3 pos = position;
+            
+            // Smoother, more organic noise (Liquid/Ink feel)
+            float noiseFreq = 0.5;
+            float noiseAmp = uDistortion;
+            float noise = snoise(vec3(pos.x * noiseFreq + uTime * 0.1, pos.y * noiseFreq, pos.z * noiseFreq));
+            
+            vNoise = noise;
+            
+            // Deform the sphere along normal based on noise
+            vec3 newPos = pos + (normalize(pos) * noise * noiseAmp);
+
+            // Interaction
+            float dist = distance(uMouse * 10.0, newPos.xy);
+            float interaction = smoothstep(5.0, 0.0, dist);
+            newPos += normalize(pos) * interaction * 0.5;
+
+            vec4 mvPosition = modelViewMatrix * vec4(newPos, 1.0);
+            gl_Position = projectionMatrix * mvPosition;
+
+            // Size variation based on depth and noise
+            gl_PointSize = uSize * (24.0 / -mvPosition.z) * (1.0 + noise * 0.5);
+            
+            vAlpha = 1.0;
+            vPos = newPos;
+        }
+    </script>
+
+    <script type="x-shader/x-fragment" id="fragmentShader">
+        uniform vec3 uColor;
+        uniform float uOpacity;
+        
+        varying float vNoise;
+        varying vec3 vPos;
+
+        void main() {
+            // Soft circle particle
+            vec2 center = gl_PointCoord - vec2(0.5);
+            float dist = length(center);
+            if (dist > 0.5) discard;
+            
+            // Soft edges for "ink blot" effect
+            float alpha = smoothstep(0.5, 0.2, dist) * uOpacity;
+            
+            // Color variation based on noise (creates depth)
+            vec3 darkColor = uColor * 0.5;
+            vec3 lightColor = uColor * 1.8; // Highlights
+            
+            vec3 finalColor = mix(darkColor, lightColor, vNoise * 0.5 + 0.5);
+            
+            gl_FragColor = vec4(finalColor, alpha);
+        }
+    </script>
+
+
+<script>
+// Declare variables in outer scope so they can be accessed by GSAP animations
+        let uniforms, transitionRotationY, systemsGroup, particles, camera, renderer, scene;
+
+        // Wait for THREE.js to load before initializing canvas
+        let threeRetries = 0;
+        function initThreeJS() {
+            if (!window.THREE) {
+                if (++threeRetries > 50) {
+                    console.warn('Three.js failed to load after 5s');
+                    const container = document.getElementById('canvas-container');
+                    if (container) container.style.background = 'radial-gradient(ellipse at center, #e7e5e4 0%, #FDFCF8 70%)';
+                    return;
+                }
+                setTimeout(initThreeJS, 100);
+                return;
+            }
+
+        const container = document.getElementById('canvas-container');
+        if (!container) return; // Exit if container doesn't exist
+        
+        scene = new THREE.Scene();
+        // Fog to blend into paper background
+        scene.fog = new THREE.FogExp2(0xCECECE, 0.035);
+
+        camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 100);
+        camera.position.set(0, 0, 18);
+
+        renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        container.appendChild(renderer.domElement);
+
+        // Group to hold the "Systems"
+        systemsGroup = new THREE.Group();
+        systemsGroup.position.x = 4.0; 
+        scene.add(systemsGroup);
+
+        // --- MAIN PARTICLE MESH (The "Brain/Cloud") ---
+        // Dense geometry for ink effect
+        const geometry = new THREE.IcosahedronGeometry(4.5, 30);
+        
+        uniforms = {
+            uTime: { value: 0 },
+            uDistortion: { value: 0.72 },
+            uSize: { value: 2.5 },
+            uColor: { value: new THREE.Color((getComputedStyle(document.documentElement).getPropertyValue('--color-primary') || '#3D2265').trim()) },
+            uOpacity: { value: 0.8 },
+            uMouse: { value: new THREE.Vector2(0, 0) }
+        };
+
+        const material = new THREE.ShaderMaterial({
+            vertexShader: document.getElementById('vertexShader').textContent,
+            fragmentShader: document.getElementById('fragmentShader').textContent,
+            uniforms: uniforms,
+            transparent: true,
+            depthWrite: false,
+            // Additive blending makes it look too digital/glowing. 
+            // Normal blending is better for ink/physical matter.
+            blending: THREE.NormalBlending
+        });
+
+        particles = new THREE.Points(geometry, material);
+        const particleGroup = new THREE.Group();
+        particleGroup.add(particles);
+        systemsGroup.add(particleGroup);
+
+        // --- RENAISSANCE LINES (Astrolabe effect) ---
+        const lineGroup = new THREE.Group();
+        systemsGroup.add(lineGroup);
+
+        function createThinOrbit(radius, rotation, phase = 0) {
+            const curve = new THREE.EllipseCurve(
+                0, 0,            // ax, aY
+                radius, radius,  // xRadius, yRadius
+                0, 2 * Math.PI,  // aStartAngle, aEndAngle
+                false,           // aClockwise
+                0                // aRotation
+            );
+            const points = curve.getPoints(128);
+            const geo = new THREE.BufferGeometry().setFromPoints(points);
+
+            // Rust ↔ Purple vertex color blend for better visibility
+            const rust = new THREE.Color((getComputedStyle(document.documentElement).getPropertyValue('--color-accent') || '#9855FF').trim());
+            const purple = new THREE.Color((getComputedStyle(document.documentElement).getPropertyValue('--color-accent-2') || '#E63CFE').trim());
+            const colors = [];
+            const count = points.length;
+            for (let i = 0; i < count; i++) {
+                const t = count <= 1 ? 0 : i / (count - 1);
+                const mix = (Math.sin((t + phase) * Math.PI * 2) + 1) * 0.5;
+                const c = rust.clone().lerp(purple, mix);
+                colors.push(c.r, c.g, c.b);
+            }
+            geo.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+
+            const mat = new THREE.LineBasicMaterial({ 
+                vertexColors: true,
+                transparent: true,
+                opacity: 0.38,
+                fog: false,
+                depthWrite: false
+            });
+            const orbit = new THREE.Line(geo, mat);
+            orbit.rotation.x = rotation.x;
+            orbit.rotation.y = rotation.y;
+            lineGroup.add(orbit);
+            return orbit;
+        }
+
+        const orbits = [
+            createThinOrbit(5.5, {x: Math.PI/2, y: 0}, 0.0),
+            createThinOrbit(5.2, {x: Math.PI/3, y: Math.PI/6}, 0.33),
+            createThinOrbit(6.0, {x: Math.PI/1.8, y: Math.PI/4}, 0.66)
+        ];
+
+        // Each ring sits in its own pivot so its plane can slowly precess around the orb
+        // (a travelling orbit) instead of only spinning in place. Neighbouring rings move
+        // in opposite directions on intersecting planes, creating an atom-like crossover.
+        const ORBIT_PRECESSION = [0.0058, -0.00435, 0.00327];
+        const ORBIT_DRIFT = [0.00363, -0.00726, 0.01089];
+        const orbitPivots = orbits.map((orbit, i) => {
+            const pivot = new THREE.Group();
+            lineGroup.remove(orbit);
+            pivot.rotation.z = i * 0.7;
+            pivot.add(orbit);
+            lineGroup.add(pivot);
+            return pivot;
+        });
+
+        // --- INTERACTION & ANIMATION ---
+        let time = 0;
+        let speed = 0.1;
+        let mouseX = 0, mouseY = 0;
+        transitionRotationY = { value: 0 };
+
+        // New Interaction State
+        let isDragging = false;
+        let previousMouse = { x: 0, y: 0 };
+        let rotationVelocity = { x: 0, y: 0 };
+        let cumulativeRotation = { x: 0, y: 0 };
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+            mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+            uniforms.uMouse.value.x += (mouseX - uniforms.uMouse.value.x) * 0.05;
+            uniforms.uMouse.value.y += (mouseY - uniforms.uMouse.value.y) * 0.05;
+        });
+
+        // Drag Events (Mouse)
+        document.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            previousMouse = { x: e.clientX, y: e.clientY };
+            rotationVelocity = { x: 0, y: 0 }; // Reset velocity on grab
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                const deltaX = e.clientX - previousMouse.x;
+                const deltaY = e.clientY - previousMouse.y;
+                
+                // Update velocity based on drag speed
+                rotationVelocity.x = deltaY * 0.005; // Drag Y controls X rotation
+                rotationVelocity.y = deltaX * 0.005; // Drag X controls Y rotation
+                
+                cumulativeRotation.x += rotationVelocity.x;
+                cumulativeRotation.y += rotationVelocity.y;
+                
+                previousMouse = { x: e.clientX, y: e.clientY };
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+        // Drag Events (Touch)
+        document.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            previousMouse = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+            rotationVelocity = { x: 0, y: 0 };
+        }, { passive: false });
+
+        document.addEventListener('touchmove', (e) => {
+            if (isDragging) {
+                e.preventDefault();
+                const deltaX = e.touches[0].clientX - previousMouse.x;
+                const deltaY = e.touches[0].clientY - previousMouse.y;
+                
+                rotationVelocity.x = deltaY * 0.005;
+                rotationVelocity.y = deltaX * 0.005;
+                
+                cumulativeRotation.x += rotationVelocity.x;
+                cumulativeRotation.y += rotationVelocity.y;
+                
+                previousMouse = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+            }
+        }, { passive: false });
+
+        document.addEventListener('touchend', () => {
+            isDragging = false;
+        });
+
+        // Resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            adjustLayout();
+        });
+
+        function adjustLayout() {
+            // Mobile: Move group down so it doesn't block top text, slightly smaller
+            if(window.innerWidth < 768) {
+                systemsGroup.position.set(0, 0, -5);
+                systemsGroup.scale.set(0.6, 0.6, 0.6);
+            } else {
+                systemsGroup.position.set(4.5, 0, 0);
+                systemsGroup.scale.set(1, 1, 1);
+            }
+        }
+        adjustLayout();
+        
+        // Ensure initial orb state is set correctly
+        if (systemsGroup) {
+            const isMobile = window.innerWidth < 768;
+            if (isMobile) {
+                systemsGroup.position.set(0, 0, -5);
+                systemsGroup.scale.set(0.6, 0.6, 0.6);
+            } else {
+                systemsGroup.position.set(4.5, 0, 0);
+                systemsGroup.scale.set(1, 1, 1);
+            }
+            transitionRotationY.value = 0;
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            // Base time progression
+            time += 0.013 + (speed * 0.05);
+
+            if (!isDragging) {
+                // Apply momentum damping
+                rotationVelocity.x *= 0.95;
+                rotationVelocity.y *= 0.95;
+                
+                // Return to base rotation speed gradually
+                const baseSpeed = 0.005; // Increased idle rotation speed
+                
+                // Ease Y rotation to base speed
+                rotationVelocity.y += (baseSpeed - rotationVelocity.y) * 0.02;
+                
+                // Dampen X rotation to 0
+                if (Math.abs(rotationVelocity.x) < 0.0001) rotationVelocity.x = 0;
+                
+                cumulativeRotation.x += rotationVelocity.x;
+                cumulativeRotation.y += rotationVelocity.y;
+            }
+
+            // Keep the particle core independent; each outer ring gets its own alternating
+            // direction below. The transition spin stays on their shared parent.
+            systemsGroup.rotation.x = 0;
+            systemsGroup.rotation.y = transitionRotationY.value;
+            particleGroup.rotation.x = cumulativeRotation.x;
+            particleGroup.rotation.y = cumulativeRotation.y;
+            
+            // Subtle Z wobble
+            systemsGroup.rotation.z = Math.sin(time * 0.1) * 0.05;
+
+            // Rings: slow precession around the orb (pivot) plus the original in-plane drift
+            lineGroup.rotation.x = Math.sin(time * 0.08) * 0.24;
+            lineGroup.rotation.y = 0;
+            orbitPivots.forEach((pivot, i) => {
+                pivot.rotation.y += ORBIT_PRECESSION[i];
+                orbits[i].rotation.z += ORBIT_DRIFT[i];
+            });
+
+            // Smooth camera sway based on mouse
+            camera.position.x += (mouseX * 0.5 - camera.position.x) * 0.05;
+            camera.position.y += (mouseY * 0.5 - camera.position.y) * 0.05;
+            camera.lookAt(0,0,0);
+
+            uniforms.uTime.value = time;
+            renderer.render(scene, camera);
+        }
+        animate();
+        }
+
+        // Initialize Three.js when ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initThreeJS);
+        } else {
+            initThreeJS();
+        }
+
+        // GSAP fallback: ensure hero is visible if GSAP fails to load
+        function noGsapFallback() {
+            var heroBlock = document.getElementById('hero-block');
+            var mobileHeroCta = document.getElementById('mobile-hero-cta');
+            if (heroBlock) heroBlock.classList.remove('opacity-0');
+            if (mobileHeroCta) mobileHeroCta.classList.remove('opacity-0');
+        }
+        window.addEventListener('load', function() {
+            if (typeof gsap === 'undefined') noGsapFallback();
+        }, { once: true });
+
+// Home-only: Start button plays orb exit then navigates to Services
+(() => {
+  const heroBlock = document.getElementById('hero-block');
+  const btnStartDesktop = document.getElementById('btn-start-desktop');
+  const btnStartMobile = document.getElementById('btn-start-mobile');
+  const navServices = document.getElementById('nav-services');
+  const mobileServices = document.getElementById('mobile-services');
+
+  // Aggressive Prefetching
+  let hasPrefetchedServices = false;
+  const prefetchServices = () => {
+    if (hasPrefetchedServices) return;
+    hasPrefetchedServices = true;
+    try {
+      const link = document.createElement('link');
+      link.rel = 'prefetch';
+      link.href = 'services';
+      link.as = 'document';
+      document.head.appendChild(link);
+    } catch (_) {}
+
+    // Kick off the request and let it overlap with the orb animation.
+    // (This is the "overlap navigation" you want, without cutting the orb short.)
+    fetch('services', { cache: 'force-cache', credentials: 'same-origin' }).catch(() => {});
+  };
+  
+  window.addEventListener('load', prefetchServices);
+
+  let isAnimating = false;
+  let hasNavigated = false;
+
+  function redirectToServices() {
+    if (hasNavigated) return;
+    hasNavigated = true;
+    window.location.href = 'services';
+  }
+
+  function goToServices() {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    // Start fetching immediately so network work overlaps the orb timeline.
+    prefetchServices();
+
+    if (typeof gsap === 'undefined') {
+      redirectToServices();
+      return;
+    }
+
+    // Get all foreground elements to fade out
+    const header = document.querySelector('header');
+    const mobileHeroCta = document.getElementById('mobile-hero-cta');
+    const heroCoordinates = document.getElementById('hero-coordinates');
+
+    // Clear CSS animations so GSAP can take over
+    [heroBlock, header, mobileHeroCta, heroCoordinates].forEach(el => {
+      if (el) {
+        const currentOpacity = getComputedStyle(el).opacity; // Capture BEFORE removing animation
+        el.style.animation = 'none';
+        el.style.opacity = currentOpacity;
+      }
+    });
+
+    const tl = gsap.timeline({
+      defaults: { ease: 'power2.inOut' },
+      onComplete: () => {
+        setTimeout(redirectToServices, 500);
+      },
+    });
+
+    // Fade out hero block with upward motion
+    if (heroBlock) {
+      tl.to(heroBlock, { opacity: 0, y: -40, duration: 0.8 }, 0);
+    }
+
+    // Fade out header
+    if (header) {
+      tl.to(header, { opacity: 0, duration: 0.6 }, 0);
+    }
+
+    // Fade out mobile CTA section
+    if (mobileHeroCta) {
+      tl.to(mobileHeroCta, { opacity: 0, duration: 0.6 }, 0.1);
+    }
+
+    // Fade out coordinates
+    if (heroCoordinates) {
+      tl.to(heroCoordinates, { opacity: 0, duration: 0.6 }, 0.1);
+    }
+
+    // Fade body to Services background color
+    tl.to(document.body, { backgroundColor: '#FDFCF8', duration: 1.5 }, 0.5);
+
+    // Orb exit animation (Slower, more cinematic)
+    if (typeof uniforms !== 'undefined' && uniforms && systemsGroup && transitionRotationY) {
+      // Position loader based on layout
+      const loader = document.getElementById('transition-loader');
+      if (loader) {
+        const isMobile = window.innerWidth < 768;
+        const loaderContent = loader.querySelector('div');
+        if (loaderContent) {
+          if (isMobile) {
+            loaderContent.style.transform = 'translateY(10vh)';
+          } else {
+            loaderContent.style.marginLeft = '25%';
+          }
+        }
+      }
+
+      tl.to(uniforms.uOpacity, { value: 0, duration: 2.5 }, 0);
+      tl.to(transitionRotationY, { value: transitionRotationY.value + Math.PI * 3, duration: 3.5 }, 0);
+      tl.to(systemsGroup.scale, { x: 5.0, y: 5.0, z: 5.0, duration: 3.5 }, 0);
+      tl.to(systemsGroup.position, { z: 15, duration: 3.5 }, 0);
+      
+      // Fade in the loader as the orb finishes
+      tl.to('#transition-loader', { 
+        opacity: 1, 
+        duration: 1.5, 
+        pointerEvents: 'auto' 
+      }, 2.0);
+      
+      // Scale the loader up
+      tl.fromTo('#transition-loader .loader-visual', 
+        { scale: 0.8, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 1.5, ease: 'back.out(1.7)' }, 
+        2.2
+      );
+    } else {
+      tl.add(redirectToServices, 0.1);
+    }
+  }
+
+  // Also prefetch on hover
+  btnStartDesktop?.addEventListener('mouseenter', prefetchServices);
+  btnStartMobile?.addEventListener('mouseenter', prefetchServices);
+  navServices?.addEventListener('mouseenter', prefetchServices);
+  mobileServices?.addEventListener('mouseenter', prefetchServices);
+
+  btnStartDesktop?.addEventListener('click', (e) => { e.preventDefault(); goToServices(); });
+  btnStartMobile?.addEventListener('click', (e) => { e.preventDefault(); goToServices(); });
+  navServices?.addEventListener('click', (e) => { e.preventDefault(); goToServices(); });
+  mobileServices?.addEventListener('click', (e) => { e.preventDefault(); goToServices(); });
+})();
+</script>
+
+<!-- Footer: placed outside absolute-positioned main so it's in normal document flow -->
+<div class="h-screen"></div>
+<section id="home-proof" class="relative z-30 w-full bg-paper border-t border-ink/10 py-20 md:py-28" aria-labelledby="home-proof-title">
+    <div class="max-w-5xl mx-auto px-6 md:px-12">
+        <div class="max-w-3xl">
+            <p class="font-mono text-[10px] uppercase tracking-[0.25em] text-rust">Client results</p>
+            <h2 id="home-proof-title" class="mt-4 font-serif text-4xl md:text-6xl text-ink tracking-tight">Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing</h2>
+            <p class="mt-5 font-serif text-xl text-neutral-600 leading-relaxed">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et.</p>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <a href="/products#case-studies" class="group block border border-ink/10 bg-white/50 p-6 md:p-8 rounded-sm hover:border-rust/40 transition-colors">
+                <div class="flex items-center gap-4">
+                    <img src="assets/icons/brand-mark.svg" alt="Lorem Ipsum" class="w-14 h-14 object-contain" width="56" height="56" loading="lazy"/>
+                    <div>
+                        <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-rust">Lorem ipsum</p>
+                        <h3 class="mt-1 font-serif text-2xl md:text-3xl text-ink">Contoso</h3>
+                    </div>
+                </div>
+                <p class="mt-6 font-open-sans text-sm md:text-base text-neutral-600 leading-relaxed">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <span class="mt-6 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-rust transition-colors">lorem ipsum dolor sit <span aria-hidden="true">&rarr;</span></span>
+            </a>
+
+            <a href="/products#case-studies" class="group block border border-ink/10 bg-white/50 p-6 md:p-8 rounded-sm hover:border-rust/40 transition-colors">
+                <div class="flex items-center gap-4">
+                    <img src="assets/icons/brand-mark.svg" alt="Lorem Ipsum" class="w-14 h-14 object-contain" width="56" height="56" loading="lazy"/>
+                    <div>
+                        <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-rust">Lorem ipsum dolor</p>
+                        <h3 class="mt-1 font-serif text-2xl md:text-3xl text-ink">Northwind</h3>
+                    </div>
+                </div>
+                <p class="mt-6 font-open-sans text-sm md:text-base text-neutral-600 leading-relaxed">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+                <span class="mt-6 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-rust transition-colors">lorem ipsum dolor sit <span aria-hidden="true">&rarr;</span></span>
+            </a>
+        </div>
+
+        <a href="/products#case-studies" class="mt-10 inline-flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-rust hover:text-ink transition-colors">lorem ipsum dolor sit <span aria-hidden="true">&rarr;</span></a>
+    </div>
+</section>
+<footer class="relative z-30 w-full bg-paper border-t border-ink/10 pt-20 md:pt-24 pb-12 md:pb-16">
+    <div class="max-w-5xl mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 text-left">
+            <div class="flex flex-col gap-4">
+                <a href="index.html" class="font-serif text-2xl md:text-3xl tracking-tight text-ink font-medium hover:text-rust transition-colors">Studio</a>
+                <p class="text-sm text-neutral-600 font-open-sans leading-relaxed">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.</p>
+                <a href="inquire.html#inquiry-form" class="inline-flex items-center justify-center font-serif italic text-lg px-8 py-2.5 border border-sepia bg-sepia hover:bg-ink text-paper rounded-full shadow-sm transition-colors w-fit">Get in touch</a>
+            </div>
+            <div class="flex flex-col gap-4">
+                <p class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold font-mono">Lorem</p>
+                <nav class="flex flex-col gap-2" aria-label="Footer navigation">
+                    <a href="ai-training.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Build</a>
+                    <a href="ai-development.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Design</a>
+                    <a href="ai-consulting.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Strategy</a>
+                    <a href="ai-governance.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Care</a>
+                    <a href="products.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Our Work</a>
+                    <a href="how-we-work.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">How We Work</a>
+                    <a href="about-us.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">About Us</a>
+                    <a href="blog.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Blog</a>
+                    <a href="data-security.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Data &amp; Security</a>
+                    <a href="inquire.html#inquiry-form" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Book a Call</a>
+                </nav>
+            </div>
+            <div class="flex flex-col gap-4">
+                <p class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold font-mono">Lorem</p>
+                <a href="mailto:hello@example.com" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">lorem</a>
+                <a href="tel:+61000000000" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">+61 000 000 000</a>
+                <a href="#" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">LinkedIn</a>
+                <a href="#privacy-policy" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">lorem ipsum</a>
+                <span class="text-sm text-neutral-600 font-open-sans">Worldwide</span>
+            </div>
+        </div>
+        <div class="border-t border-ink/10 mt-10 pt-6">
+            <p class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold font-mono mb-3">Lorem ipsum dolor</p>
+            <nav class="flex flex-wrap gap-x-4 gap-y-2" aria-label="City pages">
+                <a href="ai-consulting/sydney.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Sydney</a>
+                <a href="ai-consulting/melbourne.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Melbourne</a>
+                <a href="ai-consulting/brisbane.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Brisbane</a>
+                <a href="ai-consulting/adelaide.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Adelaide</a>
+                <a href="ai-consulting/canberra.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Canberra</a>
+                <a href="ai-consulting/darwin.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Darwin</a>
+                <a href="ai-consulting/hobart.html" class="text-sm text-neutral-600 hover:text-ink transition-colors font-open-sans">Hobart</a>
+            </nav>
+        </div>
+        <div class="border-t border-ink/10 mt-6 pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm text-neutral-500 font-open-sans">
+            <span>&copy; 2026 Studio. All rights reserved.</span>
+            <span>Worldwide</span>
+        </div>
+        <p class="little-company-brand" aria-label="Studio"><span data-brand>Studio</span></p>
+    </div>
+</footer>
+
+<script defer src="https://va.vercel-scripts.com/v1/speed-insights/script.js"></script>
+<script>
+/* START button: maroon base + a glitchy "signal pulse" (a thin chromatic ring that stutters
+   outward) synced with a slow label scramble. Click fires a bigger pulse concurrently with the
+   existing orb-warp transition (goToServices untouched). Degrades to a plain maroon button when
+   GSAP is unavailable or prefers-reduced-motion is set. */
+(function () {
+  'use strict';
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var GLYPHS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/<>#%&*';
+
+  // matches the Aria hover-card eyebrow scramble exactly (total 40 frames, lock left->right with jitter)
+  function makeScramble(btn) {
+    return function scramble() {
+      var lab = btn.querySelector('.start-btn-hero-label'); if (!lab) return;
+      var fin = lab.dataset.k || (lab.dataset.k = lab.textContent);
+      var chars = fin.split(''), frame = 0, total = 40;
+      var lockAt = chars.map(function (c, i) {
+        return c === ' ' ? 0 : Math.floor((i / chars.length) * (total - 5)) + 2 + ((Math.random() * 3) | 0);
+      });
+      if (lab._raf) cancelAnimationFrame(lab._raf);
+      (function tick() {
+        var out = '';
+        for (var i = 0; i < chars.length; i++) {
+          out += (chars[i] === ' ' || frame >= lockAt[i]) ? chars[i] : GLYPHS[(Math.random() * GLYPHS.length) | 0];
+        }
+        lab.textContent = out;
+        if (frame++ < total) { lab._raf = requestAnimationFrame(tick); }
+        else { lab.textContent = fin; lab._raf = null; }
+      })();
+    };
+  }
+
+  function enhance(btn) {
+    var wrap = btn.closest('.start-btn-pulse-wrap') || btn.parentElement;
+    if (!wrap || wrap.dataset.sbDone) return;
+    wrap.dataset.sbDone = '1';
+    var scramble = makeScramble(btn);
+    function glitch() {
+      var lab = btn.querySelector('.start-btn-hero-label'); if (!lab) return;
+      lab.classList.remove('sb-glitch'); void lab.offsetWidth; lab.classList.add('sb-glitch');  // restart the anim
+    }
+    function fx() { scramble(); glitch(); }                // the Aria-card feel: scramble + chromatic glitch
+
+    if (reduce) return;                                   // static maroon button
+    if (!window.gsap) { btn.addEventListener('mouseenter', fx); return; }
+
+    var mk = function (cls) { var d = document.createElement('div'); d.className = cls; return d; };
+
+    // RINGS: a pool of hairline circles rendered OVER the button face (above its bg, below the label),
+    // so each visibly grows from the button centre and ripples outward — the Aria slide-9 pulse.
+    var RING_N = 4, rings = [];
+    for (var ri = 0; ri < RING_N; ri++) { var rg = mk('sb-ring'); wrap.appendChild(rg); rings.push(rg); }
+
+    // SPARKS: glitchy debris that flicks outward from behind the button.
+    var parts = [];
+    for (var pi = 0; pi < 6; pi++) { var p = mk('sb-particle'); wrap.appendChild(p); parts.push(p); }
+
+    var ORANGE = 'rgba(249,115,22,0.9)', VIOLET = 'rgba(139,92,246,0.85)';
+
+    // emit one ring: scale 0.45 -> 2.6, opacity 0.55 -> 0 over 2.1s on a GENTLE power1.out so it
+    // actually travels outward (the fix: expo.out slammed it to full size instantly). Colour alternates.
+    function emitRing(idx, big) {
+      var el = rings[idx % RING_N];
+      el.style.borderColor = ORANGE;                         // rings stay all-orange; sparks carry the violet
+      el.style.boxShadow = '0 0 6px rgba(249,115,22,0.3)';
+      gsap.fromTo(el, { scale: 0.45, opacity: big ? 0.8 : 0.55 },
+        { scale: big ? 3.1 : 2.6, opacity: 0, duration: big ? 1.8 : 2.1, ease: 'power1.out', overwrite: 'auto' });
+    }
+
+    // sparks: random angle / size / stagger, stuttery (glitchy) fade
+    function sparkBurst(big) {
+      for (var i = 0; i < parts.length; i++) {
+        var a = Math.random() * Math.PI * 2, d = (big ? 80 : 54) + Math.random() * 42;
+        parts[i].style.background = (i % 2) ? VIOLET : ORANGE;
+        gsap.set(parts[i], { x: 0, y: 0, scale: 0.6 + Math.random() * 1.1, opacity: 0.95 });
+        gsap.to(parts[i], { x: Math.cos(a) * d, y: Math.sin(a) * d, duration: big ? 0.9 : 1.15, ease: 'power2.out', delay: i * 0.04, overwrite: 'auto' });
+        gsap.to(parts[i], { opacity: 0, duration: big ? 0.9 : 1.15, ease: 'steps(6)', delay: i * 0.04 });
+      }
+    }
+
+    // continuous emitter: a new ring every EMIT seconds so the ripples overlap with no dead gap
+    var emitN = 0, EMIT = 0.85;
+    function tick() {
+      emitRing(emitN, false);
+      if (emitN % 2 === 0) sparkBurst(false);   // sparks on every other ring
+      if (emitN % 3 === 0) fx();                // occasional spontaneous label scramble
+      emitN++;
+    }
+    var loop = gsap.timeline({ repeat: -1 });
+    loop.call(tick, null, 0).to({}, { duration: EMIT });
+
+    btn.addEventListener('mouseenter', fx);
+    // click: a brighter triple-ring burst + sparks, concurrent with the untouched orb-warp
+    btn.addEventListener('click', function () {
+      fx(); sparkBurst(true);
+      emitRing(emitN++, true);
+      gsap.delayedCall(0.16, function () { emitRing(emitN++, true); });
+      gsap.delayedCall(0.32, function () { emitRing(emitN++, true); });
+    });
+  }
+
+  function ready() { Array.prototype.forEach.call(document.querySelectorAll('.start-btn-hero'), enhance); }
+  function wait(n) { n = n || 0; if (window.gsap || reduce || n > 40) return ready(); setTimeout(function () { wait(n + 1); }, 75); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { wait(0); }); else wait(0);
+})();
+</script>
+</body>
+</html>
