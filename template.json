@@ -1,0 +1,93 @@
+{
+  "id": "ai-consultants",
+  "name": "AI Consultants",
+  "version": "1.0.0",
+  "description": "Static multi-page AI consultancy / studio template. Rebrand via css/tokens.css and js/brand.js. Tailwind output committed; no production CSS build step.",
+  "category": "landing-page",
+  "subcategory": "professional-services",
+  "repository": "https://github.com/Little-Devs/template-ai-consultants",
+  "demoUrl": "https://ai-consultants.little.website/",
+  "previewImage": "",
+  "techStack": {
+    "framework": "Static HTML",
+    "version": "1.0.0",
+    "styling": "Tailwind CSS (committed css/output.css) + hand CSS",
+    "scripting": "JavaScript"
+  },
+  "features": [
+    "Multi-page AI consultancy site (services, products, blog, inquire, book)",
+    "Rebrand via css/tokens.css and js/brand.js (STUDIO_BRAND)",
+    "Committed Tailwind output — no production CSS regen",
+    "Optional Supabase inquiry (supabase/SETUP.md); default mailto forms",
+    "Agent skills index at /.well-known/agent-skills/",
+    "Agent-markdown shim (api/ + middleware.ts)",
+    "Self-hosted Inter + Black Echo credit font"
+  ],
+  "aesthetic": {
+    "style": "Studio purple / paper",
+    "description": "Warm paper background with deep purple primary and violet–magenta accents",
+    "fonts": {
+      "display": "Inter",
+      "sans": "Inter",
+      "credit": "Black Echo",
+      "primary": "Inter"
+    },
+    "colors": {
+      "primary": "#3D2265",
+      "primaryName": "Primary purple",
+      "accent": "#9855FF",
+      "accentName": "Accent violet",
+      "accent2": "#E63CFE",
+      "accent2Name": "Accent magenta",
+      "accentInk": "#5B2FA8",
+      "accentInkName": "Accent ink",
+      "background": "#FDFCF8",
+      "backgroundName": "Paper",
+      "ink": "#1C1917",
+      "inkName": "Ink",
+      "muted": "#525252",
+      "mutedName": "Muted"
+    }
+  },
+  "sections": [
+    "Header",
+    "Hero",
+    "Services",
+    "Products",
+    "How we work",
+    "About",
+    "Blog",
+    "Inquire / Book",
+    "Footer"
+  ],
+  "useCases": [
+    "AI consultancies",
+    "AI product studios",
+    "Professional services firms offering AI training and governance",
+    "Agencies showcasing AI assistants and automation"
+  ],
+  "customization": {
+    "difficulty": "easy",
+    "colorScheme": "css/tokens.css CSS variables",
+    "typography": "Self-hosted Inter (assets/fonts) + Black Echo; edit tokens",
+    "layout": "Static multi-page HTML + existing section CSS"
+  },
+  "performance": {
+    "framework": "Static HTML (no SPA)",
+    "cssOnly": "Partial — GSAP / Lucide / Lottie / Three on some pages",
+    "lighthouse": "varies by page"
+  },
+  "license": "MIT",
+  "author": "Little-Devs",
+  "createdAt": "2026-09-09",
+  "lastUpdated": "2026-09-09",
+  "tags": [
+    "landing-page",
+    "ai",
+    "consultancy",
+    "studio",
+    "professional-services",
+    "static-html",
+    "tailwind"
+  ]
+}

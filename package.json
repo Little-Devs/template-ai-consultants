@@ -1,7 +1,7 @@
 {
-  "name": "studio-template",
+  "name": "template-ai-consultants",
   "version": "1.0.0",
-  "description": "Static multi-page studio template. Rebrand via css/tokens.css and js/brand.js.",
+  "description": "Static multi-page AI consultancy template. Rebrand via css/tokens.css and js/brand.js.",
   "main": "server.js",
   "scripts": {
     "build:css": "npx tailwindcss -i ./src/input.css -o ./css/output.css --minify",
@@ -15,7 +15,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "type": "commonjs",
   "devDependencies": {
     "@vercel/functions": "^3.4.4",
